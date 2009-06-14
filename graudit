@@ -1,0 +1,15 @@
+#!/bin/sh
+# -R is recursive
+# -a treats all files as text (bad idea?)
+# -H prints the name of the file
+# -C 1 prints one line of contaxt before and after the match
+# -E uses extended regexp
+# -f specifies the rule file (need basename?)
+
+grdir=`dirname $0`
+grep    --color=always \
+        --exclude-dir=.svn \
+        --exclude-dir=.cvs \
+        --exclude-dir=.git \
+        -n -R -H -C 1 -E \
+        -f $grdir/signatures.db $1
