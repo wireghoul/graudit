@@ -1,0 +1,57 @@
+# The inline comments cause an overhead, might have to filter them out via
+# creation of a tmp file to read the rules from. This would improve maintainability
+# so definately worth a thought
+# No blank lines allowed (filter this too FTW!!!!!)
+#%#%#%#
+# PHP Rules
+#%#%#%#
+# Execution
+exec *\(.*\$.*\)
+passthru
+popen
+proc_close
+proc_open
+proc_get_status
+proc_nice
+proc_terminate
+proc_close
+proc_open
+proc_get_status
+proc_nice
+proc_terminate
+shell_exec
+system *\(
+# Extensions
+expect_
+pcntl_
+posix_
+#Semaphore extension
+ftok
+msg_
+sem_
+shm_
+shmop_
+#Otherstuffs
+eval *\(.*\$.*\)
+file *\(
+file_get_contents
+fopen
+fwrite
+stream_
+mail *\(
+include *\(
+passthru
+phpinfo
+preg_replace
+readfile
+require *\(
+mysql_
+pg_
+\$_GET
+\$_POST
+\$_COOKIE
+\$_REQUEST
+\$PHPSELF
+#%#%#
+# Perl
+#%#%#
