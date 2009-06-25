@@ -40,11 +40,11 @@ fwrite
 stream_
 mail *\(
 include *\(
-passthru
-phpinfo
+include_once *\(
 preg_replace
 readfile
 require *\(
+require_once *\(
 mysql_
 pg_
 \$_GET

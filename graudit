@@ -1,15 +1,81 @@
-#!/bin/sh
+#!/bin/bash
+# Graudit version 1.1 (2009 June 19)
+# Written by Wireghoul - http://www.justanotherhacker.com
+
 # -R is recursive
-# -a treats all files as text (bad idea?)
 # -H prints the name of the file
 # -C 1 prints one line of contaxt before and after the match
 # -E uses extended regexp
-# -f specifies the rule file (need basename?)
+# -f specifies the rule file
+# -n prints the line number
 
+#TODO make argument happies
+
+VERSION='1.1'
 grdir=`dirname $0`
-grep    --color=always \
+context=1
+color='always'
+database='default'
+separator='##############################################'
+
+version () {
+    echo "Graudit version: $VERSION"
+}
+
+usage () {
+    cat <<EOU
+Usage: graudit [opts] /path/to/scan
+
+OPTIONS
+  -h show this message
+  -v show version number
+  -d database to use
+  -c number of lines of context to display
+  -z supress colors
+
+Database is one of php, perl, rough or default, not providing a database will use default
+/path is the path to the file or directory to audit
+EOU
+}
+
+while getopts "hvzd:c:" opt; do
+    case $opt in
+        h)
+            usage
+            exit 1
+        ;;
+        v)
+            version
+            exit 0
+        ;;
+        z)
+            color='none'
+        ;;
+        c)
+            context="$OPTARG"
+            shift
+            shift
+        ;;
+        d)
+            database="$OPTARG"
+            shift
+            shift
+        ;;
+        \?)
+            echo "Invalid option: -$OPTARG" >&2
+            usage
+            exit 1
+        ;;
+    esac
+done
+
+echo "Opts: $@"
+
+grep    --color=$color \
         --exclude-dir=.svn \
         --exclude-dir=.cvs \
         --exclude-dir=.git \
-        -n -R -H -C 1 -E \
-        -f $grdir/signatures.db $1
+        -n -R -H -C $context -E \
+        -f $grdir/signatures/$database.db "$@" \
+        | sed -e"s/--/$separator/"
+

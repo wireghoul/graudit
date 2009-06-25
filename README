@@ -1,0 +1,6 @@
+GRAUDIT
+
+Graudit is a simple script and signatire set that allows you to find security 
+flaws in web applications witten in PHP and Perl using the GNU utility grep.
+It is comparable to other static analysis aplications like RATS and flawfinder
+while keeping the technical requirements to a minimum.
