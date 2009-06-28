@@ -1,18 +1,12 @@
 #!/bin/bash
 # Graudit version 1.1 (2009 June 19)
 # Written by Wireghoul - http://www.justanotherhacker.com
-
-# -R is recursive
-# -H prints the name of the file
-# -C 1 prints one line of contaxt before and after the match
-# -E uses extended regexp
-# -f specifies the rule file
-# -n prints the line number
-
-#TODO make argument happies
+# Released under the GPL licence
 
 VERSION='1.1'
 grdir=`dirname $0`
+
+# Default values
 context=1
 color='always'
 database='default'
@@ -53,13 +47,9 @@ while getopts "hvzd:c:" opt; do
         ;;
         c)
             context="$OPTARG"
-            shift
-            shift
         ;;
         d)
             database="$OPTARG"
-            shift
-            shift
         ;;
         \?)
             echo "Invalid option: -$OPTARG" >&2
@@ -68,8 +58,21 @@ while getopts "hvzd:c:" opt; do
         ;;
     esac
 done
+#Remove arguments from $@
+shift $((OPTIND-1))
 
-echo "Opts: $@"
+if [ -z $1 ]; then
+        usage
+        exit 1
+fi
+
+
+# -R is recursive
+# -H prints the name of the file
+# -C prints # lines of context before and after the match
+# -E uses extended regexp
+# -f specifies the rule file (signature database)
+# -n prints the line number
 
 grep    --color=$color \
         --exclude-dir=.svn \

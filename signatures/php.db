@@ -1,10 +1,3 @@
-# The inline comments cause an overhead, might have to filter them out via
-# creation of a tmp file to read the rules from. This would improve maintainability
-# so definately worth a thought
-# No blank lines allowed (filter this too FTW!!!!!)
-#%#%#%#
-# PHP Rules
-#%#%#%#
 # Execution
 exec *\(.*\$.*\)
 passthru
@@ -40,11 +33,11 @@ fwrite
 stream_
 mail *\(
 include *\(
-passthru
-phpinfo
+include_once *\(
 preg_replace
 readfile
 require *\(
+require_once *\(
 mysql_
 pg_
 \$_GET
@@ -52,6 +45,3 @@ pg_
 \$_COOKIE
 \$_REQUEST
 \$PHPSELF
-#%#%#
-# Perl
-#%#%#
