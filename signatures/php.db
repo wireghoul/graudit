@@ -1,5 +1,5 @@
 # Execution
-exec *\(.*\$.*\)
+exec *\(.*\)
 passthru
 popen
 proc_close
@@ -25,19 +25,19 @@ sem_
 shm_
 shmop_
 #Otherstuffs
-eval *\(.*\$.*\)
+eval *\(.*\)
 file *\(
 file_get_contents
 fopen
 fwrite
 stream_
 mail *\(
-include *\(
-include_once *\(
+include *\(.*\$.*\)
+include_once *\(.*\$.*\)
 preg_replace
 readfile
-require *\(
-require_once *\(
+require *\(.*\$.*\)
+require_once *\(.*\$.*\)
 mysql_
 pg_
 \$_GET
