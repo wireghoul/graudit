@@ -73,7 +73,6 @@ elif [ -f "$sigdb" ]; then
 else
     database="$grdir/signatures/$sigdb.db"
 fi
-echo "Using database $database"
                                                                                                                                                             
 # -R is recursive
 # -H prints the name of the file
