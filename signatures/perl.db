@@ -5,7 +5,7 @@ sysread
 exec
 eval
 fork
-\`.*\`
+`.*`
 fctnl
 ioctl
 bind

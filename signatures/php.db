@@ -1,6 +1,6 @@
 # Execution
 exec *\(.*\)
-\`.*\`
+`.*`
 passthru
 popen
 proc_close

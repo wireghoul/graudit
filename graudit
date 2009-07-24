@@ -9,7 +9,7 @@ grdir=`dirname $0`
 # Default values
 context=1
 color='always'
-database='default'
+database="$grdir/signatures/default.db"
 separator='##############################################'
 
 version () {
@@ -49,7 +49,7 @@ while getopts "hvzd:c:" opt; do
             context="$OPTARG"
         ;;
         d)
-            database="$OPTARG"
+            sigdb="$OPTARG"
         ;;
         \?)
             echo "Invalid option: -$OPTARG" >&2
@@ -66,7 +66,15 @@ if [ -z $1 ]; then
         exit 1
 fi
 
-
+if [ "$sigdb" == '-' ]; then
+        database='-'
+elif [ -f "$sigdb" ]; then
+    database="$sigdb"
+else
+    database="$grdir/signatures/$sigdb.db"
+fi
+echo "Using database $database"
+                                                                                                                                                            
 # -R is recursive
 # -H prints the name of the file
 # -C prints # lines of context before and after the match
@@ -79,6 +87,6 @@ grep    --color=$color \
         --exclude-dir=.cvs \
         --exclude-dir=.git \
         -n -R -H -C $context -E \
-        -f $grdir/signatures/$database.db "$@" \
+        -f $database "$@" \
         | sed -e"s/--/$separator/"
 
