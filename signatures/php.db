@@ -1,8 +1,8 @@
 # Execution
 exec *\(.*\)
 `.*`
-passthru
-popen
+passthru *\(.*\)
+popen *\(.*\)
 proc_close
 proc_open
 proc_get_status
@@ -13,21 +13,26 @@ proc_open
 proc_get_status
 proc_nice
 proc_terminate
-shell_exec
-system *\(
+shell_exec *\(.*\)
+system *\(.*\)
 # Extensions
 expect_
 pcntl_
 posix_
 #Semaphore extension
 ftok
-msg_
-sem_
+msg_ get_ queue
+msg_ queue_ exists
+msg_ receive
+msg_ remove_ queue
+msg_ send
+msg_ set_ queue
+msg_ stat_ queuesem_
 shm_
 shmop_
 #Otherstuffs
 eval *\(.*\)
-file *\(
+file *\(.*\)
 file_get_contents
 fopen
 fwrite
@@ -41,8 +46,8 @@ require *\(.*\$.*\)
 require_once *\(.*\$.*\)
 mysql_
 pg_
-\$_GET
-\$_POST
-\$_COOKIE
-\$_REQUEST
+\$_GET\[.*\]
+\$_POST\[.*\]
+\$_COOKIE\[.*\]
+\$_REQUEST\[.*\]
 \$PHPSELF

@@ -50,6 +50,13 @@ while getopts "hvzd:c:" opt; do
         ;;
         d)
             sigdb="$OPTARG"
+            if [ "$sigdb" == '-' ]; then
+                database='-'
+            elif [ -f "$sigdb" ]; then
+                database="$sigdb"
+            else
+                database="$grdir/signatures/$sigdb.db"
+            fi
         ;;
         \?)
             echo "Invalid option: -$OPTARG" >&2
@@ -66,14 +73,6 @@ if [ -z $1 ]; then
         exit 1
 fi
 
-if [ "$sigdb" == '-' ]; then
-        database='-'
-elif [ -f "$sigdb" ]; then
-    database="$sigdb"
-else
-    database="$grdir/signatures/$sigdb.db"
-fi
-                                                                                                                                                            
 # -R is recursive
 # -H prints the name of the file
 # -C prints # lines of context before and after the match
