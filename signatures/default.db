@@ -11,6 +11,7 @@ system *\(.*\$_.*\)
 eval *\(.*\$_.*\)
 mysql_query *\(.*\$_.*\)
 WHERE .*=.*\$_.*
+(include|include_once|require|require_once) *\(.*\$.*\)
 #%#%#
 # Perl
 #%#%#
