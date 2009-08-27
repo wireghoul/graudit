@@ -1,57 +1,17 @@
-# The inline comments cause an overhead, might have to filter them out via
-# creation of a tmp file to read the rules from. This would improve maintainability
-# so definately worth a thought
-# No blank lines allowed (filter this too FTW!!!!!)
 #%#%#%#
 # PHP Rules
 #%#%#%#
 # Execution
-exec *\(.*\$.*\)
-passthru
-popen
-proc_close
-proc_open
-proc_get_status
-proc_nice
-proc_terminate
-proc_close
-proc_open
-proc_get_status
-proc_nice
-proc_terminate
-shell_exec
-system *\(
-# Extensions
-expect_
-pcntl_
-posix_
-#Semaphore extension
-ftok
-msg_
-sem_
-shm_
-shmop_
+exec *\(.*\$_.*\)
+passthru *\(.*\)
+popen *\(.*\)
+shell_exec *\(.*\$_.*\)
+system *\(.*\$_.*\)
 #Otherstuffs
-eval *\(.*\$.*\)
-file *\(
-file_get_contents
-fopen
-fwrite
-stream_
-mail *\(
-include *\(
-include_once *\(
-preg_replace
-readfile
-require *\(
-require_once *\(
-mysql_
-pg_
-\$_GET
-\$_POST
-\$_COOKIE
-\$_REQUEST
-\$PHPSELF
+eval *\(.*\$_.*\)
+mysql_query *\(.*\$_.*\)
+WHERE .*=.*\$_.*
+(include|include_once|require|require_once) *\(.*\$.*\)
 #%#%#
 # Perl
 #%#%#

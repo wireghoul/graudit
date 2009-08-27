@@ -6,7 +6,7 @@ other static analysis applications like RATS and flaw-finder while keeping the
 technical requirements to a minimum and being very flexible.
 
 USAGE
-Graudit supports several options and tries to follow good shell practises. For
+Graudit supports several options and tries to follow good shell practices. For
 a list of the options you can run graudit -h or see below. The simplest way to use 
 graudit is;
 graudit /path/to/scan
