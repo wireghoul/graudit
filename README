@@ -2,7 +2,8 @@ GRAUDIT
 
 Graudit is a simple script and signature sets that allows you to find potential 
 security flaws in source code using the GNU utility grep. It's comparable to 
-other static analysis applications like RATS, SWAAT and flaw-finder while keeping the technical requirements to a minimum and being very flexible.
+other static analysis applications like RATS, SWAAT and flaw-finder while keeping 
+the technical requirements to a minimum and being very flexible.
 
 USAGE
 Graudit supports several options and tries to follow good shell practices. For
