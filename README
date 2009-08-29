@@ -2,15 +2,33 @@ GRAUDIT
 
 Graudit is a simple script and signature sets that allows you to find potential 
 security flaws in source code using the GNU utility grep. It's comparable to 
-other static analysis applications like RATS, SWAAT and flaw-finder while keeping 
-the technical requirements to a minimum and being very flexible.
+other static analysis applications like RATS, SWAAT and flaw-finder while 
+keeping the technical requirements to a minimum and being very flexible.
 
 USAGE
 Graudit supports several options and tries to follow good shell practices. For
-a list of the options you can run graudit -h or see below. The simplest way to use 
-graudit is;
-graudit /path/to/scan
+a list of the options you can run graudit -h or see below. The simplest way to 
+use graudit is;
+graudit <options> /path/to/scan
+
+The following options are available:
+  -h prints a short help text
+  -v prints version number
+  -d <db> database to use
+  -c <num> number of lines of context to display, default is 2
+  -z supress colors
 
 
-HELP
-more to come...
+DATABASES
+Graudit uses extended regular expressions (POSIX) as it's signatures and comes 
+with several databases ready for use. You can extend the existing databases or 
+make your own if you require additional signatures.
+
+* Default is aimed at finding low hanging fruit. It cointains generic rules that 
+should match common vulnerabilites in several languages. However, in order to 
+find additional vulnerabilities for a specific language you should use the 
+language specific databases.
+
+CONTRIBUTING
+If you would like to contribute to graudit, please fork the repository at github
+and use that.
