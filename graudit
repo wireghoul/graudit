@@ -1,5 +1,5 @@
 #!/bin/bash
-# Graudit version 1.1 (2009 June 19)
+# Graudit - Rough code review tool using grep
 # Written by Wireghoul - http://www.justanotherhacker.com
 # Released under the GPL licence
 
