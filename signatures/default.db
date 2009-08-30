@@ -2,15 +2,15 @@
 # PHP Rules
 #%#%#%#
 # Execution
-exec *\(.*\$_.*\)
+exec *\(.*\$.*\)
 passthru *\(.*\)
 popen *\(.*\)
-shell_exec *\(.*\$_.*\)
-system *\(.*\$_.*\)
+shell_exec *\(.*\$.*\)
+system *\(.*\$.*\)
 #Otherstuffs
-eval *\(.*\$_.*\)
-mysql_query *\(.*\$_.*\)
-WHERE .*=.*\$_.*
+eval *\(.*\$.*\)
+mysql_query *\(.*\$.*\)
+WHERE .*=.*\$.*
 (include|include_once|require|require_once) *\(.*\$.*\)
 #%#%#
 # Perl
