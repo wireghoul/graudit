@@ -35,10 +35,10 @@ shmop_
 eval *\(.*\)
 file *\(.*\)
 file_get_contents
-fopen
+fopen *\(.*\$.*\)
 fwrite
 stream_
-mail *\(
+mail *\(.*\)
 include *\(.*\$.*\)
 include_once *\(.*\$.*\)
 preg_replace
