@@ -13,7 +13,7 @@ echo.*\$_.*\[.*\]
 eval *\(.*\$.*\)
 #SQLi signature needs to stop matching before LF when color=on #bug(1)
 mysql_query *\(.*\$.*\)
-WHERE .*=.*\$.*
+WHERE .*=.*\$[^; ]+
 (include|include_once|require|require_once) *\(.*\$.*\)
 #%#%#
 # Perl
