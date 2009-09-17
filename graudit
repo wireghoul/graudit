@@ -2,8 +2,10 @@
 # Graudit - Rough code review tool using grep
 # Written by Wireghoul - http://www.justanotherhacker.com
 # Released under the GPL licence
+set -e
+set -o pipefail
 
-VERSION='1.1'
+VERSION='1.2'
 grdir=`dirname $0`
 
 # Default values
@@ -11,6 +13,11 @@ context=1
 color='always'
 database="$grdir/signatures/default.db"
 separator='##############################################'
+
+if [ ! -x /bin/grep ]; then
+    echo "/bin/grep not found"
+    exit 2
+fi
 
 version () {
     echo "Graudit version: $VERSION"
@@ -61,16 +68,16 @@ while getopts "hvzd:c:" opt; do
         \?)
             echo "Invalid option: -$OPTARG" >&2
             usage
-            exit 1
+            exit 2
         ;;
     esac
 done
 #Remove arguments from $@
 shift $((OPTIND-1))
 
-if [ -z $1 ]; then
+if [ -z "$1" ]; then
         usage
-        exit 1
+        exit 2
 fi
 
 # -R is recursive
@@ -87,4 +94,4 @@ grep    --color=$color \
         -n -R -H -C $context -E \
         -f $database "$@" \
         | sed -e"s/--/$separator/"
-
+exit $?
