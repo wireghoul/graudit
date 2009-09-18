@@ -39,6 +39,7 @@ fopen *\(.*\$.*\)
 fwrite
 move_uploaded_file *\(.*\)
 stream_
+create_function *\(.*\)
 mail *\(.*\)
 include *\(.*\$.*\)
 include_once *\(.*\$.*\)
