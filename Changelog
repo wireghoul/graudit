@@ -1,8 +1,6 @@
 1.2		2009 September 18
 		Default signatures aimed at low hanging fruit
 		Improved documentation
-		Added Makefile
-		Added testsuite
 		Bug fixes to graudit and signatures
 
 1.1		2009 July 29
