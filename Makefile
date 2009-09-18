@@ -9,6 +9,7 @@ VERSION=`./graudit -v | cut -d' ' -f 3`
 
 dist: $(DISTFILES)
 	mkdir graudit-$(VERSION)
+	cp -f $(DISTFILES) graudit-$(VERSION)
 	tar zcf graudit-$(VERSION).tar.gz graudit-$(VERSION)
 	zip -9r graudit-$(VERSION).zip graudit-$(VERSION)
 	rm -r graudit-$(VERSION)
