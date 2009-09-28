@@ -5,9 +5,9 @@
 SIGNATURES := signatures/default.db  signatures/php.db     signatures/rough.db signatures/perl.db     signatures/python.db
 DISTFILES := Changelog  graudit  LICENSE  README
 VERSION=`./graudit -v | cut -d' ' -f 3`
-.PHONY : clean
+.PHONY : clean test
 
-dist: $(DISTFILES)
+dist: $(DISTFILES) test
 	mkdir -p graudit-$(VERSION)/signatures
 	cp -f $(DISTFILES) graudit-$(VERSION)
 	cp -f $(SIGNATURES) graudit-$(VERSION)/signatures
@@ -17,3 +17,6 @@ dist: $(DISTFILES)
 
 clean:
 	rm -rf graudit-*.tar.gz graudit-*.zip
+
+test:
+	cd t && ./runtests.sh
