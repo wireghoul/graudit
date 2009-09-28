@@ -8,7 +8,8 @@ FAIL=0
 RET=0
 
 plan () {
-    PLANNED=$1
+    DEC=$1
+    PLANNED=$2
 }
 
 # Track highest return value
@@ -53,9 +54,10 @@ not_ok () {
 die () {
     TOTAL=$(($OK+$FAIL))
     if [ $TOTAL -ne $PLANNED ]; then
-        echo "Wrong number of tests ($TOTAL) expected $PLANNED"
+        echo >&2 "$0 Wrong number of tests ($TOTAL) expected $PLANNED"
         exit 2
     fi
+    echo "$DESC"
     echo "Completed $TOTAL of $PLANNED tests"
     echo "OK: $OK"
     echo "FAIL: $FAIL"
