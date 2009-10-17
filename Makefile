@@ -2,7 +2,7 @@
 # Graudit makefile
 ###
 
-SIGNATURES := signatures/default.db  signatures/php.db     signatures/rough.db signatures/perl.db     signatures/python.db
+SIGNATURES := signatures/default.db signatures/php.db signatures/rough.db signatures/perl.db signatures/python.db signatures/asp.db signatures/jsp.db signatures/other.db
 DISTFILES := Changelog  graudit  LICENSE  README
 VERSION=`./graudit -v | cut -d' ' -f 3`
 .PHONY : clean test
