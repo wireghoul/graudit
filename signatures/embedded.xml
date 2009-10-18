@@ -1,0 +1,60 @@
+<!-- These are used for all languages, and are matched against
+     whatever the language-specific parser marks as a string
+-->
+<vulns lang="embedded" suffixes="" options="caseinsensitive">
+  <vuln match=".*select .* from .*" type="sqlstring" />
+  <vuln match=".*update .* where" type="sqlstring" />
+  <vuln match=".*insert .* into" type="sqlstring" />
+  <vuln match=".*delete .* from" type="sqlstring" />
+  <vuln match=".*exec.*" type="sqlstring" />
+  <vuln match=".*executeQuery.*" type="sqlstring" />
+  <vuln match=".*sp_executesql.*" type="sqlstring"/>
+  <vuln match=".*sqlcommand.*" type="sqlstring"/>
+  <vuln match=".*executeScalar.*" type="sqlstring" />
+  <vuln match=".*executeSql.*" type="sqlstring" />
+  <vuln match=".*executeQuery.*" type="sqlstring" />
+  <vuln match=".*executeStatement.*" type="sqlstring" />
+  <vuln match=".*mysql_query.*" type="sqlstring" severity="medium"/>
+  <vuln match=".*executeQuery.*" type="sqlstring" severity="medium"/>
+  <vuln match=".*createStatement.*" type="sqlstring" severity="medium"/>
+  <vuln match=".*exec (@Query).*" type="sqlstring" severity="medium"/>
+  <vuln match=".*exec @Query.*" type="sqlstring" severity="medium"/>
+  <vuln match=".*concat.*" type="concatination" severity="medium"/>
+  <vuln match=".*concatenate.*" type="concatination" severity="medium"/>
+  <vuln match=".*GetQueryResultInXML.*" type="sqlstring" />
+  <vuln match=".*setfilter.*" type="filter" />
+  <vuln match=".*sqloledb.*" type="SQL Connection" />
+  <vuln match=".*sql server.*" type="SQL Connection" />
+  <vuln match=".*driver.*" type="SQL Connection" />
+  <vuln match=".*sqlconnection.*" type="SQL Connection"/>
+  <vuln match=".*dsn.*" type="SQL Connection"/>
+  <vuln match=".*adodb.*" type="SQL Connection"/>
+  <vuln match=".*jdbc.*" type="SQL Connection"/>
+  <vuln match=".*java.sql.*" type="SQL Connection"/>
+  <vuln match=".*sqlclient.*" type="SQL Connection"/>
+  <vuln match=".*oracleclient.*" type="SQL Connection"/>
+  <vuln match=".*mysql_connect.*" type="SQL Connection" severity="medium"/>
+  <vuln match=".*driver.*" type="SQL Connection"/>
+  <vuln match=".*pass.*" type="Interesting String"/>
+  <vuln match=".*pwd.*" type="Interesting String"/>
+  <vuln match=".*usr.*" type="Interesting String"/>
+  <vuln match=".*user.*" type="Interesting String"/>
+  <vuln match=".*public.*class.*" type="Interesting String"/>
+  <vuln match=".*session.*" type="Interesting String"/>
+  <vuln match=".*(chmod|chown).*" type="Interesting String"/>
+  <vuln match=".*base64.*" type="Encraption"/>
+  <vuln match=".*urlencode.*" type="Encraption"/>
+  <vuln match=".*htmlencode.*" type="Encraption"/>
+  <vuln match=".*UTF8Encoding.UTF8.GetBytes.*" type="Encraption"/>
+  <vuln match=".*UTF8Encoding.UTF8.GetString.*" type="Encraption"/>
+  <vuln match=".*ToBase64String.*" type="Encraption"/>
+  <vuln match=".*FromBase64String.*" type="Encraption"/>
+  <vuln match=".*Math.random.*" type="encraption" />  
+  <vuln match=".*rnd.*" type="encraption" />  
+  <vuln match=".*(rand|srand).*" type="encraption" />  
+  <vuln match=".*Wscript.shell.*" type="OSScripting"/>
+  <vuln match=".*system.*" type="OSScripting"/>
+  <vuln match=".*execfile.*" type="OSScripting"/>
+  <vuln match=".*Input.*Type.*Hidden.*" type="HiddenParameters"/>
+  <vuln match=".*Exception.*" type="error" severity="low"/> 
+</vulns>

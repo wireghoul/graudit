@@ -7,6 +7,7 @@ passthru *\(.*\)
 popen *\(.*\)
 shell_exec *\(.*\$.*\)
 system *\(.*\$.*\)
+`.*\$.*`
 #Otherstuffs
 #XSS signature needs to stop matching before LF when color=on #bug(1)
 echo.*\$_.*\[.*\]
@@ -18,3 +19,4 @@ WHERE .*=.*\$[^; ]+
 #%#%#
 # Perl
 #%#%#
+
