@@ -5,9 +5,15 @@
 . ./harness.sh
 
 # Declare description and number of checks
-plan 'changelog updated' 1 
+plan 'changelog updated' 2 
 
 # TESTS
+head -1 ../Changelog| cut -f1>ver1
+../graudit -v | cut -d" " -f3>ver2
 
-# Not posix compliant
-ok 'changelog version' 'test $(head -1 ../Changelog| cut -f1) == $(../graudit -v | cut -d' ' -f3)'
+# Harness need stricter checks
+ok 'changelog version' 'grep -f ver1 ver2'
+ok 'script version' 'grep -f ver2 ver1'
+
+rm ver1
+rm ver2
