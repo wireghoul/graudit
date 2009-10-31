@@ -1,3 +1,10 @@
+1.3		2009 October 31
+		Some signatures addes to existing databases
+		Signature improvements to existing databases
+		Added JSP ruleset
+		Added ASP ruleset
+		Improved testing
+		
 1.2		2009 September 18
 		Default signatures aimed at low hanging fruit
 		Improved documentation
