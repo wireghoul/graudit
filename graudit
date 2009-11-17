@@ -18,7 +18,12 @@ if [ ! -x /bin/grep ]; then
     echo "/bin/grep not found"
     exit 2
 fi
-
+/bin/grep --exclude-dir=. test "$0" >/dev/null 2>&1
+if [ $? -eq 2 ]; then
+    echo $?
+    echo "Graudit requires a newer version of grep (>=2.5.3)"
+    exit 2
+fi
 version () {
     echo "Graudit version: $VERSION"
 }
