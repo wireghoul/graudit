@@ -5,12 +5,16 @@
 set -e
 set -o pipefail
 
-VERSION='1.3'
+VERSION='1.4'
 grdir=`dirname $0`
 
 # Default values
 context=1
 color='always'
+#Default can go with search paths
+# /usr/share/graudit/
+# ~/.graudit
+# $grdir/
 database="$grdir/signatures/default.db"
 separator='##############################################'
 
