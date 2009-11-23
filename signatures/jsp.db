@@ -2,5 +2,7 @@ request.getQueryString
 Runtime.exec
 getRequest
 Request.GetParameter
+request.getParameter
 jsp:getProperty
 java.security.acl.acl
+response.sendRedirect *\(.*(Request|request).*\)

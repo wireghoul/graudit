@@ -32,19 +32,20 @@ sem_
 shm_
 shmop_
 #Otherstuffs
-eval *\(.*\)
-file *\(.*\)
-file_get_contents
+header *\(.*$_(GET|POST|REQUEST|COOKIE).*\)
+eval *\(.\$*\)
+file *\(.\$*\)
+file_get_contents *\(.\$*\)
 fopen *\(.*\$.*\)
 fwrite
 move_uploaded_file *\(.*\)
 stream_
 create_function *\(.*\)
-mail *\(.*\)
+mail *\(.\$*\)
 include *\(.*\$.*\)
 include_once *\(.*\$.*\)
-preg_replace
-readfile
+preg_replace *\(.\$*\)
+readfile *\(.\$*\)
 require *\(.*\$.*\)
 require_once *\(.*\$.*\)
 phpinfo
