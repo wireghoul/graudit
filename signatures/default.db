@@ -4,7 +4,7 @@
 # Execution
 exec *\(.*\$.*\)
 passthru *\(.*\)
-popen *\(.*\)
+popen *\(.*\$.*\)
 shell_exec *\(.*\$.*\)
 system *\(.*\$.*\)
 `.*\$.*`
