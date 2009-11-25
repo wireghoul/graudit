@@ -11,12 +11,11 @@ grdir=`dirname $0`
 # Default values
 context=1
 color='always'
-#Default can go with search paths
-# /usr/share/graudit/
-# ~/.graudit
-# $grdir/
-database="$grdir/signatures/default.db"
+sigdb='default'
 separator='##############################################'
+
+#Save custom colors
+OLD_COLORS=$GREP_COLORS
 
 if [ ! -x /bin/grep ]; then
     echo "/bin/grep not found"
@@ -48,7 +47,7 @@ Database is one of php, perl, rough or default, not providing a database will us
 EOU
 }
 
-while getopts "hvzd:c:" opt; do
+while getopts "hvzZd:c:" opt; do
     case $opt in
         h)
             usage
@@ -61,20 +60,14 @@ while getopts "hvzd:c:" opt; do
         z)
             color='none'
         ;;
+        Z)
+            export GREP_COLORS='ms=41;01;37:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36'
+        ;;
         c)
             context="$OPTARG"
         ;;
         d)
             sigdb="$OPTARG"
-            if [ "$sigdb" == '-' ]; then
-                database='-'
-            elif [ "$sigdb" == '*' ]; then
-                database="$grdir/signatures/*"
-            elif [ -f "$sigdb" ]; then
-                database="$sigdb"
-            else
-                database="$grdir/signatures/$sigdb.db"
-            fi
         ;;
         \?)
             echo "Invalid option: -$OPTARG" >&2
@@ -85,6 +78,18 @@ while getopts "hvzd:c:" opt; do
 done
 #Remove arguments from $@
 shift $((OPTIND-1))
+
+#Database location can vary based on installation
+if [ "$sigdb" == '-' ]; then
+    database='-'
+elif [ -f /usr/share/graudit/$sigdb.db ]; then
+    database=/usr/share/graudit/$sigdb.db
+elif [ -f ~/.graudit/$sigdb.db ]; then
+    database=~/.graudit/$sigdb.db
+else
+    database=$grdir/signatures/$sigdb.db
+fi
+
 
 if [ -z "$1" ]; then
         usage
@@ -105,4 +110,6 @@ grep    --color=$color \
         -n -R -H -C $context -E \
         -f "$database" "$@" \
         | sed -e"s/--/$separator/"
-exit $?
+SUCCESS=$?
+export GREP_COLORS="$OLD_COLORS"
+exit $SUCCESS
