@@ -86,8 +86,10 @@ elif [ -f /usr/share/graudit/$sigdb.db ]; then
     database=/usr/share/graudit/$sigdb.db
 elif [ -f ~/.graudit/$sigdb.db ]; then
     database=~/.graudit/$sigdb.db
-else
+elif [ -f $grdir/signatures/$sigdb.db ]; then
     database=$grdir/signatures/$sigdb.db
+else
+    database=$sigdb
 fi
 
 
