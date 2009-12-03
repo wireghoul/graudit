@@ -32,7 +32,7 @@ sem_
 shm_
 shmop_
 #Otherstuffs
-header *\(.*$_(GET|POST|REQUEST|COOKIE).*\)
+header *\(.*\$_(GET|POST|REQUEST|COOKIE).*\)
 eval *\(.\$*\)
 file *\(.\$*\)
 file_get_contents *\(.\$*\)
