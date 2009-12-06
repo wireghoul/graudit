@@ -17,6 +17,7 @@ The following options are available:
   -d <db> database to use
   -c <num> number of lines of context to display, default is 2
   -z supress colors
+  -Z high contrast colors
 
 
 DATABASES
@@ -24,10 +25,24 @@ Graudit uses extended regular expressions (POSIX) as it's signatures and comes
 with several databases ready for use. You can extend the existing databases or 
 make your own if you require additional signatures.
 
+* Asp offers basic auditing support for the Active Server Pages languages
+
 * Default is aimed at finding low hanging fruit. It cointains generic rules that 
 should match common vulnerabilites in several languages. However, in order to 
 find additional vulnerabilities for a specific language you should use the 
 language specific databases.
+
+* Jsp basic JSP support.
+
+* Other looks for source comments that could indicate problems
+
+* Perl basic support for perl
+
+* PHP tracks user input and function calls
+
+* Python basic python support
+
+* Rough - deprecated db of old rules
 
 CONTRIBUTING
 If you would like to contribute to graudit, please fork the repository at github
