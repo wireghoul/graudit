@@ -49,6 +49,8 @@ readfile *\(.\$*\)
 require *\(.*\$.*\)
 require_once *\(.*\$.*\)
 phpinfo
+unserialize *\(.*\)i
+unserialize_callback_func
 mysql_connect *\(.*\$.*\)
 mysql_pconnect *\(.*\$.*\)
 mysql_change_user *\(.*\$.*\)
@@ -72,3 +74,7 @@ pg_update *\(.*\$.*\)
 \$_REQUEST\[.*\]
 \$_FILES\[.*\]
 \$PHPSELF
+\$HTTP_GET_VARS
+\$http_get_vars
+\$HTTP_POST_VARS
+\$http_post_vars
