@@ -36,3 +36,8 @@ recvfrom
 recv
 signal
 fork
+Bastion
+RExec
+r_eval
+r_execfile
+r_exec
