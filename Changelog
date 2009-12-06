@@ -1,3 +1,14 @@
+1.5		2009 December 06
+		New features for server wide install
+		Source distro file for package maintainers
+		Signature bug fixes
+		New php, python and perl signatures
+		Deprecating the rough signature set
+		Fixed graudit usage text
+		Improved documentation
+		Several color modes supported
+
+
 1.4		2009 November 23
 		New and improved signatures
 		Graceful detection of grep version < 2.5.3
