@@ -4,6 +4,7 @@
 
 SIGNATURES := signatures/default.db signatures/php.db signatures/rough.db signatures/perl.db signatures/python.db signatures/asp.db signatures/jsp.db signatures/other.db
 DISTFILES := Changelog  graudit  LICENSE  README
+TESTFILES := t/*
 VERSION=`./graudit -v | cut -d' ' -f 3`
 .PHONY : clean install systeminstall test
 
@@ -13,6 +14,10 @@ dist: $(DISTFILES) test
 	cp -f $(SIGNATURES) graudit-$(VERSION)/signatures
 	tar zcf graudit-$(VERSION).tar.gz graudit-$(VERSION)
 	zip -9r graudit-$(VERSION).zip graudit-$(VERSION)
+	mkdir graudit-$(VERSION)/t
+	cp -f $(TESTFILES) graudit-$(VERSION)/t
+	cp Makefile graudit-$(VERSION)
+	tar zcf graudit-$(VERSION)_src.tar.gz
 	rm -r graudit-$(VERSION)
 
 install: $(DISTFILES) test
