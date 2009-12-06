@@ -41,8 +41,9 @@ OPTIONS
   -d database to use
   -c number of lines of context to display
   -z supress colors
+  -Z Hight contrast colors
 
-Database is one of php, perl, rough or default, not providing a database will use default
+Database is one of asp, jsp, other, perl, php, python or default, not providing a database will use default
 /path is the path to the file or directory to audit
 EOU
 }
