@@ -15,8 +15,8 @@ dist: $(DISTFILES) test
 	zip -9r graudit-$(VERSION).zip graudit-$(VERSION)
 	cp -rf t/ graudit-$(VERSION)/
 	cp Makefile graudit-$(VERSION)
-	tar zcf graudit-$(VERSION)_src.tar.gz
-	rm -r graudit-$(VERSION)
+	tar zcf graudit-$(VERSION)_src.tar.gz graudit-$(VERSION)
+	#rm -r graudit-$(VERSION)
 
 install: $(DISTFILES) test
 	mkdir -p ~/.graudit
