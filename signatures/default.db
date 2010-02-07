@@ -1,6 +1,3 @@
-#%#%#%#
-# PHP Rules
-#%#%#%#
 # Execution
 exec *\(.*\$.*\)
 passthru *\(.*\)
@@ -16,7 +13,4 @@ eval *\(.*\$.*\)
 mysql_query *\(.*\$.*\)
 WHERE .*=.*\$[^; ]+
 (include|include_once|require|require_once) *\(.*\$.*\)
-#%#%#
-# Perl
-#%#%#
-
+print.*param *\(.*\);
