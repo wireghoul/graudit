@@ -39,6 +39,7 @@ OPTIONS
   -h show this message
   -v show version number
   -d database to use
+  -i case insensitive search
   -c number of lines of context to display
   -z supress colors
   -Z Hight contrast colors
@@ -48,7 +49,7 @@ Database is one of asp, jsp, other, perl, php, python or default, not providing 
 EOU
 }
 
-while getopts "hvzZd:c:" opt; do
+while getopts "hvizZd:c:" opt; do
     case $opt in
         h)
             usage
@@ -69,6 +70,9 @@ while getopts "hvzZd:c:" opt; do
         ;;
         d)
             sigdb="$OPTARG"
+        ;;
+        i)
+            icase="-i"
         ;;
         \?)
             echo "Invalid option: -$OPTARG" >&2
@@ -110,6 +114,7 @@ grep    --color=$color \
         --exclude-dir=.svn \
         --exclude-dir=.cvs \
         --exclude-dir=.git \
+        $icase \
         -n -R -H -C $context -E \
         -f "$database" "$@" \
         | sed -e"s/^\(\x1b\[.*m\x1b\[K\)--\(\x1b\[\)/\1##############################################\2/" -e"s/^--$/$separator/"

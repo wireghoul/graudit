@@ -2,6 +2,7 @@
 		Bugfix for greedy separator code (thx to Chillman)
 		Imported C rules from RATS
 		Started test suite transition to the Junio C Hamano Git inspired one
+		Added case insensitive switch (thx to Chillman for patch)
 
 1.5		2009 December 06
 		New features for server wide install
