@@ -5,7 +5,7 @@
 set -e
 set -o pipefail
 
-VERSION='1.5'
+VERSION='1.6'
 grdir=`dirname $0`
 
 # Default values
@@ -112,7 +112,7 @@ grep    --color=$color \
         --exclude-dir=.git \
         -n -R -H -C $context -E \
         -f "$database" "$@" \
-        | sed -e"s/--/$separator/"
+        | sed -e"s/^\(\x1b\[.*m\x1b\[K\)--\(\x1b\[\)/\1##############################################\2/" -e"s/^--$/$separator/"
 SUCCESS=$?
 export GREP_COLORS="$OLD_COLORS"
 exit $SUCCESS
