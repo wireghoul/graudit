@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # Copyright (c) 2005 Junio C Hamano
-#
+# Modified by Eldar "Wireghoul" Marcussen for use with graudit
 
 # if --tee was passed, write the output not only to the terminal, but
 # additionally to the file test-results/$BASENAME.out, too.
@@ -36,11 +36,6 @@ VISUAL=:
 # CDPATH into the environment
 unset CDPATH
 
-# Protect ourselves from using predefined TODOTXT_CFG_FILE
-unset TODOTXT_CFG_FILE $(set|sed '/^TODOTXT_/!d;s/=.*//')
-# To prevent any damage if someone has still those exported somehow in his env:
-unset TODO_FILE DONE_FILE REPORT_FILE TMP_FILE
-
 # Each test should start with something like this, after copyright notices:
 #
 # test_description='Description of this test...
@@ -64,8 +59,6 @@ do
 		debug=t; shift ;;
 	-i|--i|--im|--imm|--imme|--immed|--immedi|--immedia|--immediat|--immediate)
 		immediate=t; shift ;;
-	-l|--l|--lo|--lon|--long|--long-|--long-t|--long-te|--long-tes|--long-test|--long-tests)
-		TODOTXT_TEST_LONG=t; export TODOTXT_TEST_LONG; shift ;;
 	-h|--h|--he|--hel|--help)
 		help=t; shift ;;
 	-v|--v|--ve|--ver|--verb|--verbo|--verbos|--verbose)
@@ -312,7 +305,7 @@ test_external_without_stderr () {
 	# The temporary file has no (and must have no) security
 	# implications.
 	tmp="$TMPDIR"; if [ -z "$tmp" ]; then tmp=/tmp; fi
-	stderr="$tmp/todotxt-external-stderr.$$.tmp"
+	stderr="$tmp/txt-external-stderr.$$.tmp"
 	test_external "$@" 4> "$stderr"
 	[ -f "$stderr" ] || error "Internal error: $stderr disappeared."
 	descr="no stderr: $1"
@@ -409,10 +402,6 @@ test_done () {
 	esac
 }
 
-# Use -P to resolve symlinks in our working directory so that the pwd
-# in subprocesses equals our $PWD (for pathname comparisons).
-cd -P .
-
 # Record our location for reference.
 TEST_DIRECTORY=$(pwd)
 
@@ -425,164 +414,6 @@ rm -fr "$test" || {
 	exit 1
 }
 
-# Most tests can use the created repository, but some may need to create more.
-# Usage: test_init_todo <directory>
-test_init_todo () {
-	test "$#" = 1 ||
-	error "bug in the test script: not 1 parameter to test_init_todo"
-	owd=`pwd`
-	root="$1"
-	mkdir -p "$root"
-	cd "$root" || error "Cannot setup todo dir in $root"
-        # Initialize the configuration file. Carefully quoted.
-        sed -e 's|TODO_DIR=.*$|TODO_DIR="'"$TEST_DIRECTORY/$test"'"|' $TEST_DIRECTORY/../todo.cfg > todo.cfg
-
-	# Install latest todo.sh
-	mkdir bin
-	ln -s "$TEST_DIRECTORY/../todo.sh" bin/todo.sh
-
-	# Initialize a hack date script
-	TODO_TEST_REAL_DATE=$(which date)
-	TODO_TEST_TIME=1234500000
-	export PATH TODO_TEST_REAL_DATE TODO_TEST_TIME
-
-	# Trying to detect the version of "date" on current system
-	DATE_STYLE=unknown
-	# on GNU systems (versions may vary):
-	#date --version
-	#date (GNU coreutils) 6.10
-	#...
-	if date --version 2>&1 | grep -q "GNU"; then
-		DATE_STYLE=GNU
-	# on Mac OS X 10.5:
-	#date --version
-	#date: illegal option -- -
-	#usage: date [-jnu] [-d dst] [-r seconds] [-t west] [-v[+|-]val[ymwdHMS]] ...
-	#[-f fmt date | [[[mm]dd]HH]MM[[cc]yy][.ss]] [+format]
-	elif date --version 2>&1 | grep -q -e "-jnu"; then
-		DATE_STYLE=Mac10.5
-	# on Mac OS X 10.4:
-	#date --version
-	#date: illegal option -- -
-	#usage: date [-nu] [-r seconds] [+format]
-	#       date [[[[[cc]yy]mm]dd]hh]mm[.ss]
-	elif date --version 2>&1 | grep -q -e "-nu"; then
-		DATE_STYLE=Mac10.4
-	fi
-
-	case $DATE_STYLE in
-		GNU)
-			cat > bin/date <<-EOF
-			#!/bin/sh
-			exec "$TODO_TEST_REAL_DATE" -d @\$TODO_TEST_TIME \$@
-			EOF
-			chmod 755 bin/date
-		;;
-		Mac10.5)
-			cat > bin/date <<-EOF
-			#!/bin/sh
-			exec "$TODO_TEST_REAL_DATE" -j -f %s \$TODO_TEST_TIME \$@
-			EOF
-			chmod 755 bin/date
-		;;
-		Mac10.4)
-			cat > bin/date <<-EOF
-			#!/bin/sh
-			exec "$TODO_TEST_REAL_DATE" -r \$TODO_TEST_TIME \$@
-			EOF
-			chmod 755 bin/date
-		;;
-		*)
-			echo "WARNING: Current date executable not recognized"
-			echo "So today date will be used, expect false negative tests..."
-		;;
-	esac
-
-	# Ensure a correct PATH for testing.
-	PATH=$owd/$root/bin:$PATH
-	export PATH
-
-	cd "$owd"
-}
-
-# Usage: test_tick [increment]
-test_tick () {
-	TODO_TEST_TIME=$(($TODO_TEST_TIME + ${1:-86400}))
-}
-
-# Generate and run a series of tests based on a transcript.
-# Usage: test_todo_session "description" <<EOF
-# >>> command
-# output1
-# output2
-# >>> command
-# === exit status
-# output3
-# output4
-# EOF
-test_todo_session () {
-    test "$#" = 1 ||
-    error "bug in the test script: extra args to test_todo_session"
-    subnum=1
-    cmd=""
-    status=0
-    > expect
-    while read line
-    do
-	case $line in
-	">>> "*)
-	    test -z "$cmd" || error "bug in the test script: missing blank line separator in test_todo_session"
-	    cmd=${line#>>> }
-	    ;;
-	"=== "*)
-	    status=${line#=== }
-	    ;;
-	"")
-	    if [ ! -z "$cmd" ]; then
-		if [ $status = 0 ]; then
-		    test_expect_success "$1 $subnum" "$cmd > output && test_cmp expect output"
-		else
-		    test_expect_success "$1 $subnum" "$cmd > output || test $? = $status && test_cmp expect output"
-		fi
-
-		subnum=$(($subnum + 1))
-		cmd=""
-		status=0
-		> expect
-	    fi
-	    ;;
-	*)
-	    echo $line >> expect
-	    ;;
-	esac
-    done
-    if [ ! -z "$cmd" ]; then
-	if [ $status = 0 ]; then
-	    test_expect_success "$1 $subnum" "$cmd > output && test_cmp expect output"
-	else
-	    test_expect_success "$1 $subnum" "$cmd > output || test $? = $status && test_cmp expect output"
-	fi
-    fi
-}
-
-test_shell () {
-	trap - EXIT
-	export PS1='$(ret_val=$?; [ "$ret_val" != "0" ] && echo -e "=== $ret_val\n\n>>> "||echo "\n>>> ")'
-	cat <<EOF
-Do your tests session here and
-don't forget to replace the hardcoded path with \$HOME in the transcript:
-$HOME/todo.txt => \$HOME/todo.txt
-EOF
-	bash --noprofile --norc
-	exit 0
-}
-
-test_init_todo "$test"
-# Use -P to resolve symlinks in our working directory so that the pwd
-# in subprocesses equals our $PWD (for pathname comparisons).
-cd -P "$test" || exit 1
-
-# Since todo.sh refers to the home directory often,
 # make sure we don't accidentally grab the tester's config
 # but use something specified by the framework.
 HOME=$(pwd)
