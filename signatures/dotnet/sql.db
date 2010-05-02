@@ -1,0 +1,39 @@
+# DotNet SQL
+exec sp_executesql
+execute sp_executesql
+select from
+insert
+update
+delete from where
+delete
+exec sp_
+execute sp_
+exec xp_
+execute sp_
+exec @
+execute @
+executestatement
+executeSQL
+setfilter
+executeQuery
+GetQueryResultInXML
+adodb
+sqloledb
+sql server
+driver
+Server.CreateObject
+.Provider
+.Open
+ADODB.recordset
+New OleDbConnection
+ExecuteReader
+DataSource
+SqlCommand
+Microsoft.Jet
+SqlDataReader
+ExecuteReader
+GetString
+SqlDataAdapter
+CommandType
+StoredProcedure
+System.Data.sql

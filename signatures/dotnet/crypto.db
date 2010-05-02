@@ -1,0 +1,11 @@
+# Dotnet crypto
+RNGCryptoServiceProvider
+SHA
+MD5
+base64
+xor
+DES
+RC2
+System.Random
+Random
+System.Security.Cryptography

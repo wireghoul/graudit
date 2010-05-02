@@ -1,0 +1,6 @@
+# Dotnet Logging
+# Logging can be a source of information leakage.
+log4net
+Console.WriteLine
+System.Diagnostics.Debug
+System.Diagnostics.Trace

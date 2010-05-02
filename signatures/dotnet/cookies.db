@@ -1,0 +1,6 @@
+# Dotnet cookies
+# Cookie manipulation can be key to various application security exploits, such as session hijacking/fixation and parameter
+# manipulation.
+System.Net.Cookie
+HTTPOnly
+document.cookie

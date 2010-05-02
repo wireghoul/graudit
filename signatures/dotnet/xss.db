@@ -1,0 +1,23 @@
+# Dotnet XSS
+response.write
+<% =
+HttpUtility
+HtmlEncode
+UrlEncode
+innerText
+innerHTML
+<applet>
+<frameset>
+<embed>
+<frame>
+<html>
+<iframe>
+<img>
+<style>
+<layer>
+<ilayer>
+<meta>
+<object>
+<body>
+<frame security
+<iframe security

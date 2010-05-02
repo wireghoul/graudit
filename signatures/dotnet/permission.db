@@ -1,0 +1,16 @@
+# Dotnet permission
+# Bypassing the code access security permission?
+.RequestMinimum
+.RequestOptional
+Assert
+Debug.Assert
+CodeAccessPermission
+ReflectionPermission.MemberAccess
+SecurityPermission.ControlAppDomain
+SecurityPermission.UnmanagedCode
+SecurityPermission.SkipVerification
+SecurityPermission.ControlEvidence
+SecurityPermission.SerializationFormatter
+SecurityPermission.ControlPrincipal
+SecurityPermission.ControlDomainPolicy
+SecurityPermission.ControlPolicy

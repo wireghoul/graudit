@@ -1,0 +1,10 @@
+# DotNet input controls
+system.web.ui.htmlcontrols.htmlinputhidden
+system.web.ui.webcontrols.hiddenfield
+system.web.ui.webcontrols.hyperlink
+system.web.ui.webcontrols.textbox
+system.web.ui.webcontrols.label
+system.web.ui.webcontrols.linkbutton
+system.web.ui.webcontrols.listbox
+system.web.ui.webcontrols.checkboxlist
+system.web.ui.webcontrols.dropdownlist
