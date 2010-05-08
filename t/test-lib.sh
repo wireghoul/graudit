@@ -403,7 +403,8 @@ test_done () {
 }
 
 # Record our location for reference.
-TEST_DIRECTORY=$(pwd)
+#TEST_DIRECTORY=$(pwd)
+TEST_DIRECTORY=/tmp
 
 # Test repository
 test="trash directory.$(basename "$0" .sh)"
