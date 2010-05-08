@@ -12,10 +12,11 @@ use graudit is;
 graudit <options> /path/to/scan
 
 The following options are available:
-  -h prints a short help text
-  -v prints version number
-  -d <db> database to use
   -c <num> number of lines of context to display, default is 2
+  -d <db> database to use
+  -h prints a short help text
+  -i case in-sensitive search
+  -v prints version number
   -z supress colors
   -Z high contrast colors
 
@@ -25,12 +26,18 @@ Graudit uses extended regular expressions (POSIX) as it's signatures and comes
 with several databases ready for use. You can extend the existing databases or 
 make your own if you require additional signatures.
 
+* All is a combined database of all the databases listed below
+
 * Asp offers basic auditing support for the Active Server Pages languages
 
+* C offers support for the C programming language
+
 * Default is aimed at finding low hanging fruit. It cointains generic rules that 
-should match common vulnerabilites in several languages. However, in order to 
-find additional vulnerabilities for a specific language you should use the 
-language specific databases.
+  should match common vulnerabilites in several languages. However, in order to 
+  find additional vulnerabilities for a specific language you should use the 
+  language specific databases.
+
+* Dotnet offers basic dot net support
 
 * Jsp basic JSP support.
 
@@ -42,8 +49,7 @@ language specific databases.
 
 * Python basic python support
 
-* Rough - deprecated db of old rules
-
 CONTRIBUTING
 If you would like to contribute to graudit, please fork the repository at github
-(git@github.com:wireghoul/graudit.git) and use that.
+(git@github.com:wireghoul/graudit.git) and use that. If you wish to get in contact 
+with me, shoot me a line on github or twitter (@wireghoul).

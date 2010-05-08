@@ -2,7 +2,7 @@
 # Graudit makefile
 ###
 
-SIGNATURES := signatures/default.db signatures/php.db signatures/rough.db signatures/perl.db signatures/python.db signatures/asp.db signatures/jsp.db signatures/other.db signatures/c.db signatures/dotnet.db
+SIGNATURES := signatures/default.db signatures/php.db  signatures/perl.db signatures/python.db signatures/asp.db signatures/jsp.db signatures/other.db signatures/c.db signatures/dotnet.db signatures/all.db
 DISTFILES := Changelog  graudit  LICENSE  README
 VERSION=`./graudit -v | cut -d' ' -f 3`
 .PHONY : clean install systeminstall test signatures
@@ -39,3 +39,12 @@ test:
 
 signatures:
 	cat signatures/dotnet/* > signatures/dotnet.db
+	cat signatures/asp.db > signatures/all.db
+	cat signatures/c.db >> signatures/all.db
+	cat signatures/dotnet.db >> signatures/all.db
+	cat signatures/default.db >> signatures/all.db
+	cat signatures/jsp.db >> signatures/all.db
+	cat signatures/other.db >> signatures/all.db
+	cat signatures/perl.db >> signatures/all.db
+	cat signatures/php.db >> signatures/all.db
+	cat signatures/python.db >> signatures/all.db
