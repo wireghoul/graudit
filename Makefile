@@ -35,7 +35,10 @@ clean:
 	rm -rf graudit-*.tar.gz graudit-*.zip
 
 test:
+	mkdir -p t/test-results
+	rm -f t/test-results/*
 	cd t && ./runtests.sh
+	cd t && ./aggregate-results.sh test-results/*
 
 signatures:
 	cat signatures/dotnet/* > signatures/dotnet.db
