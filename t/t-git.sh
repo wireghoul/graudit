@@ -8,4 +8,4 @@
 plan 'Graudit repo tests' 1 
 
 # TESTS
-not_ok 'No outstanding commits' 'git status|grep -v "working directory clean"'
+ok 'No outstanding commits' 'git status|grep -v "working directory clean"'

@@ -67,9 +67,6 @@ do
 		quiet=t; shift ;;
 	--no-color)
 		color=; shift ;;
-	--no-python)
-		# noop now...
-		shift ;;
 	--tee)
 		shift ;; # was handled already
 	*)
@@ -403,8 +400,7 @@ test_done () {
 }
 
 # Record our location for reference.
-#TEST_DIRECTORY=$(pwd)
-TEST_DIRECTORY=/tmp
+TEST_DIRECTORY=$(pwd)
 
 # Test repository
 test="trash directory.$(basename "$0" .sh)"
