@@ -1,11 +1,10 @@
 #!/bin/sh
 # Testing git integrity?
 
-#Load testing harness
-. ./harness.sh
-
 # Declare description and number of checks
-plan 'Graudit repo tests' 1 
+test_description='Graudit repo tests'
+. ./test-lib.sh
 
 # TESTS
-ok 'No outstanding commits' 'git status|grep -v "working directory clean"'
+test_expect_success 'No outstanding commits' 'git status|grep "working directory clean"'
+test_done
