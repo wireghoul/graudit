@@ -7,4 +7,5 @@ test_description='Graudit repo tests'
 
 # TESTS
 test_expect_success 'No outstanding commits' 'git status|grep "working directory clean"'
+test_expect_success 'No outstanding push/pulls' 'git status|grep -v "# Your branch is"'
 test_done
