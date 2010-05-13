@@ -6,6 +6,7 @@
 		Dotnet signatures (thx to Chillman again)
 		Discontinued the rough database
 		Added the combined database "all"
+		Support for the GRDIR enviroment variable
 
 1.5		2009 December 06
 		New features for server wide install

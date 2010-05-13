@@ -87,6 +87,8 @@ shift $((OPTIND-1))
 #Database location can vary based on installation
 if [ "$sigdb" == '-' ]; then
     database='-'
+elif [ $GRDIR/$sigdb.db ]; then
+    database=$GRDIR/$sigdb.db
 elif [ -f /usr/share/graudit/$sigdb.db ]; then
     database=/usr/share/graudit/$sigdb.db
 elif [ -f ~/.graudit/$sigdb.db ]; then
