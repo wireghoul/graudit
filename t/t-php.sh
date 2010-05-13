@@ -1,7 +1,7 @@
 #!/bin/sh
 # Testing php signatures and invocation
 
-test_description='C signature database tests'
+test_description='PHP signature database tests'
 . ./test-lib.sh
 
 # Test setup

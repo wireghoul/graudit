@@ -1,14 +1,15 @@
 #!/bin/sh
-# Testing jsp signatures and invocation
+# Testing php signatures and invocation
 
-#Load testing harness
-. ./harness.sh
+test_description='JSP signature database tests'
+. ./test-lib.sh
 
-# Declare description and number of checks
-plan 'jsp tests' 4 
+# Test setup
+# Nothing to setup
 
-# TESTS
-ok 'jsp signature syntax test' '../graudit -d jsp anotherfile' 
-ok 'jsp context argument' '../graudit -c 5 -d jsp anotherfile'
-ok 'jsp no color test' '../graudit -z -d jsp anotherfile'
-not_ok 'jsp no such file test' '../graudit -d jsp nosuchfile'
+# Tests
+test_expect_code 1 'JSP signature syntax test' '../graudit -d jsp anotherfile'
+test_expect_code 1 'JSP context argument' '../graudit -c 5 -d jsp anotherfile'
+test_expect_code 1 'JSP no color test' '../graudit -z -d jsp anotherfile'
+test_expect_code 2 'JSP no such file test' '../graudit -d jsp nosuchfile'
+test_done

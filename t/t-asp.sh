@@ -1,14 +1,15 @@
 #!/bin/sh
-# Testing asp signatures and invocation
+# Testing php signatures and invocation
 
-#Load testing harness
-. ./harness.sh
+test_description='Asp signature database tests'
+. ./test-lib.sh
 
-# Declare description and number of checks
-plan 'Asp tests' 4 
+# Test setup
+# Nothing to setup
 
-# TESTS
-ok 'Asp signature syntax test' '../graudit -d asp anotherfile'
-ok 'Asp context argument' '../graudit -c 5 -d asp anotherfile'
-ok 'Asp no color test' '../graudit -z -d asp anotherfile'
-not_ok 'Asp no such file test' '../graudit -d asp nosuchfile'
+# Tests
+test_expect_code 1 'ASP signature syntax test' '../graudit -d asp anotherfile'
+test_expect_code 1 'ASP context argument' '../graudit -c 5 -d asp anotherfile'
+test_expect_code 1 'ASP no color test' '../graudit -z -d asp anotherfile'
+test_expect_code 2 'ASP no such file test' '../graudit -d asp nosuchfile'
+test_done
