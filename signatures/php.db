@@ -3,16 +3,16 @@ exec *\(.*\)
 `.*`
 passthru *\(.*\)
 popen *\(.*\)
-proc_close
-proc_open
-proc_get_status
-proc_nice
-proc_terminate
-proc_close
-proc_open
-proc_get_status
-proc_nice
-proc_terminate
+proc_close *\(.*\)
+proc_open *\(.*\)
+proc_get_status *\(.*\)
+proc_nice *\(.*\)
+proc_terminate *\(.*\)
+proc_close *\(.*\)
+proc_open *\(.*\)
+proc_get_status *\(.*\)
+proc_nice *\(.*\)
+proc_terminate *\(.*\)
 shell_exec *\(.*\)
 system *\(.*\)
 # Extensions
@@ -49,7 +49,7 @@ readfile *\(.\$*\)
 require *\(.*\$.*\)
 require_once *\(.*\$.*\)
 phpinfo
-unserialize *\(.*\)i
+unserialize *\(.*\)
 unserialize_callback_func
 mysql_connect *\(.*\$.*\)
 mysql_pconnect *\(.*\$.*\)
