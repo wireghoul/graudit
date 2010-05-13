@@ -1,14 +1,15 @@
 #!/bin/sh
-# Testing default signatures and invocation
+# Testing php signatures and invocation
 
-#Load testing harness
-. ./harness.sh
+test_description='Default signature database tests'
+. ./test-lib.sh
 
-# Declare description and number of checks
-plan 'default signature tests' 4 
+# Test setup
+# Nothing to setup
 
-# TESTS
-ok 'default signature syntax test' '../graudit anotherfile' 
-ok 'default context argument' '../graudit -c 5 anotherfile'
-ok 'default no color test' '../graudit -z anotherfile'
-not_ok 'default no such file test' '../graudit nosuchfile'
+# Tests
+test_expect_code 1 'Default signature syntax test' '../graudit -d default anotherfile'
+test_expect_code 1 'Default context argument' '../graudit -c 5 -d default anotherfile'
+test_expect_code 1 'Default no color test' '../graudit -z -d default anotherfile'
+test_expect_code 2 'Default no such file test' '../graudit -d default nosuchfile'
+test_done

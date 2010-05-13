@@ -1,14 +1,15 @@
 #!/bin/sh
-# Testing rough signatures and invocation
+# Testing php signatures and invocation
 
-#Load testing harness
-. ./harness.sh
+test_description='Rough signature database tests'
+. ./test-lib.sh
 
-# Declare description and number of checks
-plan 'rough signature tests' 4 
+# Test setup
+# Nothing to setup
 
-# TESTS
-ok 'rough signature syntax test' '../graudit -d rough anotherfile' 
-ok 'rough context argument' '../graudit -c 5 -d rough anotherfile'
-ok 'rough no color test' '../graudit -z -d rough anotherfile'
-not_ok 'rough no such file test' '../graudit -d rough nosuchfile'
+# Tests
+test_expect_code 1 'Rough signature syntax test' '../graudit -d rough anotherfile'
+test_expect_code 1 'Rough context argument' '../graudit -c 5 -d rough anotherfile'
+test_expect_code 1 'Rough no color test' '../graudit -z -d rough anotherfile'
+test_expect_code 2 'Rough no such file test' '../graudit -d rough nosuchfile'
+test_done
