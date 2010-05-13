@@ -1,14 +1,15 @@
 #!/bin/sh
 # Testing python signatures and invocation
 
-#Load testing harness
-. ./harness.sh
+test_description='Python signature database tests'
+. ./test-lib.sh
 
-# Declare description and number of checks
-plan 'python tests' 4 
+# Test setup
+# Nothing to setup
 
-# TESTS
-ok 'python signature syntax test' '../graudit -d python anotherfile' 
-ok 'python context argument' '../graudit -c 5 -d python anotherfile'
-ok 'python no color test' '../graudit -z -d python anotherfile'
-not_ok 'python no such file test' '../graudit -d python nosuchfile'
+# Tests
+test_expect_code 1 'Python signature syntax test' '../graudit -d python anotherfile'
+test_expect_code 1 'Python context argument' '../graudit -c 5 -d python anotherfile'
+test_expect_code 1 'Python no color test' '../graudit -z -d python anotherfile'
+test_expect_code 2 'Python no such file test' '../graudit -d python nosuchfile'
+test_done
