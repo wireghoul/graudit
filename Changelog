@@ -1,4 +1,4 @@
-1.6		2010 May ??
+1.6		2010 May 14
 		Bugfix for greedy separator code (thx to Chillman)
 		Imported C rules from RATS
 		Started test suite transition to the Junio C Hamano Git inspired one
