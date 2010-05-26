@@ -1,13 +1,11 @@
 #!/bin/sh
 # Testing invocation and command arguments
 
-#Load testing harness
-. ./harness.sh
+test_description="Invocation checks"
+. ./test-lib.sh
 
-# Declare description and number of checks
-plan 'invocation checks' 3
+#Test
 
-# TESTS
-ok 'version check' '../graudit -v'
-not_ok 'usage check' '../graudit'
-not_ok 'bad argument' '../graudit -99'
+test_expect_code 1 'version check' '../graudit -v'
+test_expect_code 2 'usage check' '../graudit'
+test_expect_code 2 'bad argument' '../graudit -99'

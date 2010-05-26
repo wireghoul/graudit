@@ -1,12 +1,9 @@
 #!/bin/sh
 # Testing description
 
-#Load testing harness
-. ./harness.sh
+test_description='Example test file'
+. ./test-lib.sh
 
-# Declare description and number of checks
-plan 'blank test' 2 
-
-# TESTS
-ok 'working command' '../graudit something'
-not_ok 'bad command' './graudit something'
+# Tests
+test_expect_code 1 'working command' '../graudit something'
+test_expect_code 2 'bad command' './graudit something'

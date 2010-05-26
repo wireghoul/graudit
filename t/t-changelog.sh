@@ -1,19 +1,20 @@
 #!/bin/sh
 # Ensure changelog version and script versions match
 
-#Load testing harness
-. ./harness.sh
+test_description='Version number matching'
+. ./test-lib.sh
 
-# Declare description and number of checks
-plan 'changelog updated' 2 
+# Test setup
+# Nothing to setup
 
-# TESTS
+# Tests
+test_expect_success 'changelog version matches script version' '
 head -1 ../Changelog| cut -f1>ver1
 ../graudit -v | cut -d" " -f3>ver2
-
-# Harness need stricter checks
-ok 'changelog version' 'grep -f ver1 ver2'
-ok 'script version' 'grep -f ver2 ver1'
+test_cmp ver1 ver2
+'
 
 rm ver1
 rm ver2
+
+test_done
