@@ -50,15 +50,15 @@ memfrob
 crypt
 srandom
 # Design signatures
-chroot
+chroot *\(
 gets
-system
+system *\(
 popen
 getenv
 strcpy
 strcat
-printf
-sprintf
+printf *\(
+sprintf *\(
 wsprintf
 wsprintfA
 wsprintfW
