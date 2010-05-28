@@ -10,5 +10,4 @@ for TEST in t-*.sh; do
         F=$T
     fi
 done
-rm test-logfile
 exit $F
