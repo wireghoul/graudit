@@ -99,3 +99,5 @@ apache_response_headers *\(.*\)
 \$http_post_vars
 \$HTTP_ENV_VARS
 \$http_env_vars
+\$HTTP_POST_FILES
+\$http_post_files
