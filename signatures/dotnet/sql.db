@@ -1,11 +1,6 @@
 # DotNet SQL
 exec sp_executesql
 execute sp_executesql
-select from
-insert
-update
-delete from where
-delete
 exec sp_
 execute sp_
 exec xp_
