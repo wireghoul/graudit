@@ -16,7 +16,9 @@ The following options are available:
   -d <db> database to use
   -h prints a short help text
   -i case in-sensitive search
+  -l lists databases available
   -v prints version number
+  -x exclude these files
   -z supress colors
   -Z high contrast colors
 

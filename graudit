@@ -41,6 +41,7 @@ OPTIONS
   -i case insensitive search
   -l lists databases available
   -c number of lines of context to display
+  -x exclude these files
   -z supress colors
   -Z Hight contrast colors
 
