@@ -4,7 +4,6 @@
 # Released under the GPL licence
 set -e
 set -o pipefail
-
 VERSION='1.6'
 grdir=`dirname $0`
 
@@ -40,6 +39,7 @@ OPTIONS
   -v show version number
   -d database to use
   -i case insensitive search
+  -l lists databases available
   -c number of lines of context to display
   -z supress colors
   -Z Hight contrast colors
@@ -49,7 +49,22 @@ Database is one of asp, jsp, other, perl, php, python or default, not providing 
 EOU
 }
 
-while getopts "hvizZd:c:" opt; do
+listdb () {
+if [ -n "$GRDIR" ] && [ -d $GRDIR ]; then
+    ls -1 $GRDIR/*.db
+fi
+if [ -d /usr/share/graudit/ ]; then
+     ls -1 /usr/share/graudit/*.db
+fi
+if [ -d ~/.graudit/ ]; then
+     ls -1 ~/.graudit/*.db
+fi
+if [ -d "$grdir"/signatures/ ]; then
+     ls -1 "$grdir"/signatures/*.db
+fi
+}
+
+while getopts "hvilzZd:c:" opt; do
     case $opt in
         h)
             usage
@@ -57,6 +72,10 @@ while getopts "hvizZd:c:" opt; do
         ;;
         v)
             version
+            exit 0
+        ;;
+        l) 
+            listdb
             exit 0
         ;;
         z)
@@ -87,14 +106,14 @@ shift $((OPTIND-1))
 #Database location can vary based on installation
 if [ "$sigdb" == '-' ]; then
     database='-'
-elif [ -f $GRDIR/$sigdb.db  ]; then
-    database=$GRDIR/$sigdb.db
+elif [ -f "$GRDIR"/$sigdb.db  ]; then
+    database="$GRDIR"/$sigdb.db
 elif [ -f /usr/share/graudit/$sigdb.db ]; then
     database=/usr/share/graudit/$sigdb.db
 elif [ -f ~/.graudit/$sigdb.db ]; then
     database=~/.graudit/$sigdb.db
-elif [ -f $grdir/signatures/$sigdb.db ]; then
-    database=$grdir/signatures/$sigdb.db
+elif [ -f "$grdir"/signatures/$sigdb.db ]; then
+    database="$grdir"/signatures/$sigdb.db
 else
     database=$sigdb
 fi
