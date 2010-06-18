@@ -84,11 +84,6 @@ recordSet
 # DotNet SQL
 exec sp_executesql
 execute sp_executesql
-select from
-insert
-update
-delete from where
-delete
 exec sp_
 execute sp_
 exec xp_
@@ -128,18 +123,3 @@ HtmlEncode
 UrlEncode
 innerText
 innerHTML
-<applet>
-<frameset>
-<embed>
-<frame>
-<html>
-<iframe>
-<img>
-<style>
-<layer>
-<ilayer>
-<meta>
-<object>
-<body>
-<frame security
-<iframe security

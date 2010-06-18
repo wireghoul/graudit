@@ -1,5 +1,5 @@
 # Race conditions
-access
+access *\(
 creat
 mknod
 mkfifo
@@ -11,7 +11,7 @@ scandir
 fopen
 lstat
 stat
-open
+open *\(
 chmod
 chown
 chgrp
@@ -20,13 +20,9 @@ rename
 (rmdirp|rmdir)
 remove
 unlink
-link
+link *\(
 lchown
-execve
-execl
-execlp
-execle
-execv
+(execve|execl|execlp|execle|execv)
 freopen
 mktemp
 # RNG based signatures

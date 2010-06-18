@@ -52,7 +52,7 @@ ADODB.recordset
 ADODB.Command
 ADODB.Recordset
 # Race conditions
-access
+access *\(
 creat
 mknod
 mkfifo
@@ -64,18 +64,16 @@ scandir
 fopen
 lstat
 stat
-open
+open *\(
 chmod
 chown
 chgrp
 rename
-mkdir
-mkdirp
-rmdirp
-rmdir
+(mkdir|mkdirp)
+(rmdirp|rmdir)
 remove
 unlink
-link
+link *\(
 lchown
 execve
 execl
@@ -88,59 +86,39 @@ mktemp
 drand48
 erand48
 initstate
-jrand48
-lcong48
-lrand48
-mrand48
-nrand48
+(jrand48|lcong48|lrand48|mrand48|nrand48|seed48|srand48)
 random
-seed48
 setstate
 srand
-srand48
 strfry
 memfrob
 crypt
 srandom
 # Design signatures
-chroot
+chroot *\(
 gets
-system
+system *\(
 popen
 getenv
 strcpy
 strcat
-printf
-sprintf
-wsprintf
-wsprintfA
-wsprintfW
-_snprinft
-_snwprinft
-lstrcpy
-lstrcpyA
-lstrcpyW
+(printf|sprintf|wsprintf|wsprintfA|wsprintfW|_snprinft|_snwprinft) *\(
+(lstrcpy|lstrcpyA|lstrcpyW)
 wcscpy
 _mbscpy
 _tcscpy
-StrCpy
-StrCpyA
-StrCpyW
+(StrCpy|StrCpyA|StrCpyW)
 lstrcat
 wscat
 _mbscat
 _tcscat
-StrCat
-StrCatA
-StrCatW
+(StrCat|StrCatA|StrCatW)
 strxfrm
 wcsxfrm
 _tcsxfrm
 lstrcpyn
 lstrcpynW
-StrCpyN
-StrCpyNA
-StrCpyNW
+(StrCpyN|StrCpyNA|StrCpyNW)
 wcsncpy
 _mbsncpy
 _tcsncpy
@@ -150,21 +128,11 @@ _tcsncat
 MultiByteToWideChar
 WideCharToMultiByte
 StrNCat
-StrCatBuff
-StrCatBuffA
-StrCatBuffW
-StrCatN
-StrCatNA
-StrCatNW
-StrFormatByteSize
-StrFormatByteSizeA
-StrFormatByteSizeW
-StrFormatByteSize64
-StrFormatByteSize64A
-StrFormatByteSize64W
-StrFormatKBSize
-StrFormatKBSizeA
-StrFormatKBSizeW
+(StrCatBuff|StrCatBuffA|StrCatBuffW)
+(StrCatN|StrCatNA|StrCatNW)
+(StrFormatByteSize|StrFormatByteSizeA|StrFormatByteSizeW)
+(StrFormatByteSize64|StrFormatByteSize64A|StrFormatByteSize64W)
+(StrFormatKBSize|StrFormatKBSizeA|StrFormatKBSizeW)
 StrFromTimeInterval
 StrFromTimeIntervalA
 StrFromTimeIntervalW
@@ -456,11 +424,6 @@ recordSet
 # DotNet SQL
 exec sp_executesql
 execute sp_executesql
-select from
-insert
-update
-delete from where
-delete
 exec sp_
 execute sp_
 exec xp_
@@ -500,21 +463,6 @@ HtmlEncode
 UrlEncode
 innerText
 innerHTML
-<applet>
-<frameset>
-<embed>
-<frame>
-<html>
-<iframe>
-<img>
-<style>
-<layer>
-<ilayer>
-<meta>
-<object>
-<body>
-<frame security
-<iframe security
 # Execution
 exec *\(.*\$.*\)
 passthru *\(.*\)
@@ -600,7 +548,7 @@ system *\(.*\)
 expect_
 pcntl_
 posix_
-#Semaphore extension
+# Semaphore extension
 ftok
 msg_get_queue
 msg_queue_exists
@@ -612,7 +560,7 @@ msg_stat_queue
 sem_
 shm_
 shmop_
-#Otherstuffs
+# Otherstuffs
 header *\(.*\$_(GET|POST|REQUEST|COOKIE).*\)
 eval *\(.\$*\)
 file *\(.\$*\)
@@ -629,9 +577,19 @@ preg_replace *\(.\$*\)
 readfile *\(.\$*\)
 require *\(.*\$.*\)
 require_once *\(.*\$.*\)
-phpinfo
+# Informatin disclosure
+phpinfo *\(.*\)
+phpcredits *\(.*\)
+php_logo_guid *\(.*\)
+php_uname *\(.*\)
+phpversion *\(.*\)
+zend_logo_guid *\(.*\)
+zend_version *\(.*\)
+get_loaded_extensions *\(.*\)
+# Stefan Esser's research
 unserialize *\(.*\)
 unserialize_callback_func
+# Database
 mysql_connect *\(.*\$.*\)
 mysql_pconnect *\(.*\$.*\)
 mysql_change_user *\(.*\$.*\)
@@ -649,6 +607,15 @@ pg_select *\(.*\$.*\)
 pg_send_query *\(.*\$.*\)
 pg_set_client_encoding *\(.*\$.*\)
 pg_update *\(.*\$.*\)
+# Superglobals
+getenv *\(.*\)
+apache_getenv *\(.*\)
+putenv *\(.*\)
+apache_setenv *\(.*\)
+getallheaders *\(.*\)
+apache_request_headers *\(.*\)
+apache_response_headers *\(.*\)
+\$_ENV\[.*\]
 \$_GET\[.*\]
 \$_POST\[.*\]
 \$_COOKIE\[.*\]
@@ -659,7 +626,11 @@ pg_update *\(.*\$.*\)
 \$http_get_vars
 \$HTTP_POST_VARS
 \$http_post_vars
-access
+\$HTTP_ENV_VARS
+\$http_env_vars
+\$HTTP_POST_FILES
+\$http_post_files
+access *\(
 mkfifo
 pathconf
 listdir
@@ -673,7 +644,7 @@ mkdir
 rmdir
 remove
 unlink
-link
+link *\(
 execv
 execve
 execl
