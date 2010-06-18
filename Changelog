@@ -1,3 +1,10 @@
+1.7		2010 ?? ??
+		New PHP signatures
+		Improved C signatures for fewer false positives
+		Improved dotnet signatures
+		-l operator lists available databases
+		-x operator for excluding files
+
 1.6		2010 May 14
 		Bugfix for greedy separator code (thx to Chillman)
 		Imported C rules from RATS

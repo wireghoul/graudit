@@ -4,7 +4,7 @@
 # Released under the GPL licence
 set -e
 set -o pipefail
-VERSION='1.6'
+VERSION='1.7'
 grdir=`dirname $0`
 
 # Default values
