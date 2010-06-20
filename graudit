@@ -65,7 +65,7 @@ if [ -d "$grdir"/signatures/ ]; then
 fi
 }
 
-while getopts "hvilzZd:c:" opt; do
+while getopts "hvilzZd:c:x:" opt; do
     case $opt in
         h)
             usage
@@ -93,6 +93,9 @@ while getopts "hvilzZd:c:" opt; do
         ;;
         i)
             icase="-i"
+        ;;
+        x)
+            ignorepattern="--exclude=$OPTARG"
         ;;
         \?)
             echo "Invalid option: -$OPTARG" >&2
@@ -136,7 +139,7 @@ grep    --color=$color \
         --exclude-dir=.svn \
         --exclude-dir=.cvs \
         --exclude-dir=.git \
-        $icase \
+        $icase $ignorepattern \
         -n -R -H -C $context -E \
         -f "$database" "$@" \
         | sed -e"s/^\(\x1b\[.*m\x1b\[K\)--\(\x1b\[\)/\1##############################################\2/" -e"s/^--$/$separator/"
