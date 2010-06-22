@@ -1,5 +1,5 @@
 #!/bin/sh
-# Testing php signatures and invocation
+# Testing all signatures and invocation
 
 test_description='Asp signature database tests'
 . ./test-lib.sh

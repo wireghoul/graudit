@@ -1,5 +1,5 @@
 #!/bin/sh
-# Testing php signatures and invocation
+# Testing default signatures and invocation
 
 test_description='Default signature database tests'
 . ./test-lib.sh
