@@ -1,5 +1,5 @@
 #!/bin/sh
-# Testing php signatures and invocation
+# Testing jsp signatures and invocation
 
 test_description='JSP signature database tests'
 . ./test-lib.sh

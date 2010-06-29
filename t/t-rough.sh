@@ -1,5 +1,5 @@
 #!/bin/sh
-# Testing php signatures and invocation
+# Testing rough signatures and invocation
 
 test_description='Rough signature database tests'
 . ./test-lib.sh
