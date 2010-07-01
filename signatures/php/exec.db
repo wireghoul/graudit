@@ -1,0 +1,17 @@
+# Execution
+exec *\(.*\)
+`.*`
+passthru *\(.*\)
+popen *\(.*\)
+proc_close *\(.*\)
+proc_open *\(.*\)
+proc_get_status *\(.*\)
+proc_nice *\(.*\)
+proc_terminate *\(.*\)
+proc_close *\(.*\)
+proc_open *\(.*\)
+proc_get_status *\(.*\)
+proc_nice *\(.*\)
+proc_terminate *\(.*\)
+shell_exec *\(.*\)
+system *\(.*\)
