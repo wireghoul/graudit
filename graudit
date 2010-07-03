@@ -5,7 +5,8 @@
 set -e
 set -o pipefail
 VERSION='1.7'
-grdir=`dirname $0`
+basedir=`dirname $0`
+BINFILE=`which grep`
 
 # Default values
 context=1
@@ -16,8 +17,8 @@ separator='##############################################'
 #Save custom colors
 OLD_COLORS=$GREP_COLORS
 
-if [ ! -x /bin/grep ]; then
-    echo "/bin/grep not found"
+if [ ! -x $BINFILE ]; then
+    echo "grep not found!"
     exit 2
 fi
 /bin/grep --exclude-dir=. test "$0" >/dev/null 2>&1
@@ -60,8 +61,8 @@ fi
 if [ -d ~/.graudit/ ]; then
      ls -1 ~/.graudit/*.db
 fi
-if [ -d "$grdir"/signatures/ ]; then
-     ls -1 "$grdir"/signatures/*.db
+if [ -d "$basedir"/signatures/ ]; then
+     ls -1 "$basedir"/signatures/*.db
 fi
 }
 
@@ -116,8 +117,8 @@ elif [ -f /usr/share/graudit/$sigdb.db ]; then
     database=/usr/share/graudit/$sigdb.db
 elif [ -f ~/.graudit/$sigdb.db ]; then
     database=~/.graudit/$sigdb.db
-elif [ -f "$grdir"/signatures/$sigdb.db ]; then
-    database="$grdir"/signatures/$sigdb.db
+elif [ -f "$basedir"/signatures/$sigdb.db ]; then
+    database="$basedir"/signatures/$sigdb.db
 else
     database=$sigdb
 fi
@@ -135,14 +136,14 @@ fi
 # -f specifies the rule file (signature database)
 # -n prints the line number
 
-grep    --color=$color \
-        --exclude-dir=.svn \
-        --exclude-dir=.cvs \
-        --exclude-dir=.git \
-        $icase $ignorepattern \
-        -n -R -H -C $context -E \
-        -f "$database" "$@" \
-        | sed -e"s/^\(\x1b\[.*m\x1b\[K\)--\(\x1b\[\)/\1##############################################\2/" -e"s/^--$/$separator/"
+$BINFILE --color=$color \
+         --exclude-dir=.svn \
+         --exclude-dir=.cvs \
+         --exclude-dir=.git \
+         $icase $ignorepattern \
+         -n -R -H -C $context -E \
+         -f "$database" "$@" \
+         | sed -e"s/^\(\x1b\[.*m\x1b\[K\)--\(\x1b\[\)/\1##############################################\2/" -e"s/^--$/$separator/"
 SUCCESS=$?
 export GREP_COLORS="$OLD_COLORS"
 exit $SUCCESS
