@@ -1,0 +1,23 @@
+# PHP - Superglobals & Envoronment
+getenv\s*\(.*\)
+apache_getenv\s*\(.*\)
+putenv\s*\(.*\)
+apache_setenv\s*\(.*\)
+getallheaders\s*\(.*\)
+apache_request_headers\s*\(.*\)
+apache_response_headers\s*\(.*\)
+\$_ENV\[.*\]
+\$_GET\[.*\]
+\$_POST\[.*\]
+\$_COOKIE\[.*\]
+\$_REQUEST\[.*\]
+\$_FILES\[.*\]
+\$PHPSELF
+\$HTTP_GET_VARS
+\$http_get_vars
+\$HTTP_POST_VARS
+\$http_post_vars
+\$HTTP_ENV_VARS
+\$http_env_vars
+\$HTTP_POST_FILES
+\$http_post_files

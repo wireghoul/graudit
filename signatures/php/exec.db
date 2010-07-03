@@ -1,4 +1,4 @@
-# Execution
+# PHP - Execution
 exec\s*\(.*\)
 `.*`
 passthru\s*\(.*\)
