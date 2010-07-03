@@ -1,16 +1,16 @@
 # Execution
-exec *\(.*\$.*\)
-passthru *\(.*\)
-popen *\(.*\$.*\)
-shell_exec *\(.*\$.*\)
-system *\(.*\$.*\)
+exec\s*\(.*\$.*\)
+passthru\s*\(.*\)
+popen\s*\(.*\$.*\)
+shell_exec\s*\(.*\$.*\)
+system\s*\(.*\$.*\)
 `.*\$.*`
 #Otherstuffs
 #XSS signature needs to stop matching before LF when color=on #bug(1)
 echo.*\$_.*\[.*\]
-eval *\(.*\$.*\)
+eval\s*\(.*\$.*\)
 #SQLi signature needs to stop matching before LF when color=on #bug(1)
-mysql_query *\(.*\$.*\)
-WHERE .*=.*\$[^; ]+
-(include|include_once|require|require_once) *\(.*\$.*\)
-print.*param *\(.*\);
+mysql_query\s*\(.*\$.*\)
+WHERE\s+.*=.*\$[^; ]+
+(include|include_once|require|require_once)\s*\(.*\$.*\)
+print.*param\s*\(.*\);
