@@ -1,5 +1,5 @@
 # Race conditions
-access *\(
+access\s*\(
 creat
 mknod
 mkfifo
@@ -11,7 +11,7 @@ scandir
 fopen
 lstat
 stat
-open *\(
+open\s*\(
 chmod
 chown
 chgrp
@@ -20,7 +20,7 @@ rename
 (rmdirp|rmdir)
 remove
 unlink
-link *\(
+link\s*\(
 lchown
 (execve|execl|execlp|execle|execv)
 freopen
@@ -38,14 +38,14 @@ memfrob
 crypt
 srandom
 # Design signatures
-chroot *\(
+chroot\s*\(
 gets
-system *\(
+system\s*\(
 popen
 getenv
 strcpy
 strcat
-(printf|sprintf|wsprintf|wsprintfA|wsprintfW|_snprinft|_snwprinft) *\(
+(printf|sprintf|wsprintf|wsprintfA|wsprintfW|_snprinft|_snwprinft)\s*\(
 (lstrcpy|lstrcpyA|lstrcpyW)
 wcscpy
 _mbscpy

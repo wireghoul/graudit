@@ -5,4 +5,4 @@ Request.GetParameter
 request.getParameter
 jsp:getProperty
 java.security.acl.acl
-response.sendRedirect *\(.*(Request|request).*\)
+response.sendRedirect\s*\(.*(Request|request).*\)

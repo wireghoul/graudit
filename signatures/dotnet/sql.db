@@ -1,12 +1,12 @@
 # DotNet SQL
-exec sp_executesql
-execute sp_executesql
-exec sp_
-execute sp_
-exec xp_
-execute sp_
-exec @
-execute @
+exec\s*sp_executesql
+execute\s*sp_executesql
+exec\s*sp_
+execute\s*sp_
+exec\s*xp_
+execute\s*sp_
+exec\s*@
+execute\s*@
 executestatement
 executeSQL
 setfilter
@@ -14,13 +14,13 @@ executeQuery
 GetQueryResultInXML
 adodb
 sqloledb
-sql server
+sql\s*server
 driver
 Server.CreateObject
 .Provider
 .Open
 ADODB.recordset
-New OleDbConnection
+New\s*OleDbConnection
 ExecuteReader
 DataSource
 SqlCommand

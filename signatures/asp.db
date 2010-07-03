@@ -7,7 +7,7 @@ Request.Form
 Replace
 Request.Write
 Response.Write
-Response.Write\(Request.QueryString\(
+Response.Write\s*\(Request.QueryString\s*\(
 FileSystemObject
 Scripting.FileSystemObject
 System.FileSystemInfo
