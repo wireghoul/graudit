@@ -1,0 +1,9 @@
+# Informatin disclosure
+phpinfo\s*\(.*\)
+phpcredits\s*\(.*\)
+php_logo_guid\s*\(.*\)
+php_uname\s*\(.*\)
+phpversion\s*\(.*\)
+zend_logo_guid\s*\(.*\)
+zend_version\s*\(.*\)
+get_loaded_extensions\s*\(.*\)
