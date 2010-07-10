@@ -1,0 +1,39 @@
+#!/bin/bash
+# Configure script for setting --prefix and --dbdir for graudit installs
+
+PREFIX=/usr/bin
+DBDIR=/usr/share/graudit
+
+show_help() {
+    cat <<EOH
+Configure supports the following options:
+--help - prints this message
+--prefix <path> - Sets the prefix path (Default: $PREFIX)
+--dbdir <path> - Sets the signature path (Default: $DBDIR)
+EOH
+}
+while test "$#" -ne 0
+do
+    case "$1" in
+    --prefix)
+        PREFIX=$2
+        shift
+        shift
+    ;;
+    --help)
+        show_help
+        shift
+    ;;
+    --dbdir)
+        DBDIR=$2
+        shift
+        shift
+    ;;
+    *)
+        echo "Unknown option $1";
+        exit 1
+    ;;
+    esac
+done
+cat Makefile.in | sed -e"s/P####/$PREFIX/" -e"s/D####/$DBDIR" > Makefile
+exit $?
