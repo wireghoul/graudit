@@ -1,36 +1,20 @@
-# Extensions
-expect_
-pcntl_
-posix_
-# Semaphore extension
-ftok
-msg_get_queue
-msg_queue_exists
-msg_receive
-msg_remove_queue
-msg_send
-msg_set_queue
-msg_stat_queue
-sem_
-shm_
-shmop_
 # Otherstuffs
-header *\(.*\$_(GET|POST|REQUEST|COOKIE).*\)
+header\s*\(.*\$_(GET|POST|REQUEST|COOKIE).*\)
 eval\s*\(\s*.\$.*\s*\)
-file *\(.\$.*\)
-file_get_contents *\(.\$.*\)
-fopen *\(.*\$.*\)
+file\s*\(.\$.*\)
+file_get_contents\s*\(.\$.*\)
+fopen\s*\(.*\$.*\)
 fwrite
-move_uploaded_file *\(.*\)
+move_uploaded_file\s*\(.*\)
 stream_
-create_function *\(.*\)
-mail *\(.\$.*\)
-include *\(.*\$.*\)
-include_once *\(.*\$.*\)
-preg_replace *\(.\$*\)
-readfile *\(.\$.*\)
-require *\(.*\$.*\)
-require_once *\(.*\$.*\)
+create_function\s*\(.*\)
+mail\s*\(.\$.*\)
+include\s*\(.*\$.*\)
+include_once\s*\(.*\$.*\)
+preg_replace\s*\(.\$*\)
+readfile\s*\(.\$.*\)
+require\s*\(.*\$.*\)
+require_once\s*\(.*\$.*\)
 # Stefan Esser's research
-unserialize *\(.*\)
+unserialize\s*\(.*\)
 unserialize_callback_func
