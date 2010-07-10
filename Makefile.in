@@ -16,7 +16,8 @@ dist: $(DISTFILES) test signatures
 	tar zcf graudit-$(VERSION).tar.gz graudit-$(VERSION)
 	zip -9r graudit-$(VERSION).zip graudit-$(VERSION)
 	cp -rf t/ graudit-$(VERSION)/
-	cp Makefile graudit-$(VERSION)
+	cp Makefile.in configure graudit-$(VERSION)
+	cp -r signatures/ graudit-$(VERSION)
 	tar zcf graudit-$(VERSION)_src.tar.gz graudit-$(VERSION)
 	rm -r graudit-$(VERSION)
 
