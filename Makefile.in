@@ -10,7 +10,7 @@ VERSION=`./graudit -v | cut -d' ' -f 3`
 .PHONY : clean install systeminstall test signatures
 
 dist: $(DISTFILES) test signatures
-	./t/git-test.sh
+	cd t && ./git-test.sh
 	mkdir -p graudit-$(VERSION)/signatures
 	cp -f $(DISTFILES) graudit-$(VERSION)
 	cp -f $(SIGNATURES) graudit-$(VERSION)/signatures
