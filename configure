@@ -35,5 +35,5 @@ do
     ;;
     esac
 done
-cat Makefile.in | sed -e"s/P####/$PREFIX/" -e"s/D####/$DBDIR" > Makefile
+cat Makefile.in | sed -e"s/P####/$PREFIX/" -e"s/D####/$DBDIR/" > Makefile
 exit $?
