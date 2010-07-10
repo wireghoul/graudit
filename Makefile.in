@@ -2,8 +2,8 @@
 # Graudit makefile
 ###
 
-PREFIX := 'P####'
-DBDIR := 'D####'
+PREFIX := 'P===='
+DBDIR := 'D===='
 SIGNATURES := signatures/default.db signatures/php.db  signatures/perl.db signatures/python.db signatures/asp.db signatures/jsp.db signatures/other.db signatures/c.db signatures/dotnet.db signatures/all.db
 DISTFILES := Changelog  graudit  LICENSE  README
 VERSION=`./graudit -v | cut -d' ' -f 3`
@@ -27,14 +27,14 @@ install: $(DISTFILES) test
 	cp -f graudit ~/bin
 
 systeminstall: $(DISTFILES) test
-	ifeq ($(PREFIX), 'P####')
-		echo 'Prefix not configured, run configure first'
-		exit 1
-	endif
-	ifeq ($(DBDIR), 'D####')
-		echo 'dbdir not configured, run configure first'
-		exit 1
-	endif
+ifeq ($(PREFIX),'P====')
+	@echo 'Prefix not configured, run configure first'
+	exit 1
+endif
+ifeq ( $(DBDIR), 'D====' )
+	@echo 'dbdir not configured, run configure first'
+	exit 1
+endif
 	mkdir -p /usr/share/graudit
 	cp -f $(SIGNATURES) /usr/share/graudit
 	cp -f $(DISTFILES) /usr/share/graudit
