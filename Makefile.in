@@ -35,10 +35,11 @@ ifeq ( $(DBDIR), 'D====' )
 	@echo 'dbdir not configured, run configure first'
 	exit 1
 endif
-	mkdir -p /usr/share/graudit
-	cp -f $(SIGNATURES) /usr/share/graudit
-	cp -f $(DISTFILES) /usr/share/graudit
-	mv /usr/share/graudit/graudit /usr/bin/graudit
+	mkdir -p $(PREFIX)
+	mkdir -p $(DBDIR)
+	cp -f $(SIGNATURES) $(DBDIR)
+	cp -f $(DISTFILES) $(DBDIR)
+	mv $(DBDIR)/graudit $(PREFIX)/graudit
 
 
 clean:
