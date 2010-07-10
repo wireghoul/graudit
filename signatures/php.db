@@ -1,20 +1,65 @@
-# Execution
-exec *\(.*\)
+# PHP - Execution
+exec\s*\(.*\)
 `.*`
-passthru *\(.*\)
-popen *\(.*\)
-proc_close *\(.*\)
-proc_open *\(.*\)
-proc_get_status *\(.*\)
-proc_nice *\(.*\)
-proc_terminate *\(.*\)
-proc_close *\(.*\)
-proc_open *\(.*\)
-proc_get_status *\(.*\)
-proc_nice *\(.*\)
-proc_terminate *\(.*\)
-shell_exec *\(.*\)
-system *\(.*\)
+passthru\s*\(.*\)
+popen\s*\(.*\)
+proc_close\s*\(.*\)
+proc_open\s*\(.*\)
+proc_get_status\s*\(.*\)
+proc_nice\s*\(.*\)
+proc_terminate\s*\(.*\)
+shell_exec\s*\(.*\)
+system\s*\(.*\)
+# Informatin disclosure
+phpinfo\s*\(.*\)
+phpcredits\s*\(.*\)
+php_logo_guid\s*\(.*\)
+php_uname\s*\(.*\)
+phpversion\s*\(.*\)
+zend_logo_guid\s*\(.*\)
+zend_version\s*\(.*\)
+get_loaded_extensions\s*\(.*\)
+# PHP - Database
+mysql_connect\s*\(.*\$.*\)
+mysql_pconnect\s*\(.*\$.*\)
+mysql_change_user\s*\(.*\$.*\)
+mysql_query\s*\(.*\$.*\)
+mysql_error\s*\(.*\$.*\)
+mysql_set_charset\s*\(.*\$.*\)
+mysql_unbuffered_query\s*\(.*\$.*\)
+pg_connect\s*\(.*\$.*\)
+pg_pconnect\s*\(.*\$.*\)
+pg_execute\s*\(.*\$.*\)
+pg_insert\s*\(.*\$.*\)
+pg_put_line\s*\(.*\$.*\)
+pg_query\s*\(.*\$.*\)
+pg_select\s*\(.*\$.*\)
+pg_send_query\s*\(.*\$.*\)
+pg_set_client_encoding\s*\(.*\$.*\)
+pg_update\s*\(.*\$.*\)
+# PHP - Superglobals & Envoronment
+getenv\s*\(.*\)
+apache_getenv\s*\(.*\)
+putenv\s*\(.*\)
+apache_setenv\s*\(.*\)
+getallheaders\s*\(.*\)
+apache_request_headers\s*\(.*\)
+apache_response_headers\s*\(.*\)
+\$_ENV\[.*\]
+\$_GET\[.*\]
+\$_POST\[.*\]
+\$_COOKIE\[.*\]
+\$_REQUEST\[.*\]
+\$_FILES\[.*\]
+\$PHPSELF
+\$HTTP_GET_VARS
+\$http_get_vars
+\$HTTP_POST_VARS
+\$http_post_vars
+\$HTTP_ENV_VARS
+\$http_env_vars
+\$HTTP_POST_FILES
+\$http_post_files
 # Extensions
 expect_
 pcntl_
@@ -48,56 +93,6 @@ preg_replace *\(.\$*\)
 readfile *\(.\$.*\)
 require *\(.*\$.*\)
 require_once *\(.*\$.*\)
-# Informatin disclosure
-phpinfo *\(.*\)
-phpcredits *\(.*\)
-php_logo_guid *\(.*\)
-php_uname *\(.*\)
-phpversion *\(.*\)
-zend_logo_guid *\(.*\)
-zend_version *\(.*\)
-get_loaded_extensions *\(.*\)
 # Stefan Esser's research
 unserialize *\(.*\)
 unserialize_callback_func
-# Database
-mysql_connect *\(.*\$.*\)
-mysql_pconnect *\(.*\$.*\)
-mysql_change_user *\(.*\$.*\)
-mysql_query *\(.*\$.*\)
-mysql_error *\(.*\$.*\)
-mysql_set_charset *\(.*\$.*\)
-mysql_unbuffered_query *\(.*\$.*\)
-pg_connect *\(.*\$.*\)
-pg_pconnect *\(.*\$.*\)
-pg_execute *\(.*\$.*\)
-pg_insert *\(.*\$.*\)
-pg_put_line *\(.*\$.*\)
-pg_query *\(.*\$.*\)
-pg_select *\(.*\$.*\)
-pg_send_query *\(.*\$.*\)
-pg_set_client_encoding *\(.*\$.*\)
-pg_update *\(.*\$.*\)
-# Superglobals
-getenv *\(.*\)
-apache_getenv *\(.*\)
-putenv *\(.*\)
-apache_setenv *\(.*\)
-getallheaders *\(.*\)
-apache_request_headers *\(.*\)
-apache_response_headers *\(.*\)
-\$_ENV\[.*\]
-\$_GET\[.*\]
-\$_POST\[.*\]
-\$_COOKIE\[.*\]
-\$_REQUEST\[.*\]
-\$_FILES\[.*\]
-\$PHPSELF
-\$HTTP_GET_VARS
-\$http_get_vars
-\$HTTP_POST_VARS
-\$http_post_vars
-\$HTTP_ENV_VARS
-\$http_env_vars
-\$HTTP_POST_FILES
-\$http_post_files

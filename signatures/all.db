@@ -7,7 +7,7 @@ Request.Form
 Replace
 Request.Write
 Response.Write
-Response.Write\(Request.QueryString\(
+Response.Write\s*\(Request.QueryString\s*\(
 FileSystemObject
 Scripting.FileSystemObject
 System.FileSystemInfo
@@ -52,7 +52,7 @@ ADODB.recordset
 ADODB.Command
 ADODB.Recordset
 # Race conditions
-access *\(
+access\s*\(
 creat
 mknod
 mkfifo
@@ -64,7 +64,7 @@ scandir
 fopen
 lstat
 stat
-open *\(
+open\s*\(
 chmod
 chown
 chgrp
@@ -73,13 +73,9 @@ rename
 (rmdirp|rmdir)
 remove
 unlink
-link *\(
+link\s*\(
 lchown
-execve
-execl
-execlp
-execle
-execv
+(execve|execl|execlp|execle|execv)
 freopen
 mktemp
 # RNG based signatures
@@ -95,14 +91,14 @@ memfrob
 crypt
 srandom
 # Design signatures
-chroot *\(
+chroot\s*\(
 gets
-system *\(
+system\s*\(
 popen
 getenv
 strcpy
 strcat
-(printf|sprintf|wsprintf|wsprintfA|wsprintfW|_snprinft|_snwprinft) *\(
+(printf|sprintf|wsprintf|wsprintfA|wsprintfW|_snprinft|_snwprinft)\s*\(
 (lstrcpy|lstrcpyA|lstrcpyW)
 wcscpy
 _mbscpy
@@ -356,7 +352,7 @@ System.Random
 Random
 System.Security.Cryptography
 # Dotnet errors
-catch{
+catch\s*{
 Finally
 trace enabled
 customErrors mode
@@ -422,14 +418,14 @@ HiddenField.Value
 TextBox.Text
 recordSet
 # DotNet SQL
-exec sp_executesql
-execute sp_executesql
-exec sp_
-execute sp_
-exec xp_
-execute sp_
-exec @
-execute @
+exec\s*sp_executesql
+execute\s*sp_executesql
+exec\s*sp_
+execute\s*sp_
+exec\s*xp_
+execute\s*sp_
+exec\s*@
+execute\s*@
 executestatement
 executeSQL
 setfilter
@@ -437,13 +433,13 @@ executeQuery
 GetQueryResultInXML
 adodb
 sqloledb
-sql server
+sql\s*server
 driver
 Server.CreateObject
 .Provider
 .Open
 ADODB.recordset
-New OleDbConnection
+New\s*OleDbConnection
 ExecuteReader
 DataSource
 SqlCommand
@@ -457,28 +453,28 @@ StoredProcedure
 System.Data.sql
 # Dotnet XSS
 response.write
-<% =
+<%\s*=
 HttpUtility
 HtmlEncode
 UrlEncode
 innerText
 innerHTML
 # Execution
-exec *\(.*\$.*\)
-passthru *\(.*\)
-popen *\(.*\$.*\)
-shell_exec *\(.*\$.*\)
-system *\(.*\$.*\)
+exec\s*\(.*\$.*\)
+passthru\s*\(.*\)
+popen\s*\(.*\$.*\)
+shell_exec\s*\(.*\$.*\)
+system\s*\(.*\$.*\)
 `.*\$.*`
 #Otherstuffs
 #XSS signature needs to stop matching before LF when color=on #bug(1)
 echo.*\$_.*\[.*\]
-eval *\(.*\$.*\)
+eval\s*\(.*\$.*\)
 #SQLi signature needs to stop matching before LF when color=on #bug(1)
-mysql_query *\(.*\$.*\)
-WHERE .*=.*\$[^; ]+
-(include|include_once|require|require_once) *\(.*\$.*\)
-print.*param *\(.*\);
+mysql_query\s*\(.*\$.*\)
+WHERE\s+.*=.*\$[^; ]+
+(include|include_once|require|require_once)\s*\(.*\$.*\)
+print.*param\s*\(.*\);
 request.getQueryString
 Runtime.exec
 getRequest
@@ -486,7 +482,7 @@ Request.GetParameter
 request.getParameter
 jsp:getProperty
 java.security.acl.acl
-response.sendRedirect *\(.*(Request|request).*\)
+response.sendRedirect\s*\(.*(Request|request).*\)
 backdoor
 bug
 hack
@@ -527,23 +523,68 @@ truncate
 kill
 umask
 param *\(.*\);
-# Execution
-exec *\(.*\)
+# PHP - Execution
+exec\s*\(.*\)
 `.*`
-passthru *\(.*\)
-popen *\(.*\)
-proc_close *\(.*\)
-proc_open *\(.*\)
-proc_get_status *\(.*\)
-proc_nice *\(.*\)
-proc_terminate *\(.*\)
-proc_close *\(.*\)
-proc_open *\(.*\)
-proc_get_status *\(.*\)
-proc_nice *\(.*\)
-proc_terminate *\(.*\)
-shell_exec *\(.*\)
-system *\(.*\)
+passthru\s*\(.*\)
+popen\s*\(.*\)
+proc_close\s*\(.*\)
+proc_open\s*\(.*\)
+proc_get_status\s*\(.*\)
+proc_nice\s*\(.*\)
+proc_terminate\s*\(.*\)
+shell_exec\s*\(.*\)
+system\s*\(.*\)
+# Informatin disclosure
+phpinfo\s*\(.*\)
+phpcredits\s*\(.*\)
+php_logo_guid\s*\(.*\)
+php_uname\s*\(.*\)
+phpversion\s*\(.*\)
+zend_logo_guid\s*\(.*\)
+zend_version\s*\(.*\)
+get_loaded_extensions\s*\(.*\)
+# PHP - Database
+mysql_connect\s*\(.*\$.*\)
+mysql_pconnect\s*\(.*\$.*\)
+mysql_change_user\s*\(.*\$.*\)
+mysql_query\s*\(.*\$.*\)
+mysql_error\s*\(.*\$.*\)
+mysql_set_charset\s*\(.*\$.*\)
+mysql_unbuffered_query\s*\(.*\$.*\)
+pg_connect\s*\(.*\$.*\)
+pg_pconnect\s*\(.*\$.*\)
+pg_execute\s*\(.*\$.*\)
+pg_insert\s*\(.*\$.*\)
+pg_put_line\s*\(.*\$.*\)
+pg_query\s*\(.*\$.*\)
+pg_select\s*\(.*\$.*\)
+pg_send_query\s*\(.*\$.*\)
+pg_set_client_encoding\s*\(.*\$.*\)
+pg_update\s*\(.*\$.*\)
+# PHP - Superglobals & Envoronment
+getenv\s*\(.*\)
+apache_getenv\s*\(.*\)
+putenv\s*\(.*\)
+apache_setenv\s*\(.*\)
+getallheaders\s*\(.*\)
+apache_request_headers\s*\(.*\)
+apache_response_headers\s*\(.*\)
+\$_ENV\[.*\]
+\$_GET\[.*\]
+\$_POST\[.*\]
+\$_COOKIE\[.*\]
+\$_REQUEST\[.*\]
+\$_FILES\[.*\]
+\$PHPSELF
+\$HTTP_GET_VARS
+\$http_get_vars
+\$HTTP_POST_VARS
+\$http_post_vars
+\$HTTP_ENV_VARS
+\$http_env_vars
+\$HTTP_POST_FILES
+\$http_post_files
 # Extensions
 expect_
 pcntl_
@@ -562,75 +603,25 @@ shm_
 shmop_
 # Otherstuffs
 header *\(.*\$_(GET|POST|REQUEST|COOKIE).*\)
-eval *\(.\$*\)
-file *\(.\$*\)
-file_get_contents *\(.\$*\)
+eval\s*\(\s*.\$.*\s*\)
+file *\(.\$.*\)
+file_get_contents *\(.\$.*\)
 fopen *\(.*\$.*\)
 fwrite
 move_uploaded_file *\(.*\)
 stream_
 create_function *\(.*\)
-mail *\(.\$*\)
+mail *\(.\$.*\)
 include *\(.*\$.*\)
 include_once *\(.*\$.*\)
 preg_replace *\(.\$*\)
-readfile *\(.\$*\)
+readfile *\(.\$.*\)
 require *\(.*\$.*\)
 require_once *\(.*\$.*\)
-# Informatin disclosure
-phpinfo *\(.*\)
-phpcredits *\(.*\)
-php_logo_guid *\(.*\)
-php_uname *\(.*\)
-phpversion *\(.*\)
-zend_logo_guid *\(.*\)
-zend_version *\(.*\)
-get_loaded_extensions *\(.*\)
 # Stefan Esser's research
 unserialize *\(.*\)
 unserialize_callback_func
-# Database
-mysql_connect *\(.*\$.*\)
-mysql_pconnect *\(.*\$.*\)
-mysql_change_user *\(.*\$.*\)
-mysql_query *\(.*\$.*\)
-mysql_error *\(.*\$.*\)
-mysql_set_charset *\(.*\$.*\)
-mysql_unbuffered_query *\(.*\$.*\)
-pg_connect *\(.*\$.*\)
-pg_pconnect *\(.*\$.*\)
-pg_execute *\(.*\$.*\)
-pg_insert *\(.*\$.*\)
-pg_put_line *\(.*\$.*\)
-pg_query *\(.*\$.*\)
-pg_select *\(.*\$.*\)
-pg_send_query *\(.*\$.*\)
-pg_set_client_encoding *\(.*\$.*\)
-pg_update *\(.*\$.*\)
-# Superglobals
-getenv *\(.*\)
-apache_getenv *\(.*\)
-putenv *\(.*\)
-apache_setenv *\(.*\)
-getallheaders *\(.*\)
-apache_request_headers *\(.*\)
-apache_response_headers *\(.*\)
-\$_ENV\[.*\]
-\$_GET\[.*\]
-\$_POST\[.*\]
-\$_COOKIE\[.*\]
-\$_REQUEST\[.*\]
-\$_FILES\[.*\]
-\$PHPSELF
-\$HTTP_GET_VARS
-\$http_get_vars
-\$HTTP_POST_VARS
-\$http_post_vars
-\$HTTP_ENV_VARS
-\$http_env_vars
-\$HTTP_POST_FILES
-\$http_post_files
-access *\(
+access\s*\(
 mkfifo
 pathconf
 listdir
@@ -644,7 +635,7 @@ mkdir
 rmdir
 remove
 unlink
-link *\(
+link\s*\(
 execv
 execve
 execl
