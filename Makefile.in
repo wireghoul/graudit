@@ -20,13 +20,13 @@ dist: $(DISTFILES) test signatures
 	tar zcf graudit-$(VERSION)_src.tar.gz graudit-$(VERSION)
 	rm -r graudit-$(VERSION)
 
-install: $(DISTFILES) test
+userinstall: $(DISTFILES) test
 	mkdir -p ~/.graudit
 	cp -f $(SIGNATURES) ~/.graudit
 	mkdir -p ~/bin
 	cp -f graudit ~/bin
 
-systeminstall: $(DISTFILES) test
+install: $(DISTFILES) test
 ifeq ($(PREFIX),'P====')
 	@echo 'Prefix not configured, run configure first'
 	exit 1
@@ -52,7 +52,8 @@ test:
 	cd t && ./aggregate-results.sh test-results/*
 
 signatures:
-	cat signatures/dotnet/* > signatures/dotnet.db
+	cat signatures/dotnet/*.db > signatures/dotnet.db
+	cat signatures/php/*.db > signatures/php.db
 	cat signatures/asp.db > signatures/all.db
 	cat signatures/c.db >> signatures/all.db
 	cat signatures/dotnet.db >> signatures/all.db

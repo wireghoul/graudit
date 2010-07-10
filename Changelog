@@ -5,6 +5,8 @@
 		Whitespace neutrality for all signatures
 		-l operator lists available databases
 		-x operator for excluding files
+		configure script added to make chain
+		Makefile install targets changed, install is now server wide
 		
 
 1.6		2010 May 14
