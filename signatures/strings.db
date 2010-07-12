@@ -1,7 +1,7 @@
-.*select\s+.* from .*
-.*update\s+.* where
-.*insert\s+.* into
-.*delete\s+.* from
+.*select\s+.*\s+from .*
+.*update\s+.*\s+where
+.*insert\s+.*\s+into
+.*delete\s*.*\s+from
 .*exec.*
 .*executeQuery.*
 .*sp_executesql.*
