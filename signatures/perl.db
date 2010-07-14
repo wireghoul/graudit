@@ -1,20 +1,22 @@
+# Perl exec signatures
+exec\s*\(?.*\$.*\)?
+fork\s*\(?.*\)?
+`.*\$.*`
+system\s*\(?.*\$.*\)?
+open\s*\(?.*\$.*\)?
+# Perl signatures
 getc
 readdir
 read
 sysread
-exec
 eval
-fork
-`.*`
 fctnl
 ioctl
 bind
 setpgrp
 syscall
 connect
-system
 glob
-open
 mkdir
 rmdir
 link
@@ -26,4 +28,5 @@ symlink
 truncate
 kill
 umask
-param *\(.*\);
+->param\s*\(.*\)
+\$ARGV\[.*?\]

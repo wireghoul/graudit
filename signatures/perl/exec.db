@@ -1,5 +1,6 @@
-exec\s*\(?.*\)?
+# Perl exec signatures
+exec\s*\(?.*\$.*\)?
 fork\s*\(?.*\)?
-`.*`
-system\s*\(?.*\)?
-open\s*\(?.*\)?
+`.*\$.*`
+system\s*\(?.*\$.*\)?
+open\s*\(?.*\$.*\)?

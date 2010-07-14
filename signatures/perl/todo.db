@@ -1,3 +1,4 @@
+# Perl signatures
 getc
 readdir
 read
@@ -21,4 +22,5 @@ symlink
 truncate
 kill
 umask
-param\s*\(.*\)
+->param\s*\(.*\)
+\$ARGV\[.*?\]

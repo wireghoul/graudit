@@ -483,34 +483,32 @@ request.getParameter
 jsp:getProperty
 java.security.acl.acl
 response.sendRedirect\s*\(.*(Request|request).*\)
-backdoor
-bug
-hack
-fixme
-todo
-BACKDOOR
-BUG
-HACK
-FIXME
-TODO
+[Bb][Aa][Cc][Kk][Dd][Oo][Oo][Rr]
+[Bb][Uu][Gg]
+[Dd][Ee][Cc][Oo][Yy]
+[Hh][Aa][Cc][Kk]
+[Ff][Ii][Xx][Mm][Ee]
+[Tt][Oo][Dd][Oo]
 XXX
+# Perl exec signatures
+exec\s*\(?.*\$.*\)?
+fork\s*\(?.*\)?
+`.*\$.*`
+system\s*\(?.*\$.*\)?
+open\s*\(?.*\$.*\)?
+# Perl signatures
 getc
 readdir
 read
 sysread
-exec
 eval
-fork
-`.*`
 fctnl
 ioctl
 bind
 setpgrp
 syscall
 connect
-system
 glob
-open
 mkdir
 rmdir
 link
@@ -522,7 +520,8 @@ symlink
 truncate
 kill
 umask
-param *\(.*\);
+->param\s*\(.*\)
+\$ARGV\[.*?\]
 # PHP - Execution
 exec\s*\(.*\)
 `.*`
@@ -535,6 +534,22 @@ proc_nice\s*\(.*\)
 proc_terminate\s*\(.*\)
 shell_exec\s*\(.*\)
 system\s*\(.*\)
+# Extensions
+expect_
+pcntl_
+posix_
+# Semaphore extension
+ftok
+msg_get_queue
+msg_queue_exists
+msg_receive
+msg_remove_queue
+msg_send
+msg_set_queue
+msg_stat_queue
+sem_
+shm_
+shmop_
 # Informatin disclosure
 phpinfo\s*\(.*\)
 phpcredits\s*\(.*\)
@@ -585,41 +600,25 @@ apache_response_headers\s*\(.*\)
 \$http_env_vars
 \$HTTP_POST_FILES
 \$http_post_files
-# Extensions
-expect_
-pcntl_
-posix_
-# Semaphore extension
-ftok
-msg_get_queue
-msg_queue_exists
-msg_receive
-msg_remove_queue
-msg_send
-msg_set_queue
-msg_stat_queue
-sem_
-shm_
-shmop_
 # Otherstuffs
-header *\(.*\$_(GET|POST|REQUEST|COOKIE).*\)
+header\s*\(.*\$_(GET|POST|REQUEST|COOKIE).*\)
 eval\s*\(\s*.\$.*\s*\)
-file *\(.\$.*\)
-file_get_contents *\(.\$.*\)
-fopen *\(.*\$.*\)
+file\s*\(.\$.*\)
+file_get_contents\s*\(.\$.*\)
+fopen\s*\(.*\$.*\)
 fwrite
-move_uploaded_file *\(.*\)
+move_uploaded_file\s*\(.*\)
 stream_
-create_function *\(.*\)
-mail *\(.\$.*\)
-include *\(.*\$.*\)
-include_once *\(.*\$.*\)
-preg_replace *\(.\$*\)
-readfile *\(.\$.*\)
-require *\(.*\$.*\)
-require_once *\(.*\$.*\)
+create_function\s*\(.*\)
+mail\s*\(.\$.*\)
+include\s*\(.*\$.*\)
+include_once\s*\(.*\$.*\)
+preg_replace\s*\(.\$*\)
+readfile\s*\(.\$.*\)
+require\s*\(.*\$.*\)
+require_once\s*\(.*\$.*\)
 # Stefan Esser's research
-unserialize *\(.*\)
+unserialize\s*\(.*\)
 unserialize_callback_func
 access\s*\(
 mkfifo
