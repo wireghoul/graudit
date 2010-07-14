@@ -56,6 +56,7 @@ test:
 signatures:
 	cat signatures/dotnet/*.db > signatures/dotnet.db
 	cat signatures/php/*.db > signatures/php.db
+	cat signatures/perl/*.db > signatures/perl.db
 	cat signatures/asp.db > signatures/all.db
 	cat signatures/c.db >> signatures/all.db
 	cat signatures/dotnet.db >> signatures/all.db
