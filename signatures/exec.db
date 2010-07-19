@@ -1,0 +1,18 @@
+# Perl exec signatures
+exec\s*\(?.*\$.*\)?
+fork\s*\(?.*\)?
+`.*\$.*`
+system\s*\(?.*\$.*\)?
+open\s*\(?.*\$.*\)?
+# PHP - Execution
+exec\s*\(.*\)
+`.*`
+passthru\s*\(.*\)
+popen\s*\(.*\)
+proc_close\s*\(.*\)
+proc_open\s*\(.*\)
+proc_get_status\s*\(.*\)
+proc_nice\s*\(.*\)
+proc_terminate\s*\(.*\)
+shell_exec\s*\(.*\)
+system\s*\(.*\)
