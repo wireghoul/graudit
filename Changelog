@@ -1,4 +1,4 @@
-1.7		2010 ?? ??
+1.7		2010 Jul 31
 		New PHP signatures
 		Improved C signatures for fewer false positives
 		Improved dotnet signatures
