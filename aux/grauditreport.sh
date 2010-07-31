@@ -1,8 +1,7 @@
 #!/bin/sh
 # Save graudit output as <div>ified html
 # Steady on the regex if you want to modify this
-
-gver=`graudit -v | cut -d' ' -f 3`
+VERSION=0.2
 cat <<HEADER
 <html>
     <head>
