@@ -26,7 +26,7 @@ HEADER
 
 # We use graudit -Z to do exact matching as ext regex don't support non greedy matching
 graudit -Z $* | \
-sed -e's/&/&amp;/' -e's/"/&quot;/' -e"s/'/&apos;/" -e's/</\&lt\;/g' -e's/>/\&gt\;/g' \
+sed -e's/\&/\&amp;/g' -e's/"/\&quot;/g' -e"s/'/\&apos;/g" -e's/</\&lt\;/g' -e's/>/\&gt\;/g' \
 -e"s/^\x1b\[35m\x1b\[K\(.*\)\x1b\[m\x1b\[K\x1b\[36m\x1b\[K\([-:]\)\x1b\[m\x1b\[K\x1b\[32m\x1b\[K\(.*\)\x1b\[m\x1b\[K\x1b\[36m\x1b\[K\([-:]\)\x1b\[m\x1b\[K\(.*\)$/<ul id='line'><li id='fn'>\1<\/li><li id='m'>\2<\/li><li id='ln'>\3<\/li><li id='m'>\4<\/li><li id='code'>\5<\/li><\/ul>/" \
 -e"s/\x1b\[41;01;37m\x1b\[K\(.*\)\x1b\[m\x1b\[K/<li id='vuln'>\1<\/li>/g" \
 -e"s/\x1b\[36m\x1b\[K##############################################\x1b\[m\x1b\[K/<hr \/>/"
