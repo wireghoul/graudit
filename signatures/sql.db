@@ -16,9 +16,9 @@ adodb
 sqloledb
 sql\s*server
 driver
-Server.CreateObject
-.Provider
-.Open
+Server\.CreateObject
+\.Provider
+\.Open
 ADODB.recordset
 New\s*OleDbConnection
 ExecuteReader
@@ -31,7 +31,7 @@ GetString
 SqlDataAdapter
 CommandType
 StoredProcedure
-System.Data.sql
+System\.Data\.sql
 # PHP - Database
 mysql_connect\s*\(.*\$.*\)
 mysql_pconnect\s*\(.*\$.*\)
