@@ -138,7 +138,7 @@ fi
 
 $BINFILE --color=$color \
          --exclude-dir=.svn \
-         --exclude-dir=.cvs \
+         --exclude-dir=CVS \
          --exclude-dir=.git \
          $icase $ignorepattern \
          -n -R -H -C $context -E \
