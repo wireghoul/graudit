@@ -1,0 +1,36 @@
+# PHP-fruit signatures
+exec\s*\(.*\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP).*\)
+system\s*\(.*\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP).*\)
+popen\s*\(.*\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP).*\)
+shell_exec\s*\(.*\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP).*\)
+passthru\s*\(.*\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP).*\)
+header\s*\(.*\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP).*\)
+`.*\$_(GET|POST|REQUEST|SESSION|COOKIE).*`
+eval\s*\(.*\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP).*\)
+header\s*\(.*\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP).*\)
+include\s*\(.*\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP).*\)
+include_once\s*\(.*\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP).*\)
+require\s*\(.*\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP).*\)
+require_once\s*\(.*\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP).*\)
+fopen\s*\(.*\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP).*\)
+unserialize\s*\(.*\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP).*\)
+mysql_query\s*\(.*\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP).*\)
+(WHERE|where)\s+.*=.*\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP)[^; ]+
+(LIKE|like)\s+.*\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP)
+(ORDER BY|order by)\s+.*\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP)
+(LIMIT|limit)\s+.*\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP)
+# Perl-fruit signatures
+exec\s*\(?.*\$ARGV.*\)?
+exec\s*\(?.*\$.*->param\s*\(.*\).*\)?
+system\s*\(?.*\$ARGV.*\)?
+system\s*\(?.*\$.*->param\s*\(.*\).*\)?
+`.*\$ARGV.*`
+`.*\$.*->param\s*\(.*\).*`
+eval\s*\(?.*\$ARGV.*\)?
+eval\s*\(?.*\$.*->param\s*\(.*\).*\)?
+use\s+.*\$ARGV.*
+use\s+.*\$.*->param\s*\(.*\).*
+(WHERE|where)\s+.*=.*\$.*->param\s*\(.*\)
+(LIKE|like)\s+.*\$.*->param\s*\(.*\)
+(ORDER BY|order by)\s+.*\$.*->param\s*\(.*\)
+(LIMIT|limit)\s+.*\$.*->param\s*\(.*\)

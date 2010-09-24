@@ -1,9 +1,9 @@
 # Perl exec signatures
-exec\s*\(?.*\$.*\)?
-fork\s*\(?.*\)?
+exec(\s*\(|\s+).*\$.*\)?
+fork(\s*\(|\s+).*\)?
 `.*\$.*`
-system\s*\(?.*\$.*\)?
-open\s*\(?.*\$.*\)?
+system(\s*\(?|\s+)*\$.*\)?
+open(\s*\(?|\s+)*\$.*\)?
 # PHP - Execution
 exec\s*\(.*\)
 `.*`

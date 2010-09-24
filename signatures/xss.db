@@ -7,7 +7,7 @@ UrlEncode
 innerText
 innerHTML
 # Perl xss signatures
-print\s*\$.*->param\(?.*\)?
+print\s*.*\$.*->param\(?.*\)?
 # PHP xss signatures
 echo\s*.*\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP).*
 <\?(php)?\s*=\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP).*

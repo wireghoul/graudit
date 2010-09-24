@@ -491,11 +491,11 @@ response.sendRedirect\s*\(.*(Request|request).*\)
 [Tt][Oo][Dd][Oo]
 XXX
 # Perl exec signatures
-exec\s*\(?.*\$.*\)?
-fork\s*\(?.*\)?
+exec(\s*\(|\s+).*\$.*\)?
+fork(\s*\(|\s+).*\)?
 `.*\$.*`
-system\s*\(?.*\$.*\)?
-open\s*\(?.*\$.*\)?
+system(\s*\(?|\s+)*\$.*\)?
+open(\s*\(?|\s+)*\$.*\)?
 # Perl signatures
 getc
 readdir
@@ -523,7 +523,7 @@ umask
 ->param\s*\(.*\)
 \$ARGV\[.*?\]
 # Perl xss signatures
-print\s*\$.*->param\(?.*\)?
+print\s*.*\$.*->param\(?.*\)?
 # PHP - Execution
 exec\s*\(.*\)
 `.*`

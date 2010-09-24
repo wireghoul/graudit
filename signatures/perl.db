@@ -1,9 +1,9 @@
 # Perl exec signatures
-exec\s*\(?.*\$.*\)?
-fork\s*\(?.*\)?
+exec(\s*\(|\s+).*\$.*\)?
+fork(\s*\(|\s+).*\)?
 `.*\$.*`
-system\s*\(?.*\$.*\)?
-open\s*\(?.*\$.*\)?
+system(\s*\(?|\s+)*\$.*\)?
+open(\s*\(?|\s+)*\$.*\)?
 # Perl signatures
 getc
 readdir
@@ -31,4 +31,4 @@ umask
 ->param\s*\(.*\)
 \$ARGV\[.*?\]
 # Perl xss signatures
-print\s*\$.*->param\(?.*\)?
+print\s*.*\$.*->param\(?.*\)?
