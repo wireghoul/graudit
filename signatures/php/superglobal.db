@@ -12,6 +12,7 @@ apache_response_headers\s*\(.*\)
 \$_COOKIE\[.*\]
 \$_REQUEST\[.*\]
 \$_FILES\[.*\]
+\$_SERVER\[.*\]
 \$PHPSELF
 \$HTTP_GET_VARS
 \$http_get_vars
@@ -19,5 +20,7 @@ apache_response_headers\s*\(.*\)
 \$http_post_vars
 \$HTTP_ENV_VARS
 \$http_env_vars
+\$HTTP_RAW_POST_DATA
+\$http_raw_post_data
 \$HTTP_POST_FILES
 \$http_post_files
