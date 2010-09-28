@@ -1,0 +1,63 @@
+.\"	$Id: template.in.1,v 1.1 2010/06/02 12:15:32 kristaps Exp $
+.\"
+.\" Copyright notice goes here.
+.\"
+.\" See mdoc(7) for further reference.
+.\"
+.Dd $Mdocdate: June 2 2010 $
+.\" Replace the following with the name of your utility in UPPERCASE.
+.Dt GRAUDIT 1
+.Os
+.
+.Sh NAME
+.\" Replace the following two lines as indicated.
+.Nm graudit
+.Nd source code auditing tool
+.Sh SYNOPSIS
+.Nm
+.\" Add your utility's flags and arguments.
+.Op Fl options
+.Ar /path/to/scan
+.Sh DESCRIPTION
+Graudit is a simple script and signature sets that allows you to find potential 
+security flaws in source code using the GNU utility grep.
+.\" Document its arguments first.
+Its arguments are as follows:
+.Bl -tag -width Ds
+.It Fl c Ar num
+Number of lines of context to display (Default: 2)
+.It Fl d Ar database
+Signature database to use
+.It Fl h
+Print short help message
+.It Fl i
+Case in-sensitive search
+.It Fl l
+Lists available database
+.It Fl v
+Print version number
+.It Fl x
+Exclude files matching this pattern
+.It Fl z
+Supress colors
+.It Fl Z
+High contrast colors
+.It Ar /path/to/scan
+Directory or files to scan
+.El
+.Pp
+By default, the
+.Nm
+utility does this and that.
+.Sh EXIT STATUS
+.\" Change this if it's not the case.
+The exit status is 0 if a signature match is found and 1 otherwise. An exit status of 2 means an error occurred.
+.Sh SEE ALSO
+.\" What other utilities have you referred to?
+.Xr grep(1)
+.Sh AUTHORS
+The
+.Nm
+utility was written by
+.\" Enter your contact information here.
+.An Eldar Marcussen Aq wireghoul justanotherhacker com .
