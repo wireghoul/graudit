@@ -46,18 +46,14 @@ High contrast colors
 Directory or files to scan
 .El
 .Pp
-By default, the
-.Nm
-utility does this and that.
+By default, graudit will scan all files and directories (excluding .svn, .git and .CVS) under /path/to/scan using the default signature database and display two lines of context using the standard grep colors. Running graudit some/dir/ is the same as running graudit -c 2 -d default some/dir/
 .Sh EXIT STATUS
 .\" Change this if it's not the case.
 The exit status is 0 if a signature match is found and 1 otherwise. An exit status of 2 means an error occurred.
 .Sh SEE ALSO
 .\" What other utilities have you referred to?
-.Xr grep(1)
+.Xr grep(1) graudit(7)
 .Sh AUTHORS
-The
-.Nm
-utility was written by
+Graudit was written by
 .\" Enter your contact information here.
 .An Eldar Marcussen Aq wireghoul justanotherhacker com .
