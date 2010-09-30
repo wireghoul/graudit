@@ -4,6 +4,8 @@ eval\s*\(\s*.\$.*\s*\)
 file\s*\(.\$.*\)
 file_get_contents\s*\(.\$.*\)
 fopen\s*\(.*\$.*\)
+p?fsockopen\s*\(.*\)
+stream_context_create\s*\(.*\)
 fwrite
 move_uploaded_file\s*\(.*\)
 stream_
