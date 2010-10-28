@@ -25,7 +25,7 @@ security flaws in source code using the GNU utility grep.
 Its arguments are as follows:
 .Bl -tag -width Ds
 .It Fl c Ar num
-Number of lines of context to display (Default: 2)
+Number of lines of context to display (Default: 2; one before and one after the matching line)
 .It Fl d Ar database
 Signature database to use
 .It Fl h
@@ -34,6 +34,8 @@ Print short help message
 Case in-sensitive search
 .It Fl l
 Lists available database
+.It Fl L
+Prints line numbers in a paste friendly format for vim
 .It Fl v
 Print version number
 .It Fl x
@@ -46,7 +48,7 @@ High contrast colors
 Directory or files to scan
 .El
 .Pp
-By default, graudit will scan all files and directories (excluding .svn, .git and .CVS) under /path/to/scan using the default signature database and display two lines of context using the standard grep colors. Running graudit some/dir/ is the same as running graudit -c 2 -d default some/dir/
+By default, graudit will scan all files and directories (excluding .svn, .git and .CVS) under /path/to/scan using the default signature database and display two lines of context using the standard grep colors. Running graudit some/dir/ is the same as running graudit -c 1 -d default some/dir/
 .Sh EXIT STATUS
 .\" Change this if it's not the case.
 The exit status is 0 if a signature match is found and 1 otherwise. An exit status of 2 means an error occurred.
