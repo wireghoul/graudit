@@ -10,6 +10,8 @@ BINFILE=`which grep`
 
 # Default values
 context=1
+zimlines="#"
+vimlines="#"
 color='always'
 sigdb='default'
 separator='##############################################'
@@ -45,6 +47,7 @@ OPTIONS
   -x exclude these files
   -z supress colors
   -Z Hight contrast colors
+  -L vim friendly line numbers
 
 Database is one of asp, jsp, other, perl, php, python or default, not providing a database will use default
 /path is the path to the file or directory to audit
@@ -66,7 +69,7 @@ if [ -d "$basedir"/signatures/ ]; then
 fi
 }
 
-while getopts "hvilzZd:c:x:" opt; do
+while getopts "hvilLzZd:c:x:" opt; do
     case $opt in
         h)
             usage
@@ -98,6 +101,11 @@ while getopts "hvilzZd:c:x:" opt; do
         x)
             ignorepattern="--exclude=$OPTARG"
         ;;
+	L)
+	    zimlines="s/\([:-]\)\([0-9][0-9]*\)\([:-]\)/ \+\2\3/"
+	    #\(\x1b\[.*m\x1b\[K\)
+	    #vimlines="s/\([:-]\)\(\x1b\[.*m\x1b\[K\)/ +\1/"
+	;;
         \?)
             echo "Invalid option: -$OPTARG" >&2
             usage
@@ -143,7 +151,7 @@ $BINFILE --color=$color \
          $icase $ignorepattern \
          -n -R -H -C $context -E \
          -f "$database" "$@" \
-         | sed -e"s/^\(\x1b\[.*m\x1b\[K\)--\(\x1b\[.*\x1b\[K\)$/\1##############################################\2/" -e"s/^--$/$separator/"
+         | sed -e"s/^\(\x1b\[.*m\x1b\[K\)--\(\x1b\[.*\x1b\[K\)$/\1##############################################\2/" -e"s/^--$/$separator/" | sed -e"$vimlines" -e"$zimlines"
 SUCCESS=$?
 export GREP_COLORS="$OLD_COLORS"
 exit $SUCCESS
