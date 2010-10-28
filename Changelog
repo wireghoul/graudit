@@ -1,3 +1,16 @@
+1.8		2010 ??? ??
+		-L operator does vim friendly line numbers
+		Man pages and documentation updates
+		PHP signature updates
+		JSP signature updates
+		Dotnet signature updates
+		Perl signature updates and bug fixes
+		Python signature updates
+		Bug fixes for aux/ scripts
+		More aux/ scripts
+		Fixed ignore CVS directories by default
+	
+		
 1.7		2010 Jul 31
 		New PHP signatures
 		Improved C signatures for fewer false positives

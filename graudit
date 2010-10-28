@@ -4,7 +4,7 @@
 # Released under the GPL licence
 set -e
 set -o pipefail
-VERSION='1.7'
+VERSION='1.8'
 basedir=`dirname $0`
 BINFILE=`which grep`
 
