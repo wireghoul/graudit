@@ -483,6 +483,8 @@ request.getParameter
 jsp:getProperty
 java.security.acl.acl
 response.sendRedirect\s*\(.*(Request|request).*\)
+printStacktrace
+out\.print(ln)?.*[Rr]equest\.
 [Bb][Aa][Cc][Kk][Dd][Oo][Oo][Rr]
 [Bb][Uu][Gg]
 [Dd][Ee][Cc][Oo][Yy]
@@ -579,6 +581,14 @@ pg_select\s*\(.*\$.*\)
 pg_send_query\s*\(.*\$.*\)
 pg_set_client_encoding\s*\(.*\$.*\)
 pg_update\s*\(.*\$.*\)
+php://stdin
+php://stdout
+php://stderr
+php://output
+php://input
+php://filter
+php://memory
+php://temp 
 # PHP - Superglobals & Envoronment
 getenv\s*\(.*\)
 apache_getenv\s*\(.*\)
