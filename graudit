@@ -38,16 +38,17 @@ usage () {
 Usage: graudit [opts] /path/to/scan
 
 OPTIONS
-  -h show this message
-  -v show version number
-  -d database to use
-  -i case insensitive search
+  -c <num> number of lines of context to display, default is 2
+  -d <db> database to use
+  -h prints a short help text
+  -i case in-sensitive search
   -l lists databases available
-  -c number of lines of context to display
+  -L vim friendly lines
+  -v prints version number
   -x exclude these files
   -z supress colors
-  -Z Hight contrast colors
-  -L vim friendly line numbers
+  -Z high contrast colors
+
 
 Database is one of asp, jsp, other, perl, php, python or default, not providing a database will use default
 /path is the path to the file or directory to audit
