@@ -111,4 +111,5 @@ unserialize\s*\(.*\)
 unserialize_callback_func
 # PHP xss signatures
 echo\s*.*\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP).*
-<\?(php)?\s*=\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP).*
+<\?=\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP).*
+<\%=\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP).*
