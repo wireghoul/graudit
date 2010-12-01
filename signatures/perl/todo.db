@@ -1,7 +1,7 @@
 # Perl signatures
 getc
 readdir
-read
+read(\s+|\s*\()
 sysread
 eval.*\$.*
 fctnl
@@ -10,7 +10,7 @@ bind
 setpgrp
 syscall
 connect.*\$.*
-glob.*\$.*
+glob(\s+|\s*\().*\$.*
 mkdir
 rmdir
 link.*\$.*
@@ -23,4 +23,3 @@ truncate
 kill.*\$.*
 umask
 ->param\s*\(.*\)
-\$ARGV\[.*?\]
