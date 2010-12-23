@@ -5,11 +5,11 @@
 PREFIX := 'P===='
 DBDIR := 'D===='
 SIGNATURES := signatures/default.db signatures/php.db  signatures/perl.db signatures/python.db signatures/asp.db signatures/jsp.db signatures/other.db signatures/c.db signatures/dotnet.db signatures/all.db
-DISTFILES := Changelog  graudit  LICENSE  README
+DISTFILES := Changelog  graudit  LICENSE  README graudit.1
 VERSION=`./graudit -v | cut -d' ' -f 3`
 .PHONY : clean install uninstall userinstall test signatures
 
-dist: $(DISTFILES) clean signatures test
+dist: $(DISTFILES) clean signatures manpages test
 	cd t && ./git-test.sh
 	mkdir -p graudit-$(VERSION)/signatures
 	cp -f $(DISTFILES) graudit-$(VERSION)
@@ -83,4 +83,3 @@ manpages:
 	cp -f graudit.in.1 graudit.1
 	nroff -Tascii -mandoc <graudit.in.7 >/dev/null
 	cp -f graudit.in.7 graudit.7
-
