@@ -1,4 +1,7 @@
 # PHP xss signatures
-echo\s*.*\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP).*
-<\?=\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP).*
-<\%=\$(_GET|_POST|_REQUEST|_SESSION|_COOKIE|HTTP).*
+echo\s+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
+print\s+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
+print_r(\s+|\s*\().*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
+\<\?\=\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http)
+\<\%\=\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http)
+
