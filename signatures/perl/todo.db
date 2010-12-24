@@ -1,7 +1,7 @@
 # Perl signatures
 getc
-readdir
-read(\s+|\s*\()
+readdir(\s+|\s*\().*\$.*
+read(\s+|\s*\().*\$.*
 sysread
 eval.*\$.*
 fctnl
@@ -11,15 +11,15 @@ setpgrp
 syscall
 connect.*\$.*
 glob(\s+|\s*\().*\$.*
-mkdir
-rmdir
-link.*\$.*
-unlink
-chmod.*\$.*
-chown
+mkdir(\s+|\s*\().*\$.*
+rmdir(\s+|\s*\().*\$.*
+link(\s+|\s*\().*\$.*
+unlink(\s+|\s*\().*\$.*
+chmod(\s+|\s*\().*\$.*
+chown(\s+|\s*\().*\$.*
 chroot
 symlink
-truncate
+truncate(\s+|\s*\().*\$.*
 kill.*\$.*
 umask
 ->param\s*\(.*\)
