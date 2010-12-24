@@ -9,7 +9,7 @@ DISTFILES := Changelog  graudit  LICENSE  README graudit.1
 VERSION=`./graudit -v | cut -d' ' -f 3`
 .PHONY : clean install uninstall userinstall test signatures
 
-dist: $(DISTFILES) clean signatures manpages test
+dist: clean signatures manpages $(DISTFILES) test
 	cd t && ./git-test.sh
 	mkdir -p graudit-$(VERSION)/signatures
 	cp -f $(DISTFILES) graudit-$(VERSION)
