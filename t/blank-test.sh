@@ -7,3 +7,4 @@ test_description='Example test file'
 # Tests
 test_expect_code 1 'working command' '../graudit something'
 test_expect_code 2 'bad command' './graudit something'
+test_done
