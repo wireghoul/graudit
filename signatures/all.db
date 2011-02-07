@@ -476,15 +476,22 @@ WHERE\s+.*=.*\$[^; ]+
 (include|include_once|require|require_once)\s*\(.*\$.*\)
 print.*param\s*\(.*\);
 request.getQueryString
-Runtime.exec
+exec\s*\(.*\)
+Runtime\.
+getRuntime\s*\(.*\)(\.|\s*;)
 getRequest
-Request.GetParameter
-request.getParameter
-jsp:getProperty
+[Rr]equest.getParameter
+getProperty\s*\(
 java.security.acl.acl
 response.sendRedirect\s*\(.*(Request|request).*\)
-printStacktrace
+print[Ss]tack[Tt]race
 out\.print(ln)?.*[Rr]equest\.
+# Database rules
+jdbc:.*;
+createStatement\s*\(.*\)
+executeQuery\s*\(.*\)
+# Network
+Socket\s*\(
 [Bb][Aa][Cc][Kk][Dd][Oo][Oo][Rr]
 [Bb][Uu][Gg]
 [Dd][Ee][Cc][Oo][Yy]

@@ -1,10 +1,17 @@
 request.getQueryString
-Runtime.exec
+exec\s*\(.*\)
+Runtime\.
+getRuntime\s*\(.*\)(\.|\s*;)
 getRequest
-Request.GetParameter
-request.getParameter
-jsp:getProperty
+[Rr]equest.getParameter
+getProperty\s*\(
 java.security.acl.acl
 response.sendRedirect\s*\(.*(Request|request).*\)
-printStacktrace
+print[Ss]tack[Tt]race
 out\.print(ln)?.*[Rr]equest\.
+# Database rules
+jdbc:.*;
+createStatement\s*\(.*\)
+executeQuery\s*\(.*\)
+# Network
+Socket\s*\(
