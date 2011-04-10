@@ -12,6 +12,7 @@ use graudit is;
 graudit <options> /path/to/scan
 
 The following options are available:
+  -A scan ALL files
   -c <num> number of lines of context to display, default is 2
   -d <db> database to use
   -h prints a short help text

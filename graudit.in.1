@@ -19,11 +19,14 @@
 .Op Fl options
 .Ar /path/to/scan
 .Sh DESCRIPTION
-Graudit is a simple script and signature sets that allows you to find potential 
+.Nm
+is a simple script and signature sets that allows you to find potential 
 security flaws in source code using the GNU utility grep.
 .\" Document its arguments first.
 Its arguments are as follows:
 .Bl -tag -width Ds
+.It Fl A
+Scan ALL files
 .It Fl c Ar num
 Number of lines of context to display (Default: 2; one before and one after the matching line)
 .It Fl d Ar database
@@ -48,7 +51,7 @@ High contrast colors
 Directory or files to scan
 .El
 .Pp
-By default, graudit will scan all files and directories (excluding .svn, .git and .CVS) under /path/to/scan using the default signature database and display two lines of context using the standard grep colors. Running graudit some/dir/ is the same as running graudit -c 1 -d default some/dir/
+By default, graudit will scan most files and directories (excluding *.gz, *.zip, *.gif, *.jpg, *.png, .svn/, .git/ and .CVS/) under /path/to/scan using the default signature database and display two lines of context using the standard grep colors. Running graudit some/dir/ is the same as running graudit -c 1 -d default some/dir/
 .Sh EXIT STATUS
 .\" Change this if it's not the case.
 The exit status is 0 if a signature match is found and 1 otherwise. An exit status of 2 means an error occurred.
@@ -56,6 +59,7 @@ The exit status is 0 if a signature match is found and 1 otherwise. An exit stat
 .\" What other utilities have you referred to?
 .Xr grep(1) graudit(7)
 .Sh AUTHORS
-Graudit was written by
+.Nm
+was written by
 .\" Enter your contact information here.
 .An Eldar Marcussen - http://www.justanotherhacker.com .
