@@ -58,8 +58,8 @@ clean:
 test:
 	mkdir -p t/test-results
 	rm -f t/test-results/*
-	cd t && ./runtests.sh
-	cd t && ./aggregate-results.sh test-results/*
+	cd t && /bin/sh ./runtests.sh
+	cd t && /bin/sh ./aggregate-results.sh test-results/*
 
 signatures:
 	cat signatures/dotnet/*.db > signatures/dotnet.db
