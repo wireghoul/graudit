@@ -4,7 +4,7 @@
 # Released under the GPL licence
 set -e
 set -o pipefail
-VERSION='1.9'
+VERSION='2.0'
 basedir=`dirname $0`
 BINFILE=`which grep`
 
@@ -15,7 +15,7 @@ vimlines="#"
 color='always'
 sigdb='default'
 separator='##############################################'
-excludefiles='--exclude=*.gz --exclude=*.zip --exclude=*.png --exclude=*.jpg --exclude=*.gif'
+excludefiles='--exclude=*.gz --exclude=*.zip --exclude=*.gif --exclude=*.jpg --exclude=*.png'
 
 #Save custom colors
 OLD_COLORS=$GREP_COLORS
