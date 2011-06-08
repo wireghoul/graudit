@@ -13,4 +13,7 @@ passthru ('nosuch --cmd');
 `ls -la`
 shell_exec("touch $_POST[fname]");
 shell_exec("id");
+exec $_GET['cmd'];
+exec
+
 ?>
