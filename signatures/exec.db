@@ -5,14 +5,14 @@ fork(\s*\(|\s+).*\)?
 system(\s*\(?|\s+)*\$.*\)?
 open(\s*\(?|\s+)*\$.*\)?
 # PHP - Execution
-exec\s*\(.*\)
+exec([[:space:]]*\(|[[:space:]]+).*\)?
 `.*`
-passthru\s*\(.*\)
-popen\s*\(.*\)
-proc_close\s*\(.*\)
-proc_open\s*\(.*\)
-proc_get_status\s*\(.*\)
-proc_nice\s*\(.*\)
-proc_terminate\s*\(.*\)
-shell_exec\s*\(.*\)
-system\s*\(.*\)
+passthru([[:space:]]*\(|[[:space:]]+).*\)?
+popen([[:space:]]*\(|[[:space:]]+).*\)?
+proc_close([[:space:]]*\(|[[:space:]]+).*\)?
+proc_open([[:space:]]*\(|[[:space:]]+).*\)?
+proc_get_status([[:space:]]*\(|[[:space:]]+).*\)?
+proc_nice([[:space:]]*\(|[[:space:]]+).*\)?
+proc_terminate([[:space:]]*\(|[[:space:]]+).*\)?
+shell_exec([[:space:]]*\(|[[:space:]]+).*\)?
+system([[:space:]]*\(|[[:space:]]+).*\)?

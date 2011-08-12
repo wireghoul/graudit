@@ -460,21 +460,21 @@ UrlEncode
 innerText
 innerHTML
 # Execution
-exec\s*\(.*\$.*\)
-passthru\s*\(.*\)
-popen\s*\(.*\$.*\)
-shell_exec\s*\(.*\$.*\)
-system\s*\(.*\$.*\)
+exec[[:space:]]*\(.*\$.*\)
+passthru[[:space:]]*\(.*\)
+popen[[:space:]]*\(.*\$.*\)
+shell_exec[[:space:]]*\(.*\$.*\)
+system[[:space:]]*\(.*\$.*\)
 `.*\$.*`
 #Otherstuffs
 #XSS signature needs to stop matching before LF when color=on #bug(1)
 echo.*\$_.*\[.*\]
-eval\s*\(.*\$.*\)
+eval[[:space:]]*\(.*\$.*\)
 #SQLi signature needs to stop matching before LF when color=on #bug(1)
-mysql_query\s*\(.*\$.*\)
+mysql_query[[:space:]]*\(.*\$.*\)
 WHERE\s+.*=.*\$[^; ]+
-(include|include_once|require|require_once)\s*\(.*\$.*\)
-print.*param\s*\(.*\);
+(include|include_once|require|require_once)[[:space:]]*\(.*\$.*\)
+print.*param[[:space:]]*\(.*\);
 request.getQueryString
 exec\s*\(.*\)
 Runtime\.
@@ -537,17 +537,17 @@ umask
 # Perl xss signatures
 print\s*.*\$.*->param\(?.*\)?
 # PHP - Execution
-exec\s*\(.*\)
+exec([[:space:]]*\(|[[:space:]]+).*\)?
 `.*`
-passthru\s*\(.*\)
-popen\s*\(.*\)
-proc_close\s*\(.*\)
-proc_open\s*\(.*\)
-proc_get_status\s*\(.*\)
-proc_nice\s*\(.*\)
-proc_terminate\s*\(.*\)
-shell_exec\s*\(.*\)
-system\s*\(.*\)
+passthru([[:space:]]*\(|[[:space:]]+).*\)?
+popen([[:space:]]*\(|[[:space:]]+).*\)?
+proc_close([[:space:]]*\(|[[:space:]]+).*\)?
+proc_open([[:space:]]*\(|[[:space:]]+).*\)?
+proc_get_status([[:space:]]*\(|[[:space:]]+).*\)?
+proc_nice([[:space:]]*\(|[[:space:]]+).*\)?
+proc_terminate([[:space:]]*\(|[[:space:]]+).*\)?
+shell_exec([[:space:]]*\(|[[:space:]]+).*\)?
+system([[:space:]]*\(|[[:space:]]+).*\)?
 # Extensions
 expect_
 pcntl_
@@ -574,23 +574,40 @@ zend_logo_guid\s*\(.*\)
 zend_version\s*\(.*\)
 get_loaded_extensions\s*\(.*\)
 # PHP - Database
-mysql_connect\s*\(.*\$.*\)
-mysql_pconnect\s*\(.*\$.*\)
-mysql_change_user\s*\(.*\$.*\)
-mysql_query\s*\(.*\$.*\)
-mysql_error\s*\(.*\$.*\)
-mysql_set_charset\s*\(.*\$.*\)
-mysql_unbuffered_query\s*\(.*\$.*\)
-pg_connect\s*\(.*\$.*\)
-pg_pconnect\s*\(.*\$.*\)
-pg_execute\s*\(.*\$.*\)
-pg_insert\s*\(.*\$.*\)
-pg_put_line\s*\(.*\$.*\)
-pg_query\s*\(.*\$.*\)
-pg_select\s*\(.*\$.*\)
-pg_send_query\s*\(.*\$.*\)
-pg_set_client_encoding\s*\(.*\$.*\)
-pg_update\s*\(.*\$.*\)
+mysql_connect[[:space:]]*\(.*\$.*\)
+mysql_pconnect[[:space:]]*\(.*\$.*\)
+mysql_change_user[[:space:]]*\(.*\$.*\)
+mysql_query[[:space:]]*\(.*\$.*\)
+mysql_error[[:space:]]*\(.*\$.*\)
+mysql_set_charset[[:space:]]*\(.*\$.*\)
+mysql_unbuffered_query[[:space:]]*\(.*\$.*\)
+mysqli_.*
+pg_connect[[:space:]]*\(.*\$.*\)
+pg_pconnect[[:space:]]*\(.*\$.*\)
+pg_execute[[:space:]]*\(.*\$.*\)
+pg_insert[[:space:]]*\(.*\$.*\)
+pg_put_line[[:space:]]*\(.*\$.*\)
+pg_query[[:space:]]*\(.*\$.*\)
+pg_select[[:space:]]*\(.*\$.*\)
+pg_send_query[[:space:]]*\(.*\$.*\)
+pg_set_client_encoding[[:space:]]*\(.*\$.*\)
+pg_update[[:space:]]*\(.*\$.*\)
+sqlite_open[[:space:]]*\(.*\$.*\)
+sqlite_poen[[:space:]]*\(.*\$.*\)
+sqlite_query[[:space:]]*\(.*\$.*\)
+sqlite_array_query[[:space:]]*\(.*\$.*\)
+sqlite_create_function[[:space:]]*\(.*\$.*\)
+sqlite_create_aggregate[[:space:]]*\(.*\$.*\)
+sqlite_exec[[:space:]]*\(.*\$.*\)
+sqlite_fetch_.*[[:space:]]*\(.*\$.*\)
+msql_.*
+mssql_.*
+fbsql_.*
+sybase_.*
+ibase_.*
+dbx_.*
+ingres_.*
+ifx_.*
 php://stdin
 php://stdout
 php://stderr
@@ -648,9 +665,9 @@ require_once\s*\(.*\$.*\)
 unserialize\s*\(.*\)
 unserialize_callback_func
 # PHP xss signatures
-echo\s+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
-print\s+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
-print_r(\s+|\s*\().*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
+echo[[:space:]]+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
+print[[:space:]]+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
+print_r([[:space:]]*\(|[[:space:]]+).*\)?\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
 \<\?\=\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http)
 \<\%\=\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http)
 access\s*\(
