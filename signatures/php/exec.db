@@ -1,4 +1,5 @@
 # PHP - Execution
+assert([[:space:]]*\(|[[:space:]]+).*\)?
 exec([[:space:]]*\(|[[:space:]]+).*\)?
 `.*`
 passthru([[:space:]]*\(|[[:space:]]+).*\)?
