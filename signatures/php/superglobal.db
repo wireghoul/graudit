@@ -1,4 +1,4 @@
-# PHP - Superglobals & Envoronment
+# PHP - Superglobals & Environment
 getenv\s*\(.*\)
 apache_getenv\s*\(.*\)
 putenv\s*\(.*\)
@@ -24,3 +24,5 @@ apache_response_headers\s*\(.*\)
 \$http_raw_post_data
 \$HTTP_POST_FILES
 \$http_post_files
+# Variable variables aren't superglobals, but bad idea
+\$\$.*
