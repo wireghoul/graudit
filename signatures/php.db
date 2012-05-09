@@ -1,4 +1,5 @@
 # PHP - Execution
+assert([[:space:]]*\(|[[:space:]]+).*\)?
 exec([[:space:]]*\(|[[:space:]]+).*\)?
 `.*`
 passthru([[:space:]]*\(|[[:space:]]+).*\)?
@@ -78,7 +79,7 @@ php://input
 php://filter
 php://memory
 php://temp 
-# PHP - Superglobals & Envoronment
+# PHP - Superglobals & Environment
 getenv\s*\(.*\)
 apache_getenv\s*\(.*\)
 putenv\s*\(.*\)
@@ -104,6 +105,8 @@ apache_response_headers\s*\(.*\)
 \$http_raw_post_data
 \$HTTP_POST_FILES
 \$http_post_files
+# Variable variables aren't superglobals, but bad idea
+\$\$.*
 # Otherstuffs
 header\s*\(.*\$_(GET|POST|REQUEST|COOKIE).*\)
 eval\s*\(\s*.\$.*\s*\)

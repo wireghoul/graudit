@@ -5,6 +5,7 @@ fork(\s*\(|\s+).*\)?
 system(\s*\(?|\s+)*\$.*\)?
 open(\s*\(?|\s+)*\$.*\)?
 # PHP - Execution
+assert([[:space:]]*\(|[[:space:]]+).*\)?
 exec([[:space:]]*\(|[[:space:]]+).*\)?
 `.*`
 passthru([[:space:]]*\(|[[:space:]]+).*\)?
