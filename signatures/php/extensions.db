@@ -14,3 +14,5 @@ msg_stat_queue
 sem_
 shm_
 shmop_
+# LibXSLT use php functions as XSLT functions
+registerPhpFunctions
