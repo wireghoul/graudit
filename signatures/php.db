@@ -59,6 +59,8 @@ msg_stat_queue
 sem_
 shm_
 shmop_
+# LibXSLT use php functions as XSLT functions
+registerPhpFunctions
 # Informatin disclosure
 phpinfo\s*\(.*\)
 phpcredits\s*\(.*\)
@@ -76,7 +78,7 @@ mysql_query[[:space:]]*\(.*\$.*\)
 mysql_error[[:space:]]*\(.*\$.*\)
 mysql_set_charset[[:space:]]*\(.*\$.*\)
 mysql_unbuffered_query[[:space:]]*\(.*\$.*\)
-mysqli_.*
+mysqli_.*[[:space:]]*\(.*\$.*\)
 pg_connect[[:space:]]*\(.*\$.*\)
 pg_pconnect[[:space:]]*\(.*\$.*\)
 pg_execute[[:space:]]*\(.*\$.*\)
@@ -95,14 +97,21 @@ sqlite_create_function[[:space:]]*\(.*\$.*\)
 sqlite_create_aggregate[[:space:]]*\(.*\$.*\)
 sqlite_exec[[:space:]]*\(.*\$.*\)
 sqlite_fetch_.*[[:space:]]*\(.*\$.*\)
-msql_.*
-mssql_.*
-fbsql_.*
-sybase_.*
-ibase_.*
-dbx_.*
-ingres_.*
-ifx_.*
+msql_.*[[:space:]]*\(.*\$.*\)
+mssql_.*[[:space:]]*\(.*\$.*\)
+odbc_.*[[:space:]]*\(.*\$.*\)
+fbsql_.*[[:space:]]*\(.*\$.*\)
+sybase_.*[[:space:]]*\(.*\$.*\)
+ibase_.*[[:space:]]*\(.*\$.*\)
+dbx_.*[[:space:]]*\(.*\$.*\)
+ingres_.*[[:space:]]*\(.*\$.*\)
+ifx_.*[[:space:]]*\(.*\$.*\)
+oci_.*[[:space:]]*\(.*\$.*\)
+sqlsrv_.*[[:space:]]*\(.*\$.*\)
+px_.*[[:space:]]*\(.*\$.*\)
+ovrimos_.*[[:space:]]*\(.*\$.*\)
+maxdb_.*[[:space:]]*\(.*\$.*\)
+db2_.*[[:space:]]*\(.*\$.*\)
 php://stdin
 php://stdout
 php://stderr
