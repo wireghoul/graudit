@@ -1,10 +1,18 @@
+2.0		2013 Feb ??
+		Option to unignore several common binary files by default (-A flag)
+		Ignoring more binary files by default
+		Updated PHP rules
+		Updated Perl rules
+		Deprecating c rules
+		Added JSP taint checking PoC script to aux/
+
 1.9		2011 Jan 11
-                Fixed php (php/xss.db) database which had a blank line at the end, causing everything to match. (Thx @jodymelbourne)
-                Added test case for blank lines in signature scripts
-                Added database validating aux script
+		Fixed php (php/xss.db) database which had a blank line at the end, causing everything to match. (Thx @jodymelbourne)
+		Added test case for blank lines in signature scripts
+		Added database validating aux script
 		Updated Makefile file manifest
 		Fixed bug in test script template (t/blank-test.sh)
-		
+
 1.8		2010 Dec 24	//Happy xmas edition!
 		-L operator does vim friendly line numbers
 		Man pages and documentation updates
@@ -16,8 +24,8 @@
 		Bug fixes for aux/ scripts
 		More aux/ scripts
 		Fixed ignore CVS directories by default
-	
-		
+
+
 1.7		2010 Jul 31
 		New PHP signatures
 		Improved C signatures for fewer false positives
@@ -27,7 +35,7 @@
 		-x operator for excluding files
 		configure script added to make chain
 		Makefile install targets changed, install is now server wide
-		
+
 
 1.6		2010 May 14
 		Bugfix for greedy separator code (thx to Chillman)
@@ -61,7 +69,7 @@
 		Added JSP ruleset
 		Added ASP ruleset
 		Improved testing
-		
+
 1.2		2009 September 18
 		Default signatures aimed at low hanging fruit
 		Improved documentation
