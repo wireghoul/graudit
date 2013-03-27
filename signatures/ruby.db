@@ -14,4 +14,3 @@ File\.new[[:space:]]*\(
 fork[[:space:]]*\(
 write[[:space:]]*\(
 execve[[:space:]]*\(
-
