@@ -75,6 +75,7 @@ signatures:
 	cat signatures/perl.db >> signatures/all.db
 	cat signatures/php.db >> signatures/all.db
 	cat signatures/python.db >> signatures/all.db
+	cat signatures/ruby.db >> signatures/all.db
 	cat signatures/*/xss.db > signatures/xss.db
 	cat signatures/*/sql.db > signatures/sql.db
 	cat signatures/*/exec.db > signatures/exec.db
