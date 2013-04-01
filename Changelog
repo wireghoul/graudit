@@ -5,6 +5,7 @@
 		Updated Perl rules
 		Deprecating c rules
 		Added JSP taint checking PoC script to aux/
+		Added some basic ruby rules from @bcoles
 
 1.9		2011 Jan 11
 		Fixed php (php/xss.db) database which had a blank line at the end, causing everything to match. (Thx @jodymelbourne)
