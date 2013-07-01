@@ -1,0 +1,10 @@
+allowDomain
+allowInsecureDomain
+ExternalInterface
+fscommand
+getURL
+htmlText
+loadBytes
+loadPolicyFile
+LocalConnection
+navigateToURL 
