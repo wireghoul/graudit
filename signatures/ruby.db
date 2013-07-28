@@ -14,3 +14,7 @@ File\.new[[:space:]]*\(
 fork[[:space:]]*\(
 write[[:space:]]*\(
 execve[[:space:]]*\(
+# Ruby - Unsafe Reflection 
+# http://blog.conviso.com.br/2013/02/exploiting-unsafe-reflection-in.html
+params\[:[a-zA-Z0-9_]+\]\.constantize
+new\(params\[:[a-zA-Z0-9_]+\]
