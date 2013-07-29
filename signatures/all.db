@@ -796,3 +796,6 @@ File\.new[[:space:]]*\(
 fork[[:space:]]*\(
 write[[:space:]]*\(
 execve[[:space:]]*\(
+# Ruby - Unsafe Reflection
+params\[:[a-zA-Z0-9_]+\]\.constantize
+new[[:space:]]*\(params\[:[a-zA-Z0-9_]+\]
