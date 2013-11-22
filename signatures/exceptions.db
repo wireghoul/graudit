@@ -1,0 +1,27 @@
+# Java Specific Security Related Exceptions
+AccessControlException
+BindException
+ConcurrentModificationException
+DigestException
+FileNotFoundException
+GeneralSecurityException
+InsufficientResourcesException
+InvalidAlgorithmParameterException
+InvalidKeyException
+InvalidParameterException
+JarException
+KeyException
+KeyManagementException
+KeyStoreException
+NoSuchAlgorithmException
+NoSuchProviderException
+NotOwnerException
+NullPointerException
+OutOfMemoryError
+PriviledgedActionException
+ProviderException
+SignatureException
+SQLException
+StackOverflowError
+UnrecoverableEntryException
+UnrecoverableKeyException
