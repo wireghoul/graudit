@@ -8,8 +8,8 @@ test_description='Python signature database tests'
 # Nothing to setup
 
 # Tests
-test_expect_code 1 'Python signature syntax test' '../graudit -d python anotherfile'
-test_expect_code 1 'Python context argument' '../graudit -c 5 -d python anotherfile'
-test_expect_code 1 'Python no color test' '../graudit -z -d python anotherfile'
-test_expect_code 2 'Python no such file test' '../graudit -d python nosuchfile'
+test_expect_code 1 'Python signature syntax test' '../graudit -d ../signatures/python.db anotherfile'
+test_expect_code 1 'Python context argument' '../graudit -c 5 -d ../signatures/python.db anotherfile'
+test_expect_code 1 'Python no color test' '../graudit -z -d ../signatures/python.db anotherfile'
+test_expect_code 2 'Python no such file test' '../graudit -d ../signatures/python.db nosuchfile'
 test_done

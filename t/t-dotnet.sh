@@ -7,5 +7,5 @@ test_description='Dotnet signature database tests'
 # Nothing to setup
 
 # Tests
-test_expect_code 1 'Dotnet signature syntax check' '../graudit -d dotnet anotherfile'
+test_expect_code 1 'Dotnet signature syntax check' '../graudit -d ../signatures/dotnet.db anotherfile'
 test_done
