@@ -55,7 +55,7 @@ clean:
 	rm -f t/test-results/*
 	rm -f graudit.1 graudit.7
 
-test:
+test: signatures
 	mkdir -p t/test-results
 	rm -f t/test-results/*
 	cd t && /bin/sh ./runtests.sh
