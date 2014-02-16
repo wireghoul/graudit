@@ -1,11 +1,19 @@
-2.0		2013 Feb ??
-		Option to unignore several common binary files by default (-A flag)
+2.0		2014 Feb 17
+		Added option include several common binary files (ignored by default) [-A flag]
 		Ignoring more binary files by default
 		Updated PHP rules
 		Updated Perl rules
 		Deprecating c rules
 		Added JSP taint checking PoC script to aux/
 		Added some basic ruby rules from @bcoles
+		Added ios rules (from Samuel Reed)
+		Added android rules (from Samuel Reed)
+		Added actionscript rules (from Samuel Reed)
+		Ruby reflection rules (from Samuel Reed)
+		Bugfix for graudit on Mac (from Samuel Reed)
+		Added java exceptions signatures (from Samuel Reed)
+		Jsp signatures more correctly represented as java.db
+		Added strings database to look for important text strings
 
 1.9		2011 Jan 11
 		Fixed php (php/xss.db) database which had a blank line at the end, causing everything to match. (Thx @jodymelbourne)
