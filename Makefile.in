@@ -4,7 +4,7 @@
 
 PREFIX := 'P===='
 DBDIR := 'D===='
-SIGNATURES := signatures/default.db signatures/php.db  signatures/perl.db signatures/python.db signatures/asp.db signatures/jsp.db signatures/other.db signatures/c.db signatures/dotnet.db signatures/all.db
+SIGNATURES := signatures/default.db signatures/php.db  signatures/perl.db signatures/python.db signatures/asp.db signatures/java.db signatures/strings.db signatures/c.db signatures/dotnet.db signatures/ruby.db signatures/actionscript.db signatures/ios.db signatures/android.db signatures/all.db
 DISTFILES := Changelog  graudit  LICENSE  README graudit.1
 VERSION=`./graudit -v | cut -d' ' -f 3`
 .PHONY : clean install uninstall userinstall test signatures
@@ -72,7 +72,7 @@ signatures:
 	cat signatures/dotnet.db >> signatures/all.db
 	cat signatures/default.db >> signatures/all.db
 	cat signatures/java.db >> signatures/all.db
-	cat signatures/other.db >> signatures/all.db
+	cat signatures/strings.db >> signatures/all.db
 	cat signatures/perl.db >> signatures/all.db
 	cat signatures/php.db >> signatures/all.db
 	cat signatures/python.db >> signatures/all.db
