@@ -3,6 +3,7 @@
 		Ignoring more binary files by default
 		Updated PHP rules
 		Updated Perl rules
+		Updated default rules
 		Deprecating c rules
 		Added JSP taint checking PoC script to aux/
 		Added some basic ruby rules from @bcoles

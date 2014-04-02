@@ -465,7 +465,7 @@ passthru[[:space:]]*\(.*\)
 popen[[:space:]]*\(.*\$.*\)
 shell_exec[[:space:]]*\(.*\$.*\)
 system[[:space:]]*\(.*\$.*\)
-`[^`]*\$[^]*`
+`[^`]*\$[^`]*`
 #Otherstuffs
 #XSS signature needs to stop matching before LF when color=on #bug(1)
 echo.*\$_.*\[.*\]
