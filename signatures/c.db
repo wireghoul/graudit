@@ -10,7 +10,7 @@ basename
 scandir
 fopen
 lstat
-stat
+stat\s*\(
 open\s*\(
 chmod
 chown
@@ -195,7 +195,7 @@ getpass
 getchar
 fgetc
 getc
-read
+read\s*\(
 bcopy
 fgets
 cin
