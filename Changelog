@@ -1,10 +1,11 @@
-2.0		2014 Feb 17
+2.0		2016 Jan 25
 		Added option include several common binary files (ignored by default) [-A flag]
 		Ignoring more binary files by default
 		Updated PHP rules
 		Updated Perl rules
 		Updated default rules
-		Deprecating c rules
+		Updated dotnet rules
+		Updated and deprecating c rules
 		Added JSP taint checking PoC script to aux/
 		Added some basic ruby rules from @bcoles
 		Added ios rules (from Samuel Reed)
@@ -15,6 +16,7 @@
 		Added java exceptions signatures (from Samuel Reed)
 		Jsp signatures more correctly represented as java.db
 		Added strings database to look for important text strings
+		Added aux script for finding suitable php files to use in unserialize() exploits
 
 1.9		2011 Jan 11
 		Fixed php (php/xss.db) database which had a blank line at the end, causing everything to match. (Thx @jodymelbourne)
