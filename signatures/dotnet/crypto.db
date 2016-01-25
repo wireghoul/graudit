@@ -4,7 +4,7 @@ SHA
 MD5
 base64
 xor
-DES
+(\.DES|TripleDES| DES)
 RC2
 System.Random
 Random

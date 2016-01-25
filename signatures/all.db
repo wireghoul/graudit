@@ -346,7 +346,7 @@ SHA
 MD5
 base64
 xor
-DES
+(\.DES|TripleDES| DES)
 RC2
 System.Random
 Random
@@ -771,6 +771,7 @@ px_.*[[:space:]]*\(.*\$.*\)
 ovrimos_.*[[:space:]]*\(.*\$.*\)
 maxdb_.*[[:space:]]*\(.*\$.*\)
 db2_.*[[:space:]]*\(.*\$.*\)
+CURLOPT_SSL_VERIFY(HOST|PEER), *([Ff][Aa][Ll][Ss][Ee]|0)
 php://stdin
 php://stdout
 php://stderr
