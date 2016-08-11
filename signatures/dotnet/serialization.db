@@ -1,0 +1,11 @@
+# Dotnet serialization and deserialization
+# Security and Serialization: https://msdn.microsoft.com/en-us/library/ek7af9ck(v=vs.90).aspx
+Serialization
+SerializationFormatter
+Serializable
+SerializeObject
+SerializationBinder
+JsonSerializer
+JsonSerializerSettings
+DleserializeObject
+ISerializable
