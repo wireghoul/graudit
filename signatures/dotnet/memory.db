@@ -1,0 +1,11 @@
+# Dotnet memory allocation and deallocation
+# MemoryStream Class: https://msdn.microsoft.com/en-us/library/system.io.memorystream(v=vs.110).aspx
+MemoryStream
+.Write
+.Read
+.WriteByte
+.WriteTo
+.WriteAsync
+.Flush
+.Finalize
+.CopyTo
