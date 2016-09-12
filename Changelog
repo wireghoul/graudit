@@ -1,3 +1,6 @@
+2.1             2016 ??? ??
+                Fixed broken test cases
+
 2.0		2016 Jan 25
 		Added option include several common binary files (ignored by default) [-A flag]
 		Ignoring more binary files by default

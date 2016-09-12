@@ -38,6 +38,17 @@ log4net
 Console.WriteLine
 System.Diagnostics.Debug
 System.Diagnostics.Trace
+# Dotnet memory allocation and deallocation
+# MemoryStream Class: https://msdn.microsoft.com/en-us/library/system.io.memorystream(v=vs.110).aspx
+MemoryStream
+.Write
+.Read
+.WriteByte
+.WriteTo
+.WriteAsync
+.Flush
+.Finalize
+.CopyTo
 # Dotnet permission
 # Bypassing the code access security permission?
 .RequestMinimum
@@ -54,6 +65,9 @@ SecurityPermission.SerializationFormatter
 SecurityPermission.ControlPrincipal
 SecurityPermission.ControlDomainPolicy
 SecurityPermission.ControlPolicy
+# Dotnet reflection
+# Reflection (C sharp): https://msdn.microsoft.com/en-us/library/mt656691.aspx
+Reflection
 # Dotnet HTTP request strings
 # Requests from external sources. Ensure that all HTTP requests received are data validated for 
 # composition, max and min length, and if the data falls with the realms of the
@@ -81,6 +95,17 @@ InputStream
 HiddenField.Value
 TextBox.Text
 recordSet
+# Dotnet serialization and deserialization
+# Security and Serialization: https://msdn.microsoft.com/en-us/library/ek7af9ck(v=vs.90).aspx
+Serialization
+SerializationFormatter
+Serializable
+SerializeObject
+SerializationBinder
+JsonSerializer
+JsonSerializerSettings
+DleserializeObject
+ISerializable
 # DotNet SQL
 exec\s*sp_executesql
 execute\s*sp_executesql
