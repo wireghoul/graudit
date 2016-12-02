@@ -4,11 +4,12 @@
 # Released under the GPL licence
 set -e
 set -o pipefail
-VERSION='2.0'
+VERSION='2.1'
 basedir=`dirname $0`
 BINFILE=`which grep`
 
 # Default values
+hidebanner=0
 context=1
 zimlines="#"
 vimlines="#"
@@ -30,24 +31,42 @@ if [ $? -eq 2 ]; then
     echo "Graudit requires a newer version of grep (>=2.5.3)"
     exit 2
 fi
+banner() {
+    if [ $hidebanner == 0 ]; then
+    echo \
+'===========================================================
+                                      .___ __  __   
+          _________________  __ __  __| _/|__|/  |_ 
+         / ___\_` __ \__  \ |  |  \/ __ | | \\_  __\
+        / /_/  >  | \// __ \|  |  / /_/ | |  ||  |  
+        \___  /|__|  (____  /____/\____ | |__||__|  
+       /_____/            \/           \/           
+              grep rough audit - static analysis tool
+                  v2.1 written by @Wireghoul
+=================================[justanotherhacker.com]==='
+    fi
+}
+
 version () {
     echo "Graudit version: $VERSION"
 }
 
 usage () {
+    banner
     cat <<EOU
 Usage: graudit [opts] /path/to/scan
 
 OPTIONS
   -A scan ALL files
+  -B supress banner
   -c <num> number of lines of context to display, default is 2
-  -d <db> database to use
+  -d <dbname> database to use or /path/to/db/file
   -h prints a short help text
   -i case in-sensitive search
   -l lists databases available
   -L vim friendly lines
   -v prints version number
-  -x exclude these files
+  -x exclude these files (comma seperated list:-x *.js,*.sql)
   -z supress colors
   -Z high contrast colors
 
@@ -58,6 +77,7 @@ EOU
 }
 
 listdb () {
+    banner
 if [ -n "$GRDIR" ] && [ -d $GRDIR ]; then
     ls -1 $GRDIR/*.db
 fi
@@ -72,8 +92,11 @@ if [ -d "$basedir"/signatures/ ]; then
 fi
 }
 
-while getopts "AhvilLzZd:c:x:" opt; do
+while getopts "ABhvilLzZd:c:x:" opt; do
     case $opt in
+        B)
+            hidebanner=1
+        ;;
         h)
             usage
             exit 1
@@ -102,7 +125,12 @@ while getopts "AhvilLzZd:c:x:" opt; do
             icase="-i"
         ;;
         x)
-            ignorepattern="--exclude=$OPTARG"
+            OIFS=$IFS
+            IFS=','
+            for ign in $OPTARG; do
+                ignorepattern="$ignorepattern --exclude=$ign"
+            done
+            IFS=$OIFS
         ;;
 	L)
 	    zimlines="s/\([:-]\)\([0-9][0-9]*\)\([:-]\)/ \+\2\3/"
@@ -149,7 +177,7 @@ fi
 # -E uses extended regexp
 # -f specifies the rule file (signature database)
 # -n prints the line number
-
+banner
 $BINFILE --color=$color \
          --exclude-dir=.svn \
          --exclude-dir=CVS \
