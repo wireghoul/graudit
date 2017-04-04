@@ -1,5 +1,9 @@
-2.1             2016 ??? ??
-                Fixed broken test cases
+2.1		2017 Apr 05
+		Fixed broken test cases
+		Added multi argument support to -x
+		Added banner
+		Added banner supression switch
+		Replaced ./configure; make installation steps with make and variables (issue #9)
 
 2.0		2016 Jan 25
 		Added option include several common binary files (ignored by default) [-A flag]
