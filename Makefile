@@ -33,7 +33,7 @@ userinstall: $(DISTFILES) test
 	mkdir -p ~/bin
 	cp -f graudit ~/bin
 
-install: $(DISTFILES) test manpages
+install: manpages $(DISTFILES) test
 	mkdir -p $(bindir)
 	mkdir -p $(datadir)
 	cp -f $(SIGNATURES) $(datadir)
