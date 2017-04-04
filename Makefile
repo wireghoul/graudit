@@ -2,10 +2,10 @@
 # Graudit makefile
 ###
 
-prefix = /usr/share
-datadir = $(prefix)/graudit
-exec_prefix= /usr
-bindir = $(exec_prefix)/bin
+prefix = /usr
+dataroot = $(prefix)/share
+datadir = $(dataroot)/graudit
+bindir = $(prefix)/bin
 SIGNATURES := signatures/default.db signatures/php.db  signatures/perl.db signatures/python.db signatures/asp.db signatures/java.db signatures/strings.db signatures/c.db signatures/dotnet.db signatures/ruby.db signatures/actionscript.db signatures/ios.db signatures/android.db signatures/all.db
 DISTFILES := Changelog  graudit  LICENSE  README graudit.1
 VERSION=`./graudit -v | cut -d' ' -f 3`
