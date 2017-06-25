@@ -281,3 +281,11 @@ strncat
 getwd
 umask
 AddAccessAllowedAce
+# sw bugs from aaron campbell, see https://www.arbornetworks.com/blog/asert/static-code-analysis-using-google-code-search/
+flags\ *&&\ *[A-Z_]+
+\[sizeof\(.*\)\]\ *=\ *'?\\?0'?;$
+^[\ \t]*printf\(getenv
+if \(errno = E
+<= 65553
+0xfffffff[^0-9a-f]
+getopt\ *\(argc,\ *argv,\ *\"[^\"]*;
