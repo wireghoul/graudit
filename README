@@ -21,7 +21,7 @@ The following options are available:
   -l lists databases available
   -L vim friendly lines
   -v prints version number
-  -xexclude these files (comma seperated list:-x *.js,*.sql)
+  -x exclude these files (comma seperated list:-x *.js,*.sql)
   -z supress colors
   -Z high contrast colors
 
