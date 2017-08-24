@@ -5,8 +5,8 @@
 set -e
 set -o pipefail
 VERSION='2.1'
-basedir=`dirname $0`
-BINFILE=`which grep`
+basedir=$(dirname "$0")
+BINFILE=$(which grep)
 
 # Default values
 hidebanner=0
@@ -21,7 +21,7 @@ excludefiles='--exclude=*.bz2 --exclude=*.gz --exclude=*.zip --exclude=*.rar --e
 #Save custom colors
 OLD_COLORS=$GREP_COLORS
 
-if [ ! -x $BINFILE ]; then
+if [ ! -x "$BINFILE" ]; then
     echo "grep not found!"
     exit 2
 fi
@@ -78,8 +78,8 @@ EOU
 
 listdb () {
     banner
-if [ -n "$GRDIR" ] && [ -d $GRDIR ]; then
-    ls -1 $GRDIR/*.db
+if [ -n "$GRDIR" ] && [ -d "$GRDIR" ]; then
+    ls -1 "$GRDIR/*.db"
 fi
 if [ -d /usr/share/graudit/ ]; then
      ls -1 /usr/share/graudit/*.db
@@ -153,16 +153,16 @@ shift $((OPTIND-1))
 #Database location can vary based on installation
 if [ "$sigdb" == '-' ]; then
     database='-'
-elif [ -f "$GRDIR"/$sigdb.db  ]; then
-    database="$GRDIR"/$sigdb.db
-elif [ -f /usr/share/graudit/$sigdb.db ]; then
-    database=/usr/share/graudit/$sigdb.db
-elif [ -f ~/.graudit/$sigdb.db ]; then
-    database=~/.graudit/$sigdb.db
-elif [ -f "$basedir"/signatures/$sigdb.db ]; then
-    database="$basedir"/signatures/$sigdb.db
+elif [ -f "$GRDIR/$sigdb.db"  ]; then
+    database="$GRDIR/$sigdb.db"
+elif [ -f "/usr/share/graudit/$sigdb.db" ]; then
+    database="/usr/share/graudit/$sigdb.db"
+elif [ -f "~/.graudit/$sigdb.db" ]; then
+    database="~/.graudit/$sigdb.db"
+elif [ -f "$basedir/signatures/$sigdb.db" ]; then
+    database="$basedir/signatures/$sigdb.db"
 else
-    database=$sigdb
+    database="$sigdb"
 fi
 
 
@@ -184,7 +184,7 @@ $BINFILE --color=$color \
          --exclude-dir=.git \
          $excludefiles \
          $icase $ignorepattern \
-         -n -R -H -C $context -E \
+         -n -R -H -C "$context" -E \
          -f "$database" "$@" \
          | sed -e"s/^\(\x1b\[.*m\x1b\[K\)--\(\x1b\[.*\x1b\[K\)$/\1##############################################\2/" -e"s/^--$/$separator/" | sed -e"$vimlines" -e"$zimlines"
 SUCCESS=$?
