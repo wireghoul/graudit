@@ -334,7 +334,14 @@ strncat
 getwd
 umask
 AddAccessAllowedAce
-# Dotnet cookies
+# sw bugs from aaron campbell, see https://www.arbornetworks.com/blog/asert/static-code-analysis-using-google-code-search/
+flags\s*&&\s*[A-Z_]+
+\[sizeof\(.*\)\]\s*=\s*'?\\?0'?;$
+^[\s\t]*printf\(getenv
+if \(errno = E
+<= 65553
+0xfffffff[^0-9a-f]
+getopt\s*\(argc,\s*argv,\s*\"[^\"]*;# Dotnet cookies
 # Cookie manipulation can be key to various application security exploits, such as session hijacking/fixation and parameter
 # manipulation.
 System.Net.Cookie
