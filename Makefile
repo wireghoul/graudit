@@ -23,7 +23,7 @@ dist: clean signatures manpages $(DISTFILES) test
 	cp Makefile.in configure graudit-$(VERSION)
 	cp graudit.in.1 graudit-$(VERSION)
 	cp -r signatures/ graudit-$(VERSION)
-	cp -r aux graudit-$(VERSION)
+	cp -r auxiliary graudit-$(VERSION)
 	tar zcf graudit-$(VERSION)_src.tar.gz graudit-$(VERSION)
 	rm -r graudit-$(VERSION)
 
