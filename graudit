@@ -92,7 +92,7 @@ if [ -d "$basedir"/signatures/ ]; then
 fi
 }
 
-while getopts "ABhvilLzZd:c:x:" opt; do
+while getopts "AbBhvilLzZd:c:x:" opt; do
     case $opt in
         B)
             hidebanner=1
@@ -109,6 +109,9 @@ while getopts "ABhvilLzZd:c:x:" opt; do
             listdb
             exit 0
         ;;
+        b)
+		export GREP_COLORS='ms=93:sl=:cx=:fn=94:ln=92:bn=92:se=32'
+	;;
         z)
             color='none'
         ;;
