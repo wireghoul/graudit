@@ -5,11 +5,11 @@ VERSION=0.2
 cat <<HEADER
 <html>
     <head>
-        <title>Graudit report for graudit $*</title>
+        <title>graudit report for graudit $*</title>
         <meta name="keywords" content="graudit static analysis report" />
         <!-- Shameless plug -->
         <meta name="description" content="Static analysis report generated using graudit - http://www.justanotherhacker.com" />
-        <meta name="generator" content="Grauditreport using graudit version $gver" />
+        <meta name="generator" content="grauditreport using graudit version $gver" />
         <style>
             body { background:#000; color:#fff }
             ul { list-style: none; margin: 0; padding: 0}

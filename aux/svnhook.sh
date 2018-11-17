@@ -1,6 +1,6 @@
 #!/bin/sh
 #!/bin/sh
-# Graudit svnhook example by Wireghoul, uses PHP ruleset
+# graudit svnhook example by Wireghoul, uses PHP ruleset
 REPOSITORY=$1
 REVISION=$2
 /usr/local/bin/svnlook diff -r $REVISION $REPOSITORY | \

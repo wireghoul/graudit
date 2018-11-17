@@ -1,5 +1,5 @@
 #!/bin/bash
-# Graudit - Rough code review tool using grep
+# graudit - Rough code review tool using grep
 # Written by Wireghoul - http://www.justanotherhacker.com
 # Released under the GPL licence
 set -e
@@ -28,7 +28,7 @@ fi
 $BINFILE --exclude-dir=. test "$0" >/dev/null 2>&1
 if [ $? -eq 2 ]; then
     echo $?
-    echo "Graudit requires a newer version of grep (>=2.5.3)"
+    echo "graudit requires a newer version of grep (>=2.5.3)"
     exit 2
 fi
 banner() {
@@ -48,7 +48,7 @@ banner() {
 }
 
 version () {
-    echo "Graudit version: $VERSION"
+    echo "graudit version: $VERSION"
 }
 
 usage () {

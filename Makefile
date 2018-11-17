@@ -1,5 +1,5 @@
 ###
-# Graudit makefile
+# graudit makefile
 ###
 
 prefix = /usr

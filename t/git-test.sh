@@ -2,7 +2,7 @@
 # Testing git integrity?
 
 # Declare description and number of checks
-test_description='Graudit repo tests'
+test_description='graudit repo tests'
 . ./test-lib.sh
 
 # TESTS
