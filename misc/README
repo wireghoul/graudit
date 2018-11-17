@@ -1,0 +1,7 @@
+The misc directory contains examples of how graudit can be built upon to allow more in depth analysis.
+The miscilary scripts are not part of the official release, they are included in the source package and 
+package maintainers can choose to include them if they wish. These scripts will be updated adhoc for now.
+If you have an miscilary script that you use or wish to improve on the existing script, please follow the
+normal contribution path by forking the git repository or send me the files/patches/etc.
+
+@Wireghoul
