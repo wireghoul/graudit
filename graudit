@@ -160,8 +160,8 @@ elif [ -f "$GRDIR/$sigdb.db"  ]; then
     database="$GRDIR/$sigdb.db"
 elif [ -f "/usr/share/graudit/$sigdb.db" ]; then
     database="/usr/share/graudit/$sigdb.db"
-elif [ -f "~/.graudit/$sigdb.db" ]; then
-    database="~/.graudit/$sigdb.db"
+elif [ -f "$HOME/.graudit/$sigdb.db" ]; then
+    database="$HOME/.graudit/$sigdb.db"
 elif [ -f "$basedir/signatures/$sigdb.db" ]; then
     database="$basedir/signatures/$sigdb.db"
 else
