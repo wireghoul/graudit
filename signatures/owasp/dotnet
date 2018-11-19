@@ -1,0 +1,184 @@
+# HTTP request strings
+request.accesstypes
+request.browser
+request.files
+request.headers
+request.TotalBytes
+request.httpmethod
+request.querystring
+request.item
+request.form
+request.BinaryRead
+request.cookies
+request.certificate
+request.rawurl
+request.servervariables
+request.url
+request.urlreferrer
+request.useragent
+request.userlanguages
+# HTML Output
+response.write
+innerText
+HttpUtility
+InnerHTML
+HtmlEncode
+<%=
+UrlEncode
+# SQL & Database
+exec sp_
+delete from where
+exec @
+setfilter
+sqloledb
+.Provider
+ExecuteReader
+SqlDataReader
+select from
+delete
+execute @
+executeQuery
+sql server
+System.Data.sql
+DataSource
+ExecuteReader
+insert
+execute sp_
+executestatement
+GetQueryResultInXML
+driver
+ADODB.recordset
+SqlCommand
+SqlDataAdapter
+update
+exec xp_
+executeSQL
+adodb
+Server.CreateObject
+New OleDbConnection
+Microsoft.Jet
+StoredProcedure
+# Cookies
+System.Net.Cookie
+HTTPOnly
+document.cookie
+#HTML Tags
+HTMLEncode
+<embed>
+<img>
+<meta>
+URLEncode
+<frame>
+<style>
+<object>
+<applet>
+<html>
+<layer>
+<frame security
+<frameset>
+<iframe>
+<ilayer>
+<iframe security
+# Input controls
+htmlcontrols.htmlinputhidden
+webcontrols.label
+webcontrols.dropdownlist
+webcontrols.hiddenfield
+webcontrols.linkbutton
+webcontrols.hyperlink
+webcontrols.listbox
+webcontrols.textbox
+webcontrols.checkboxlist
+# WEB.config
+requestEncoding
+compilation
+webcontrols.dropdownlist
+httpRuntime
+forms protection
+connectionStrings
+Credentials
+responseEncoding
+webcontrols.linkbutton
+CustomErrors
+sessionState
+appSettings
+authentication mode
+identity impersonate
+Trace
+webcontrols.listbox
+httpCookies
+maxRequestLength
+ConfigurationSettings
+Allow
+timeout
+authorization
+webcontrols.checkboxlist
+httpHandlers
+Debug
+appSettings
+Deny
+remote
+#global.asax
+Application_OnAuthenticateRequest
+Application_OnAUthorizeRequest
+Session_OnStart
+Session_OnEnd
+#Logging
+log4net
+Console.WriteLine
+System.Diagnostics.Debug
+System.Diagnostics.Trace
+# Machine.config
+validateRequest
+enableViewState
+enableViewStateMac
+#threads and concurrency
+Thread
+Dispose
+#Class design
+Public
+Sealed
+# Reflection and serialization
+Serializable
+StrongNameIdentity
+AllowPartiallyTrustedCallersAttribute
+StrongNameIdentityPermission
+GetObjectData
+System.Reflection
+#Exceptions and errors
+catch
+finally
+trace enabled
+customErrors mode
+#Cryptography
+RNGCryptoServiceProvider
+DES
+xor
+SHA
+RC2
+System.Security.Cryptography
+MD5
+System.Random
+base64
+Random
+# Storage
+SecureString
+ProtectedMemory
+# Authorization, Assert and Revert
+RequestMinimum
+CodeAccessPermission
+SkipVerification
+ControlDomainPolicy
+RequestOptional
+MemberAccess
+ControlEvidence
+ControlPolicy
+Assert
+ControlAppDomain
+SerializationFormatter
+Debug.Assert
+UnmanagedCode
+ControlPrincipal
+# Legacy methods
+printf
+strcpy
