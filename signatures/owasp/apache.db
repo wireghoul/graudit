@@ -1,0 +1,51 @@
+# Legacy methods
+exec
+sprint
+document.referrer
+fprintf
+printf
+Stdio
+FILE
+strcpy
+strncpy
+Strcat
+cout
+cln
+cerr
+System
+popen
+stringstream
+fstringstream
+Malloc
+free
+# Request processing
+headers_in
+ap_read_request
+post_read_request
+# Response processing
+headers_out
+ap_rprintf
+ap_send_error_response
+ap_send_fd
+ap_vprintf
+# Cookie processing
+headers_in
+headers_out
+headers_out
+ap_cookie_write2
+ap_cookie_read
+ap_cookie_check_string
+# Logging
+cout
+cerr
+ap_open_stderr_log
+ap_error_log2stderr
+ap_log_error
+ap_log_perror
+ap_log_rerror
+# HTML Encoding
+ap_unescape_all
+ap_unescape_url
+ap_unescape_url_keep2f
+ap_unescape_urlencoded
+ap_escape_path_segment
