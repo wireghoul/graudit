@@ -1,3 +1,12 @@
+2.2		2018 Dec 20
+		Added another demo script
+		Adde signatures from OWASP code review guide
+		Various bugfixes and code quality updates
+		Renamed aux/ to misc/
+		Colour blind mode added
+		Updated documentation
+		More rule updates
+
 2.1		2017 Apr 05
 		Fixed broken test cases
 		Added multi argument support to -x
