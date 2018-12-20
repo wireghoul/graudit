@@ -1,32 +1,39 @@
-GRAUDIT
-
+graudit
+===============================================================================
 graudit is a simple script and signature sets that allows you to find potential 
 security flaws in source code using the GNU utility grep. It's comparable to 
 other static analysis applications like RATS, SWAAT and flaw-finder while 
 keeping the technical requirements to a minimum and being very flexible.
 
-USAGE
+Usage
+===============================================================================
 graudit supports several options and tries to follow good shell practices. For
 a list of the options you can run graudit -h or see below. The simplest way to 
 use graudit is;
-graudit <options> /path/to/scan
 
-The following options are available:
+```
+graudit [opts] /path/to/scan
+
+OPTIONS
+-d <dbname> database to use or /path/to/file.db (uses default if not specified)
   -A scan ALL files
-  -B don't print banner
+  -x exclude these files (comma separated list: -x *.js,*.sql)
+  -i case in-sensitive scan
   -c <num> number of lines of context to display, default is 2
-  -d <db> database to use
-  -h prints a short help text
-  -i case in-sensitive search
-  -l lists databases available
+
+  -B supress banner
   -L vim friendly lines
-  -v prints version number
-  -x exclude these files (comma seperated list:-x *.js,*.sql)
+  -b colour blind friendly template
   -z supress colors
   -Z high contrast colors
+  
+  -l lists databases available
+  -v prints version number
+  -h prints this help screen
+```
 
-
-DATABASES
+Databases
+===============================================================================
 graudit uses extended regular expressions (POSIX) as it's signatures and comes 
 with several databases ready for use. You can extend the existing databases or 
 make your own if you require additional signatures.
@@ -54,10 +61,13 @@ make your own if you require additional signatures.
 
 * Python basic python support
 
-CONTRIBUTING
-If you would like to contribute to graudit, please fork the repository at github
-(git@github.com:wireghoul/graudit.git) and use that. If you wish to get in contact 
+Contributing
+===============================================================================
+If you would like to contribute to graudit, please fork the repository at 
+https://github.com/wireghoul/graudit and use that. If you wish to get in contact 
 with me, shoot me a line on github or twitter (@wireghoul).
 
-CREDITS
+Credits
+===============================================================================
 Wireghoul - http://www.justanotherhacker.com
+Various others - see Changelog
