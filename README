@@ -15,7 +15,7 @@ use graudit is;
 graudit [opts] /path/to/scan
 
 OPTIONS
--d <dbname> database to use or /path/to/file.db (uses default if not specified)
+  -d <dbname> database to use or /path/to/file.db (uses default if not specified)
   -A scan ALL files
   -x exclude these files (comma separated list: -x *.js,*.sql)
   -i case in-sensitive scan
