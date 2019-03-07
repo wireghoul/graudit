@@ -2,4 +2,3 @@ require .*\$.*
 require(_once)?[[:space:]]*\(.*\$.*
 include .*\$.*
 include(_once)?[[:space:]]*\(.*\$.*
-
