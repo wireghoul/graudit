@@ -1,5 +1,5 @@
 # If file upload possible, even via locally hosted images e.g. jpg, then phar vulnerability present via any file processing function.
-# Problematic code is:
+# Problematic code is: -
 #   include("phar://test.phar")'
 # For exploitation/explanation, see
 #   See https://blog.ripstech.com/2018/new-php-exploitation-technique/
