@@ -20,6 +20,7 @@ excludefiles='--exclude=*.bz2 --exclude=*.gz --exclude=*.zip --exclude=*.rar --e
 
 #Save custom colors
 OLD_COLORS=$GREP_COLORS
+OLD_COLOR=$GREP_COLOR
 
 if [ ! -x "$BINFILE" ]; then
     echo "grep not found!"
@@ -110,13 +111,15 @@ while getopts "AbBhvilLzZd:c:x:" opt; do
             exit 0
         ;;
         b)
-		export GREP_COLORS='ms=93:sl=:cx=:fn=94:ln=92:bn=92:se=32'
+	    export GREP_COLORS='ms=93:sl=:cx=:fn=94:ln=92:bn=92:se=32'
+	    export GREP_COLOR='1;35'
 	;;
         z)
             color='none'
         ;;
         Z)
             export GREP_COLORS='ms=41;01;37:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36'
+	    export GREP_COLOR='1;37;41;'
         ;;
         c)
             context="$OPTARG"
