@@ -2,15 +2,16 @@ AccessController
 addHeader
 CallableStatement
 Cipher
+controller
 createRequest
 doPrivileged
-exec
-executeQuery
+exec[[:space:]]*\(
+executeQuery[[:space:]]*\(
 executeUpdate
-getParameter
+getParameter[[:space:]]*\(
 getProperty
-getQueryString
-getSession
+getQueryString[[:space:]]*\(
+getSession[[:space:]]\(
 HTTPCookie
 HttpServletRequest
 HttpServletResponse
@@ -20,6 +21,7 @@ IS_SUPPORTING_EXTERNAL_ENTITIES
 KeyManagerFactory
 PreparedStatement
 random
+java.util.Random
 SecureRandom
 SecurityException
 SecurityManager
@@ -29,7 +31,6 @@ setHeader
 setJavaScriptEnabled
 setPluginState
 setStatus
-setStatus
 SSLContext
 SSLSocketFactory
 Statement
@@ -37,3 +38,6 @@ SUPPORT_DTD
 suppressAccessChecks
 TrustManager
 XMLReader
+readObject[[:space:]]*\(
+printStackTrace[[:space:]]\(
+SecretKeySpec

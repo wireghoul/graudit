@@ -1,17 +1,17 @@
 request.getQueryString
-exec\s*\(.*\)
+exec[[:space:]]*\(.*\)
 Runtime\.
-getRuntime\s*\(.*\)(\.|\s*;)
+getRuntime[[:space:]]*\(.*\)(\.|\s*;)
 getRequest
 [Rr]equest.getParameter
-getProperty\s*\(
+getProperty[[:space:]]*\(
 java.security.acl.acl
-response.sendRedirect\s*\(.*(Request|request).*\)
+response.sendRedirect[[:space:]]*\(.*(Request|request).*\)
 print[Ss]tack[Tt]race
 out\.print(ln)?.*[Rr]equest\.
 # Database rules
 jdbc:.*;
-createStatement\s*\(.*\)
-executeQuery\s*\(.*\)
+createStatement[[:space:]]*\(.*\)
+executeQuery[[:space:]]*\(.*\)
 # Network
-Socket\s*\(
+Socket[[:space:]]*\(

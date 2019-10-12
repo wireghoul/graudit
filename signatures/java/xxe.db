@@ -1,0 +1,14 @@
+SAXParserFactory
+DOM4J
+XMLInputFactory
+TransformerFactory
+javax.xml.validation.Validator
+SchemaFactory
+SAXTransformerFactory
+XMLReader
+SAXBuilder
+SAXReader
+javax.xml.bind.Unmarshaller
+XPathExpression
+DOMSource
+StAXSource
