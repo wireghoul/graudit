@@ -1,0 +1,6 @@
+\[...*].*=.*\\0
+snprintf[[:space:]]*\([^\,]+\,[[:space:]]*sizeof\(
+memcpy[[:space:]]*\([^\,]+\,[^\,]+\,[[:space:]]*sizeof\(
+[[:space:]]gets[[:space:]]*\(
+exec(ve|l|lp|le|v)?[[:space:]]*\(
+system[[:space:]]*\(
