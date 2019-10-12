@@ -9,3 +9,5 @@ RC2
 System.Random
 Random
 System.Security.Cryptography
+PBEParameterSpec
+PasswordDeriveBytes
