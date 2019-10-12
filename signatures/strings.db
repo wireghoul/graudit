@@ -60,3 +60,5 @@ XXX
 .*execfile.*
 .*Input.*Type.*Hidden.*
 .*(E|e)xception.*
+http:
+ftp:
