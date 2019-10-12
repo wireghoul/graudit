@@ -1,5 +1,6 @@
 \[...*].*=.*\\0
 snprintf[[:space:]]*\([^\,]+\,[[:space:]]*sizeof\(
+strncpy[[:space:]]*\([^\,]+\,[[:space:]]*sizeof\(
 memcpy[[:space:]]*\([^\,]+\,[^\,]+\,[[:space:]]*sizeof\(
 [[:space:]]gets[[:space:]]*\(
 exec(ve|l|lp|le|v)?[[:space:]]*\(
