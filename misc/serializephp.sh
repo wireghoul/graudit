@@ -3,5 +3,5 @@
 # uncomment below if you want everything
 # echo -ne " __toString[[:space:]]*\\(\n __call[[:space:]]*\\(\n __Set[[:space:]]*\\(\n __get[[:space:]]*\\(\n" \
 ) | \
-graudit -d - -- -A 20 $1
+graudit -d /dev/stdin -- -A 20 $1
 

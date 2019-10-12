@@ -12,5 +12,5 @@ graudit -z -c 0 -d $RCEHOME/rce.db "$1" | \
 perl -ne 'while ($_ =~ m!\$([a-z0-9-_\[\]\x27\>]+)!gi) { print "\\\$$1\n"; print "include\nrequire\n"; }' | \
 sed -e's/\[/\\[/g' -e's/\]/\\]/g' | \
 sort | uniq | \
-graudit -d - "$1"
+graudit -d /dev/stdin "$1"
 #more

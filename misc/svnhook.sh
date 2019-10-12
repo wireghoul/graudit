@@ -4,6 +4,6 @@
 REPOSITORY=$1
 REVISION=$2
 /usr/local/bin/svnlook diff -r $REVISION $REPOSITORY | \
-graudit -d php - | \
+graudit -d php /dev/stdin | \
 ansi2html.sh | \
-mail -e -s "[graudit report] rev$REVISION - $REPOSITORY" root@domkain.com
+mail -e -s "[graudit report] rev$REVISION - $REPOSITORY" root@domain.com

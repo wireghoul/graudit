@@ -10,4 +10,4 @@ fi
 graudit -z -d jsp "$1" | \
 perl -ne 'if ($_ =~ m/(\S+)\s*=\s*request\./) { print "$1\n"; }' | \
 sort | uniq | \
-graudit -d - "$1"
+graudit -d /dev/stdin "$1"
