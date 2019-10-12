@@ -3,6 +3,7 @@ bindService
 checkPermission
 commit
 Cursor
+debuggable
 deleteFile
 execSQL
 fileList
@@ -42,3 +43,7 @@ SQLiteDatabase
 startActivity
 startService
 stopService
+WRITE_EXTERNAL_STORAGE
+sdcard
+getExternalStorageDirectory
+isExternalStorageWritable
