@@ -24,3 +24,16 @@ setAllowsAny
 sqlite3
 UIPasteBoard
 uniqueIdentifier
+setAllowsAnyHTTPSCertificate
+validatesSecureCertificate
+allowInvalidCertificates
+kCFStreamSSLValidatesCertificateChain
+CCCrypt
+NSExceptionDomains
+NSAllowsArbitraryLoads
+NSExceptionAllowsInsecureHTTPLoads
+kSSLProtocol3
+kSSLProtocol2
+kSSLProtocolAll
+NSExceptionMinimumTLSVersion
+kSecAttrAccessibleAlways
