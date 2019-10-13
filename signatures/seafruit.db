@@ -1,7 +1,9 @@
 \[[0-9][0-9]+\].*=.*\\0
 \[[^\]]+\+[^\]]*\].*=.*\\0
+printf[[:space:]]*\([^\,\'\"]+\)\;
 snprintf[[:space:]]*\([^\,]+\,[[:space:]]*sizeof\(
 strc(at|py)[[:space:]]*\(
+scanf[[:space:]]\(
 strncpy[[:space:]]*\([^\,]+\,[[:space:]]*sizeof\(
 memcpy[[:space:]]*\([^\,]+\,[^\,]+\,[[:space:]]*sizeof\(
 [[:space:]]gets[[:space:]]*\(
