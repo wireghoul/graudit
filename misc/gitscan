@@ -1,0 +1,14 @@
+#!/bin/sh
+# download and scan a single github repo's master branch, output to stdout
+if [ -z $1 ]; then
+    echo "$0 <https://github/repo/url>"
+    exit 2
+fi
+url=$1
+echo "Scanning $url!"
+D=$( echo "$1" | cut -d '/' -f 5 )
+mkdir -p churn/$D
+wget -q -O churn/$D/master.zip "$url/archive/master.zip"
+cd churn/$D
+unzip -qq master.zip
+graudit -x *.js,*.json,*.map,*.sql -d ./flatline.db .
