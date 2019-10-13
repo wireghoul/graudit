@@ -6,7 +6,7 @@ prefix = /usr
 dataroot = $(prefix)/share
 datadir = $(dataroot)/graudit
 bindir = $(prefix)/bin
-SIGNATURES := signatures/default.db signatures/php.db  signatures/perl.db signatures/python.db signatures/asp.db signatures/java.db signatures/strings.db signatures/c.db signatures/dotnet.db signatures/ruby.db signatures/actionscript.db signatures/ios.db signatures/android.db signatures/all.db
+SIGNATURES := signatures/actionscript.db signatures/android.db signatures/asp.db signatures/c.db signatures/default.db signatures/dotnet.db signatures/exec.db signatures/fruit.db signatures/ios.db signatures/java.db signatures/js.db signatures/perl.db signatures/php.db signatures/python.db signatures/rough.db signatures/ruby.db signatures/secrets.db signatures/spsqli.db signatures/sql.db signatures/strings.db signatures/xss.db
 DISTFILES := Changelog  graudit  LICENSE  README.md graudit.1
 VERSION=`./graudit -v | cut -d' ' -f 3`
 .PHONY : clean install uninstall userinstall test signatures
@@ -60,16 +60,6 @@ signatures:
 	cat signatures/perl/*.db > signatures/perl.db
 	cat signatures/python/*.db > signatures/python.db
 	cat signatures/java/*.db > signatures/java.db
-	cat signatures/asp.db > signatures/all.db
-	cat signatures/c.db >> signatures/all.db
-	cat signatures/dotnet.db >> signatures/all.db
-	cat signatures/default.db >> signatures/all.db
-	cat signatures/java.db >> signatures/all.db
-	cat signatures/strings.db >> signatures/all.db
-	cat signatures/perl.db >> signatures/all.db
-	cat signatures/php.db >> signatures/all.db
-	cat signatures/python.db >> signatures/all.db
-	cat signatures/ruby.db >> signatures/all.db
 	cat signatures/*/xss.db > signatures/xss.db
 	cat signatures/*/sql.db > signatures/sql.db
 	cat signatures/*/exec.db > signatures/exec.db
