@@ -1,0 +1,27 @@
+# PHP RCE signatures
+exec[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
+system[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
+popen[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
+proc_open[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
+pcntl_exec[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
+shell_exec[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
+passthru[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
+`.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http)\[.*`;
+eval[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
+(require|include)(_once)*[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|HTTP|http|php\:|expect\:).*\)
+fopen[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
+readfile[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
+file_get_contents[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
+show_source[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
+preg_replace[[:space:]]*\([\'"](.).*\1[igsu]*e.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http)
+unserialize[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
+mysql_query[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
+mysqli_query[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
+mssql_query[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
+oci_parse[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
+pg_query[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
+(WHERE|where)[[:space:]]+.*=.*\$(_ENV\[|_GET\[|_POST\[|_COOKIE\[|_REQUEST\[|_SERVER\[|HTTP|http)[^; ]+
+[\'\" ]+AND[[:space:]]+.*=[[:space:]]?\$(_ENV\[|_GET\[|_POST\[|_COOKIE\[|_REQUEST\[|_SERVER\[|HTTP|http)[^; ]+
+(LIKE|like)[[:space:]]+.*\$(_ENV\[|_GET\[|_POST\[|_COOKIE\[|_REQUEST\[|_SERVER\[|HTTP|http)
+(ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+.*\$(_ENV|_GET\[|_POST\[|_COOKIE\[|_REQUEST\[|_SERVER|HTTP|http)
+(LIMIT|limit)[[:space:]]+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http)
