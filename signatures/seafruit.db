@@ -3,7 +3,7 @@
 printf[[:space:]]*\([^\,\'\"]+\)\;
 snprintf[[:space:]]*\([^\,]+\,[[:space:]]*sizeof\(
 strc(at|py)[[:space:]]*\(
-scanf[[:space:]]\(
+scanf[[:space:]]*\([^\,]+\,[^\,]+\)\;
 strncpy[[:space:]]*\([^\,]+\,[[:space:]]*sizeof\(
 memcpy[[:space:]]*\([^\,]+\,[^\,]+\,[[:space:]]*sizeof\(
 [[:space:]]gets[[:space:]]*\(
