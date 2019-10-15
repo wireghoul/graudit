@@ -93,7 +93,7 @@ The following databases are included:
 Contributing
 ===============================================================================
 If you would like to contribute to graudit, please fork the repository at 
-https://github.com/wireghoul/graudit and use that. In particular language rules
+https://github.com/wireghoul/graudit and use that. In particular language rules,
 additional scripts and documentation contributions are very welcome.
 If you like graudit then please say thanks and share it around.
 
@@ -102,5 +102,5 @@ If you wish to get in contact with me, shoot me a line on github or twitter:
 
 Credits
 ===============================================================================
-Wireghoul - http://www.justanotherhacker.com
-Various others - see Changelog
+  * Wireghoul - http://www.justanotherhacker.com
+  * Various others - see Changelog
