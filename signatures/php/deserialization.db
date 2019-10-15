@@ -1,0 +1,16 @@
+# If file upload possible, even via locally hosted images e.g. jpg, then phar vulnerability present via any file processing function.
+# Problematic code is: -
+#   include("phar://test.phar")'
+# For exploitation/explanation, see
+#   See https://blog.ripstech.com/2018/new-php-exploitation-technique/
+#   See https://github.com/s-n-t/presentations/blob/master/us-18-Thomas-It's-A-PHP-Unserialization-Vulnerability-Jim-But-Not-As-We-Know-It.pdf for how to use fake jpgs
+serialize\s*\(.*\)
+unserialize\s*\(.*\)
+file_exists\s*\(.*\)
+md5_file\s*\(.*\)
+filemtime\s*\(.*\)
+filesize\s*\(.*\)
+file_get_contents\s*\(.*\)
+include\s*\(.*\)
+fopen\s*\(.*\)
+file\s*\(.*\)
