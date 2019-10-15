@@ -17,7 +17,7 @@ between releases. To do this run the following command:
 git clone https://github.com/wireghoul/graudit
 ```
 
-You should also add an alias for the graudit command in your .profile
+You should also add an alias for graudit in your .profile
 ```
 alias graudit='~/graudit/graudit'
 ```
