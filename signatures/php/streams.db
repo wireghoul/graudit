@@ -1,8 +1,0 @@
-php://stdin
-php://stdout
-php://stderr
-php://output
-php://input
-php://filter
-php://memory
-php://temp 
