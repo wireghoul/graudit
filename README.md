@@ -14,7 +14,7 @@ not inlcuded on the distribution files. This also enables you to get updates
 between releases. To do this run the following command:
 
 ```
-git clone https://github.com/wireghoul/graudit\
+git clone https://github.com/wireghoul/graudit
 ```
 
 You should also add an alias for the graudit command in your .profile
