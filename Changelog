@@ -1,3 +1,25 @@
+2.3             2019 Oct 15
+		Added database for finding sensitive information (secrets)
+		C database no longer deprecated
+		Created low hanging fruit rules for C/C++ (seafruit.db)
+		Added more test cases to avoid some past mistakes
+		Updated make and make install rules to match new version changes
+		Removed the all rules database
+		Updated documentation
+		Improved bsdgrep/OSX support
+		Improved PHP rules for stream/wrapper bugs (ie: phar://) (@manasmbellani)
+		Added and updated python rules
+		More Java rules and cleanup of Java rules
+		More DotNet rules
+		More Android rules
+		More iOS rules
+		Added basic JavaScript rules
+		Added additional script to show C taint analysis (misc/b0ftaint.sh)
+		Added script for finding low hanging/high impact PHP bugs (misc/flatline.*)
+		Added script for using flatline rules in taint analysis (misc/vulntaint.sh)
+		Added script for scanning github repos with flatline (misc/gitscan)
+		Added script for finding interesting files and secrets (misc/graufflehog.sh)
+
 2.2		2018 Dec 20
 		Added another demo script
 		Adde signatures from OWASP code review guide
