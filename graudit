@@ -185,6 +185,7 @@ fi
 # -n prints the line number
 banner
 $BINFILE --color=$color \
+         --devices=skip \
          --exclude-dir=.svn \
          --exclude-dir=CVS \
          --exclude-dir=.git \
