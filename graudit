@@ -5,7 +5,8 @@
 set -e
 set -o pipefail
 VERSION='2.3'
-basedir=$(dirname $(realpath "$0"))
+graudit_bin_path=$(realpath $(which "$0"))
+basedir=$(dirname "$graudit_bin_path")
 BINFILE=$(which grep)
 
 # Default values
@@ -26,7 +27,7 @@ if [ ! -x "$BINFILE" ]; then
     echo "grep not found!"
     exit 2
 fi
-$BINFILE --exclude-dir=. test "$0" >/dev/null 2>&1
+$BINFILE --exclude-dir=. test "$(realpath "$graudit_bin_path")" >/dev/null 2>&1
 if [ $? -eq 2 ]; then
     echo $?
     echo "graudit requires a newer version of grep (>=2.5.3)"
