@@ -5,7 +5,7 @@
 set -e
 set -o pipefail
 VERSION='2.3'
-basedir=$(dirname "$0")
+basedir=$(dirname $(realpath "$0"))
 BINFILE=$(which grep)
 
 # Default values
