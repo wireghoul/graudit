@@ -1,0 +1,12 @@
+# file IO
+open[[:space:]]input[[:space:]]
+open[[:space:]]output[[:space:]]
+read[[:space:]]
+write[[:space:]]
+delete[[:space:]]
+# subroutines
+call[[:space:]]
+# debugging
+with[[:space:]]debugging[[:space:]]mode
+# dangerous
+accept[[:space:]]
