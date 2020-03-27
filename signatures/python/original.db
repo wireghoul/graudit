@@ -14,7 +14,7 @@ rmdir
 remove[[:space:]]*\(
 \.unlink[[:space:]]*\(
 link[[:space:]]*\(
-execv[[:space:]]\(
+execv[[:space:]]*\(
 execve[[:space:]]*\(
 execl[[:space:]]*\(
 execlp[[:space:]]*\(
