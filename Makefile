@@ -60,9 +60,11 @@ signatures:
 	cat signatures/perl/*.db > signatures/perl.db
 	cat signatures/python/*.db > signatures/python.db
 	cat signatures/java/*.db > signatures/java.db
+	cat signatures/c/*.db > signatures/c.db
 	cat signatures/*/xss.db > signatures/xss.db
 	cat signatures/*/sql.db > signatures/sql.db
 	cat signatures/*/exec.db > signatures/exec.db
+	cat signatures/*/fruit.db > signatures/fruit.db
 
 manpages:
 	nroff -Tascii -mandoc <graudit.in.1 >/dev/null

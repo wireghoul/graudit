@@ -1,0 +1,15 @@
+# Perl-fruit signatures
+exec[[:space:]]*\(?.*\$ARGV.*\)?
+exec[[:space:]]*\(?.*\$.*->param[[:space:]]*\(.*\).*\)?
+system[[:space:]]*\(?.*\$ARGV.*\)?
+system[[:space:]]*\(?.*\$.*->param[[:space:]]*\(.*\).*\)?
+`.*\$ARGV.*`
+`.*\$.*->param[[:space:]]*\(.*\).*`
+eval[[:space:]]*\(?.*\$ARGV.*\)?
+eval[[:space:]]*\(?.*\$.*->param[[:space:]]*\(.*\).*\)?
+use[[:space:]]+.*\$ARGV.*
+use[[:space:]]+.*\$.*->param[[:space:]]*\(.*\).*
+(WHERE|where)[[:space:]]+.*=.*\$.*->param[[:space:]]*\(.*\)
+(LIKE|like)[[:space:]]+.*\$.*->param[[:space:]]*\(.*\)
+(ORDER BY|order by)[[:space:]]+.*\$.*->param[[:space:]]*\(.*\)
+(LIMIT|limit)[[:space:]]+.*\$.*->param[[:space:]]*\(.*\)
