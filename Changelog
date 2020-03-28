@@ -1,4 +1,16 @@
-2.3             2019 Oct 15
+2.4     2020 Mar 28
+		Updated documentation
+		Seafruit.db removed (now in fruit.db)
+		Added low hanging fruit databases for several languages
+		Added basic support for Go language
+		Added basic support for COBOL (@_bcoles)
+		Fixed faulty rules in Python and Java (@quakehead, @l0ss)
+		Updated C rules
+		Updated PHP rules (FFI and more)
+		Updated Node rules
+		Reworked Makefile for signatures
+
+2.3     2019 Oct 15
 		Added database for finding sensitive information (secrets)
 		C database no longer deprecated
 		Created low hanging fruit rules for C/C++ (seafruit.db)
