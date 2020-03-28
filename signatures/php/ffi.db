@@ -1,0 +1,8 @@
+FFI::cdef[[:space:]]*\(
+\$ffi\-\>.*\(
+FFI::addr[[:space:]]*\(
+FFI::memcpy[[:space:]]*\(
+FFI::load[[:space:]]*\(
+FFI::free[[:space:]]*\(
+FFI::new[[:space:]]*\(
+FFI:;string[[:space:]]*\(
