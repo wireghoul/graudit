@@ -6,6 +6,8 @@ HtmlEncode
 UrlEncode
 innerText
 innerHTML
+URL\.Query\(\).*
+QueryUnescape\(.*
 # Perl xss signatures
 print\s*.*\$.*->param\(?.*\)?
 # PHP xss signatures

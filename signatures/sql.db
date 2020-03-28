@@ -32,6 +32,13 @@ SqlDataAdapter
 CommandType
 StoredProcedure
 System\.Data\.sql
+\.Raw\(.*\)
+\.Query\(.*\)
+\.QueryContext\(.*\)
+\.QueryRow\(.*\)
+\.QueryRowContext\(.*\)
+\.Exec\(.*\)
+\.ExecContext\(.*\)
 # PHP - Database
 mysql_connect[[:space:]]*\(.*\$.*\)
 mysql_pconnect[[:space:]]*\(.*\$.*\)

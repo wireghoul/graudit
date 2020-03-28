@@ -10,6 +10,17 @@ memcpy[[:space:]]*\([^\,]+\,[^\,]+\,[[:space:]]*sizeof\(
 exec(ve|l|lp|le|v)[[:space:]]*\(
 system[[:space:]]*\(
 (strc(at|py)|memcpy|sprintf|sscanf)[[:space:]]*\(.*argv
+\.WriteString\(.*URL\.Query\(\).*\)
+\.Write\(.*URL.Query\(\).*\)
+\.Println\(.*URL.Query\(\).*\)
+\.Raw\(.*URL.Query\(\).*\)
+\.Query\(.*URL.Query\(\).*\)
+\.QueryContext\(.*URL.Query\(\).*\)
+\.QueryRow\(.*URL.Query\(\).*\)
+\.QueryRowContext\(.*URL.Query\(\).*\)
+\.Exec\(.*URL.Query\(\).*\)
+\.ExecContext\(.*URL.Query\(\).*\)
+\.Open\(.*URL.Query\(\).*\)
 # Perl-fruit signatures
 exec[[:space:]]*\(?.*\$ARGV.*\)?
 exec[[:space:]]*\(?.*\$.*->param[[:space:]]*\(.*\).*\)?
