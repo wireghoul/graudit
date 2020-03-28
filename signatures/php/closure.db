@@ -1,0 +1,2 @@
+Closure::bind(To)?[[:space:]]*\(
+Closure::call[[:space:]]*\(
