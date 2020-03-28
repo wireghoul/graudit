@@ -1,0 +1,6 @@
+\.NewWithClaims\(.*\)
+\.SignedString\(.*\)
+http\.SetCookie\(.*\)
+\.Cookie\(.*\)
+\.Header.Set\(.*\)
+\.Header.Add\(.*\)

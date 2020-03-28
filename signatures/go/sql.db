@@ -1,0 +1,7 @@
+\.Raw\(.*\)
+\.Query\(.*\)
+\.QueryContext\(.*\)
+\.QueryRow\(.*\)
+\.QueryRowContext\(.*\)
+\.Exec\(.*\)
+\.ExecContext\(.*\)

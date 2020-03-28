@@ -1,0 +1,10 @@
+http:RedirectHandler\(.*\)
+\.ListenAndServe\(.*\)
+\.ListenAndServeTLS\(.*\)
+\.Handle\(.*\)
+\.Handler\(.*\)
+\.HandleFunc\(.*\)
+\.Server\{.*\}
+\.Serve\(.*\)
+\.NewListener\(.*\)
+\.NewRequest\(.*\)
