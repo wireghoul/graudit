@@ -21,6 +21,7 @@ system[[:space:]]*\(
 \.Exec\(.*URL.Query\(\).*\)
 \.ExecContext\(.*URL.Query\(\).*\)
 \.Open\(.*URL.Query\(\).*\)
+\.query\(.*[\'\"][[:space:]]*\+.*
 # Perl-fruit signatures
 exec[[:space:]]*\(?.*\$ARGV.*\)?
 exec[[:space:]]*\(?.*\$.*->param[[:space:]]*\(.*\).*\)?

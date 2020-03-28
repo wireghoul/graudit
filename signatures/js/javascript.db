@@ -1,0 +1,8 @@
+eval[[:space:]]*\(
+dangerouslySetInnerHTML
+trustAsHtml
+NODE_TLS_REJECT_UNAUTHORIZED
+rejectUnauthorized
+insecure
+strictSSL
+clientPemCrtSignedBySelfSignedRootCaBuffer

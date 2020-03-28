@@ -1,3 +1,4 @@
+\.query\(.*[\'\"][[:space:]]*\+.*
 eval[[:space:]]*\(
 dangerouslySetInnerHTML
 trustAsHtml
@@ -6,3 +7,27 @@ rejectUnauthorized
 insecure
 strictSSL
 clientPemCrtSignedBySelfSignedRootCaBuffer
+\.IncomingForm\(
+\.parse\(
+\.readFile\(
+\.appendFile\(
+\.writeFile\(
+\.open\(
+\.unlink\(
+\.rename\(
+\.createReadStream\(
+\.createServer\(
+\.createTransport\(
+\.sendMail\(
+#MongoDB rules
+\.connect\(
+\.createCollection\(
+\.collection\(.*\)\.aggregate\(.*
+\.collection\(.*\)\.find(One)?\(.*
+\.collection\(.*\)\.insert(One|Many)?\(.*
+\.collection\(.*\)\.delete(One|Many)?\(.*
+\.collection\(.*\)\.update(One|Many)?\(.*
+\.collection\(.*\)\.drop\(.*
+#MySQL rules
+\.createConnection\(.*
+\.query\(.*\)
