@@ -72,10 +72,12 @@ The following databases are included:
   - android
   - asp
   - c
+  - cobol
   - default (used if -d argument is omitted)
   - dotnet
   - exec
   - fruit
+  - go
   - ios
   - java
   - js
@@ -89,6 +91,12 @@ The following databases are included:
   - sql
   - strings
   - xss
+
+
+Tutorial
+===============================================================================
+Coming soon..
+
 
 Contributing
 ===============================================================================
