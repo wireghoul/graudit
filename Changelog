@@ -1,4 +1,4 @@
-2.4     2020 Mar 28
+2.4		2020 Mar 28
 		Updated documentation
 		Seafruit.db removed (now in fruit.db)
 		Added low hanging fruit databases for several languages
@@ -10,7 +10,7 @@
 		Updated Node rules
 		Reworked Makefile for signatures
 
-2.3     2019 Oct 15
+2.3		2019 Oct 15
 		Added database for finding sensitive information (secrets)
 		C database no longer deprecated
 		Created low hanging fruit rules for C/C++ (seafruit.db)
