@@ -1,0 +1,9 @@
+\{\..*injectStmt\:
+\{\..*import(c(pp)?|objc)\:
+\{\.unchecked
+\{\.global
+\{\..*boundC|overflowC|nilC|c)hecks\:[[:space:]]+off
+\{\..*deadCodeElim\:[[:space:]]+on
+\{\..*pass(C|L)\:[[:space:]]+
+\{\..*codegenDecl\:
+\{\..*injectStmt\:

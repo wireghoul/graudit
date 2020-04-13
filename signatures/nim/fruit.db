@@ -1,0 +1,3 @@
+asm[[:space:]]+.*
+unsafeAddr
+execShellCmd[[:space:]]*\(
