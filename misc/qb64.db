@@ -1,0 +1,41 @@
+#TODO, add case insensitive feature to rules
+\$CHECKING
+\$CONSOLE
+_(FILE|DIR)EXISTS
+_MEM(GET|COPY|FILL|FREE|PUT|NEW)[[:space:]]*\(
+_OPEN(CLIENT|CONNECTION|HOST)
+B(LOAD|SAVE)[[:space:]]*\(
+BYVAL[[:space:]]+
+CALL([[:space:]]+ABSOLUTE)?[[:space:]]*\(
+CHDIR[[:space:]]*\(
+CHAIN[[:space:]]+[\"\']
+COMMAND\$
+DECLARE( DYNAMIC| CUSTOMTYPE)? LIBRARY
+END
+FIELD
+FILEATTR
+GET
+GOTO
+\$INCLUDE
+INP[[:space:]]*\(
+KILL
+MKDIR
+ON ERROR
+ON.*GO(SUB|TO)
+OPEN[[:space:]]+.*(FOR)?
+OUT[[:space:]]+
+PEEK
+POKE
+PUT
+READ[[:space:]]+
+RUN
+SEEK
+SHELL[[:space:]]
+STOP[[:space:]]
+SYSTEM
+VARPTR(\$)?
+VARSEG
+WRITE
+mysql_real_connect[[:space:]]*\(
+mysql_query[[:space:]]+
+mysql_fetch_.*
