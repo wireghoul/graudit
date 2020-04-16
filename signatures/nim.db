@@ -2,7 +2,7 @@ asm[[:space:]]+
 unsafeAddr([[:space:]]+|[[:space:]]*\()
 open(File)?[[:space:]]*\(
 addr[[:space:]]*\(
-asm[[:space:]]+.*
+asm[[:space:]]+[\'\"].*
 unsafeAddr
 execShellCmd[[:space:]]*\(
 (put|del|get)Env[[:space:]]*\(
