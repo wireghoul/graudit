@@ -1,0 +1,11 @@
+_weak_escape
+_do_query
+\$_(GET|POST|REQUEST|COOKIE|SERVER)
+\$[^\,\;\(\> ]+\->prepare[[:space:]]*\(.*\$.*
+\$[^\,\;\(\> ]+\->get_(row|col|var|results).*\$.*
+\$[^\,\;\(\> ]+\->get_param.*\$.*
+\$[^\,\;\(\> ]+\->get_body_param.*\$.*
+\$[^\,\;\(\> ]+\->get_header.*
+\$[^\,\;\(\> ]+\->get_json_params.*
+\$[^\,\;\(\> ]+\->get_file_params.*
+\$[^\,\;\(\> ]+\->get_query_param.*
