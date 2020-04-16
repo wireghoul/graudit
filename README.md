@@ -84,7 +84,7 @@ The following databases are included:
   - perl
   - php
   - python
-  - rough
+  - nim
   - ruby
   - secrets
   - spsqli
