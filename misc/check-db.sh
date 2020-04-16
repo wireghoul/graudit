@@ -5,7 +5,7 @@ if [ -z $1 ]; then
     echo "Usage $0 <file to check>"
     exit 1
 fi
-grep -Ef $1 /proc/self >/dev/null
+grep -Ef $1 /dev/null >/dev/null
 if [ $? -eq 2 ]; then
     echo "Bad signature in database: $1"
     exit 1
