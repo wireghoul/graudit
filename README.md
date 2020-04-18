@@ -61,8 +61,9 @@ follows:
   2. /usr/share/graudit/
   3. $HOME/.graudit/
   4. A relative signature/ directory from the graudit location
-  5. Any file that is specified with a full path, ie: /home/user/my.db
-  6. Rules can be read from stdin by supplying - or /dev/stdin as the database
+  5. A relative misc/ directory from the graudit location
+  6. Any file that is specified with a full path, ie: /home/user/my.db
+  7. Rules can be read from stdin by supplying - or /dev/stdin as the database
 
 A list of the database files in order of precedence is shown with the -l switch:
 `graudit -l`

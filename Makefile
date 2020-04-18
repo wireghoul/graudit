@@ -6,7 +6,7 @@ prefix = /usr
 dataroot = $(prefix)/share
 datadir = $(dataroot)/graudit
 bindir = $(prefix)/bin
-SIGNATURES := signatures/actionscript.db signatures/android.db signatures/asp.db signatures/c.db signatures/cobol.db signatures/default.db signatures/dotnet.db signatures/exec.db signatures/fruit.db signatures/go.db signatures/ios.db signatures/java.db signatures/js.db signatures/perl.db signatures/php.db signatures/python.db signatures/nim.db signatures/rough.db signatures/ruby.db signatures/secrets.db signatures/spsqli.db signatures/sql.db signatures/strings.db signatures/xss.db
+SIGNATURES := signatures/actionscript.db signatures/android.db signatures/asp.db signatures/c.db signatures/cobol.db signatures/default.db signatures/dotnet.db signatures/exec.db signatures/fruit.db signatures/go.db signatures/ios.db signatures/java.db signatures/js.db signatures/perl.db signatures/php.db signatures/python.db signatures/nim.db signatures/ruby.db signatures/secrets.db signatures/spsqli.db signatures/sql.db signatures/strings.db signatures/xss.db
 DISTFILES := Changelog  graudit  LICENSE  README.md graudit.1
 VERSION=`./graudit -v | cut -d' ' -f 3`
 .PHONY : clean install uninstall userinstall test signatures
