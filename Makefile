@@ -55,19 +55,20 @@ test: signatures
 	cd t && /bin/sh ./aggregate-results.sh test-results/*
 
 signatures:
-	cat signatures/c/*.db      > signatures/c.db 
-	cat signatures/dotnet/*.db > signatures/dotnet.db
-	cat signatures/go/*.db     > signatures/go.db
-	cat signatures/java/*.db   > signatures/java.db
-	cat signatures/js/*.db     > signatures/js.db
-	cat signatures/php/*.db    > signatures/php.db
-	cat signatures/perl/*.db   > signatures/perl.db
-	cat signatures/python/*.db > signatures/python.db
-	cat signatures/nim/*.db    > signatures/nim.db
-	cat signatures/*/exec.db   > signatures/exec.db
-	cat signatures/*/fruit.db  > signatures/fruit.db
-	cat signatures/*/sql.db    > signatures/sql.db
-	cat signatures/*/xss.db    > signatures/xss.db
+	cat signatures/c/*.db       > signatures/c.db 
+	cat signatures/dotnet/*.db  > signatures/dotnet.db
+	cat signatures/go/*.db      > signatures/go.db
+	cat signatures/java/*.db    > signatures/java.db
+	cat signatures/js/*.db      > signatures/js.db
+	cat signatures/php/*.db     > signatures/php.db
+	cat signatures/perl/*.db    > signatures/perl.db
+	cat signatures/python/*.db  > signatures/python.db
+	cat signatures/nim/*.db     > signatures/nim.db
+	cat signatures/*/default.db > signatures/default.db
+	cat signatures/*/exec.db    > signatures/exec.db
+	cat signatures/*/fruit.db   > signatures/fruit.db
+	cat signatures/*/sql.db     > signatures/sql.db
+	cat signatures/*/xss.db     > signatures/xss.db
 
 manpages:
 	nroff -Tascii -mandoc <graudit.in.1 >/dev/null
