@@ -1,14 +1,13 @@
 \[[0-9][0-9]+\].*=.*\\0
 \[[^\]]+\+[^\]]*\].*=.*\\0
 printf[[:space:]]*\([^\,\'\"]+\)\;
-snprintf[[:space:]]*\([^\,]+\,[[:space:]]*sizeof\(
-strc(at|py)[[:space:]]*\(
-scanf[[:space:]]*\([^\,]+\,[^\,]+\)\;
+snprintf[[:space:]]*\([^\,]+\,[[:space:]]*sizeof\(.*\%s
+scanf[[:space:]]*\([^\,]+\%s[^\\,]+\,[^\,]+\)\;
 strncpy[[:space:]]*\([^\,]+\,[[:space:]]*sizeof\(
 memcpy[[:space:]]*\([^\,]+\,[^\,]+\,[[:space:]]*sizeof\(
 [[:space:]]gets[[:space:]]*\(
 exec(ve|l|lp|le|v)[[:space:]]*\(
-system[[:space:]]*\(
+system[[:space:]]*\(.*\)\;
 (strc(at|py)|memcpy|sprintf|sscanf)[[:space:]]*\(.*argv
 \.WriteString\(.*URL\.Query\(\).*\)
 \.Write\(.*URL.Query\(\).*\)
@@ -21,7 +20,13 @@ system[[:space:]]*\(
 \.Exec\(.*URL.Query\(\).*\)
 \.ExecContext\(.*URL.Query\(\).*\)
 \.Open\(.*URL.Query\(\).*\)
+response.sendRedirect[[:space:]]*\(.*(Request|request).*\)
+out\.print(ln)?.*[Rr]equest\.
 \.query\(.*[\'\"][[:space:]]*\+.*
+eval[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*[^\'\"]+
+asm[[:space:]]+[\'\"].*
+unsafeAddr
+execShellCmd[[:space:]]*\(
 # Perl-fruit signatures
 exec[[:space:]]*\(?.*\$ARGV.*\)?
 exec[[:space:]]*\(?.*\$.*->param[[:space:]]*\(.*\).*\)?
