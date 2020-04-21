@@ -23,7 +23,7 @@ system[[:space:]]*\(.*\)\;
 response.sendRedirect[[:space:]]*\(.*(Request|request).*\)
 out\.print(ln)?.*[Rr]equest\.
 \.query\(.*[\'\"][[:space:]]*\+.*
-eval[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*[^\'\"]+
+eval[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
 asm[[:space:]]+[\'\"].*
 unsafeAddr
 execShellCmd[[:space:]]*\(
