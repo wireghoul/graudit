@@ -1,2 +1,4 @@
+\.Clean\(.*\)
 \.Open\(.*\)
 \.Read\(.*\)
+\TempFile\(.*\)

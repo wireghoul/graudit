@@ -1,5 +1,7 @@
+\.Clean\(.*\)
 \.Open\(.*\)
 \.Read\(.*\)
+\TempFile\(.*\)
 \.WriteString\(.*URL\.Query\(\).*\)
 \.Write\(.*URL.Query\(\).*\)
 \.Println\(.*URL.Query\(\).*\)
