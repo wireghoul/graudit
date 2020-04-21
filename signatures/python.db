@@ -1,3 +1,4 @@
+\.NamedTemporaryFile\(.*\)
 access[[:space:]]*\(
 assert[[:space:]]*\(
 mkfifo
@@ -66,3 +67,5 @@ zipfile
 [[:space:]]+compiler
 yaml
 urllib3.disable_warnings
+\.startswith\(
+\.urlopen\(
