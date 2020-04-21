@@ -25,6 +25,8 @@ SQLException
 StackOverflowError
 UnrecoverableEntryException
 UnrecoverableKeyException
+response.sendRedirect[[:space:]]*\(.*(Request|request).*\)
+out\.print(ln)?.*[Rr]equest\.
 AccessController
 addHeader
 CallableStatement
@@ -65,6 +67,7 @@ SUPPORT_DTD
 suppressAccessChecks
 TrustManager
 XMLReader
+ObjectInputStream
 readObject[[:space:]]*\(
 printStackTrace[[:space:]]\(
 SecretKeySpec

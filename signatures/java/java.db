@@ -38,6 +38,7 @@ SUPPORT_DTD
 suppressAccessChecks
 TrustManager
 XMLReader
+ObjectInputStream
 readObject[[:space:]]*\(
 printStackTrace[[:space:]]\(
 SecretKeySpec
