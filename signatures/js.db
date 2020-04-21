@@ -1,4 +1,6 @@
+(document|\$)\.cookie[[:space:]]*\(
 \.query\(.*[\'\"][[:space:]]*\+.*
+eval[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*[^\'\"]+
 eval[[:space:]]*\(
 dangerouslySetInnerHTML
 trustAsHtml
