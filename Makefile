@@ -7,14 +7,16 @@ dataroot = $(prefix)/share
 datadir = $(dataroot)/graudit
 bindir = $(prefix)/bin
 SIGNATURES := signatures/actionscript.db signatures/android.db signatures/asp.db signatures/c.db signatures/cobol.db signatures/default.db signatures/dotnet.db signatures/exec.db signatures/fruit.db signatures/go.db signatures/ios.db signatures/java.db signatures/js.db signatures/perl.db signatures/php.db signatures/python.db signatures/nim.db signatures/ruby.db signatures/secrets.db signatures/spsqli.db signatures/sql.db signatures/strings.db signatures/xss.db
-DISTFILES := Changelog  graudit  LICENSE  README.md graudit.1
+DISTFILES := Changelog  graudit  LICENSE  README.md
+MANFILES := graudit.1
 VERSION=`./graudit -v | cut -d' ' -f 3`
 .PHONY : clean install uninstall userinstall test signatures
 
-dist: clean signatures manpages $(DISTFILES) test
+dist: clean signatures manpages $(DISTFILES) $(MANFILES) test
 	cd t && ./git-test.sh
 	mkdir -p graudit-$(VERSION)/signatures
 	cp -f $(DISTFILES) graudit-$(VERSION)
+	cp -f $(MANFILES) graudit-$(VERSION)
 	cp -f $(SIGNATURES) graudit-$(VERSION)/signatures
 	tar zcf graudit-$(VERSION).tar.gz graudit-$(VERSION)
 	zip -9r graudit-$(VERSION).zip graudit-$(VERSION)
@@ -32,11 +34,12 @@ userinstall: $(DISTFILES) test
 	mkdir -p ~/bin
 	cp -f graudit ~/bin
 
-install: manpages $(DISTFILES) test
+install: manpages $(DISTFILES) $(MANFILES) test
 	mkdir -p $(bindir)
 	mkdir -p $(datadir)
 	cp -f $(SIGNATURES) $(datadir)
 	cp -f $(DISTFILES) $(datadir)
+	cp -f $(MANFILES) $(datadir)
 	mv $(datadir)/graudit $(bindir)/graudit
 
 uninstall:
