@@ -27,6 +27,7 @@ UnrecoverableEntryException
 UnrecoverableKeyException
 response.sendRedirect[[:space:]]*\(.*(Request|request).*\)
 out\.print(ln)?.*[Rr]equest\.
+<%=[Rr]equest\.
 AccessController
 addHeader
 CallableStatement

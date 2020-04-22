@@ -20,6 +20,7 @@ system[[:space:]]*\(.*\)\;
 \.Open\(.*URL.Query\(\).*\)
 response.sendRedirect[[:space:]]*\(.*(Request|request).*\)
 out\.print(ln)?.*[Rr]equest\.
+<%=[Rr]equest\.
 \.query\(.*[\'\"][[:space:]]*\+.*
 eval[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
 asm[[:space:]]+[\'\"].*
