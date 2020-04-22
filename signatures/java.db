@@ -71,6 +71,7 @@ XMLReader
 ObjectInputStream
 readObject[[:space:]]*\(
 resolveClass[[:space:]]*\(
+\.createValueExpression[[:space:]]*\(
 printStackTrace[[:space:]]\(
 SecretKeySpec
 request.getQueryString
