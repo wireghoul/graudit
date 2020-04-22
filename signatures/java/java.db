@@ -40,5 +40,6 @@ TrustManager
 XMLReader
 ObjectInputStream
 readObject[[:space:]]*\(
+resolveClass[[:space:]]*\(
 printStackTrace[[:space:]]\(
 SecretKeySpec
