@@ -173,6 +173,7 @@ get_loaded_extensions\s*\(.*\)
 (::|\-\>)withUploadedFiles[[:space:]]*\(.*
 (::|\-\>)withUri[[:space:]]*\(.*
 (::|\-\>)withUserInfo[[:space:]]*\(.*
+\-\>setPassword[[:space:]]*\(
 # PHP - Database
 mysql_connect[[:space:]]*\(.*\$.*\)
 mysql_pconnect[[:space:]]*\(.*\$.*\)
