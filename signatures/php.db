@@ -174,6 +174,8 @@ get_loaded_extensions\s*\(.*\)
 (::|\-\>)withUri[[:space:]]*\(.*
 (::|\-\>)withUserInfo[[:space:]]*\(.*
 \-\>setPassword[[:space:]]*\(
+\-\>loadKey[[:space:]]*\(
+\-\>login[[:space:]]*\([^\,]+\,[^\,]+\)
 # PHP - Database
 mysql_connect[[:space:]]*\(.*\$.*\)
 mysql_pconnect[[:space:]]*\(.*\$.*\)
