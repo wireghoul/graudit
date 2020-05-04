@@ -8,6 +8,7 @@ innerText
 innerHTML
 URL\.Query\(\).*
 QueryUnescape\(.*
+# Java xss signatures
 <%=.*[Rr]equest\.
 response.sendRedirect[[:space:]]*\(.*[Rr]equest.*\)
 <c:out.*\$\{param
@@ -17,5 +18,4 @@ print\s*.*\$.*->param\(?.*\)?
 echo[[:space:]]+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
 print[[:space:]]+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
 print_r([[:space:]]*\(|[[:space:]]+).*\)?\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
-\<\?\=\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http)
-\<\%\=\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http)
+\<[\?\%]\=\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http)

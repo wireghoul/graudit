@@ -1,3 +1,4 @@
+# Java xss signatures
 <%=.*[Rr]equest\.
 response.sendRedirect[[:space:]]*\(.*[Rr]equest.*\)
 <c:out.*\$\{param
