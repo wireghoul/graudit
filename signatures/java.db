@@ -95,6 +95,11 @@ A[Ll][Ll][Oo][Ww]_?A[Ll][Ll]_?H[Oo][Ss][Tt][Nn][Aa][Mm][Ee]_?V[Ee][Rr][Ii][Ff][I
 SSLSocketFactory
 is[Tt]rusted
 trustmanager
+# Expression Language detection
+<spr(ing)?:(message|theme|transform|eval|hasBindErrors|bind|nestedpath).*\$\{param
+<%=.*[Rr]equest\.
+response.sendRedirect[[:space:]]*\(.*[Rr]equest.*\)
+<c:out.*\$\{param
 SAXParserFactory
 DOM4J
 XMLInputFactory

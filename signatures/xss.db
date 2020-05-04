@@ -8,6 +8,9 @@ innerText
 innerHTML
 URL\.Query\(\).*
 QueryUnescape\(.*
+<%=.*[Rr]equest\.
+response.sendRedirect[[:space:]]*\(.*[Rr]equest.*\)
+<c:out.*\$\{param
 # Perl xss signatures
 print\s*.*\$.*->param\(?.*\)?
 # PHP xss signatures

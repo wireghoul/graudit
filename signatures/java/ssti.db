@@ -1,0 +1,2 @@
+# Expression Language detection
+<spr(ing)?:(message|theme|transform|eval|hasBindErrors|bind|nestedpath).*\$\{param
