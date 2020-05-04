@@ -96,7 +96,7 @@ SSLSocketFactory
 is[Tt]rusted
 trustmanager
 # Expression Language detection
-<spr(ing)?:(message|theme|transform|eval|hasBindErrors|bind|nestedpath).*\$\{param
+<spr(ing)?:(message|theme|transform|eval|hasBindErrors|bind|nestedpath)[^\>]+\$\{param
 # Java xss signatures
 <%=.*[Rr]equest\.
 response.sendRedirect[[:space:]]*\(.*[Rr]equest.*\)
