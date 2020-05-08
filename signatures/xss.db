@@ -1,11 +1,8 @@
 # Dotnet XSS
-response.write
-<%\s*=
-HttpUtility
-HtmlEncode
-UrlEncode
-innerText
-innerHTML
+[Rr]esponse.[Ww]rite[[:space:]]*\(
+<%\s*=[[:space:]]*[\_a-zA-Z0-9][^\%]+
+innerText[[:space:]]*=[^\;]+\+
+innerHTML[[:space:]]*=[^\;]+\+
 URL\.Query\(\).*
 QueryUnescape\(.*
 # Java xss signatures
