@@ -1,3 +1,24 @@
+2.5		2020 May 08
+		Default ruleset is now generated from languages
+		Retired rough rules
+		Cleaned up whitespace in files
+		Added misc to signature path
+		Added basic language support for Nim
+		Added language support for QB64
+		Fixed a mistake with C database from version 2.4
+		Tweaked fruit rules for C
+		Improved C rules
+		Updated secret detection rules
+		PHP rules added/updated, including PSR for HTTP
+		Improved JS and JS fruit rules
+		Added PoC rules for wordpress
+		Updated rules for Java
+		Updated Go rules
+		Updated Python rules
+		Fixed check-db.sh to work under WSL
+		Updated Makefile
+		Updated documentation
+
 2.4		2020 Mar 28
 		Updated documentation
 		Seafruit.db removed (now in fruit.db)
