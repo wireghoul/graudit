@@ -133,6 +133,11 @@ phpversion\s*\(.*\)
 zend_logo_guid\s*\(.*\)
 zend_version\s*\(.*\)
 get_loaded_extensions\s*\(.*\)
+mqseries_connx?[[:space:]]*\(
+mqseries_open[[:space:]]*\(
+AMQPStreamConnection[[:space:]]*\(
+\-\>basic_publish[[:space:]]*\(
+\-\>queue_declare[[:space:]]*\(
 #https://www.php-fig.org/psr/psr-7/
 (::|\-\>)getAttribute[[:space:]]*\(.*
 (::|\-\>)getAttributes[[:space:]]*\(.*

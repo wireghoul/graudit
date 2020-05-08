@@ -1,0 +1,5 @@
+mqseries_connx?[[:space:]]*\(
+mqseries_open[[:space:]]*\(
+AMQPStreamConnection[[:space:]]*\(
+\-\>basic_publish[[:space:]]*\(
+\-\>queue_declare[[:space:]]*\(
