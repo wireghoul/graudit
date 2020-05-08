@@ -7,10 +7,10 @@ keeping the technical requirements to a minimum and being very flexible.
 
 Installation
 ===============================================================================
-Installation can be done as a user or globally as root, simpley run make with
+Installation can be done as a user or globally as root, simply run make with
 the userinstall or install argument. It is however recommended to use graudit
 directly by cloning the git repository as it includes additional database rules
-not inlcuded on the distribution files. This also enables you to get updates
+not included on the distribution files. This also enables you to get updates
 between releases. To do this run the following command:
 
 ```
@@ -38,10 +38,10 @@ OPTIONS
   -i case in-sensitive scan
   -c <num> number of lines of context to display, default is 2
 
-  -B supress banner
+  -B suppress banner
   -L vim friendly lines
   -b colour blind friendly template
-  -z supress colors
+  -z suppress colors
   -Z high contrast colors
   
   -l lists databases available
@@ -62,7 +62,7 @@ follows:
   3. $HOME/.graudit/
   4. A relative signature/ directory from the graudit location
   5. A relative misc/ directory from the graudit location
-  6. Any file that is specified with a full path, ie: /home/user/my.db
+  6. Any file that is specified with a full path, i.e: /home/user/my.db
   7. Rules can be read from stdin by supplying - or /dev/stdin as the database
 
 A list of the database files in order of precedence is shown with the -l switch:
