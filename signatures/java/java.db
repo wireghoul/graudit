@@ -8,10 +8,13 @@ doPrivileged
 exec[[:space:]]*\(
 executeQuery[[:space:]]*\(
 executeUpdate
-getParameter[[:space:]]*\(
-getProperty
-getQueryString[[:space:]]*\(
-getSession[[:space:]]\(
+\.getHeader[[:space:]]*\(
+\.getParameter[[:space:]]*\(
+\.getProperty[[:space:]]*\(
+\.getQueryString[[:space:]]*\(
+\.getSession[[:space:]]\(
+\.getRequestedSessionId[[:space:]]*\(
+\.getServerName[[:space:]]*\(
 HTTPCookie
 HttpServletRequest
 HttpServletResponse
@@ -20,6 +23,7 @@ invalidate
 IS_SUPPORTING_EXTERNAL_ENTITIES
 KeyManagerFactory
 PreparedStatement
+\.PathParam[[:space:]]*\(
 random
 java.util.Random
 SecureRandom

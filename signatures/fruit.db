@@ -28,6 +28,7 @@ system[[:space:]]*\(.*\)\;
 response.sendRedirect[[:space:]]*\(.*(Request|request).*\)
 out\.print(ln)?.*[Rr]equest\.
 <%=[Rr]equest\.
+\.exec[[:space:]]*\(.*\+.*
 \.query\(.*[\'\"][[:space:]]*\+.*
 eval[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
 asm[[:space:]]+[\'\"].*
