@@ -1,0 +1,2 @@
+BOTH CRLF => 
+JUST LF => 
