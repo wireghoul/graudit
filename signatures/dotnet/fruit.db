@@ -1,0 +1,7 @@
+#[Ss][Ee][Ll][Ee][Cc][Tt][[:space:]]+.*\{[0-9]+\}
+[Ss][Ee][Ll][Ee][Cc][Tt][[:space:]]+.*[Rr]equest\..*
+(WHERE|where)[[:space:]]+.*=.*[Rr]equest\..*
+[\'\" ]+AND[[:space:]]+.*=.*[Rr]equest\..*
+(LIKE|like)[[:space:]]+.*[Rr]equest\..*
+(ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+.*[Rr]equest
+(LIMIT|limit)[[:space:]]+.*[Rr]equest\..*
