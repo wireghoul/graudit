@@ -22,6 +22,13 @@ catch\s*{
 Finally
 trace enabled
 customErrors mode
+System\.Diagnostics\.Process\.Start\(.*
+new[[:space:]]+(System\.Diagnostic\.)?Process(StartInfo)?[[:space:]]*\(.*
+\.Start[[:space:]]\(.*
+# via CliWrap
+new[[:space:]]+Cli[[:space:]]*\(.*
+# via Microsoft.VisualBasic
+\.Shell[[:space:]]*\(.*
 # DotNet input controls
 system.web.ui.htmlcontrols.htmlinputhidden
 system.web.ui.webcontrols.hiddenfield

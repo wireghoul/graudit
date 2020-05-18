@@ -1,3 +1,10 @@
+System\.Diagnostics\.Process\.Start\(.*
+new[[:space:]]+(System\.Diagnostic\.)?Process(StartInfo)?[[:space:]]*\(.*
+\.Start[[:space:]]\(.*
+# via CliWrap
+new[[:space:]]+Cli[[:space:]]*\(.*
+# via Microsoft.VisualBasic
+\.Shell[[:space:]]*\(.*
 # Perl exec signatures
 exec(\s*\(|\s+).*\$.*\)?
 fork(\s*\(|\s+).*\)?
