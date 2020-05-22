@@ -1,7 +1,7 @@
 asm[[:space:]]+
 unsafeAddr([[:space:]]+|[[:space:]]*\()
-open(File)?[[:space:]]*\(
 addr[[:space:]]*\(
+open(File)?[[:space:]]*\(
 asm[[:space:]]+[\'\"].*
 unsafeAddr
 execShellCmd[[:space:]]*\(

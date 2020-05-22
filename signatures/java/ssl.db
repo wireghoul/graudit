@@ -2,3 +2,7 @@ A[Ll][Ll][Oo][Ww]_?A[Ll][Ll]_?H[Oo][Ss][Tt][Nn][Aa][Mm][Ee]_?V[Ee][Rr][Ii][Ff][I
 SSLSocketFactory
 is[Tt]rusted
 trustmanager
+checkClientTrusted[[:space:]]*\(
+checkServerTrusted[[:space:]]*\(
+getAcceptedIssuers[[:space:]]*\(
+public[[:space:]]+boolean[[:space:]]+verify

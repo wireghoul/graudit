@@ -24,3 +24,5 @@ proc_nice([[:space:]]*\(|[[:space:]]+).*\)?
 proc_terminate([[:space:]]*\(|[[:space:]]+).*\)?
 shell_exec([[:space:]]*\(|[[:space:]]+).*\)?
 system([[:space:]]*\(|[[:space:]]+).*\)?
+.*\=.*\!\!
+[a-z0-9A-Z]\.\!
