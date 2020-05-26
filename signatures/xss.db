@@ -3,6 +3,7 @@
 <%\s*=[[:space:]]*[\_a-zA-Z0-9][^\%]+
 innerText[[:space:]]*=[^\;]+\+
 innerHTML[[:space:]]*=[^\;]+\+
+[Vv]alidate[Rr]equest=[\'\"]?false[\'\"]?
 URL\.Query\(\).*
 QueryUnescape\(.*
 # Java xss signatures

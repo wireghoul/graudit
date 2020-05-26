@@ -224,6 +224,24 @@ ovrimos_.*[[:space:]]*\(.*\$.*\)
 maxdb_.*[[:space:]]*\(.*\$.*\)
 db2_.*[[:space:]]*\(.*\$.*\)
 CURLOPT_SSL_VERIFY(HOST|PEER), *([Ff][Aa][Ll][Ss][Ee]|0)
+unserialize[[:space:]]*\(.*\$.*
+file_exists[[:space:]]*\(\"?\$.*
+md5_file[[:space:]]*\(\"?\$.*
+filemtime[[:space:]]*\(\"?\$.*
+filesize[[:space:]]*\(\"?\$.*
+file_get_contents[[:space:]]*\(.*\$.*
+fopen[[:space:]]*\(.*\$.*
+file[[:space:]]*\(.*\$.*
+php://stdin
+php://stdout
+php://stderr
+php://output
+php://input
+php://filter
+php://memory
+php://temp
+phar://.*\$.*
+expect:// 
 # PHP - Superglobals & Environment
 getenv\s*\(.*\)
 apache_getenv\s*\(.*\)
