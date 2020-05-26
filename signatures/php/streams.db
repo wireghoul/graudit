@@ -1,8 +1,8 @@
 unserialize[[:space:]]*\(.*\$
-file_exists[[:space:]]*\(.*\$
-md5_file[[:space:]]*\(.*\$
-filemtime[[:space:]]*\(.*\$
-filesize[[:space:]]*\(.*\$
+file_exists[[:space:]]*\(\"?\$
+md5_file[[:space:]]*\(\"?\$
+filemtime[[:space:]]*\(\"?\$
+filesize[[:space:]]*\(\"?\$
 file_get_contents[[:space:]]*\(.*\$
 fopen[[:space:]]*\(.*\$
 file[[:space:]]*\(.*\$
