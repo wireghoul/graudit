@@ -39,7 +39,7 @@ passthru[[:space:]]*\(.*\)
 popen[[:space:]]*\(.*\$.*\)
 shell_exec[[:space:]]*\(.*\$.*\)
 system[[:space:]]*\(.*\$.*\)
-`[^`]*\$[^`]*`
+`[^`]*\$[^`]+`
 #Otherstuffs
 #XSS signature needs to stop matching before LF when color=on #bug(1)
 echo.*\$_.*\[.*\]
@@ -50,18 +50,18 @@ WHERE\s+.*=.*\$[^; ]+
 (include|include_once|require|require_once)[[:space:]]*\(.*\$.*\)
 print.*param[[:space:]]*\(.*\);
 # PHP - Execution
-assert([[:space:]]*\(|[[:space:]]+).*\)?
-exec([[:space:]]*\(|[[:space:]]+).*\)?
-`.*`
-passthru([[:space:]]*\(|[[:space:]]+).*\)?
-popen([[:space:]]*\(|[[:space:]]+).*\)?
-proc_close([[:space:]]*\(|[[:space:]]+).*\)?
+assert([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
+exec([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
+`[^`]+\$[^`]+`
+passthru([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
+popen([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
+proc_close([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
 proc_open([[:space:]]*\(|[[:space:]]+).*\)?
 proc_get_status([[:space:]]*\(|[[:space:]]+).*\)?
 proc_nice([[:space:]]*\(|[[:space:]]+).*\)?
 proc_terminate([[:space:]]*\(|[[:space:]]+).*\)?
 shell_exec([[:space:]]*\(|[[:space:]]+).*\)?
-system([[:space:]]*\(|[[:space:]]+).*\)?
+system([[:space:]]*\(|[[:space:]]+[\"\']).*\)?
 # Extensions
 expect_
 pcntl_
@@ -88,6 +88,7 @@ FFI::load[[:space:]]*\(
 FFI::free[[:space:]]*\(
 FFI::new[[:space:]]*\(
 FFI:;string[[:space:]]*\(
+escapeshellcmd[[:space:]]*\(.*escapeshellarg[[:space:]]*\(.*
 echo[[:space:]]+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
 print[[:space:]]+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
 print_r([[:space:]]+|[[:space:]]*\().*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
