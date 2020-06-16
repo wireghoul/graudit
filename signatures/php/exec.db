@@ -1,13 +1,13 @@
 # PHP - Execution
-assert([[:space:]]*\(|[[:space:]]+).*\)?
-exec([[:space:]]*\(|[[:space:]]+).*\)?
-`.*`
-passthru([[:space:]]*\(|[[:space:]]+).*\)?
-popen([[:space:]]*\(|[[:space:]]+).*\)?
-proc_close([[:space:]]*\(|[[:space:]]+).*\)?
+assert([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
+exec([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
+`[^`]+\$[^`]+`
+passthru([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
+popen([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
+proc_close([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
 proc_open([[:space:]]*\(|[[:space:]]+).*\)?
 proc_get_status([[:space:]]*\(|[[:space:]]+).*\)?
 proc_nice([[:space:]]*\(|[[:space:]]+).*\)?
 proc_terminate([[:space:]]*\(|[[:space:]]+).*\)?
 shell_exec([[:space:]]*\(|[[:space:]]+).*\)?
-system([[:space:]]*\(|[[:space:]]+).*\)?
+system([[:space:]]*\(|[[:space:]]+[\"\']).*\)?
