@@ -1,3 +1,16 @@
+2.6		2020 Jun 19
+		Fixed carriage return tolerance in graudit
+		Added basic scala rules
+		Updated Java rules
+		QoL tweaks to Nim rules
+		dotnet fruit rules
+		dotnet rules overhauled
+		Added more unit tests
+		Updated PHP rules
+		Improved PHP stream rules
+		Fixed bug for PHP stream rules
+		Fixed bug when listing databases in empty directories
+
 2.5		2020 May 08
 		Default ruleset is now generated from languages
 		Retired rough rules
