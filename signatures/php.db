@@ -111,6 +111,7 @@ require_once[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|htt
 fopen[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 readfile[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 file_get_contents[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
+(is_dir|file_exists|unlink)[[:space:]]*\(\"?\$(_ENV|_GET|_POST|_COOKE|_REQUEST|_SERVER|HTTP|http).*\)
 show_source[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 preg_replace[[:space:]]*\([\'"](.).*\1[igsu]*e
 highlight_file[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
@@ -227,6 +228,7 @@ db2_.*[[:space:]]*\(.*\$.*\)
 CURLOPT_SSL_VERIFY(HOST|PEER), *([Ff][Aa][Ll][Ss][Ee]|0)
 unserialize[[:space:]]*\(.*\$.*
 file_exists[[:space:]]*\(\"?\$.*
+is_dir[[:space:]]*\(\"?\$
 md5_file[[:space:]]*\(\"?\$.*
 filemtime[[:space:]]*\(\"?\$.*
 filesize[[:space:]]*\(\"?\$.*
@@ -242,7 +244,7 @@ php://filter
 php://memory
 php://temp
 phar://.*\$.*
-expect:// 
+expect://
 # PHP - Superglobals & Environment
 getenv\s*\(.*\)
 apache_getenv\s*\(.*\)

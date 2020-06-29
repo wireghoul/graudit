@@ -1,5 +1,6 @@
 unserialize[[:space:]]*\(.*\$.*
 file_exists[[:space:]]*\(\"?\$.*
+is_dir[[:space:]]*\(\"?\$
 md5_file[[:space:]]*\(\"?\$.*
 filemtime[[:space:]]*\(\"?\$.*
 filesize[[:space:]]*\(\"?\$.*
@@ -15,4 +16,4 @@ php://filter
 php://memory
 php://temp
 phar://.*\$.*
-expect:// 
+expect://
