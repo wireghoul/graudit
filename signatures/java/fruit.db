@@ -1,4 +1,4 @@
 response.sendRedirect[[:space:]]*\(.*(Request|request).*\)
 out\.print(ln)?.*[Rr]equest\.
 <%=[Rr]equest\.
-\.exec[[:space:]]*\(.*\+.*
+\.exec[[:space:]]*\([^\;]+[\'\"][[:space:]]*\+.*
