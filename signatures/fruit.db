@@ -29,7 +29,7 @@ system[[:space:]]*\(.*\)\;
 response.sendRedirect[[:space:]]*\(.*(Request|request).*\)
 out\.print(ln)?.*[Rr]equest\.
 <%=[Rr]equest\.
-\.exec[[:space:]]*\(.*\+.*
+\.exec[[:space:]]*\([^\;]+[\'\"][[:space:]]*\+.*
 \.query\(.*[\'\"][[:space:]]*\+.*
 eval[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
 asm[[:space:]]+[\'\"].*
@@ -50,7 +50,9 @@ use[[:space:]]+.*\$.*->param[[:space:]]*\(.*\).*
 (LIKE|like)[[:space:]]+.*\$.*->param[[:space:]]*\(.*\)
 (ORDER BY|order by)[[:space:]]+.*\$.*->param[[:space:]]*\(.*\)
 (LIMIT|limit)[[:space:]]+.*\$.*->param[[:space:]]*\(.*\)
-escapeshellcmd[[:space:]]*\(.*escapeshellarg[[:space:]]*\(.*
+escapeshellcmd[[:space:]]*\([^\)]*escapeshellarg[[:space:]]*\(.*
+escapeshellarg[[:space:]]*\([^\)]*escapeshellcmd[[:space:]]*\(.*
+[\'\"][[:space:]]*\.[[:space:]]*escapeshellcmd[[:space:]]*\(
 echo[[:space:]]+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
 print[[:space:]]+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
 print_r([[:space:]]+|[[:space:]]*\().*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
