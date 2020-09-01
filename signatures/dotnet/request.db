@@ -25,3 +25,4 @@ InputStream
 HiddenField.Value
 TextBox.Text
 recordSet
+Server.Transfer
