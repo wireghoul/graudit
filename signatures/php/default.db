@@ -11,7 +11,7 @@ echo.*\$_.*\[.*\]
 eval[[:space:]]*\(.*\$.*\)
 #SQLi signature needs to stop matching before LF when color=on #bug(1)
 mysql_query[[:space:]]*\(.*\$.*\)
-WHERE\s+.*=.*\$[^; ]+
+WHERE[[:space:]]+.*=.*\$[^; ]+
 (include|include_once|require|require_once)[[:space:]]*\(.*\$.*\)
 print.*param[[:space:]]*\(.*\);
 extract[[:space:]]*\(\$_(GET|POST|REQUEST|COOKIE|SERVER)

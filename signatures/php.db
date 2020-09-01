@@ -46,7 +46,7 @@ echo.*\$_.*\[.*\]
 eval[[:space:]]*\(.*\$.*\)
 #SQLi signature needs to stop matching before LF when color=on #bug(1)
 mysql_query[[:space:]]*\(.*\$.*\)
-WHERE\s+.*=.*\$[^; ]+
+WHERE[[:space:]]+.*=.*\$[^; ]+
 (include|include_once|require|require_once)[[:space:]]*\(.*\$.*\)
 print.*param[[:space:]]*\(.*\);
 extract[[:space:]]*\(\$_(GET|POST|REQUEST|COOKIE|SERVER)
@@ -278,26 +278,26 @@ import_request_variables[[:space:]]*\(
 # Variable variables aren't superglobals, but bad idea
 \$\$.*
 # Otherstuffs
-header\s*\(.*\$_(GET|POST|REQUEST|COOKIE).*\)
-eval\s*\(\s*.\$.*\s*\)
-file\s*\(.\$.*\)
-file_get_contents\s*\(.\$.*\)
-fopen\s*\(.*\$.*\)
-p?fsockopen\s*\(.*\)
-stream_context_create\s*\(.*\)
+header[[:space:]]*\(.*\$_(GET|POST|REQUEST|COOKIE).*\)
+eval[[:space:]]*\([[:space:]]*.\$.*[[:space:]]*\)
+file[[:space:]]*\(.\$.*\)
+file_get_contents[[:space:]]*\(.\$.*\)
+fopen[[:space:]]*\(.*\$.*\)
+p?fsockopen[[:space:]]*\(.*\)
+stream_context_create[[:space:]]*\(.*\)
 fwrite
-move_uploaded_file\s*\(.*\)
+move_uploaded_file[[:space:]]*\(.*\)
 stream_
-create_function\s*\(.*\)
-mail\s*\(.\$.*\)
-include\s*\(.*\$.*\)
-include_once\s*\(.*\$.*\)
-preg_replace\s*\(.\$*\)
-readfile\s*\(.\$.*\)
-require\s*\(.*\$.*\)
-require_once\s*\(.*\$.*\)
+create_function[[:space:]]*\(.*\)
+mail[[:space:]]*\(.\$.*\)
+include[[:space:]]*\(.*\$.*\)
+include_once[[:space:]]*\(.*\$.*\)
+preg_replace[[:space:]]*\(.\$*\)
+readfile[[:space:]]*\(.\$.*\)
+require[[:space:]]*\(.*\$.*\)
+require_once[[:space:]]*\(.*\$.*\)
 # Stefan Esser's research
-unserialize\s*\(.*\)
+unserialize[[:space:]]*\(.*\)
 unserialize_callback_func
 # PHP xss signatures
 echo[[:space:]]+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
