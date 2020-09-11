@@ -101,3 +101,4 @@ px_.*[[:space:]]*\(.*\$.*\)
 ovrimos_.*[[:space:]]*\(.*\$.*\)
 maxdb_.*[[:space:]]*\(.*\$.*\)
 db2_.*[[:space:]]*\(.*\$.*\)
+GRANT.*IDENTIFIED BY.*
