@@ -101,6 +101,3 @@ px_.*[[:space:]]*\(.*\$.*\)
 ovrimos_.*[[:space:]]*\(.*\$.*\)
 maxdb_.*[[:space:]]*\(.*\$.*\)
 db2_.*[[:space:]]*\(.*\$.*\)
-GRANT.*IDENTIFIED BY.*
-INSERT\s*INTO.*'[0-9a-f]{32}'.*
-INSERT\s*INTO.*'[0-9a-f]{40}'.*
