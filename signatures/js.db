@@ -1,4 +1,16 @@
 (document|\$)\.cookie[[:space:]]*\(
+nodeIntegration
+nodeIntegrationInWorker
+nodeIntegrationInSubFrames
+preload
+devTools
+BrowserWindow.webContents.openDevTools()
+webSecurity
+allowRunningInsecureContent
+contextIsolation
+worldSafeExecuteJavaScript
+additionalArguments
+enableWebSQL
 \.query\(.*[\'\"][[:space:]]*\+.*
 eval[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
 eval[[:space:]]*\(

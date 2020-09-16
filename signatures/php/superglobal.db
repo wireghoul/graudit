@@ -24,5 +24,6 @@ apache_response_headers\s*\(.*\)
 \$http_raw_post_data
 \$HTTP_POST_FILES
 \$http_post_files
+import_request_variables[[:space:]]*\(
 # Variable variables aren't superglobals, but bad idea
 \$\$.*

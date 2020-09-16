@@ -47,3 +47,4 @@ WRITE_EXTERNAL_STORAGE
 sdcard
 getExternalStorageDirectory
 isExternalStorageWritable
+\.setJavaScriptEnabled[[:space:]]*\(.*\)
