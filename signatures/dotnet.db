@@ -113,6 +113,7 @@ InputStream
 HiddenField.Value
 TextBox.Text
 recordSet
+Server.Transfer
 # Dotnet serialization and deserialization
 # Security and Serialization: https://msdn.microsoft.com/en-us/library/ek7af9ck(v=vs.90).aspx
 Serialization
