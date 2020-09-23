@@ -26,6 +26,8 @@ file_get_contents[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTT
 (is_dir|file_exists|unlink)[[:space:]]*\(\"?\$(_ENV|_GET|_POST|_COOKE|_REQUEST|_SERVER|HTTP|http).*\)
 show_source[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 preg_replace[[:space:]]*\([\'"](.).*\1[igsu]*e
+preg_match[[:space:]]*\(.*
+scandir[[:space:]]*\(.*
 highlight_file[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 file[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 unserialize[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
