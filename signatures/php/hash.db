@@ -1,0 +1,4 @@
+# PHP hash extension rules, helps to identify Hard-coded credentials/secret
+hash[[:space:]]*\(.*\)
+hash_init[[:space:]]*\(.*\)
+hash_update[[:space:]]*\(.*\)

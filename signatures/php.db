@@ -129,6 +129,10 @@ pg_query[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
 (LIKE|like)[[:space:]]+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http)
 (ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http)
 (LIMIT|limit)[[:space:]]+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http)
+# PHP hash extension rules, helps to identify Hard-coded credentials/secret
+hash[[:space:]]*\(.*\)
+hash_init[[:space:]]*\(.*\)
+hash_update[[:space:]]*\(.*\)
 # Informatin disclosure
 phpinfo\s*\(.*\)
 phpcredits\s*\(.*\)
@@ -238,6 +242,7 @@ filesize[[:space:]]*\(\"?\$.*
 file_get_contents[[:space:]]*\(.*\$.*
 fopen[[:space:]]*\(.*\$.*
 file[[:space:]]*\(.*\$.*
+scandir[[:space:]]*\(.*
 php://stdin
 php://stdout
 php://stderr
@@ -293,6 +298,7 @@ mail[[:space:]]*\(.\$.*\)
 include[[:space:]]*\(.*\$.*\)
 include_once[[:space:]]*\(.*\$.*\)
 preg_replace[[:space:]]*\(.\$*\)
+preg_match[[:space:]]*\(.*
 readfile[[:space:]]*\(.\$.*\)
 require[[:space:]]*\(.*\$.*\)
 require_once[[:space:]]*\(.*\$.*\)

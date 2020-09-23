@@ -7,6 +7,7 @@ filesize[[:space:]]*\(\"?\$.*
 file_get_contents[[:space:]]*\(.*\$.*
 fopen[[:space:]]*\(.*\$.*
 file[[:space:]]*\(.*\$.*
+scandir[[:space:]]*\(.*
 php://stdin
 php://stdout
 php://stderr

@@ -1,5 +1,0 @@
-# There are several crypto functions in php, but the following three are the essentials and the remaining usually depend on these functions.
-# Helps to identify Hard-coded credentials/secret
-hash\s*\(.*\)
-hash_init\s*\(.*\)
-hash_update\s*\(.*\)
