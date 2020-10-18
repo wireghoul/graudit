@@ -33,7 +33,7 @@ graudit [opts] /path/to/scan
 
 OPTIONS
   -d <dbname> database to use or /path/to/file.db (uses default if not specified)
-  -A scan ALL files
+  -A scan ALL files (you probably don't want this)
   -x exclude these files (comma separated list: -x *.js,*.sql)
   -i case in-sensitive scan
   -c <num> number of lines of context to display, default is 2
