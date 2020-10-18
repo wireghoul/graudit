@@ -4,9 +4,11 @@ scanf[[:space:]]*\([^\,]+\%s[^\\,]+\,[^\,]+\)\;
 strncpy[[:space:]]*\([^\,]+\,[[:space:]]*sizeof\(
 memcpy[[:space:]]*\([^\,]+\,[^\,]+\,[[:space:]]*sizeof\(
 [[:space:]]gets[[:space:]]*\(
+^gets[[:space:]]*\(
 exec(ve|l|lp|le|v)[[:space:]]*\(
 system[[:space:]]*\(.*\)\;
 (strc(at|py)|memcpy|sprintf|sscanf)[[:space:]]*\(.*argv
+strnc(at|py)[[:space:]]*\([^,]+,[^,]+,[[:space:]]*strlen[[:space:]]*\([^\)]+\)[[:space:]]*\)
 <%=[[:space:]]*[Rr]equest\.[Qq]uery[Ss]tring\[.*%>
 #[Ss][Ee][Ll][Ee][Cc][Tt][[:space:]]+.*\{[0-9]+\}
 [Ss][Ee][Ll][Ee][Cc][Tt][[:space:]]+.*[\'\"][[:space:]]*\+[[:space:]]*[Rr]equest\..*
@@ -15,6 +17,7 @@ system[[:space:]]*\(.*\)\;
 (LIKE|like)[[:space:]]+[^\;]+\+[[:space:]]*[Rr]equest\..*
 (ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+.*\+[[:space:]]*[Rr]equest
 (LIMIT|limit)[[:space:]]+.*\+[[:space:]]*[Rr]equest\..*
+Process.Start[[:space:]]*\(.*\+
 \.WriteString\(.*URL\.Query\(\).*\)
 \.Write\(.*URL.Query\(\).*\)
 \.Println\(.*URL.Query\(\).*\)
@@ -30,6 +33,8 @@ response.sendRedirect[[:space:]]*\(.*(Request|request).*\)
 out\.print(ln)?.*[Rr]equest\.
 <%=[Rr]equest\.
 \.exec[[:space:]]*\([^\;]+[\'\"][[:space:]]*\+.*
+(execute|create|new)Query[[:space:]]*\(.*[\"\'][[:space:]]*\+[[:space:]]*[^\"\']+
+queryforObject[[:space:]]*\(.*[\"\'][[:space:]]*\+[[:space:]]*[^\"\']+
 \.query\(.*[\'\"][[:space:]]*\+.*
 eval[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
 asm[[:space:]]+[\'\"].*
@@ -90,3 +95,6 @@ pg_query[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
 (LIKE|like)[[:space:]]+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http)
 (ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http)
 (LIMIT|limit)[[:space:]]+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http)
+Source\.fromFile[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
+sql\".*\#\$.*\"\.as\[.*
+SQL[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+

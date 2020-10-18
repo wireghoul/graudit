@@ -3,11 +3,12 @@ nodeIntegrationInWorker
 nodeIntegrationInSubFrames
 preload
 devTools
-BrowserWindow.webContents.openDevTools()
+BrowserWindow.webContents.openDevTools[[:space:]]*\(\)
 webSecurity
 allowRunningInsecureContent
 contextIsolation
 worldSafeExecuteJavaScript
 additionalArguments
 enableWebSQL
+openExternal[[:space:]]*\(
 ELECTRON_RUN_AS_NODE
