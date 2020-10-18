@@ -6,3 +6,4 @@
 (LIKE|like)[[:space:]]+[^\;]+\+[[:space:]]*[Rr]equest\..*
 (ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+.*\+[[:space:]]*[Rr]equest
 (LIMIT|limit)[[:space:]]+.*\+[[:space:]]*[Rr]equest\..*
+Process.Start[[:space:]]*\(.*\+
