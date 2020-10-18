@@ -12,4 +12,4 @@ find $1 \( -iname '*.conf' -o -iname '*.cnf' -o -iname '*.key' -o -iname '.id_rs
 echo ""
 echo "Running graudit with secrets.db"
 echo "-----------------------------------" 
-graudit -d secrets $1
+graudit -A -d secrets $1
