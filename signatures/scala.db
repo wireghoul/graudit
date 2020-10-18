@@ -1,0 +1,8 @@
+scala.util.Random
+Random\.nextInt
+.*\=.*\!\!
+[a-z0-9A-Z]\.\!
+Source\.fromFile[[:space:]]*\(
+Source\.fromFile[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
+sql\".*\#\$.*\"\.as\[.*
+SQL[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
