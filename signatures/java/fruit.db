@@ -2,3 +2,5 @@ response.sendRedirect[[:space:]]*\(.*(Request|request).*\)
 out\.print(ln)?.*[Rr]equest\.
 <%=[Rr]equest\.
 \.exec[[:space:]]*\([^\;]+[\'\"][[:space:]]*\+.*
+(execute|create|new)Query[[:space:]]*\(.*[\"\'][[:space:]]*\+[[:space:]]*[^\"\']+
+queryforObject[[:space:]]*\(.*[\"\'][[:space:]]*\+[[:space:]]*[^\"\']+

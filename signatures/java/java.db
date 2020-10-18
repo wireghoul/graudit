@@ -24,9 +24,6 @@ IS_SUPPORTING_EXTERNAL_ENTITIES
 KeyManagerFactory
 PreparedStatement
 \.PathParam[[:space:]]*\(
-random
-java.util.Random
-SecureRandom
 SecurityException
 SecurityManager
 sendRedirect
@@ -48,3 +45,5 @@ resolveClass[[:space:]]*\(
 \.createValueExpression[[:space:]]*\(
 printStackTrace[[:space:]]\(
 SecretKeySpec
+\.csrf\(\)\.disable\(\)
+new[[:space:]]+URL[[:space:]]*\(.*\)\.(open(Stream|Connection)|getContent)|

@@ -1,3 +1,8 @@
+java.util.Random
+new[[:space:]]*(Secure)?Random[[:space:]]*\(
+MessageDigest\.getInstance[[:space:]]*\([\"\']([Mm][Dd]5|[Ss][Hh][Aa]-?(1|256)|[Rr][Ss][Aa]\/[Nn][Oo][Nn][Ee]|DES.*|AES\/(CBC|ECB)\/.*)[\"\']\)
+\.digest[[:space:]]*\(
+extends[[:space:]]*MessageDigest
 # Java Specific Security Related Exceptions
 AccessControlException
 BindException
@@ -29,6 +34,8 @@ response.sendRedirect[[:space:]]*\(.*(Request|request).*\)
 out\.print(ln)?.*[Rr]equest\.
 <%=[Rr]equest\.
 \.exec[[:space:]]*\([^\;]+[\'\"][[:space:]]*\+.*
+(execute|create|new)Query[[:space:]]*\(.*[\"\'][[:space:]]*\+[[:space:]]*[^\"\']+
+queryforObject[[:space:]]*\(.*[\"\'][[:space:]]*\+[[:space:]]*[^\"\']+
 AccessController
 addHeader
 CallableStatement
@@ -55,9 +62,6 @@ IS_SUPPORTING_EXTERNAL_ENTITIES
 KeyManagerFactory
 PreparedStatement
 \.PathParam[[:space:]]*\(
-random
-java.util.Random
-SecureRandom
 SecurityException
 SecurityManager
 sendRedirect
@@ -79,6 +83,8 @@ resolveClass[[:space:]]*\(
 \.createValueExpression[[:space:]]*\(
 printStackTrace[[:space:]]\(
 SecretKeySpec
+\.csrf\(\)\.disable\(\)
+new[[:space:]]+URL[[:space:]]*\(.*\)\.(open(Stream|Connection)|getContent)|
 request.getQueryString
 exec[[:space:]]*\(.*\)
 Runtime\.
@@ -96,6 +102,8 @@ createStatement[[:space:]]*\(.*\)
 executeQuery[[:space:]]*\(.*\)
 # Network
 Socket[[:space:]]*\(
+<jsp:include page=\".*\$\{.*\}
+<spring:eval expression=\".*\$\{.*\}
 A[Ll][Ll][Oo][Ww]_?A[Ll][Ll]_?H[Oo][Ss][Tt][Nn][Aa][Mm][Ee]_?V[Ee][Rr][Ii][Ff][Ii][Ee][Rr]
 SSLSocketFactory
 is[Tt]rusted

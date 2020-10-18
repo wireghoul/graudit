@@ -1,0 +1,5 @@
+java.util.Random
+new[[:space:]]*(Secure)?Random[[:space:]]*\(
+MessageDigest\.getInstance[[:space:]]*\([\"\']([Mm][Dd]5|[Ss][Hh][Aa]-?(1|256)|[Rr][Ss][Aa]\/[Nn][Oo][Nn][Ee]|DES.*|AES\/(CBC|ECB)\/.*)[\"\']\)
+\.digest[[:space:]]*\(
+extends[[:space:]]*MessageDigest

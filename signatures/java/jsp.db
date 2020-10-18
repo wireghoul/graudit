@@ -15,3 +15,5 @@ createStatement[[:space:]]*\(.*\)
 executeQuery[[:space:]]*\(.*\)
 # Network
 Socket[[:space:]]*\(
+<jsp:include page=\".*\$\{.*\}
+<spring:eval expression=\".*\$\{.*\}
