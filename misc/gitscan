@@ -6,9 +6,7 @@ if [ -z $1 ]; then
 fi
 url=$1
 echo "Scanning $url!"
-D=$( echo "$1" | cut -d '/' -f 5 )
-mkdir -p churn/$D
-wget -q -O churn/$D/master.zip "$url/archive/master.zip"
-cd churn/$D
-unzip -qq master.zip
+mkdir -p churn
+cd churn
+git clone $url
 graudit -x *.js,*.json,*.map,*.sql -d ./flatline.db .
