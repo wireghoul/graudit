@@ -1,5 +1,5 @@
 #!/bin/sh
-# download and scan a single github repo's master branch, output to stdout
+# download and scan a single github repo, output to stdout
 if [ -z $1 ]; then
     echo "$0 <https://github/repo/url>"
     exit 2
