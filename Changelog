@@ -1,3 +1,16 @@
+2.8		2020 Oct 30
+		Updated Electron rules
+		Updated PHP rules
+		More scala rules and a scala signature set
+		Updated C rules
+		Updated Java rules
+		Updated fruit rules
+		Documentation tweaks
+		Improved error handling
+		Updated gitscan script
+		AMPscript and ssjs example rules
+		git log scanner example script
+
 2.7		2020 Sep 23
 		Carriage return tolerance fixed for non GNU sed versions
 		Updated PHP rules

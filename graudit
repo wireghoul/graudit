@@ -4,7 +4,7 @@
 # Released under the GPL licence
 set -e
 set -o pipefail
-VERSION='2.7'
+VERSION='2.8'
 basedir=$(dirname "$0")
 BINFILE=$(which grep)
 
@@ -23,7 +23,7 @@ OLD_COLORS=$GREP_COLORS
 OLD_COLOR=$GREP_COLOR
 
 if [ ! -x "$BINFILE" ]; then
-    echo "grep not found!"
+    echo "Can't find grep, which is a requirement to run graudit"
     exit 2
 fi
 $BINFILE --exclude-dir=. test "$0" >/dev/null 2>&1
@@ -43,7 +43,7 @@ banner() {
         \___  /|__|  (____  /____/\____ | |__||__|  
        /_____/            \/           \/           
               grep rough audit - static analysis tool
-                  v2.7 written by @Wireghoul
+                  v2.8 written by @Wireghoul
 =================================[justanotherhacker.com]==='
     fi
 }
@@ -59,7 +59,7 @@ Usage: graudit [opts] /path/to/scan
 
 OPTIONS
   -d <dbname> database to use or /path/to/file.db (uses default if not specified)
-  -A scan ALL files
+  -A scan unwanted and difficult (ALL) files
   -x exclude these files (comma separated list: -x *.js,*.sql)
   -i case in-sensitive scan
   -c <num> number of lines of context to display, default is 2
@@ -152,7 +152,7 @@ while getopts "AbBhvilLzZd:c:x:" opt; do
             excludefiles=""
         ;;
         \?)
-            echo "Invalid option: -$OPTARG" >&2
+            #echo "Invalid option: -$OPTARG" >&2
             usage
             exit 2
         ;;
@@ -163,7 +163,7 @@ shift $((OPTIND-1))
 
 #Database location can vary based on installation
 if [ "$sigdb" == '-' ]; then
-    database='-'
+    database='/dev/stdin'
 elif [ -f "$GRDIR/$sigdb.db"  ]; then
     database="$GRDIR/$sigdb.db"
 elif [ -f "/usr/share/graudit/$sigdb.db" ]; then
@@ -180,6 +180,12 @@ fi
 
 
 if [ -z "$1" ]; then
+    usage
+    exit 2
+fi
+
+if [ ! -e $database ]; then
+    echo "database path not found: $database, try running graudit with -l" >&2
     usage
     exit 2
 fi
