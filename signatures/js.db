@@ -15,6 +15,7 @@ openExternal[[:space:]]*\(
 ELECTRON_RUN_AS_NODE
 \.query\(.*[\'\"][[:space:]]*\+.*
 eval[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
+<%-[[:space:]]+.*%>
 eval[[:space:]]*\(
 dangerouslySetInnerHTML
 trustAsHtml

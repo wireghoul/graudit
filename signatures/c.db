@@ -4,9 +4,9 @@ scanf[[:space:]]*\([^\,]+\%s[^\\,]+\,[^\,]+\)\;
 strncpy[[:space:]]*\([^\,]+\,[[:space:]]*sizeof\(
 memcpy[[:space:]]*\([^\,]+\,[^\,]+\,[[:space:]]*sizeof\(
 [[:space:]]gets[[:space:]]*\(
-^gets[[:space:]]*\(
+^[[:space:]]*gets[[:space:]]*\(
 exec(ve|l|lp|le|v)[[:space:]]*\(
-system[[:space:]]*\(.*\)\;
+system[[:space:]]*\(.+\)\;
 (strc(at|py)|memcpy|sprintf|sscanf)[[:space:]]*\(.*argv
 strnc(at|py)[[:space:]]*\([^,]+,[^,]+,[[:space:]]*strlen[[:space:]]*\([^\)]+\)[[:space:]]*\)
 malloc[[:space:]]*\(strlen[[:space:]]*\(.*\)
