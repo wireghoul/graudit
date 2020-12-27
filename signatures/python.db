@@ -1,4 +1,5 @@
 \.NamedTemporaryFile\(.*\)
+\.execute[[:space:]]*\([\"\'].*%.*[\"\'][[:space:]]*%.*\)
 access[[:space:]]*\(
 assert[[:space:]]*\(
 mkfifo
