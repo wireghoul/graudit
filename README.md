@@ -36,7 +36,7 @@ OPTIONS
   -A scan unwanted and difficult (ALL) files
   -x exclude these files (comma separated list: -x *.js,*.sql)
   -i case in-sensitive scan
-  -c <num> number of lines of context to display, default is 2
+  -c <num> number of lines of context to display before and after a match, default is 1
 
   -B suppress banner
   -L vim friendly lines

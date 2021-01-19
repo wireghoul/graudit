@@ -1,3 +1,11 @@
+2.9		2021 ??? ??
+		Fix for GRDIR by @micharu123
+		Improved C fruit rules
+		Improved js fruit rules
+		Started python fruit rules
+		Updated documentation
+		Fixed typo in dotnet rules (@0x10f2c)
+
 2.8		2020 Oct 30
 		Updated Electron rules
 		Updated PHP rules
