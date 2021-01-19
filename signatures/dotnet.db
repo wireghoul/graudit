@@ -124,7 +124,7 @@ SerializeObject
 SerializationBinder
 JsonSerializer
 JsonSerializerSettings
-DleserializeObject
+DeserializeObject
 ISerializable
 # DotNet SQL
 exec[[:space:]]*sp_executesql
