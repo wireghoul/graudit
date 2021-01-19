@@ -82,7 +82,7 @@ listdb () {
     set +o pipefail
     banner
     if [ -n "$GRDIR" ] && [ -d "$GRDIR" ]; then
-        ls -1 "$GRDIR/*.db" 2>/dev/null
+        ls -1 "$GRDIR"/*.db 2>/dev/null
     fi
     if [ -d /usr/share/graudit/ ]; then
         ls -1 /usr/share/graudit/*.db 2>/dev/null

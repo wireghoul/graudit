@@ -7,5 +7,5 @@ SerializeObject
 SerializationBinder
 JsonSerializer
 JsonSerializerSettings
-DleserializeObject
+DeserializeObject
 ISerializable
