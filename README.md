@@ -35,6 +35,7 @@ OPTIONS
   -d <dbname> database to use or /path/to/file.db (uses default if not specified)
   -A scan unwanted and difficult (ALL) files
   -x exclude these files (comma separated list: -x *.js,*.sql)
+  -n include these files (comma separated list: -x *.js,*.sql)
   -i case in-sensitive scan
   -c <num> number of lines of context to display before and after a match, default is 1
 
