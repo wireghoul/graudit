@@ -61,6 +61,7 @@ OPTIONS
   -d <dbname> database to use or /path/to/file.db (uses default if not specified)
   -A scan unwanted and difficult (ALL) files
   -x exclude these files (comma separated list: -x *.js,*.sql)
+  -n include these files (comma separated list: -n *.js,*.sql)
   -i case in-sensitive scan
   -c <num> number of lines of context to display, default is 2
 
@@ -98,7 +99,7 @@ listdb () {
     fi
 }
 
-while getopts "AbBhvilLzZd:c:x:" opt; do
+while getopts "AbBhvilLzZd:c:x:n:" opt; do
     case $opt in
         B)
             hidebanner=1
@@ -131,6 +132,14 @@ while getopts "AbBhvilLzZd:c:x:" opt; do
         ;;
         d)
             sigdb="$OPTARG"
+        ;;
+        n)
+            OIFS=$IFS
+            IFS=','
+            for inc in $OPTARG; do
+                includepattern="$includepattern --include=\\$inc"
+            done
+            IFS=$OIFS
         ;;
         i)
             icase="-i"
@@ -203,6 +212,7 @@ $BINFILE --color=$color \
          --exclude-dir=.git \
          $excludefiles \
          $icase $ignorepattern \
+         $includepattern \
          -n -R -H -C "$context" -E \
          -f "$database" "$@" \
 		 | sed -e"s/$(printf '\r')//g" -e"s/^\(\x1b\[.*m\x1b\[K\)--\(\x1b\[.*\x1b\[K\)$/\1##############################################\2/" -e"s/^--$/$separator/" | sed -e"$vimlines" -e"$zimlines"
