@@ -204,8 +204,9 @@ $BINFILE --color=$color \
          $excludefiles \
          $icase $ignorepattern \
          -n -R -H -C "$context" -E \
-         -f "$database" "$@" \
-		 | sed -e"s/$(printf '\r')//g" -e"s/^\(\x1b\[.*m\x1b\[K\)--\(\x1b\[.*\x1b\[K\)$/\1##############################################\2/" -e"s/^--$/$separator/" | sed -e"$vimlines" -e"$zimlines"
+         -f "$database" $@ | \
+sed -e"s/$(printf '\r')//g" -e"s/^\(\x1b\[.*m\x1b\[K\)--\(\x1b\[.*\x1b\[K\)$/\1##############################################\2/" -e"s/^--$/$separator/" | \
+sed -e"$vimlines" -e"$zimlines"
 SUCCESS=$?
 export GREP_COLORS="$OLD_COLORS"
 exit $SUCCESS

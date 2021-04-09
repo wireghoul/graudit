@@ -1,10 +1,12 @@
-2.9		2021 ??? ??
+2.9		2021 Apr 09
 		Fix for GRDIR by @micharu123
 		Improved C fruit rules
 		Improved js fruit rules
 		Started python fruit rules
 		Updated documentation
 		Fixed typo in dotnet rules (@0x10f2c)
+		Reformatted parts of graudit for readability
+		misc/onlyfiles.sh filescanning with only files matching globs
 
 2.8		2020 Oct 30
 		Updated Electron rules
