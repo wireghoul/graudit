@@ -12,4 +12,5 @@ test_expect_code 1 'Perl signature syntax test' '../graudit -d ../signatures/per
 test_expect_code 1 'Perl context argument' '../graudit -c 5 -d ../signatures/perl.db anotherfile'
 test_expect_code 1 'Perl no color test' '../graudit -z -d ../signatures/perl.db anotherfile'
 test_expect_code 2 'Perl no such file test' '../graudit -d ../signatures/perl.db nosuchfile'
+test_expect_success 'Perl broken rules test' 'test $(../graudit -B -z -d ../signatures/perl.db nomatch.txt | wc -l) -eq 0'
 test_done

@@ -12,4 +12,5 @@ test_expect_code 1 'Default signature syntax test' '../graudit -d ../signatures/
 test_expect_code 1 'Default context argument' '../graudit -c 5 -d ../signatures/default.db anotherfile'
 test_expect_code 1 'Default no color test' '../graudit -z -d ../signatures/default.db anotherfile'
 test_expect_code 2 'Default no such file test' '../graudit -d ../signatures/default.db nosuchfile'
+test_expect_success 'Default broken rules test' 'test $(../graudit -B -z -d ../signatures/default.db nomatch.txt | wc -l) -eq 0'
 test_done

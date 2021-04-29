@@ -12,4 +12,5 @@ test_expect_code 1 'Ruby signature syntax test' '../graudit -d ../signatures/rub
 test_expect_code 1 'Ruby context argument' '../graudit -c 5 -d ../signatures/ruby.db anotherfile'
 test_expect_code 1 'Ruby no color test' '../graudit -z -d ../signatures/ruby.db anotherfile'
 test_expect_code 2 'Ruby no such file test' '../graudit -d ../signatures/ruby.db nosuchfile'
+test_expect_success 'Ruby broken rules test' 'test $(../graudit -B -z -d ../signatures/ruby.db nomatch.txt | wc -l) -eq 0'
 test_done

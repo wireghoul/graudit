@@ -12,4 +12,5 @@ test_expect_code 1 'Actionscript signature syntax test' '../graudit -d ../signat
 test_expect_code 1 'Actionscript context argument' '../graudit -c 5 -d ../signatures/actionscript.db anotherfile'
 test_expect_code 1 'Actionscript no color test' '../graudit -z -d ../signatures/actionscript.db anotherfile'
 test_expect_code 2 'Actionscript no such file test' '../graudit -d ../signatures/actionscript.db nosuchfile'
+test_expect_success 'Actionscript broken rules test' 'test $(../graudit -B -z -d ../signatures/actionscript.db nomatch.txt | wc -l) -eq 0'
 test_done

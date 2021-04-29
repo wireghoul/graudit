@@ -12,4 +12,5 @@ test_expect_code 1 'Python signature syntax test' '../graudit -d ../signatures/p
 test_expect_code 1 'Python context argument' '../graudit -c 5 -d ../signatures/python.db anotherfile'
 test_expect_code 1 'Python no color test' '../graudit -z -d ../signatures/python.db anotherfile'
 test_expect_code 2 'Python no such file test' '../graudit -d ../signatures/python.db nosuchfile'
+test_expect_success 'Python broken rules test' 'test $(../graudit -B -z -d ../signatures/python.db nomatch.txt | wc -l) -eq 0'
 test_done

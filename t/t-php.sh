@@ -12,4 +12,5 @@ test_expect_code 1 'PHP signature syntax test' '../graudit -d php anotherfile'
 test_expect_code 1 'PHP context argument' '../graudit -c 5 -d php anotherfile'
 test_expect_code 1 'PHP no color test' '../graudit -z -d php anotherfile'
 test_expect_code 2 'PHP no such file test' '../graudit -d php nosuchfile'
+test_expect_success 'PHP broken rules test' 'test $(../graudit -B -z -d ../signatures/php.db nomatch.txt | wc -l) -eq 0'
 test_done

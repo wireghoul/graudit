@@ -12,4 +12,5 @@ test_expect_code 1 'Nim signature syntax test' '../graudit -d nim anotherfile'
 test_expect_code 1 'Nim context argument' '../graudit -c 5 -d nim anotherfile'
 test_expect_code 1 'Nim no color test' '../graudit -z -d nim anotherfile'
 test_expect_code 2 'Nim no such file test' '../graudit -d nim nosuchfile'
+test_expect_success 'Nim broken rules test' 'test $(../graudit -B -z -d ../signatures/nim.db nomatch.txt | wc -l) -eq 0'
 test_done

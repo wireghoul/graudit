@@ -12,4 +12,5 @@ test_expect_code 1 'Other signature syntax test' '../graudit -d ../signatures/st
 test_expect_code 1 'Other context argument' '../graudit -c 5 -d ../signatures/strings.db anotherfile'
 test_expect_code 1 'Other no color test' '../graudit -z -d ../signatures/strings.db anotherfile'
 test_expect_code 2 'Other no such file test' '../graudit -d ../signatures/strings.db nosuchfile'
+test_expect_success 'Other broken rules test' 'test $(../graudit -B -z -d ../signatures/strings.db nomatch.txt | wc -l) -eq 0'
 test_done

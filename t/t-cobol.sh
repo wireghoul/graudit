@@ -12,4 +12,5 @@ test_expect_code 1 'COBOL signature syntax test' '../graudit -d ../signatures/co
 test_expect_code 1 'COBOL context argument' '../graudit -c 5 -d ../signatures/cobol.db anotherfile'
 test_expect_code 1 'COBOL no color test' '../graudit -z -d ../signatures/cobol.db anotherfile'
 test_expect_code 2 'COBOL no such file test' '../graudit -d ../signatures/cobol.db nosuchfile'
+test_expect_success 'COBOL broken rules test' 'test $(../graudit -B -z -d ../signatures/cobol.db nomatch.txt | wc -l) -eq 0'
 test_done

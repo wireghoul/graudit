@@ -12,4 +12,5 @@ test_expect_code 1 'ASP signature syntax test' '../graudit -d ../signatures/asp 
 test_expect_code 1 'ASP context argument' '../graudit -c 5 -d ../signatures/asp anotherfile'
 test_expect_code 1 'ASP no color test' '../graudit -z -d ../signatures/asp anotherfile'
 test_expect_code 2 'ASP no such file test' '../graudit -d ../signatures/asp nosuchfile'
+test_expect_success 'ASP broken rules test' 'test $(../graudit -B -z -d ../signatures/asp.db nomatch.txt | wc -l) -eq 0'
 test_done
