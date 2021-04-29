@@ -84,7 +84,7 @@ resolveClass[[:space:]]*\(
 printStackTrace[[:space:]]\(
 SecretKeySpec
 \.csrf\(\)\.disable\(\)
-new[[:space:]]+URL[[:space:]]*\(.*\)\.(open(Stream|Connection)|getContent)|
+new[[:space:]]+URL[[:space:]]*\(.*\)\.(open(Stream|Connection)|getContent)
 request.getQueryString
 exec[[:space:]]*\(.*\)
 Runtime\.
