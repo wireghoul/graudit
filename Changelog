@@ -1,3 +1,7 @@
+3.0		2021 Apr 29
+		Fixed broken Java rule causing massive false positives
+		Additional PHP fruit rules
+
 2.9		2021 Apr 09
 		Fix for GRDIR by @micharu123
 		Improved C fruit rules

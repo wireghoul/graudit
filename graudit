@@ -4,7 +4,7 @@
 # Released under the GPL licence
 set -e
 set -o pipefail
-VERSION='2.9'
+VERSION='3.0'
 basedir=$(dirname "$0")
 BINFILE=$(which grep)
 
@@ -43,7 +43,7 @@ banner() {
         \___  /|__|  (____  /____/\____ | |__||__|  
        /_____/            \/           \/           
               grep rough audit - static analysis tool
-                  v2.9 written by @Wireghoul
+                  v3.0 written by @Wireghoul
 =================================[justanotherhacker.com]==='
     fi
 }
