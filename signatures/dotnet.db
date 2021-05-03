@@ -84,6 +84,7 @@ SecurityPermission.SerializationFormatter
 SecurityPermission.ControlPrincipal
 SecurityPermission.ControlDomainPolicy
 SecurityPermission.ControlPolicy
+[Rr]edirect[[:space:]]*\(,*\,[[:space:]]*[Ff][Aa][Ll][Ss][Ee][[:space:]]*\)
 # Dotnet reflection
 # Reflection (C sharp): https://msdn.microsoft.com/en-us/library/mt656691.aspx
 Reflection
