@@ -5,7 +5,8 @@
 set -e
 set -o pipefail
 VERSION='3.0'
-basedir=$(dirname "$0")
+SCRIPT_PATH=$(readlink -f "$0")
+basedir=$(dirname "$SCRIPT_PATH")
 BINFILE=$(which grep)
 
 # Default values
