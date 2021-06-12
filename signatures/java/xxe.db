@@ -1,5 +1,6 @@
 SAXParserFactory
 DOM4J
+DocumentBuilderFactory
 XMLInputFactory
 TransformerFactory
 javax.xml.validation.Validator
