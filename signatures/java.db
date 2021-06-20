@@ -120,6 +120,7 @@ response.sendRedirect[[:space:]]*\(.*[Rr]equest.*\)
 <c:out.*\$\{param
 SAXParserFactory
 DOM4J
+DocumentBuilderFactory
 XMLInputFactory
 TransformerFactory
 javax.xml.validation.Validator

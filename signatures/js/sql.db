@@ -1,12 +1,12 @@
 #MongoDB rules
 \.connect\(
 \.createCollection\(
-\.collection\(.*\)\.aggregate\(.*
-\.collection\(.*\)\.find(One)?\(.*
-\.collection\(.*\)\.insert(One|Many)?\(.*
-\.collection\(.*\)\.delete(One|Many)?\(.*
-\.collection\(.*\)\.update(One|Many)?\(.*
-\.collection\(.*\)\.drop\(.*
+\.aggregate\(.*
+\.find(One)?\(.*
+\.insert(One|Many)?\(.*
+\.delete(One|Many)?\(.*
+\.update(One|Many)?\(.*
+\.drop\(.*
 #MySQL rules
 \.createConnection\(.*
 \.query\(.*\)
