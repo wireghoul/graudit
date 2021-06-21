@@ -1,3 +1,12 @@
+3.1		2021 Jun 21
+		Updated secret rules
+		Updated dotnet rules
+		Updated C rules
+		Updated Java and Mongose rules (@IoannisMatzaris)
+		Added ~/graudit/signatures to database locations
+		Updated documentation (@Montycarlo)
+
+
 3.0		2021 Apr 29
 		Fixed broken Java rule causing massive false positives
 		Additional PHP fruit rules
