@@ -4,7 +4,7 @@
 # Released under the GPL licence
 set -e
 set -o pipefail
-VERSION='3.0'
+VERSION='3.1'
 basedir=$(dirname "$0")
 BINFILE=$(which grep)
 
@@ -43,7 +43,7 @@ banner() {
         \___  /|__|  (____  /____/\____ | |__||__|  
        /_____/            \/           \/           
               grep rough audit - static analysis tool
-                  v3.0 written by @Wireghoul
+                  v3.1 written by @Wireghoul
 =================================[justanotherhacker.com]==='
     fi
 }
@@ -95,6 +95,9 @@ listdb () {
     fi
     if [ -d "$basedir"/misc/ ]; then
         ls -1 "$basedir"/misc/*.db 2>/dev/null
+    fi
+    if [ -d ~/graudit/signatures/ ]; then
+        ls -1 ~/graudit/signatures/*.db 2>/dev/null
     fi
 }
 
@@ -174,6 +177,8 @@ elif [ -f "$basedir/signatures/$sigdb.db" ]; then
     database="$basedir/signatures/$sigdb.db"
 elif [ -f "$basedir/misc/$sigdb.db" ]; then
     database="$basedir/misc/$sigdb.db"
+elif [ -f "$HOME/graudit/signatures/$sigdb.db" ]; then
+    database="$HOME/graudit/signatures/$sigdb.db"
 else
     database="$sigdb"
 fi
