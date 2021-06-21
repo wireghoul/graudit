@@ -19,7 +19,13 @@ git clone https://github.com/wireghoul/graudit
 
 You can then symlink graudit so it is in path:
 ```
-ln -s ~/graudit/graudit ~/bin/graudit
+ln -s path/to/graudit/graudit ~/bin/graudit
+```
+
+If graudit is not in your home directory you may wish to set the GRDIR
+environment variable to the signatures directory in your `.bashrc` file.
+```
+export GRDIR=/path/to/graudit/signatures
 ```
 
 Usage
@@ -60,10 +66,11 @@ follows:
   1. Custom location specified via the GRDIR environment variable
   2. /usr/share/graudit/
   3. $HOME/.graudit/
-  4. A relative signature/ directory from the graudit location
+  4. A relative signatures/ directory from the graudit location
   5. A relative misc/ directory from the graudit location
-  6. Any file that is specified with a full path, i.e: /home/user/my.db
-  7. Rules can be read from stdin by supplying - or /dev/stdin as the database
+  6. $HOME/graudit/signatures/
+  7. Any file that is specified with a full path, i.e: /home/user/my.db
+  8. Rules can be read from stdin by supplying - or /dev/stdin as the database
 
 A list of the database files in order of precedence is shown with the -l switch:
 `graudit -l`
