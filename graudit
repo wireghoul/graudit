@@ -82,22 +82,22 @@ listdb () {
     set +o pipefail
     banner
     if [ -n "$GRDIR" ] && [ -d "$GRDIR" ]; then
-        ls -1 "$GRDIR"/*.db 2>/dev/null
+        find "$GRDIR" -name *.db 2>/dev/null
     fi
     if [ -d /usr/share/graudit/ ]; then
-        ls -1 /usr/share/graudit/*.db 2>/dev/null
+        find /usr/share/graudit/ -name *.db 2>/dev/null
     fi
     if [ -d ~/.graudit/ ]; then
-        ls -1 ~/.graudit/*.db 2>/dev/null
+        find ~/.graudit/ -name *.db 2>/dev/null
     fi
     if [ -d "$basedir"/signatures/ ]; then
-        ls -1 "$basedir"/signatures/*.db 2>/dev/null
+        find "$basedir"/signatures/ -name *.db 2>/dev/null
     fi
     if [ -d "$basedir"/misc/ ]; then
-        ls -1 "$basedir"/misc/*.db 2>/dev/null
+        find "$basedir"/misc/ -name *.db 2>/dev/null
     fi
     if [ -d ~/graudit/signatures/ ]; then
-        ls -1 ~/graudit/signatures/*.db 2>/dev/null
+        find ~/graudit/signatures/ -name *.db 2>/dev/null
     fi
 }
 
