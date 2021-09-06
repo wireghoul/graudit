@@ -25,5 +25,7 @@ apache_response_headers\s*\(.*\)
 \$HTTP_POST_FILES
 \$http_post_files
 import_request_variables[[:space:]]*\(
+PHP_AUTH_USER
+PHP_AUTH_PW
 # Variable variables aren't superglobals, but bad idea
 \$\$.*

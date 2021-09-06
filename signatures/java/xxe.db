@@ -13,3 +13,4 @@ javax.xml.bind.Unmarshaller
 XPathExpression
 DOMSource
 StAXSource
+\.getDocument[[:space:]]*\(
