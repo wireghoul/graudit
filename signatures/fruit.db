@@ -19,6 +19,9 @@ strnc(at|py)[[:space:]]*\([^,]+,[^,]+,[[:space:]]*strlen[[:space:]]*\([^\)]+\)[[
 (ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+.*\+[[:space:]]*[Rr]equest
 (LIMIT|limit)[[:space:]]+.*\+[[:space:]]*[Rr]equest\..*
 Process.Start[[:space:]]*\(.*\+
+\.Arguments[[:space:]]*=(.*[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+|.*[^\'\"]+[[:space:]]*\+[[:space:]]*[\'\"])
+\.SelectNodes[[:space:]]*\(.*[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
+ReadAllBytes[[:space:]]*\(.*[Rr]equest
 \.WriteString\(.*URL\.Query\(\).*\)
 \.Write\(.*URL.Query\(\).*\)
 \.Println\(.*URL.Query\(\).*\)
