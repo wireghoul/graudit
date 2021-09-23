@@ -39,6 +39,9 @@ new[[:space:]]+Cli[[:space:]]*\(.*
 (ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+.*\+[[:space:]]*[Rr]equest
 (LIMIT|limit)[[:space:]]+.*\+[[:space:]]*[Rr]equest\..*
 Process.Start[[:space:]]*\(.*\+
+\.Arguments[[:space:]]*=(.*[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+|.*[^\'\"]+[[:space:]]*\+[[:space:]]*[\'\"])
+\.SelectNodes[[:space:]]*\(.*[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
+ReadAllBytes[[:space:]]*\(.*[Rr]equest
 # DotNet input controls
 system.web.ui.htmlcontrols.htmlinputhidden
 system.web.ui.webcontrols.hiddenfield
@@ -169,7 +172,7 @@ StoredProcedure[[:space:]]*\(
 (LIKE|like)[[:space:]]+[^\(\)\;]+(\{[0-9]+\}|[\'\"][[:space:]]+\+)
 (ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+.*(\{[0-9]+\}|[\'\"][[:space:]]+\+)
 (LIMIT|limit)[[:space:]]+.*(\{[0-9]+\}|[\'\"][[:space:]]+\+)
-ServerCertificateValidationCallback
+ServerCertificateValidationCallback.*[Tt][Rr][Uu][Ee]
 checkCertificateName
 checkCertificateRevocationList
 # Dotnet XSS
