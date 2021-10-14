@@ -16,6 +16,7 @@ ELECTRON_RUN_AS_NODE
 \.query\(.*[\'\"][[:space:]]*\+.*
 eval[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
 <%-[[:space:]]+.*%>
+\.(spawn|exec)(File)?(Sync)?\([^\)]+([\'\"] *\+|\$\{)
 eval[[:space:]]*\(
 dangerouslySetInnerHTML
 trustAsHtml
