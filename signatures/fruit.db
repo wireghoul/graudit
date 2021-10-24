@@ -49,6 +49,7 @@ eval[[:space:]]*\(.*([Rr]eq(uest)?|\.[Gg]et[Pp]aram).*\)
 \.query\(.*[\'\"][[:space:]]*\+.*
 eval[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
 <%-[[:space:]]+.*%>
+\.(spawn|exec)(File)?(Sync)?\([^\)]+([\'\"] *\+|\$\{)
 asm[[:space:]]+[\'\"].*
 unsafeAddr
 execShellCmd[[:space:]]*\(
