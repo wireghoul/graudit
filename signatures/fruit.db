@@ -1,3 +1,5 @@
+intent\.setData\(Uri\.parse\([^)]*\)\);
+setIntent[[:space:]]*\([^\,]+,[ a-zA-Z0-9\.\(\)]*\.getIntent\(\)
 printf[[:space:]]*\([[:space:]]*[^\,\'\"]+[[:space:]]*\)[[:space:]]*\;
 sprintf[[:space:]]*\([^\,]+,[^\,]+\%s
 .?scanf[[:space:]]*\([^\,]+\%s[^\,]+\,[^\,]+\)\;
