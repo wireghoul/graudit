@@ -58,6 +58,7 @@ test: signatures
 	cd t && /bin/sh ./aggregate-results.sh test-results/*
 
 signatures:
+	cat signatures/android/*.db > signatures/android.db
 	cat signatures/c/*.db       > signatures/c.db 
 	cat signatures/dotnet/*.db  > signatures/dotnet.db
 	cat signatures/go/*.db      > signatures/go.db
