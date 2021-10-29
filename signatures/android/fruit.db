@@ -1,0 +1,2 @@
+intent\.setData\(Uri\.parse\([^)]*\)\);
+setIntent[[:space:]]*\([^\,]+,[ a-zA-Z0-9\.\(\)]*\.getIntent\(\)
