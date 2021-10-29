@@ -1,3 +1,17 @@
+3.2		2021 Oct 29
+		Fixed a compatibilty bug in misc/serializephp.sh
+		Updated PHP rules
+		Updated Java rules
+		Updated fruit rules
+		Updated secret rules
+		Updated default
+		Updated android rules (@r3zk0n)
+		Updated dotnet rules
+		Changed misc/gitlog.sh to an interactive format
+		Added *.map to files that are ignored unless -A is used
+		Fixed line endings in some rule files
+		Altered some error handling slightly
+
 3.1		2021 Jun 21
 		Updated secret rules
 		Updated dotnet rules
@@ -5,7 +19,6 @@
 		Updated Java and Mongose rules (@IoannisMatzaris)
 		Added ~/graudit/signatures to database locations
 		Updated documentation (@Montycarlo)
-
 
 3.0		2021 Apr 29
 		Fixed broken Java rule causing massive false positives

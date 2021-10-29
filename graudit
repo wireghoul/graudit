@@ -4,7 +4,7 @@
 # Released under the GPL licence
 set -e
 set -o pipefail
-VERSION='3.1'
+VERSION='3.2'
 basedir=$(dirname "$0")
 BINFILE=$(which grep)
 
@@ -16,7 +16,7 @@ vimlines="#"
 color='always'
 sigdb='default'
 separator='##############################################'
-excludefiles='--exclude=*.bz2 --exclude=*.gz --exclude=*.zip --exclude=*.rar --exclude=*.gif --exclude=*.jpg --exclude=*.png'
+excludefiles='--exclude=*.bz2 --exclude=*.gz --exclude=*.zip --exclude=*.rar --exclude=*.gif --exclude=*.jpg --exclude=*.png --exclude=*.map'
 
 #Save custom colors
 OLD_COLORS=$GREP_COLORS
@@ -43,7 +43,7 @@ banner() {
         \___  /|__|  (____  /____/\____ | |__||__|  
        /_____/            \/           \/           
               grep rough audit - static analysis tool
-                  v3.1 written by @Wireghoul
+                  v3.2 written by @Wireghoul
 =================================[justanotherhacker.com]==='
     fi
 }
@@ -154,8 +154,7 @@ while getopts "AbBhvilLzZd:c:x:" opt; do
         A)
             excludefiles=""
         ;;
-        \?)
-            #echo "Invalid option: -$OPTARG" >&2
+        \?) # unknown option
             usage
             exit 2
         ;;
@@ -190,8 +189,9 @@ if [ -z "$1" ]; then
 fi
 
 if [ ! -e $database ]; then
-    echo "database path not found: $database, try running graudit with -l" >&2
-    usage
+    banner
+    echo
+    echo "database path not found for db: \"$database\", try running graudit -h" >&2
     exit 2
 fi
 
