@@ -17,3 +17,6 @@ execve[[:space:]]*\(
 # Ruby - Unsafe Reflection
 params\[:[a-zA-Z0-9_]+\]\.constantize
 new[[:space:]]*\(params\[:[a-zA-Z0-9_]+\]
+# Ruby - Deseralization
+YAML\.load*\(.*\)
+Marshal\.load*\(.*\)
