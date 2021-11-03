@@ -1,5 +1,7 @@
-intent\.setData\(Uri\.parse\([^)]*\)\);
-setIntent[[:space:]]*\([^\,]+,[ a-zA-Z0-9\.\(\)]*\.getIntent\(\)
+intent\.setData[[:space:]]*\([[:space:]]*Uri\.parse[[:space:]]*\([^\]*\)
+setIntent[[:space:]]*\([^\,]+\,[ _a-zA-Z0-9\.\(\)]+\.getIntent[[:space:]]*\(\)
+\.rawQuery[[:space:]]*\([^\"\']+\)
+\.rawQuery[[:space:]]*\(.*[\"\'][[:space:]]*\+[[:space:]]*[^\"\']+
 printf[[:space:]]*\([[:space:]]*[^\,\'\"]+[[:space:]]*\)[[:space:]]*\;
 sprintf[[:space:]]*\([^\,]+,[^\,]+\%s
 .?scanf[[:space:]]*\([^\,]+\%s[^\,]+\,[^\,]+\)\;
