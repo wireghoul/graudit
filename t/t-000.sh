@@ -19,5 +19,5 @@ test_expect_code 1 'Supress colors check' '../graudit -z anotherfile'
 test_expect_code 1 'High contrast color check' '../graudit -Z anotherfile'
 test_expect_code 1 'Colour blind support check' '../graudit -b anotherfile'
 test_expect_code 2 'bad argument' '../graudit -99'
-test_expect_code 1 'Strip carriage returns', 'echo '' | ../graudit -B -d - crlf.txt | xxd | grep -c 0d'
+test_expect_code 1 'Remove carriage returns', 'echo "" | ../graudit -B -d - crlf.txt | xxd | grep -c 0d'
 test_done
