@@ -59,7 +59,8 @@ test: signatures
 
 signatures:
 	cat signatures/android/*.db > signatures/android.db
-	cat signatures/c/*.db       > signatures/c.db 
+	cat signatures/asp/*.db     > signatures/asp.db
+	cat signatures/c/*.db       > signatures/c.db
 	cat signatures/dotnet/*.db  > signatures/dotnet.db
 	cat signatures/go/*.db      > signatures/go.db
 	cat signatures/java/*.db    > signatures/java.db
@@ -80,3 +81,4 @@ manpages:
 	cp -f graudit.in.1 graudit.1
 	nroff -Tascii -mandoc <graudit.in.7 >/dev/null
 	cp -f graudit.in.7 graudit.7
+
