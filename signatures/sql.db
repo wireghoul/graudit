@@ -1,3 +1,5 @@
+[Ss][Ee][Ll][Ee][Cc][Tt][[:space:]]+.*[[:space:]]+[Ff][Rr][Oo][Mm][[:space:]]+.*\&[^_][^_]+
+[Ww][Hh][Ee][Rr][Ee][[:space:]]+.*=.*\&[^_][^_]+
 # DotNet SQL
 exec[[:space:]]*sp_executesql
 execute[[:space:]]*sp_executesql
