@@ -32,3 +32,4 @@ DescribeMscrmEntit(ies|yAttributes)
 (Create|Retrieve|UpdateSingle)Salesforce(Object|JobSource)s?
 eval[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
 [\"\'][[Ss][Ee][Ll][Ee][Cc][Tt][[:space:]]+
+aura:unescapedHtml.*\{.+\}
