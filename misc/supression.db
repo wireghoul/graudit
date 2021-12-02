@@ -1,0 +1,14 @@
+eslint .*:[[:space:]]*['"]off["']
+\/[\/\*][[:space:]]*eslint-disable.*\*\/
+phpcs:ignore WordPress.Security
+sf:SOQLInjection
+ApexSOQLInjection
+ApexBadCrypto
+ApexCRUDViolation
+ApexDangerousMethods
+ApexInsecureEndpoint
+ApexOpenRedirect
+ApexSharingViolations
+ApexSuggestUsingNamedCred
+ApexXSSFromEscapeFalse
+ApexXSSFromURLParam
