@@ -9,13 +9,16 @@ bindir = $(prefix)/bin
 mandir = $(datarootdir)/man
 man1dir = $(mandir)/man1
 man7dir = $(mandir)/man7
-SIGNATURES := signatures/actionscript.db signatures/android.db signatures/asp.db signatures/c.db signatures/cobol.db signatures/default.db signatures/dotnet.db signatures/exec.db signatures/fruit.db signatures/go.db signatures/ios.db signatures/java.db signatures/js.db signatures/nim.db signatures/perl.db signatures/php.db signatures/python.db signatures/ruby.db signatures/scala.db signatures/secrets.db signatures/spsqli.db signatures/sql.db signatures/strings.db signatures/xss.db signatures/secrets-b64.db
+GENERATED_SIGNATURES := signatures/android.db signatures/asp.db signatures/c.db signatures/default.db signatures/dotnet.db signatures/exec.db signatures/fruit.db signatures/go.db signatures/java.db signatures/js.db signatures/nim.db signatures/perl.db signatures/php.db signatures/python.db signatures/scala.db signatures/sql.db signatures/xss.db
+NON_GENERATED_SIGNATURES := signatures/actionscript.db signatures/cobol.db signatures/ios.db signatures/ruby.db signatures/secrets.db signatures/spsqli.db signatures/strings.db signatures/secrets-b64.db
+SIGNATURES := $(GENERATED_SIGNATURES) $(NON_GENERATED_SIGNATURES)
+SRC := $(find ./signatures -type f)
 DISTFILES := Changelog  graudit  LICENSE  README.md
 MANFILES := graudit.1 graudit.7
 VERSION=`./graudit -v | cut -d' ' -f 3`
-.PHONY : clean install uninstall userinstall test signatures
+.PHONY : clean install uninstall userinstall test
 
-dist: clean signatures manpages $(DISTFILES) $(MANFILES) test
+dist: clean manpages $(SIGNATURES) $(DISTFILES) $(MANFILES) test
 	cd t && ./git-test.sh
 	mkdir -p graudit-$(VERSION)/signatures
 	cp -f $(DISTFILES) graudit-$(VERSION)
@@ -31,13 +34,13 @@ dist: clean signatures manpages $(DISTFILES) $(MANFILES) test
 	tar zcf graudit-$(VERSION)_src.tar.gz graudit-$(VERSION)
 	rm -r graudit-$(VERSION)
 
-userinstall: $(DISTFILES) test
+userinstall: $(DISTFILES) $(SIGNATURES) test
 	mkdir -p ~/.graudit
 	cp -f $(SIGNATURES) ~/.graudit
 	mkdir -p ~/bin
 	cp -f graudit ~/bin
 
-install: manpages $(DISTFILES) $(MANFILES) test
+install: manpages $(DISTFILES) $(MANFILES) $(SIGNATURES) test
 	mkdir -p $(bindir)
 	mkdir -p $(datadir)
 	mkdir -p $(man1dir)
@@ -56,6 +59,7 @@ clean:
 	rm -f graudit-*.tar.gz graudit-*.zip
 	rm -f t/test-results/*
 	rm -f graudit.1 graudit.7
+	rm -f $(GENERATED_SIGNATURES)
 
 test: signatures
 	mkdir -p t/test-results
@@ -63,7 +67,9 @@ test: signatures
 	cd t && /bin/sh ./runtests.sh
 	cd t && /bin/sh ./aggregate-results.sh test-results/*
 
-signatures:
+signatures: $(SIGNATURES)
+
+$(GENERATED_SIGNATURES): $(SRC)
 	cat signatures/android/*.db > signatures/android.db
 	cat signatures/asp/*.db     > signatures/asp.db
 	cat signatures/c/*.db       > signatures/c.db
