@@ -18,6 +18,8 @@ MANFILES := graudit.1 graudit.7
 VERSION=`./graudit -v | cut -d' ' -f 3`
 .PHONY : clean install uninstall userinstall test
 
+build: manpages $(SIGNATURES)
+
 dist: clean manpages $(SIGNATURES) $(DISTFILES) $(MANFILES) test
 	cd t && ./git-test.sh
 	mkdir -p graudit-$(VERSION)/signatures
