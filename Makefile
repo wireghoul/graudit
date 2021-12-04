@@ -3,12 +3,15 @@
 ###
 
 prefix = /usr
-dataroot = $(prefix)/share
-datadir = $(dataroot)/graudit
+datarootdir = $(prefix)/share
+datadir = $(datarootdir)/graudit
 bindir = $(prefix)/bin
+mandir = $(datarootdir)/man
+man1dir = $(mandir)/man1
+man7dir = $(mandir)/man7
 SIGNATURES := signatures/actionscript.db signatures/android.db signatures/asp.db signatures/c.db signatures/cobol.db signatures/default.db signatures/dotnet.db signatures/exec.db signatures/fruit.db signatures/go.db signatures/ios.db signatures/java.db signatures/js.db signatures/nim.db signatures/perl.db signatures/php.db signatures/python.db signatures/ruby.db signatures/scala.db signatures/secrets.db signatures/spsqli.db signatures/sql.db signatures/strings.db signatures/xss.db signatures/secrets-b64.db
 DISTFILES := Changelog  graudit  LICENSE  README.md
-MANFILES := graudit.1
+MANFILES := graudit.1 graudit.7
 VERSION=`./graudit -v | cut -d' ' -f 3`
 .PHONY : clean install uninstall userinstall test signatures
 
@@ -37,9 +40,12 @@ userinstall: $(DISTFILES) test
 install: manpages $(DISTFILES) $(MANFILES) test
 	mkdir -p $(bindir)
 	mkdir -p $(datadir)
+	mkdir -p $(man1dir)
+	mkdir -p $(man7dir)
 	cp -f $(SIGNATURES) $(datadir)
 	cp -f $(DISTFILES) $(datadir)
-	cp -f $(MANFILES) $(datadir)
+	cp -f graudit.1 $(man1dir)
+	cp -f graudit.7 $(man7dir)
 	mv $(datadir)/graudit $(bindir)/graudit
 
 uninstall:
@@ -76,9 +82,8 @@ signatures:
 	cat signatures/*/sql.db     > signatures/sql.db
 	cat signatures/*/xss.db     > signatures/xss.db
 
-manpages:
-	nroff -Tascii -mandoc <graudit.in.1 >/dev/null
-	cp -f graudit.in.1 graudit.1
-	nroff -Tascii -mandoc <graudit.in.7 >/dev/null
-	cp -f graudit.in.7 graudit.7
+manpages: $(MANFILES)
 
+graudit.%: graudit.in.%
+	nroff -Tascii -mandoc <$< >/dev/null
+	cp -f $< $@
