@@ -100,10 +100,40 @@ The following databases are included:
   - strings
   - xss
 
+Troubleshooting:
+===============================================================================
+- 'Operation Not Permitted'. See if your Terminal has Full-Disk Access.
+- 'Errors with Tests'. If the tests do not work on your machine, identify which tests are failing and comment out the testing lines. You'll lose test coverage, but graudit should function then. 
+- 'command not found: graudit'. Check to see if you've added graudit to your $PATH variable. Open a new terminal and test that graudit works.
+- 'no matches found:'. This happens if you're using a non-bash shell most likely. Your arguments should be quoted or escaped.
 
 Tutorial
 ===============================================================================
-Coming soon..
+Here are some examples for testing source code.
+
+```
+graudit . \\ Scan everything with default rules. The default rules do not mean "Every Rule" but are a selection of rules from each DB. You should be selective about which DB you should use.
+
+graudit -d xss . \\ Scan everything with the included xss database of rules.
+
+graudit -d customRules . \\ Scan everything with your own custom database of rules.
+
+graudit ~\Work\Repos\VulnerableApp \\ Scan a directory you're not currently in.
+
+graudit -B . \\ Scan everything with no banner. Good for piping.
+
+graudit -x *.min.js . \\ Exclude minified JavaScript, which is difficult to audit.
+
+graudit -x '*.min.js' . \\ Quoting or Escaping arguments helps deal with globbing issues across shells.
+graudit -x \*.min.js .
+
+graudit -i . \\ Case insensitivity is good for identifying secrets, but otherwise may lead to higher false positives.
+
+graudit -A . \\ Images, compressed, and binary files are typically excluded by default. Use -A to scan everything at the expense of performance.
+
+graudit -l \\ Will list the databases currently being used in graudit and their locations.
+
+```
 
 
 Contributing
