@@ -20,7 +20,7 @@ use[[:space:]]+.*\$.*->param[[:space:]]*\(.*\).*
 (ORDER BY|order by)[[:space:]]+.*\$.*->param[[:space:]]*\(.*\)
 (LIMIT|limit)[[:space:]]+.*\$.*->param[[:space:]]*\(.*\)
 # Perl superglobal signatures
-\$ARGV\[.*?\]
+\$ARGV\[[^\]]+\]
 \$ARGC
 \$ENV
 # Perl signatures
