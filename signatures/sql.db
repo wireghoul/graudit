@@ -22,7 +22,7 @@ Server\.CreateObject
 #\.Provider
 \.Open([[:space:]]*\(|[[:space:]]+[\"\']).*
 #ADODB.recordset
-New[[:space:]]+*OleDbConnection
+New[[:space:]]+OleDbConnection
 ExecuteReader[[:space:]]*\(
 #DataSource
 SqlCo(mmand|nnection).*\=
