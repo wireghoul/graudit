@@ -1,4 +1,4 @@
 # Perl superglobal signatures
-\$ARGV\[.*?\]
+\$ARGV\[[^\]]+\]
 \$ARGC
 \$ENV
