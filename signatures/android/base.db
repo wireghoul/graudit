@@ -48,3 +48,4 @@ sdcard
 getExternalStorageDirectory
 isExternalStorageWritable
 \.setJavaScriptEnabled[[:space:]]*\(.*\)
+[Ff][Ii][Ll][Ee].*\.getLastPathSegment[[:space:]]*\(\)
