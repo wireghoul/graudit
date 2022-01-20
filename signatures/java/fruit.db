@@ -1,13 +1,13 @@
 response.sendRedirect[[:space:]]*\(.*([Rr]eq(uest)?|\.[Gg]et[Pp]aram).*\)
 out\.print(ln)?.*([Rr]eq(uest)?|\.[Gg]et[Pp]aram)
 <%=([Rr]equest|\.[Gg]et[Pp]aram)
-\.exec[[:space:]]*\([^\;]+[\'\"][[:space:]]*\+.*
+\.exec[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+.*
 (execute|create|new)Query[[:space:]]*\(.*[\"\'][[:space:]]*\+[[:space:]]*[^\"\']+
 queryforObject[[:space:]]*\(.*[\"\'][[:space:]]*\+[[:space:]]*[^\"\']+
-eval[[:space:]]*\(.*([Rr]eq(uest)?|\.[Gg]et[Pp]aram).*\)
-\.getDocument[[:space:]]*\(.*([Rr]eq(uest)?|\.g[Gg]et[Pp]aram).*\)
+eval[[:space:]]*\([^\)\;]*([Rr]eq(uest)?|\.[Gg]et[Pp]aram).*\)
+\.getDocument[[:space:]]*\([^\)\;]+([Rr]eq(uest)?|\.g[Gg]et[Pp]aram).*\)
 (WHERE|where)[[:space:]]+.*=[[:space:]]*[\'\"][\'\"]?[[:space:]]*\+[[:space:]]*[^\"\']+
 [\'\" ]+AND[[:space:]]+.*=[[:space:]]*[\'\"][\'\"]?[[:space:]]*\+[[:space:]]*[^\"\']
-(LIKE|like)[[:space:]]+.*[\'\"][\'\"]?[[:space:]]*\+[[:space:]]*[^\"\']
+(LIKE|like)[[:space:]]+[\'\"A-Za-z0-9%]+[\'\"][\'\"]?[[:space:]]*\+[[:space:]]*[^\"\']
 (ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+.*[\'\"][\'\"]?[[:space:]]*\+[[:space:]]*[^\"\']
-(LIMIT|limit)[[:space:]]+.*[\'\"][\'\"]?[[:space:]]*\+[[:space:]]*[^\"\']
+(LIMIT|limit)[[:space:]]+([0-9,]+)?[;:space:]]*[\'\"][\'\"]?[[:space:]]*\+[[:space:]]*[^\"\']
