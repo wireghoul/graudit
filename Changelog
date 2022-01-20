@@ -1,3 +1,23 @@
+3.3		2022 Jan 20
+		Fixed false positive rate in compressed js files
+		More secret rules
+		Restructured and updated classic asp rules
+		Updated fruit rules
+		Updated SQL rules
+		Updated spsqli rules
+		Updated ruby rules (@r3zk0n)
+		Updated android rules
+		Updated java rules
+		Updated dotnet rules
+		Fixed greedyness in perl super global rules
+		Improved test case
+		Bug fixes for dotnet and sql rulesets
+		Added test case for bad quantifiers in rules
+		Changed test cases for consistency and portability
+		Rule set for auditing SCA exclusions
+		Updated ampscript rules
+		Added .github/ files for sponsorship/issues/pull requests
+
 3.2		2021 Oct 29
 		Fixed a compatibilty bug in misc/serializephp.sh
 		Updated PHP rules
