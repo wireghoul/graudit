@@ -1,5 +1,5 @@
-`
-` .*(\$) `
+.*=[[:space:]]*`
+`.*\$\{.*`
 (document|\$)\.cookie[[:space:]]*\(
 nodeIntegration
 nodeIntegrationInWorker
