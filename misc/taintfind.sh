@@ -7,7 +7,7 @@ if [ -z "$1" ]; then
     echo "Usage: $0 /path/to/check"
     exit 2
 fi
-~/flatline/graudit -B -z -d php "$1" | \
+graudit -B -z -d php "$1" | \
 perl -ne 'if ($_ =~ m/\$([A-Za-z0-9\-\_]+?)\s*=\s*\$_(GET|POST|REQUEST|COOKIE)\[.*?\]/) {
     @rulz=(
       "(include|require)(_once)?[[:space:]]*\\(?", 
