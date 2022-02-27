@@ -1,8 +1,8 @@
 graudit
 ===============================================================================
-graudit is a simple script and signature sets that allows you to find potential 
-security flaws in source code using the GNU utility grep. It's comparable to 
-other static analysis applications like RATS, SWAAT and flaw-finder while 
+graudit is a simple script and signature sets that allows you to find potential
+security flaws in source code using the GNU utility grep. It's comparable to
+other static analysis applications like RATS, SWAAT and flaw-finder while
 keeping the technical requirements to a minimum and being very flexible.
 
 Installation
@@ -17,9 +17,10 @@ between releases. To do this run the following command:
 git clone https://github.com/wireghoul/graudit
 ```
 
-You can then symlink graudit so it is in path:
+You can then add graudit to your path, using the appropriate values for
+your preferred shell:
 ```
-ln -s path/to/graudit/graudit ~/bin/graudit
+echo 'PATH="$HOME/graudit:${PATH:+:${PATH}}"; export PATH;' >> ~/.bashrc
 ```
 
 If graudit is not in your home directory you may wish to set the GRDIR
@@ -31,7 +32,7 @@ export GRDIR=/path/to/graudit/signatures
 Usage
 ===============================================================================
 graudit supports several options and tries to follow good shell practices. For
-a list of the options you can run graudit -h or see below. The simplest way to 
+a list of the options you can run graudit -h or see below. The simplest way to
 use graudit is;
 
 ```
@@ -57,8 +58,8 @@ OPTIONS
 
 Databases
 ===============================================================================
-graudit uses extended regular expressions (POSIX) as it's signatures and comes 
-with several databases ready for use. You can extend the existing databases or 
+graudit uses extended regular expressions (POSIX) as it's signatures and comes
+with several databases ready for use. You can extend the existing databases or
 make your own if you require additional signatures.
 
 Databases can be loaded from multiple locations, the order of precedence is as
@@ -108,12 +109,12 @@ Coming soon..
 
 Contributing
 ===============================================================================
-If you would like to contribute to graudit, please fork the repository at 
+If you would like to contribute to graudit, please fork the repository at
 https://github.com/wireghoul/graudit and use that. In particular language rules,
 additional scripts and documentation contributions are very welcome.
 If you like graudit then please say thanks and share it around.
 
-If you wish to get in contact with me, shoot me a line on github or twitter: 
+If you wish to get in contact with me, shoot me a line on github or twitter:
 @wireghoul
 
 Credits
