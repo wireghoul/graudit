@@ -19,10 +19,11 @@ System.Security.Cryptography
 PBEParameterSpec
 PasswordDeriveBytes
 # Dotnet errors
-catch\s*{
+catch[[:space:]]*{
 Finally
 trace enabled
 customErrors mode
+<trace[[:space:]]+enabled[[:space:]]*=['"][Tt][Rr][Uu][Ee]['"]
 System\.Diagnostics\.Process\.Start\(.*
 new[[:space:]]+(System\.Diagnostic\.)?Process(StartInfo)?[[:space:]]*\(.*
 \.Start[[:space:]]\(.*
@@ -177,7 +178,7 @@ checkCertificateName
 checkCertificateRevocationList
 # Dotnet XSS
 [Rr]esponse.[Ww]rite[[:space:]]*\(
-<%\s*=[[:space:]]*[\_a-zA-Z0-9][^\%]+
+<%[[:space:]]*=[[:space:]]*[\_a-zA-Z0-9][^\%]+
 innerText[[:space:]]*=[^\;]+\+
 innerHTML[[:space:]]*=[^\;]+\+
 [Vv]alidate[Rr]equest=[\'\"]?false[\'\"]?
