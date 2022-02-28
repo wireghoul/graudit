@@ -97,7 +97,7 @@ listdb () {
     if [ -d "$basedir"/misc/ ]; then
         ls -1 "$basedir"/misc/*.db 2>/dev/null
     fi
-    if [ -d ~/graudit/signatures/ ]; then
+    if [ -d ~/graudit/signatures/ ] && [ "$basedir" != "$HOME/graudit" ]; then
         ls -1 ~/graudit/signatures/*.db 2>/dev/null
     fi
 }
