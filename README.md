@@ -60,7 +60,7 @@ You can set default commandline options via the GRARGS environment variable.
 This may affect the use of graudit in scripts so it's only recommended to use
 the B,L,b,z and Z options for this purpose.
 ```
-echo 'GRARGS="-b -L"; export GRARGS' >> ~/.basrc
+echo 'GRARGS="-b -L"; export GRARGS' >> ~/.bashrc
 ```
 
 
