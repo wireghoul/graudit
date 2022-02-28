@@ -1,3 +1,14 @@
+3.4		2022 Mar ??
+		Fixed a path issue in misc/taintfind.sh
+		Changed installation instructions for better usage
+		Added link to tutorial video in documentation
+		Updated PHP rules
+		Updated dotnet rules
+		Updated xss rules
+		Updated secrets rules
+		Added support for setting default arguments via env vars
+		Added test cases for environment variables
+
 3.3		2022 Jan 20
 		Fixed false positive rate in compressed js files
 		More secret rules

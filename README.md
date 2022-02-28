@@ -56,6 +56,14 @@ OPTIONS
   -h prints this help screen
 ```
 
+You can set default commandline options via the GRARGS environment variable.
+This may affect the use of graudit in scripts so it's only recommended to use
+the B,L,b,z and Z options for this purpose.
+```
+echo 'GRARGS="-b -L"; export GRARGS' >> ~/.basrc
+```
+
+
 Databases
 ===============================================================================
 graudit uses extended regular expressions (POSIX) as it's signatures and comes

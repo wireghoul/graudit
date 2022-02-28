@@ -2,9 +2,10 @@
 # graudit - Rough code review tool using grep
 # Written by Wireghoul - http://www.justanotherhacker.com
 # Released under the GPL licence
+set -- $GRARGS $@
 set -e
 set -o pipefail
-VERSION='3.3'
+VERSION='3.4'
 basedir=$(dirname "$0")
 BINFILE=$(which grep)
 
@@ -43,7 +44,7 @@ banner() {
         \___  /|__|  (____  /____/\____ | |__||__|  
        /_____/            \/           \/           
               grep rough audit - static analysis tool
-                  v3.3 written by @Wireghoul
+                  v3.4 written by @Wireghoul
 =================================[justanotherhacker.com]==='
     fi
 }
