@@ -9,6 +9,7 @@
 		Added support for setting default arguments via env vars
 		Added test cases for environment variables
 		Fixed a bug in database listing function
+		Updated misc/phptaint.sh
 
 3.3		2022 Jan 20
 		Fixed false positive rate in compressed js files
