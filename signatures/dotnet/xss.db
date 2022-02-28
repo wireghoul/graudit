@@ -1,6 +1,6 @@
 # Dotnet XSS
 [Rr]esponse.[Ww]rite[[:space:]]*\(
-<%\s*=[[:space:]]*[\_a-zA-Z0-9][^\%]+
+<%[[:space:]]*=[[:space:]]*[\_a-zA-Z0-9][^\%]+
 innerText[[:space:]]*=[^\;]+\+
 innerHTML[[:space:]]*=[^\;]+\+
 [Vv]alidate[Rr]equest=[\'\"]?false[\'\"]?

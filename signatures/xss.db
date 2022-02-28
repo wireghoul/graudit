@@ -1,6 +1,6 @@
 # Dotnet XSS
 [Rr]esponse.[Ww]rite[[:space:]]*\(
-<%\s*=[[:space:]]*[\_a-zA-Z0-9][^\%]+
+<%[[:space:]]*=[[:space:]]*[\_a-zA-Z0-9][^\%]+
 innerText[[:space:]]*=[^\;]+\+
 innerHTML[[:space:]]*=[^\;]+\+
 [Vv]alidate[Rr]equest=[\'\"]?false[\'\"]?
@@ -11,7 +11,7 @@ QueryUnescape\(.*
 response.sendRedirect[[:space:]]*\(.*[Rr]equest.*\)
 <c:out.*\$\{param
 # Perl xss signatures
-print\s*.*\$.*->param\(?.*\)?
+print[[:space:]]*.*\$.*->param\(?.*\)?
 # PHP xss signatures
 echo[[:space:]]+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
 print[[:space:]]+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*

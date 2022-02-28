@@ -1,5 +1,6 @@
 # Dotnet errors
-catch\s*{
+catch[[:space:]]*{
 Finally
 trace enabled
 customErrors mode
+<trace[[:space:]]+enabled[[:space:]]*=['"][Tt][Rr][Uu][Ee]['"]

@@ -1,11 +1,11 @@
 # PHP - Superglobals & Environment
-getenv\s*\(.*\)
-apache_getenv\s*\(.*\)
-putenv\s*\(.*\)
-apache_setenv\s*\(.*\)
-getallheaders\s*\(.*\)
-apache_request_headers\s*\(.*\)
-apache_response_headers\s*\(.*\)
+getenv[[:space:]]*\(.*\)
+apache_getenv[[:space:]]*\(.*\)
+putenv[[:space:]]*\(.*\)
+apache_setenv[[:space:]]*\(.*\)
+getallheaders[[:space:]]*\(.*\)
+apache_request_headers[[:space:]]*\(.*\)
+apache_response_headers[[:space:]]*\(.*\)
 \$_ENV\[.*\]
 \$_GET\[.*\]
 \$_POST\[.*\]
