@@ -112,7 +112,7 @@ The following databases are included:
 
 Tutorial
 ===============================================================================
-Coming soon..
+A tutorial/introduction video can be found at: https://youtu.be/b8Xbzer1n94
 
 
 Contributing
