@@ -1,0 +1,7 @@
+# Command execution - [BASE_]PROCESS library - https://www.eiffel.org/doc/solutions/Process_and_BaseProcess
+\.process_launcher_with_command_line[[:space:]]*\(
+\.process_launcher[[:space:]]*\(
+# File IO
+\.make_open_read[[:space:]]*\(
+\.make_open_write[[:space:]]*\(
+\.make_create_read_write[[:space:]]*\(
