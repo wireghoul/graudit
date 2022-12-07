@@ -118,3 +118,11 @@ pg_query[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
 Source\.fromFile[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
 sql\".*\#\$.*\"\.as\[.*
 SQL[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
+(WHERE|where)[[:space:]]+[^;]+(=|[Ii][[Nn][[:space:]]+).*\$\{
+[\'\" ]+AND[[:space:]]+.*=[[:space:]]?\$\{[^\}]+\}
+(LIKE|like)[[:space:]]+(['"][^\'\"]*)?\$\{[^\}]+\}
+(ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+.*\$\{[^\}]+\}
+(LIMIT|limit)[[:space:]]+([0-9 ]+,? ?)?\$\{[^\}]+\}
+eval[[:space:]]*\([^\'\"\)]+\)
+eval[[:space:]]*\([[:space:]]*\`.*\$\{[^\}]+\}
+(spawn|execFile|\.exec)(Sync)?[[:space:]]\(.*(\$\{[^\}]+\}|\.query|\.param)

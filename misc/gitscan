@@ -9,4 +9,4 @@ echo "Scanning $url!"
 mkdir -p churn
 cd churn
 git clone $url
-graudit -x *.js,*.json,*.map,*.sql -d ./flatline.db .
+graudit -x *.js,*.json,*.map,*.sql -d flatline .

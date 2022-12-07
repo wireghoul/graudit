@@ -1,0 +1,8 @@
+(WHERE|where)[[:space:]]+[^;]+(=|[Ii][[Nn][[:space:]]+).*\$\{
+[\'\" ]+AND[[:space:]]+.*=[[:space:]]?\$\{[^\}]+\}
+(LIKE|like)[[:space:]]+(['"][^\'\"]*)?\$\{[^\}]+\}
+(ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+.*\$\{[^\}]+\}
+(LIMIT|limit)[[:space:]]+([0-9 ]+,? ?)?\$\{[^\}]+\}
+eval[[:space:]]*\([^\'\"\)]+\)
+eval[[:space:]]*\([[:space:]]*\`.*\$\{[^\}]+\}
+(spawn|execFile|\.exec)(Sync)?[[:space:]]\(.*(\$\{[^\}]+\}|\.query|\.param)

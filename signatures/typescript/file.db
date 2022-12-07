@@ -1,0 +1,3 @@
+\.readFileSync[[:space:]]*\(
+dotfiles.?[[:space:]]*:[[:space:]]*['"][Aa][Ll][Ll][Oo][Ww]['"]
+\.chmod(Sync)?[[:space:]]*\(
