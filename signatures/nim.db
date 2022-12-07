@@ -1,4 +1,4 @@
-asm[[:space:]]+
+asm[[:space:]]+['"]['"]['"]
 unsafeAddr([[:space:]]+|[[:space:]]*\()
 addr[[:space:]]*\(
 open(File)?[[:space:]]*\(
