@@ -92,21 +92,24 @@ The following databases are included:
   - cobol
   - default (used if -d argument is omitted)
   - dotnet
+  - eiffel
   - exec
   - fruit
   - go
   - ios
   - java
   - js
+  - nim
   - perl
   - php
   - python
-  - nim
   - ruby
+  - scala
   - secrets
   - spsqli
   - sql
   - strings
+  - typescript
   - xss
 
 
