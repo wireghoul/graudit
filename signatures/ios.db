@@ -40,5 +40,5 @@ kSecAttrAccessibleAlways
 SUSStoreController handleApplicationURL[[:space:]]*:
 NSURL storeURLType
 SUStoreController _handleAccountURL[[:space:]]*:
-SKUIURL initWithURL[[:space:]]*: 
+SKUIURL initWithURL[[:space:]]*:
 UIWebView[[:space:]]*:

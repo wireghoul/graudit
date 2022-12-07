@@ -93,7 +93,7 @@ SecurityPermission.ControlPolicy
 # Reflection (C sharp): https://msdn.microsoft.com/en-us/library/mt656691.aspx
 Reflection
 # Dotnet HTTP request strings
-# Requests from external sources. Ensure that all HTTP requests received are data validated for 
+# Requests from external sources. Ensure that all HTTP requests received are data validated for
 # composition, max and min length, and if the data falls with the realms of the
 parameter white-list.
 request.accepttypes

@@ -1,5 +1,5 @@
 # Dotnet HTTP request strings
-# Requests from external sources. Ensure that all HTTP requests received are data validated for 
+# Requests from external sources. Ensure that all HTTP requests received are data validated for
 # composition, max and min length, and if the data falls with the realms of the
 parameter white-list.
 request.accepttypes
