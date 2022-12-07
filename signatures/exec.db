@@ -26,3 +26,6 @@ shell_exec([[:space:]]*\(|[[:space:]]+).*\)?
 system([[:space:]]*\(|[[:space:]]+[\"\']).*\)?
 .*\=.*\!\!
 [a-z0-9A-Z]\.\!
+\.execSync[[:space:]]*\(
+require[[:space:]]*\([[:space:]]*.(child_process|execa).
+(spawn|execFile)(Sync)?[[:space:]]\(

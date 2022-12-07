@@ -1,0 +1,3 @@
+\.execSync[[:space:]]*\(
+require[[:space:]]*\([[:space:]]*.(child_process|execa).
+(spawn|execFile)(Sync)?[[:space:]]\(

@@ -1,0 +1,5 @@
+(WHERE|where)[[:space:]]+.*=.*[\'\"][[:space:]]*\+.*
+[\'\" ]+AND[[:space:]]+.*=.*\+.*
+(LIKE|like)[[:space:]]+[^\;]+\+.*
+(ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+.*\+.*
+(LIMIT|limit)[[:space:]]+([0-9]+,[[:space:]]*.*)

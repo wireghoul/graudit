@@ -1,0 +1,7 @@
+\.createCipheriv[[:space:]]*\([[:space:]]*['"](DES(-EDE3?)|RC[24]|BF|AES-128-(ECB|CBC))
+checkServerIdentity[[:space:]]*:.*
+rejectUnauthorized[[:space:]]*:[[:space:]]*[Ff][Aa][Ll][Ss][Ee]
+modulusLength[[:space:]]*:[[:space:]]*(256|512|1024)
+namedCurve.*secp112r2
+secureProtocol.*TLSv1_method
+(min|max)Version.*TLSv1.1
