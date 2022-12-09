@@ -1,3 +1,14 @@
+3.5		2022 Dec 09
+		Added Eiffel rules (@bcoles)
+		Updated secret rules
+		Reduced false positives in php rules
+		Reduced false positives in nim rules
+		Added typescript rules
+		Fixed path issue in misc/gitscan
+		Bugfix for actionscript, asp and ios rules
+		Rule correctness adjustments to asp rules
+		Minor documentation updates
+
 3.4		2022 Mar 01
 		Fixed a path issue in misc/taintfind.sh
 		Changed installation instructions for better usage
