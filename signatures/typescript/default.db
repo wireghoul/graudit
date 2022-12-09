@@ -6,3 +6,5 @@ require\(['"]adm-zip['"]\)
 \.runIn(New|This)?Context[[:space:]]*\(
 \.compileFunction[[:space:]]*\(
 \._compile[[:space:]]*\(
+eval[[:space:]]*\([^\'\"\)]+\)
+eval[[:space:]]*\([[:space:]]*\`.*\$\{[^\}]+\}

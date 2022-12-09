@@ -14,6 +14,8 @@ require\(['"]adm-zip['"]\)
 \.runIn(New|This)?Context[[:space:]]*\(
 \.compileFunction[[:space:]]*\(
 \._compile[[:space:]]*\(
+eval[[:space:]]*\([^\'\"\)]+\)
+eval[[:space:]]*\([[:space:]]*\`.*\$\{[^\}]+\}
 \.execSync[[:space:]]*\(
 require[[:space:]]*\([[:space:]]*.(child_process|execa).
 (spawn|execFile)(Sync)?[[:space:]]\(
@@ -25,8 +27,6 @@ dotfiles.?[[:space:]]*:[[:space:]]*['"][Aa][Ll][Ll][Oo][Ww]['"]
 (LIKE|like)[[:space:]]+(['"][^\'\"]*)?\$\{[^\}]+\}
 (ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+.*\$\{[^\}]+\}
 (LIMIT|limit)[[:space:]]+([0-9 ]+,? ?)?\$\{[^\}]+\}
-eval[[:space:]]*\([^\'\"\)]+\)
-eval[[:space:]]*\([[:space:]]*\`.*\$\{[^\}]+\}
 (spawn|execFile|\.exec)(Sync)?[[:space:]]\(.*(\$\{[^\}]+\}|\.query|\.param)
 algorithm[[:space:]]*:[[:space:]]*['"][Nn][Oo][Nn][Ee]['"]
 \$where:[[:space:]]*`[^`]*\$\{[^\}]+\}
