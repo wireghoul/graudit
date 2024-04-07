@@ -1,0 +1,8 @@
+\.instance_eval.*
+eval([[:space:]]*\(|[[:space:]]+[^\(])
+spawn([[:space:]]*\(|[[:space:]]+[^\(])
+system[[:space:]]*\(
+\.open[[:space:]]*\(
+\.(public_)?send[[:space:]]*\(
+`.*#\{[^`]+`
+File\.(read|new|open|delete)[[:space:]]*\(

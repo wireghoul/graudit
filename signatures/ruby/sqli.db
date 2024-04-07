@@ -1,0 +1,5 @@
+\.((destroy|delete|update|find)_(all|by)(_name|_sql)?|(re)?where|having|not)[[:space:]]*\([[:space:]]*["'].*\#\{
+\.(from|group)[[:space:]]*\([^:\)]+:
+\.(calculate|average|count|maximum|minimum|sum|join|lock|(re)?select)[[:space:]]*\(.*\[:
+\.exists\?.*:
+\.find_(or_(create|initialize)_)?by!?.*:

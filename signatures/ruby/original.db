@@ -1,0 +1,18 @@
+# Ruby - Execution
+_send_[[:space:]]*\(
+__send__[[:space:]]*\(
+system[[:space:]]*\(
+open[[:space:]]*\(
+send[[:space:]]*\(
+public_send[[:space:]]*\(
+eval[[:space:]]*\(
+exec[[:space:]]*\(
+syscall[[:space:]]*\(
+# Ruby - File operations
+File\.new[[:space:]]*\(
+fork[[:space:]]*\(
+write[[:space:]]*\(
+execve[[:space:]]*\(
+# Ruby - Unsafe Reflection
+params\[:[a-zA-Z0-9_]+\]\.constantize
+new[[:space:]]*\(params\[:[a-zA-Z0-9_]+\]
