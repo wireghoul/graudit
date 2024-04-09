@@ -1,3 +1,21 @@
+3.6		2024 Apr 09
+		Updated ruby rules
+		Updated JavaScript rules
+		Updated PHP rules
+		Updated supression rules
+		Updated android rules
+		Updated dotnet rules
+		Updated nim rules
+		Added Kotlin rules
+		Updated golang rules
+		Updated python rules
+		Updated c rules
+		Updated xss rules
+		Updated sqli rules
+		Updated exec rules
+		Updated default rules
+		Updated fruit rules
+
 3.5		2022 Dec 09
 		Added Eiffel rules (@bcoles)
 		Updated secret rules

@@ -5,7 +5,7 @@
 set -- $GRARGS $@
 set -e
 set -o pipefail
-VERSION='3.5'
+VERSION='3.6'
 basedir=$(dirname "$0")
 BINFILE=$(which grep)
 
@@ -44,7 +44,7 @@ banner() {
         \___  /|__|  (____  /____/\____ | |__||__|  
        /_____/            \/           \/           
               grep rough audit - static analysis tool
-                  v3.5 written by @Wireghoul
+                  v3.6 written by @Wireghoul
 =================================[justanotherhacker.com]==='
     fi
 }
