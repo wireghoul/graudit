@@ -1,7 +1,7 @@
 # PHP - Execution
 assert([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
 exec([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
-`[^`]+\$[^`]+`
+`[^`]*\$[^`]+`
 passthru([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
 popen([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
 proc_close([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
