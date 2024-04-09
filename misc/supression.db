@@ -12,3 +12,5 @@ ApexSharingViolations
 ApexSuggestUsingNamedCred
 ApexXSSFromEscapeFalse
 ApexXSSFromURLParam
+(#|//)[[:space:]]+nosemgrep
+#[[:space:]]*rubocop:disable.*
