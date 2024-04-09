@@ -6,7 +6,7 @@ prefix = /usr
 dataroot = $(prefix)/share
 datadir = $(dataroot)/graudit
 bindir = $(prefix)/bin
-SIGNATURES := signatures/actionscript.db signatures/android.db signatures/asp.db signatures/c.db signatures/cobol.db signatures/default.db signatures/dotnet.db signatures/exec.db signatures/fruit.db signatures/go.db signatures/ios.db signatures/java.db signatures/js.db signatures/nim.db signatures/perl.db signatures/php.db signatures/python.db signatures/ruby.db signatures/scala.db signatures/secrets.db signatures/spsqli.db signatures/sql.db signatures/strings.db signatures/typescript.db signatures/xss.db
+SIGNATURES := signatures/actionscript.db signatures/android.db signatures/asp.db signatures/c.db signatures/cobol.db signatures/default.db signatures/dotnet.db signatures/exec.db signatures/fruit.db signatures/go.db signatures/ios.db signatures/java.db signatures/js.db signatures/kotlin.db signatures/nim.db signatures/perl.db signatures/php.db signatures/python.db signatures/ruby.db signatures/scala.db signatures/secrets.db signatures/spsqli.db signatures/sql.db signatures/strings.db signatures/typescript.db signatures/xss.db
 DISTFILES := Changelog  graudit  LICENSE  README.md
 MANFILES := graudit.1
 VERSION=`./graudit -v | cut -d' ' -f 3`
@@ -65,10 +65,12 @@ signatures:
 	cat signatures/go/*.db         > signatures/go.db
 	cat signatures/java/*.db       > signatures/java.db
 	cat signatures/js/*.db         > signatures/js.db
+	cat signatures/kotlin/*.db     > signatures/kotlin.db
 	cat signatures/nim/*.db        > signatures/nim.db
 	cat signatures/perl/*.db       > signatures/perl.db
 	cat signatures/php/*.db        > signatures/php.db
 	cat signatures/python/*.db     > signatures/python.db
+	cat signatures/ruby/*.db       > signatures/ruby.db
 	cat signatures/scala/*.db      > signatures/scala.db
 	cat signatures/typescript/*.db > signatures/typescript.db
 	cat signatures/*/default.db    > signatures/default.db
