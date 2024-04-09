@@ -9,6 +9,7 @@ exec[[:space:]]*@
 execute[[:space:]]*@
 executestatement[[:space:]]*\(
 executeSQL[[:space:]]*\(
+\.ExecuteSqlRaw[[:space:]]*\(
 #setfilter
 executeQuery[[:space:]]*\(
 GetQueryResultInXML[[:space:]]*\(
