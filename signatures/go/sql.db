@@ -1,7 +1,4 @@
-\.Raw\(.*\)
-\.Query\(.*\)
-\.QueryContext\(.*\)
-\.QueryRow\(.*\)
-\.QueryRowContext\(.*\)
-\.Exec\(.*\)
-\.ExecContext\(.*\)
+\.Raw[[:space:]]*\(.*\)
+\.Exec[[:space:]]*\(.*\)
+\.ExecContext[[:space:]]*\(.*\)
+\.Query(Row(Context)?)?[[:space:]]*\(

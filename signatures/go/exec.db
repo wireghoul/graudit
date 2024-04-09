@@ -1,0 +1,4 @@
+exec\.Command[[:space:]]*\(
+syscall\.Exec[[:space:]]*\(
+os\.StartProcess[[:space:]]*\(
+session\.Run[[:space:]]*\(
