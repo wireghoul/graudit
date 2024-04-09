@@ -16,6 +16,7 @@ getExternalFilesDir
 getExternalStorageState
 getFilesDir
 getFileStreamPath
+getIntent\(\)
 getPreferences
 getReadableDatabase
 getSharedPreferences

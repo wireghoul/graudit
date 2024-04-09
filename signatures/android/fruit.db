@@ -1,4 +1,5 @@
 intent\.setData[[:space:]]*\([[:space:]]*Uri\.parse[[:space:]]*\([^\]*\)
-setIntent[[:space:]]*\([^\,]+\,[ _a-zA-Z0-9\.\(\)]+\.getIntent[[:space:]]*\(\)
+set(Intent|Result)[[:space:]]*\([^\,]+\,[[:space:]]*([_a-zA-Z0-9\.\(\)]+\.)?getIntent[[:space:]]*\(\)
+loadUrl[[:space:]]*\(.*getIntent\(\)\.getStringExtra
 \.rawQuery[[:space:]]*\([^\"\']+\)
 \.rawQuery[[:space:]]*\(.*[\"\'][[:space:]]*\+[[:space:]]*[^\"\']+
