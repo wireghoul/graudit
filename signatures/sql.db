@@ -11,6 +11,7 @@ exec[[:space:]]*@
 execute[[:space:]]*@
 executestatement[[:space:]]*\(
 executeSQL[[:space:]]*\(
+\.ExecuteSqlRaw[[:space:]]*\(
 #setfilter
 executeQuery[[:space:]]*\(
 GetQueryResultInXML[[:space:]]*\(
@@ -42,13 +43,10 @@ StoredProcedure[[:space:]]*\(
 (LIKE|like)[[:space:]]+[^\(\)\;]+(\{[0-9]+\}|[\'\"][[:space:]]+\+)
 (ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+.*(\{[0-9]+\}|[\'\"][[:space:]]+\+)
 (LIMIT|limit)[[:space:]]+.*(\{[0-9]+\}|[\'\"][[:space:]]+\+)
-\.Raw\(.*\)
-\.Query\(.*\)
-\.QueryContext\(.*\)
-\.QueryRow\(.*\)
-\.QueryRowContext\(.*\)
-\.Exec\(.*\)
-\.ExecContext\(.*\)
+\.Raw[[:space:]]*\(.*\)
+\.Exec[[:space:]]*\(.*\)
+\.ExecContext[[:space:]]*\(.*\)
+\.Query(Row(Context)?)?[[:space:]]*\(
 #MongoDB rules
 \.connect\(
 \.createCollection\(
@@ -103,6 +101,8 @@ px_.*[[:space:]]*\(.*\$.*\)
 ovrimos_.*[[:space:]]*\(.*\$.*\)
 maxdb_.*[[:space:]]*\(.*\$.*\)
 db2_.*[[:space:]]*\(.*\$.*\)
+[Ww][Hh][Ee][Rr][Ee][[:space:]]+.*=[[:space:]]*\{\}
+[Aa][Nn][Dd][[:space:]]+.*=[[:space:]]*\{\}
 (WHERE|where)[[:space:]]+.*=.*[\'\"][[:space:]]*\+.*
 [\'\" ]+AND[[:space:]]+.*=.*\+.*
 (LIKE|like)[[:space:]]+[^\;]+\+.*

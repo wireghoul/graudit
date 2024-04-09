@@ -5,6 +5,10 @@ new[[:space:]]+(System\.Diagnostic\.)?Process(StartInfo)?[[:space:]]*\(.*
 new[[:space:]]+Cli[[:space:]]*\(.*
 # via Microsoft.VisualBasic
 \.Shell[[:space:]]*\(.*
+exec\.Command[[:space:]]*\(
+syscall\.Exec[[:space:]]*\(
+os\.StartProcess[[:space:]]*\(
+session\.Run[[:space:]]*\(
 # Perl exec signatures
 exec(\s*\(|\s+).*\$.*\)?
 fork(\s*\(|\s+).*\)?
@@ -14,7 +18,7 @@ open(\s*\(?|\s+)*\$.*\)?
 # PHP - Execution
 assert([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
 exec([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
-`[^`]+\$[^`]+`
+`[^`]*\$[^`]+`
 passthru([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
 popen([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
 proc_close([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
@@ -24,6 +28,14 @@ proc_nice([[:space:]]*\(|[[:space:]]+).*\)?
 proc_terminate([[:space:]]*\(|[[:space:]]+).*\)?
 shell_exec([[:space:]]*\(|[[:space:]]+).*\)?
 system([[:space:]]*\(|[[:space:]]+[\"\']).*\)?
+\.instance_eval.*
+eval([[:space:]]*\(|[[:space:]]+[^\(])
+spawn([[:space:]]*\(|[[:space:]]+[^\(])
+system[[:space:]]*\(
+\.open[[:space:]]*\(
+\.(public_)?send[[:space:]]*\(
+`.*#\{[^`]+`
+File\.(read|new|open|delete)[[:space:]]*\(
 .*\=.*\!\!
 [a-z0-9A-Z]\.\!
 \.execSync[[:space:]]*\(

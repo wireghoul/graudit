@@ -1,5 +1,6 @@
 intent\.setData[[:space:]]*\([[:space:]]*Uri\.parse[[:space:]]*\([^\]*\)
-setIntent[[:space:]]*\([^\,]+\,[ _a-zA-Z0-9\.\(\)]+\.getIntent[[:space:]]*\(\)
+set(Intent|Result)[[:space:]]*\([^\,]+\,[[:space:]]*([_a-zA-Z0-9\.\(\)]+\.)?getIntent[[:space:]]*\(\)
+loadUrl[[:space:]]*\(.*getIntent\(\)\.getStringExtra
 \.rawQuery[[:space:]]*\([^\"\']+\)
 \.rawQuery[[:space:]]*\(.*[\"\'][[:space:]]*\+[[:space:]]*[^\"\']+
 printf[[:space:]]*\([[:space:]]*[^\,\'\"]+[[:space:]]*\)[[:space:]]*\;
@@ -26,17 +27,14 @@ Process.Start[[:space:]]*\(.*\+
 \.Arguments[[:space:]]*=(.*[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+|.*[^\'\"]+[[:space:]]*\+[[:space:]]*[\'\"])
 \.SelectNodes[[:space:]]*\(.*[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
 ReadAllBytes[[:space:]]*\(.*[Rr]equest
-\.WriteString\(.*URL\.Query\(\).*\)
-\.Write\(.*URL.Query\(\).*\)
-\.Println\(.*URL.Query\(\).*\)
-\.Raw\(.*URL.Query\(\).*\)
-\.Query\(.*URL.Query\(\).*\)
-\.QueryContext\(.*URL.Query\(\).*\)
-\.QueryRow\(.*URL.Query\(\).*\)
-\.QueryRowContext\(.*URL.Query\(\).*\)
-\.Exec\(.*URL.Query\(\).*\)
-\.ExecContext\(.*URL.Query\(\).*\)
-\.Open\(.*URL.Query\(\).*\)
+\.Write(String)?[[:space:]]*\(.*URL\.Query[[:space:]]*\(.*\)
+\.Println[[:space:]]*\(.*URL.Query[[:space:]]*\(.*\)
+\.Raw[[:space:]]*\(.*URL.Query[[:space:]]*\(.*\)
+\.Query(Row)?(Context)?[[:space:]]*\(.*URL.Query[[:space:]]*\(.*\)
+\.Exec(Context)?[[:space:]]*\(.*URL.Query[[:space:]]*\(.*\)
+\.Open[[:space:]]*\(.*URL.Query[[:space:]]*\(.*\)
+SELECT[[:space:]]+.*%s
+\.Where[[:space:]]*\(.*%s
 response.sendRedirect[[:space:]]*\(.*([Rr]eq(uest)?|\.[Gg]et[Pp]aram).*\)
 out\.print(ln)?.*([Rr]eq(uest)?|\.[Gg]et[Pp]aram)
 <%=([Rr]equest|\.[Gg]et[Pp]aram)

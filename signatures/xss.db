@@ -10,6 +10,9 @@ QueryUnescape\(.*
 <%=.*[Rr]equest\.
 response.sendRedirect[[:space:]]*\(.*[Rr]equest.*\)
 <c:out.*\$\{param
+renderToString[[:space:]]*\(
+to_html[[:space:]]*\(
+\.render[[:space:]]*\(
 # Perl xss signatures
 print[[:space:]]*.*\$.*->param\(?.*\)?
 # PHP xss signatures
