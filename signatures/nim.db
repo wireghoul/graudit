@@ -1,6 +1,7 @@
 asm[[:space:]]+['"]['"]['"]
 unsafeAddr([[:space:]]+|[[:space:]]*\()
 addr[[:space:]]*\(
+fmt[[:space:]]*\([[:space:]]*['"][Ss][Ee][Ll][Ee][Cc][Tt][[:space:]]+.*\{[a-zA-Z0-9]+\]
 open(File)?[[:space:]]*\(
 asm[[:space:]]+[\'\"].*
 unsafeAddr
