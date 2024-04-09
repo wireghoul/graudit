@@ -1,0 +1,6 @@
+\.insert(_one|_many)?[[:space:]]*\(
+\.find(_one|_many)?[[:space:]]*\(
+\.replace(_one|_many)?[[:space:]]*\(
+\.drop_database[[:space:]]*\(
+\.create_index[[:space:]]*\(
+\.remove[[:space:]]*\(

@@ -1,5 +1,13 @@
+csrf[\._]exempt
 \.NamedTemporaryFile\(.*\)
 \.execute[[:space:]]*\([\"\'].*%.*[\"\'][[:space:]]*%.*\)
+autoescape[[:space:]]*=[[:space:]]*[Ff][Aa][Ll][Ss][Ee]
+\.insert(_one|_many)?[[:space:]]*\(
+\.find(_one|_many)?[[:space:]]*\(
+\.replace(_one|_many)?[[:space:]]*\(
+\.drop_database[[:space:]]*\(
+\.create_index[[:space:]]*\(
+\.remove[[:space:]]*\(
 access[[:space:]]*\(
 assert[[:space:]]*\(
 mkfifo
@@ -68,5 +76,7 @@ zipfile
 [[:space:]]+compiler
 yaml
 urllib3.disable_warnings
+[Ww][Hh][Ee][Rr][Ee][[:space:]]+.*=[[:space:]]*\{\}
+[Aa][Nn][Dd][[:space:]]+.*=[[:space:]]*\{\}
 \.startswith\(
 \.urlopen\(
