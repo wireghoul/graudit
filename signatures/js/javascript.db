@@ -6,3 +6,4 @@ rejectUnauthorized
 insecure
 strictSSL
 clientPemCrtSignedBySelfSignedRootCaBuffer
+require[[:space:]]*\([^))+[Yy][Aa][Mm][Ll].?\)\.load\(
