@@ -10,6 +10,9 @@ system[[:space:]]*\(.+\)\;
 malloc[[:space:]]*\(.*strlen[[:space:]]*\(
 (strn?c(at|py)|memcpy|sn?printf|scanf)[[:space:]]*\(.*(arg|getenv)
 strnc(at|py)[[:space:]]*\([^,]+,[^,]+,[[:space:]]*strlen[[:space:]]*\([^\)]+\)[[:space:]]*\)
+for[[:space:]]*\([[:space:]]*;[[:space:]]*;[[:space:]]*\)[[:space:]]*\{
+while[[:space:]]*\([[:space:]]*[0-9]+[[:space:]]*\)[[:space:]]*\{
+while[[:space:]]*\([[:space:]]*[Tt][Rr][Uu][Ee][[:space:]]*\)[[:space:]]*\{
 malloc[[:space:]]*\(strlen[[:space:]]*\(.*\)
 \[[0-9][0-9]+\].*=.*\\0
 \[[^\]]+\+[^\]]*\].*=.*\\0

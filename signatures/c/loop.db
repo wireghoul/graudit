@@ -1,0 +1,3 @@
+for[[:space:]]*\([[:space:]]*;[[:space:]]*;[[:space:]]*\)[[:space:]]*\{
+while[[:space:]]*\([[:space:]]*[0-9]+[[:space:]]*\)[[:space:]]*\{
+while[[:space:]]*\([[:space:]]*[Tt][Rr][Uu][Ee][[:space:]]*\)[[:space:]]*\{
