@@ -34,13 +34,14 @@ sqlite_create_function[[:space:]]*\(
 Closure::bind(To)?[[:space:]]*\(
 Closure::call[[:space:]]*\(
 # Execution
-exec[[:space:]]*\([^;]*\$[\(\{]?[_a-zA-Z0-9][^\)]*\)[[:space:]]*[\);]
+exec[[:space:]]*\([^;\)]*\$[\(\{]?[_a-zA-Z0-9][^\)]*\)[[:space:]]*[\);]
 passthru[[:space:]]*\(.*\)
 popen[[:space:]]*\(.*\$.*\)
 shell_exec[[:space:]]*\(.*\$.*\)
 system[[:space:]]*\([^;]*\$[^\)]+\)
-#deprecate this `[^`]*\$[^`]+`
-`[^`]*\$[\(\{]?[_a-zA-Z0-9][^`]*`
+call_user_func[[:space:]]*\(.?.?\$.*,.?\$.*
+[= (]`[^`]*\$[\(\{]?[_a-zA-Z0-9][^`]*`
+^`[^`]*\$[\(\{]?[_a-zA-Z0-9][^`]*`
 #Otherstuffs
 #XSS signature needs to stop matching before LF when color=on #bug(1)
 echo.*\$_.*\[.*\]
@@ -49,7 +50,7 @@ eval[[:space:]]*\(.*\$.*\)
 (mysql.?_|pg_|sqlsrv_|::)query[[:space:]]*\(.*\$.*\)
 [Ww][Hh][Ee][Rr][Ee][[:space:]]+.*=.*\$[^; ]+
 ([Ww][Hh][Ee][Rr][Ee]|[Aa][Nn][Dd]|[Oo][Rr])[[:space:]]+.*[[:space:]]+[Ll][Ii][Kk][Ee][[:space:]]+.*\$
-(include|include_once|require|require_once)[[:space:]]*\([^\;\}\{]*\$.*\)
+^[[:space:]]*(include|include_once|require|require_once)[[:space:]]*\([^\;\}\{]*\$.*\)
 print.*param[[:space:]]*\(.*\);
 extract[[:space:]]*\(\$_(GET|POST|REQUEST|COOKIE|SERVER)
 new[[:space:]]+\$_(GET|REQUEST|POST|COOKIE).*\(

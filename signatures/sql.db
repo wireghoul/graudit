@@ -59,6 +59,15 @@ StoredProcedure[[:space:]]*\(
 #MySQL rules
 \.createConnection\(.*
 \.query\(.*\)
+[Ss][Ee][Ll][Ee][Cc][Tt][[:space:]]+\${[^}]+
+[Ff][Rr][Oo][Mm][[:space:]]+\${[^}]+
+[Ii][Nn][Ss][Ee][Rr][Tt][[:space:]]+[Ii][Nn][Tt][Oo][[:space:]]+\${[^}]+
+(UPDATE|update).+\${[^}]+
+[Ll][Ii][Mm][Ii][Tt][[:space:]]+\${[^}]+
+[Ww][Hh][Ee][Rr][Ee][[:space:]]+.*\${[^}]+
+[Aa][Nn][Dd][[:space:]]+.*=[[:space:]]*\${[^}]+
+[Ll][Ii][Kk][Ee][[:space:]]+['"]*\${[^}]+
+(group|GROUP|order|ORDER)[[:space:]]+[Bb][Yy][[:space:]]+\${[^}]+
 # PHP - Database
 mysql_connect[[:space:]]*\(.*\$.*\)
 mysql_pconnect[[:space:]]*\(.*\$.*\)

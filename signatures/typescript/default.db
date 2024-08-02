@@ -1,6 +1,6 @@
 \.cookie[[:space:]]*\(.*\.(query|param)
 \.location\.hash\.slice[[:space:]]*\(
-.innerHTML[[:space:]]*=.*\.(location\.hash|query|param)
+.innerHTML[[:space:]]*=[^;]*\.(location\.hash|query|param)
 require\(['"]adm-zip['"]\)
 \.createWriteStream[[:space:]]*\(
 \.runIn(New|This)?Context[[:space:]]*\(
