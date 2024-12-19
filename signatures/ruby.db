@@ -7,6 +7,8 @@ system[[:space:]]*\(
 \.(public_)?send[[:space:]]*\(
 `.*#\{[^`]+`
 File\.(read|new|open|delete)[[:space:]]*\(
+^[[:space:]]*`[^`]*#\{[^\}]+\}.*`
+[=\(][[:space:]]*`[^`]*#\{[^\}]+.*\}
 # Ruby - Execution
 _send_[[:space:]]*\(
 __send__[[:space:]]*\(
