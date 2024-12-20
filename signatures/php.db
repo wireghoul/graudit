@@ -117,7 +117,7 @@ require[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\
 require_once[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 fopen[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 readfile[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
-file_get_contents[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
+file_(get|put)_contents[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 (is_dir|file_exists|unlink)[[:space:]]*\(\"?\$(_ENV|_GET|_POST|_COOKE|_REQUEST|_SERVER|HTTP|http).*\)
 show_source[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 preg_replace[[:space:]]*\([\'"](.).*\1[igsu]*e
@@ -238,6 +238,8 @@ px_.*[[:space:]]*\(.*\$.*\)
 ovrimos_.*[[:space:]]*\(.*\$.*\)
 maxdb_.*[[:space:]]*\(.*\$.*\)
 db2_.*[[:space:]]*\(.*\$.*\)
+->sqliteCreate(Agregate|Collation|Function)[[:space:]]*\(
+->createFunction[[:space:]]*\(
 CURLOPT_SSL_VERIFY(HOST|PEER), *([Ff][Aa][Ll][Ss][Ee]|0)
 unserialize[[:space:]]*\(.*\$.*
 file_exists[[:space:]]*\(\"?\$.*
@@ -248,6 +250,9 @@ filesize[[:space:]]*\(\"?\$.*
 file_get_contents[[:space:]]*\(.*\$.*
 fopen[[:space:]]*\(.*\$.*
 file[[:space:]]*\(.*\$.*
+file_(get|put)_contents[[:space:]]*\(.*\$
+fread[[:space:]]*\(
+fwrite[[:space:]]*\(
 scandir[[:space:]]*\(.*
 php://stdin
 php://stdout

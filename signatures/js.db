@@ -14,10 +14,10 @@ additionalArguments
 enableWebSQL
 openExternal[[:space:]]*\(
 ELECTRON_RUN_AS_NODE
-\.query\(.*[\'\"][[:space:]]*\+.*
+\.query\([^\);]*[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
 eval[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
 <%-[[:space:]]+.*%>
-\.(spawn|exec)(File)?(Sync)?\([^\)]+([\'\"] *\+|\$\{)
+\.(spawn|exec)(File)?(Sync)?\([^\);]*([\'\"] *\+|\$\{)
 eval[[:space:]]*\(
 dangerouslySetInnerHTML
 trustAsHtml

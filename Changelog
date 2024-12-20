@@ -1,3 +1,17 @@
+3.7		2024 Dec 20
+		Updated javascript rules
+		Updated typescript rules
+		Updated sqli rules
+		Updated ruby rules
+		Updated php rules
+		Updated dotnet rules
+		Updated java rules
+		Updated fruit rules
+		Updated secret rules
+		Updated xss rules
+		Reduced false positives in default rules
+		Reduced false positives in fruit rules
+
 3.6		2024 Apr 09
 		Updated ruby rules
 		Updated JavaScript rules

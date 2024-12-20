@@ -7,6 +7,9 @@ system[[:space:]]*\(
 \.(public_)?send[[:space:]]*\(
 `.*#\{[^`]+`
 File\.(read|new|open|delete)[[:space:]]*\(
+^[[:space:]]*`[^`]*#\{[^\}]+\}.*`
+[=\(][[:space:]]*`[^`]*#\{[^\}]+.*\}
+render[[:space:]]+:?(text|plain):?.*#\{[Pp][Aa][Rr][Aa][Mm][^\}]*\}
 # Ruby - Execution
 _send_[[:space:]]*\(
 __send__[[:space:]]*\(
@@ -30,3 +33,5 @@ new[[:space:]]*\(params\[:[a-zA-Z0-9_]+\]
 \.(calculate|average|count|maximum|minimum|sum|join|lock|(re)?select)[[:space:]]*\(.*\[:
 \.exists\?.*:
 \.find_(or_(create|initialize)_)?by!?.*:
+I18n.t[[:space:]]*\(['"][^'"]+['"][[:space:]]*,[[:space:]]*query:[[:space:]]*@.*
+render[[:space:]]+:?(text|plain):?.*#\{[^\}]+\}
