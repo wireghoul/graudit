@@ -40,7 +40,7 @@ new[[:space:]]+Cli[[:space:]]*\(.*
 (ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+.*\+[[:space:]]*[Rr]equest
 (LIMIT|limit)[[:space:]]+([0-9]+,[[:space:]]*[Rr]equest\..*|[Rr]request\..*)
 Process.Start[[:space:]]*\(.*\+
-\.Arguments[[:space:]]*=(.*[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+|.*[^\'\"]+[[:space:]]*\+[[:space:]]*[\'\"])
+\.Arguments[[:space:]]*=([^;\)]*[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+|[^;\)]*[^\'\"]+[[:space:]]*\+[[:space:]]*[\'\"])
 \.SelectNodes[[:space:]]*\(.*[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
 ReadAllBytes[[:space:]]*\(.*[Rr]equest
 # DotNet input controls
