@@ -62,6 +62,7 @@ OPTIONS
   -d <dbname> database to use or /path/to/file.db (uses default if not specified)
   -A scan unwanted and difficult (ALL) files
   -x exclude these files (comma separated list: -x *.js,*.sql)
+  -n include only these files (comma separated list: -x *.js,*.sql)
   -i case in-sensitive scan
   -c <num> number of lines of context to display, default is 2
 
@@ -102,7 +103,7 @@ listdb () {
     fi
 }
 
-while getopts "AbBhvilLzZd:c:x:" opt; do
+while getopts "AbBhvilLzZd:c:x:n:" opt; do
     case $opt in
         B)
             hidebanner=1
@@ -144,6 +145,15 @@ while getopts "AbBhvilLzZd:c:x:" opt; do
             IFS=','
             for ign in $OPTARG; do
                 ignorepattern="$ignorepattern --exclude=$ign"
+            done
+            IFS=$OIFS
+        ;;
+
+        n)
+            OIFS=$IFS
+            IFS=','
+            for inc in $OPTARG; do
+                incpattern="$incpattern --include=$inc"
             done
             IFS=$OIFS
         ;;
@@ -207,7 +217,7 @@ $BINFILE --color=$color \
          --exclude-dir=.svn \
          --exclude-dir=CVS \
          --exclude-dir=.git \
-         $excludefiles \
+         $incpattern $excludefiles \
          $icase $ignorepattern \
          -n -R -H -C "$context" -E \
          -f "$database" $@ | \
