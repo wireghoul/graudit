@@ -50,8 +50,10 @@ eval[[:space:]]*\([^\)\;\"]*([Rr]eq(uest)?[\.\)]|\.[Gg]et[Pp]aram[[:space:]]*[\[
 (LIMIT|limit)[[:space:]]+([0-9,]+)?[;:space:]]*[\'\"][\'\"]?[[:space:]]*\+[[:space:]]*[^\"\']
 \.query\([^\);]*[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
 eval[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
+eval[[:space:]]*\(.*[Rr]eq(quest)?\.(query|body|param)?
 <%-[[:space:]]+.*%>
 \.(spawn|exec)(File)?(Sync)?\([^\);]*([\'\"] *\+|\$\{)
+set(Interval|Timeout)[[:space:]]*\([^,\}\)]*[Rr]eq(quest)?\.[A-Za-z0-9]+
 asm[[:space:]]+[\'\"].*
 unsafeAddr
 execShellCmd[[:space:]]*\(
