@@ -54,6 +54,7 @@ eval[[:space:]]*\(.*[Rr]eq(quest)?\.(query|body|param)?
 <%-[[:space:]]+.*%>
 \.(spawn|exec)(File)?(Sync)?\([^\);]*([\'\"] *\+|\$\{)
 set(Interval|Timeout)[[:space:]]*\([^,\}\)]*[Rr]eq(quest)?\.[A-Za-z0-9]+
+\.SafeString[[:space:]]*\([^\)]*[\"'][[:space:]]*\+
 asm[[:space:]]+[\'\"].*
 unsafeAddr
 execShellCmd[[:space:]]*\(
