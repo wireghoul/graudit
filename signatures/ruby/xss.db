@@ -1,2 +1,3 @@
 I18n.t[[:space:]]*\(['"][^'"]+['"][[:space:]]*,[[:space:]]*query:[[:space:]]*@.*
 render[[:space:]]+:?(text|plain):?.*#\{[^\}]+\}
+render[[:space:]]+[^:]+:.*\#\{[^\}]+
