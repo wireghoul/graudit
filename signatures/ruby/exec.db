@@ -5,4 +5,3 @@ system[[:space:]]*\(
 \.open[[:space:]]*\(
 \.(public_)?send[[:space:]]*\(
 `.*#\{[^`]+`
-File\.(read|new|open|delete)[[:space:]]*\(

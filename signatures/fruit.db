@@ -119,6 +119,7 @@ pg_query[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
 ^[[:space:]]*`[^`]*#\{[^\}]+\}.*`
 [=\(][[:space:]]*`[^`]*#\{[^\}]+.*\}
 render[[:space:]]+:?(text|plain):?.*#\{[Pp][Aa][Rr][Aa][Mm][^\}]*\}
+File\.(read|new|open|delete)[[:space:]]*\("[^"]*\#\{[^\}]+
 Source\.fromFile[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
 sql\".*\#\$.*\"\.as\[.*
 SQL[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+

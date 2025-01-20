@@ -35,7 +35,6 @@ system[[:space:]]*\(
 \.open[[:space:]]*\(
 \.(public_)?send[[:space:]]*\(
 `.*#\{[^`]+`
-File\.(read|new|open|delete)[[:space:]]*\(
 .*\=.*\!\!
 [a-z0-9A-Z]\.\!
 \.execSync[[:space:]]*\(

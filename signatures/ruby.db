@@ -6,10 +6,11 @@ system[[:space:]]*\(
 \.open[[:space:]]*\(
 \.(public_)?send[[:space:]]*\(
 `.*#\{[^`]+`
-File\.(read|new|open|delete)[[:space:]]*\(
+File\.(read|new|open|delete|join)[[:space:]]*\(
 ^[[:space:]]*`[^`]*#\{[^\}]+\}.*`
 [=\(][[:space:]]*`[^`]*#\{[^\}]+.*\}
 render[[:space:]]+:?(text|plain):?.*#\{[Pp][Aa][Rr][Aa][Mm][^\}]*\}
+File\.(read|new|open|delete)[[:space:]]*\("[^"]*\#\{[^\}]+
 # Ruby - Execution
 _send_[[:space:]]*\(
 __send__[[:space:]]*\(
