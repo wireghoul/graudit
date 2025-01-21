@@ -1,4 +1,4 @@
 ^[[:space:]]*`[^`]*#\{[^\}]+\}.*`
 [=\(][[:space:]]*`[^`]*#\{[^\}]+.*\}
 render[[:space:]]+:?(text|plain):?.*#\{[Pp][Aa][Rr][Aa][Mm][^\}]*\}
-File\.(read|new|open|delete)[[:space:]]*\("[^"]*\#\{[^\}]+
+File\.(read|new|open|delete|write)[[:space:]]*\("[^"]*\#\{[^\}]+[^\)]*\)

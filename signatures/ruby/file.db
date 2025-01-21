@@ -1,1 +1,2 @@
-File\.(read|new|open|delete|join)[[:space:]]*\(
+File\.(read|new|open|delete)[[:space:]]*\([^\)]+\)
+send_file([[:space:]]*\(|[[:space:]]+[^\(])

@@ -2,15 +2,17 @@
 \.instance_eval.*
 eval([[:space:]]*\(|[[:space:]]+[^\(])
 spawn([[:space:]]*\(|[[:space:]]+[^\(])
+system([[:space:]]*\(|[[:space:]]+").*\#\{[^\}]+\}
 system[[:space:]]*\(
 \.open[[:space:]]*\(
 \.(public_)?send[[:space:]]*\(
 `.*#\{[^`]+`
-File\.(read|new|open|delete|join)[[:space:]]*\(
+File\.(read|new|open|delete)[[:space:]]*\([^\)]+\)
+send_file([[:space:]]*\(|[[:space:]]+[^\(])
 ^[[:space:]]*`[^`]*#\{[^\}]+\}.*`
 [=\(][[:space:]]*`[^`]*#\{[^\}]+.*\}
 render[[:space:]]+:?(text|plain):?.*#\{[Pp][Aa][Rr][Aa][Mm][^\}]*\}
-File\.(read|new|open|delete)[[:space:]]*\("[^"]*\#\{[^\}]+
+File\.(read|new|open|delete|write)[[:space:]]*\("[^"]*\#\{[^\}]+[^\)]*\)
 # Ruby - Execution
 _send_[[:space:]]*\(
 __send__[[:space:]]*\(
