@@ -13,6 +13,12 @@ send_file([[:space:]]*\(|[[:space:]]+[^\(])
 [=\(][[:space:]]*`[^`]*#\{[^\}]+.*\}
 render[[:space:]]+:?(text|plain):?.*#\{[Pp][Aa][Rr][Aa][Mm][^\}]*\}
 File\.(read|new|open|delete|write)[[:space:]]*\("[^"]*\#\{[^\}]+[^\)]*\)
+['"(: ][Ss][Ee][Ll][Ee][Cc][Tt][[:space:]]+.*#\{[^\}]+
+(WHERE|where)[[:space:]]+.*=[[:space:]]*['"]*#\{[^\}]+
+[\'\" ]+AND[[:space:]]+.*=.*\+[[:space:]]*#\{[^\}]+
+(LIKE|like)[[:space:]]+.*#\{[^\}]+
+(ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+.*\+[[:space:]]*#\{[^\}]+
+['" ](LIMIT|limit)[[:space:]]+.*#\{[^\}]+
 # Ruby - Execution
 _send_[[:space:]]*\(
 __send__[[:space:]]*\(
@@ -40,3 +46,4 @@ I18n.t[[:space:]]*\(['"][^'"]+['"][[:space:]]*,[[:space:]]*query:[[:space:]]*@.*
 render[[:space:]]+:?(text|plain):?.*#\{[^\}]+\}
 render[[:space:]]+[^:]+:.*\#\{[^\}]+
 render.*params?\[
+<%=[[:space:]]*[Pp][Aa][Rr][Aa][Mm]
