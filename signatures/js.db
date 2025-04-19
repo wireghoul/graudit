@@ -1,6 +1,7 @@
 (document|\$)\.cookie[[:space:]]*\(
-md5[[:space:]]*\(
-sha1[[:space:]]*\(
+[Mm][Dd]5[[:space:]]*\(
+[Ss][Hh][Aa]1[[:space:]]*\(
+createHash[[:space:]]*\([[:space:]]*['"]([Ss][Hh][Aa][1]?|[Mm][Dd][5])['"]
 \.write[[:space:]]*\([^;]+\.location\.href
 nodeIntegration
 nodeIntegrationInWorker
