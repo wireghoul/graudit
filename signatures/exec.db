@@ -5,6 +5,7 @@ new[[:space:]]+(System\.Diagnostic\.)?Process(StartInfo)?[[:space:]]*\(.*
 new[[:space:]]+Cli[[:space:]]*\(.*
 # via Microsoft.VisualBasic
 \.Shell[[:space:]]*\(.*
+\.Invoke[[:space:]]*\([^\)]+\)
 exec\.Command[[:space:]]*\(
 syscall\.Exec[[:space:]]*\(
 os\.StartProcess[[:space:]]*\(
