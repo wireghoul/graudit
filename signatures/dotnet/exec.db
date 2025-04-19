@@ -5,3 +5,4 @@ new[[:space:]]+(System\.Diagnostic\.)?Process(StartInfo)?[[:space:]]*\(.*
 new[[:space:]]+Cli[[:space:]]*\(.*
 # via Microsoft.VisualBasic
 \.Shell[[:space:]]*\(.*
+\.Invoke[[:space:]]*\([^\)]+\)
