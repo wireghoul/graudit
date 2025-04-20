@@ -15,6 +15,7 @@ eval[[:space:]]*\(.*\$.*\)
 (mysql.?_|pg_|sqlsrv_|::)query[[:space:]]*\(.*\$.*\)
 [Ww][Hh][Ee][Rr][Ee][[:space:]]+.*=.*\$[^; ]+
 ([Ww][Hh][Ee][Rr][Ee]|[Aa][Nn][Dd]|[Oo][Rr])[[:space:]]+.*[[:space:]]+[Ll][Ii][Kk][Ee][[:space:]]+.*\$
+VALUES[[:space:]]*\([^\)]*\$.*\)
 ^[[:space:]]*(include|include_once|require|require_once)[[:space:]]*\([^\;\}\{]*\$.*\)
 print.*param[[:space:]]*\(.*\);
 extract[[:space:]]*\(\$_(GET|POST|REQUEST|COOKIE|SERVER)

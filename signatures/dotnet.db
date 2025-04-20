@@ -31,6 +31,7 @@ new[[:space:]]+(System\.Diagnostic\.)?Process(StartInfo)?[[:space:]]*\(.*
 new[[:space:]]+Cli[[:space:]]*\(.*
 # via Microsoft.VisualBasic
 \.Shell[[:space:]]*\(.*
+\.Invoke[[:space:]]*\([^\)]+\)
 <%=[[:space:]]*[Rr]equest\.[Qq]uery[Ss]tring\[.*%>
 #[Ss][Ee][Ll][Ee][Cc][Tt][[:space:]]+.*\{[0-9]+\}
 [Ss][Ee][Ll][Ee][Cc][Tt][[:space:]]+.*[\'\"][[:space:]]*\+[[:space:]]*[Rr]equest\..*

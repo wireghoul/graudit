@@ -2,14 +2,23 @@
 \.instance_eval.*
 eval([[:space:]]*\(|[[:space:]]+[^\(])
 spawn([[:space:]]*\(|[[:space:]]+[^\(])
+system([[:space:]]*\(|[[:space:]]+").*\#\{[^\}]+\}
 system[[:space:]]*\(
 \.open[[:space:]]*\(
 \.(public_)?send[[:space:]]*\(
 `.*#\{[^`]+`
-File\.(read|new|open|delete)[[:space:]]*\(
+File\.(read|new|open|delete)[[:space:]]*\([^\)]+\)
+send_file([[:space:]]*\(|[[:space:]]+[^\(])
 ^[[:space:]]*`[^`]*#\{[^\}]+\}.*`
 [=\(][[:space:]]*`[^`]*#\{[^\}]+.*\}
 render[[:space:]]+:?(text|plain):?.*#\{[Pp][Aa][Rr][Aa][Mm][^\}]*\}
+File\.(read|new|open|delete|write)[[:space:]]*\("[^"]*\#\{[^\}]+[^\)]*\)
+['"(: ][Ss][Ee][Ll][Ee][Cc][Tt][[:space:]]+.*#\{[^\}]+
+(WHERE|where)[[:space:]]+.*=[[:space:]]*['"]*#\{[^\}]+
+[\'\" ]+AND[[:space:]]+.*=.*\+[[:space:]]*#\{[^\}]+
+(LIKE|like)[[:space:]]+.*#\{[^\}]+
+(ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+.*\+[[:space:]]*#\{[^\}]+
+['" ](LIMIT|limit)[[:space:]]+.*#\{[^\}]+
 # Ruby - Execution
 _send_[[:space:]]*\(
 __send__[[:space:]]*\(
@@ -35,3 +44,6 @@ new[[:space:]]*\(params\[:[a-zA-Z0-9_]+\]
 \.find_(or_(create|initialize)_)?by!?.*:
 I18n.t[[:space:]]*\(['"][^'"]+['"][[:space:]]*,[[:space:]]*query:[[:space:]]*@.*
 render[[:space:]]+:?(text|plain):?.*#\{[^\}]+\}
+render[[:space:]]+[^:]+:.*\#\{[^\}]+
+render.*params?\[
+<%=[[:space:]]*[Pp][Aa][Rr][Aa][Mm]

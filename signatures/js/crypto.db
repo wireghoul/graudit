@@ -1,0 +1,3 @@
+[Mm][Dd]5[[:space:]]*\(
+[Ss][Hh][Aa]1[[:space:]]*\(
+createHash[[:space:]]*\([[:space:]]*['"]([Ss][Hh][Aa][1]?|[Mm][Dd][5])['"]

@@ -5,6 +5,7 @@ new[[:space:]]+(System\.Diagnostic\.)?Process(StartInfo)?[[:space:]]*\(.*
 new[[:space:]]+Cli[[:space:]]*\(.*
 # via Microsoft.VisualBasic
 \.Shell[[:space:]]*\(.*
+\.Invoke[[:space:]]*\([^\)]+\)
 exec\.Command[[:space:]]*\(
 syscall\.Exec[[:space:]]*\(
 os\.StartProcess[[:space:]]*\(
@@ -31,11 +32,11 @@ system([[:space:]]*\(|[[:space:]]+[\"\']).*\)?
 \.instance_eval.*
 eval([[:space:]]*\(|[[:space:]]+[^\(])
 spawn([[:space:]]*\(|[[:space:]]+[^\(])
+system([[:space:]]*\(|[[:space:]]+").*\#\{[^\}]+\}
 system[[:space:]]*\(
 \.open[[:space:]]*\(
 \.(public_)?send[[:space:]]*\(
 `.*#\{[^`]+`
-File\.(read|new|open|delete)[[:space:]]*\(
 .*\=.*\!\!
 [a-z0-9A-Z]\.\!
 \.execSync[[:space:]]*\(
