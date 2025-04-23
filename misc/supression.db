@@ -14,3 +14,4 @@ ApexXSSFromEscapeFalse
 ApexXSSFromURLParam
 (#|//)[[:space:]]+nosemgrep
 #[[:space:]]*rubocop:disable.*
+#pragma warning disable EF1000
