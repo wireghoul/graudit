@@ -1,3 +1,23 @@
+3.9		2025 May 22
+		Added giterate misc script
+		Added snumerate misc script
+		Added svnlog misc script
+		Added svnscan misc script
+		Added jwt rules
+		Added some Docker rules
+		Updated supression rules
+		Updated dotnet rules
+		Updated golang rules
+		Updated java rules
+		Updated js rules
+		Updated php rules
+		Updated python rules
+		Updated ruby rules
+		Updated scala rules
+		Updated sql rules
+		Updated secrets rules
+		Added and updated unit tests
+
 3.8		2025 Apr 20
 		Updated default rules
 		Updated js rules
