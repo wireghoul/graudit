@@ -1,4 +1,7 @@
-\.Clean\(.*\)
-\.Open\(.*\)
-\.Read\(.*\)
-\TempFile\(.*\)
+\.Clean[[:space:]]*\(.*\)
+\.Open[[:space:]]*\(.*\)
+\.Read[[:space:]]*\(.*\)
+\.TempFile[[:space:]]*\(.*\)
+os\.Remove[[:space:]]*\(
+io\.Copy[[:space:]]*\(
+\.Chmod[[:space:]]*\(
