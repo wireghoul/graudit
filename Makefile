@@ -6,7 +6,7 @@ prefix = /usr
 dataroot = $(prefix)/share
 datadir = $(dataroot)/graudit
 bindir = $(prefix)/bin
-SIGNATURES := signatures/actionscript.db signatures/android.db signatures/asp.db signatures/c.db signatures/cobol.db signatures/default.db signatures/dotnet.db signatures/exec.db signatures/fruit.db signatures/go.db signatures/ios.db signatures/java.db signatures/js.db signatures/kotlin.db signatures/nim.db signatures/perl.db signatures/php.db signatures/python.db signatures/ruby.db signatures/scala.db signatures/secrets.db signatures/spsqli.db signatures/sql.db signatures/strings.db signatures/typescript.db signatures/xss.db
+SIGNATURES := signatures/actionscript.db signatures/android.db signatures/asp.db signatures/c.db signatures/cobol.db signatures/default.db signatures/docker.db signatures/dotnet.db signatures/exec.db signatures/fruit.db signatures/go.db signatures/ios.db signatures/java.db signatures/js.db signatures/kotlin.db signatures/nim.db signatures/perl.db signatures/php.db signatures/python.db signatures/ruby.db signatures/scala.db signatures/secrets.db signatures/spsqli.db signatures/sql.db signatures/strings.db signatures/typescript.db signatures/xss.db signatures/jwt.db
 DISTFILES := Changelog  graudit  LICENSE  README.md
 MANFILES := graudit.1
 VERSION=`./graudit -v | cut -d' ' -f 3`
@@ -78,6 +78,7 @@ signatures:
 	cat signatures/*/fruit.db      > signatures/fruit.db
 	cat signatures/*/sql.db        > signatures/sql.db
 	cat signatures/*/xss.db        > signatures/xss.db
+	cat signatures/*/jwt.db        > signatures/jwt.db
 
 manpages:
 	nroff -Tascii -mandoc <graudit.in.1 >/dev/null
