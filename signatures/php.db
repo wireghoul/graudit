@@ -241,7 +241,8 @@ ovrimos_.*[[:space:]]*\(.*\$.*\)
 maxdb_.*[[:space:]]*\(.*\$.*\)
 db2_.*[[:space:]]*\(.*\$.*\)
 ->sqliteCreate(Agregate|Collation|Function)[[:space:]]*\(
-->createFunction[[:space:]]*\(
+->create(Aggregate|Collation|Function)[[:space:]]*\(
+querySingle[[:space:]]*\(
 CURLOPT_SSL_VERIFY(HOST|PEER), *([Ff][Aa][Ll][Ss][Ee]|0)
 unserialize[[:space:]]*\(.*\$.*
 file_exists[[:space:]]*\(\"?\$.*
