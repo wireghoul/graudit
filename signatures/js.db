@@ -33,6 +33,13 @@ insecure
 strictSSL
 clientPemCrtSignedBySelfSignedRootCaBuffer
 require[[:space:]]*\([^))+[Yy][Aa][Mm][Ll].?\)\.load\(
+[Jj][Ww][Tt][[:space:]]*\([[:space:]]*\{.*,[[:space:]]*secret[[:space:]]*:[[:space:]]*"[^"]*"
+\.verify[[:space:]]*\(.*\{[[:space:]]*algorithms[[:space:]]*:[[:space:]]*\[[^]]*["']none["']
+\.verify[[:space:]]*\([^,]+,[^\.]+\.None[[:space:]]*\)
+\.(verify|sign)[[:space:]]*\([^,]+,[[:space:]]*['"][^'"]*['"][[:space:]]*,
+\.asKey[[:space:]]*\([[:space:]]*['"][^'"]*['"][[:space:]]*\)
+\.sign[[:space:]]*\([[:space:]]*\{[^\}]*password[[:space:]]*:
+\.sign[[:space:]]*\([[:space:]]*['"][^'"]*['"][[:space:]]*\)
 \.IncomingForm\(
 \.parse\(
 \.readFile\(
