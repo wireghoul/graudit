@@ -53,7 +53,8 @@ system.web.ui.webcontrols.label
 system.web.ui.webcontrols.linkbutton
 system.web.ui.webcontrols.listbox
 system.web.ui.webcontrols.checkboxlist
-system.web.ui.webcontrols.dropdownlist# Dotnet legacy
+system.web.ui.webcontrols.dropdownlistValidateLifetime[[:space:]]*=[[:space:]]*false
+# Dotnet legacy
 printf
 strcpy
 # Dotnet Logging
