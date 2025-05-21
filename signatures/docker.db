@@ -1,0 +1,3 @@
+^[[:space:]]*RUN[[:space:]]+sudo[[:space:]]+
+^[[:space:]]*USER[[:space:]]+root$
+^[[:space:]]*VOLUME[[:space:]]+/var/run/docker\.sock:
