@@ -41,4 +41,5 @@ ovrimos_.*[[:space:]]*\(.*\$.*\)
 maxdb_.*[[:space:]]*\(.*\$.*\)
 db2_.*[[:space:]]*\(.*\$.*\)
 ->sqliteCreate(Agregate|Collation|Function)[[:space:]]*\(
-->createFunction[[:space:]]*\(
+->create(Aggregate|Collation|Function)[[:space:]]*\(
+querySingle[[:space:]]*\(

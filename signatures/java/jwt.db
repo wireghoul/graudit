@@ -1,0 +1,2 @@
+Algorithm\.HMAC256[[:space:]]*\([[:space:]]*"[^"]*"
+Algorithm\.none[[:space:]]*\([[:space:]]*\)

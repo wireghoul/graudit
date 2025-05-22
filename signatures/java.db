@@ -111,6 +111,8 @@ executeQuery[[:space:]]*\(.*\)
 Socket[[:space:]]*\(
 <jsp:include page=\".*\$\{.*\}
 <spring:eval expression=\".*\$\{.*\}
+Algorithm\.HMAC256[[:space:]]*\([[:space:]]*"[^"]*"
+Algorithm\.none[[:space:]]*\([[:space:]]*\)
 A[Ll][Ll][Oo][Ww]_?A[Ll][Ll]_?H[Oo][Ss][Tt][Nn][Aa][Mm][Ee]_?V[Ee][Rr][Ii][Ff][Ii][Ee][Rr]
 SSLSocketFactory
 is[Tt]rusted

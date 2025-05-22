@@ -19,6 +19,8 @@ File\.(read|new|open|delete|write)[[:space:]]*\("[^"]*\#\{[^\}]+[^\)]*\)
 (LIKE|like)[[:space:]]+.*#\{[^\}]+
 (ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+.*\+[[:space:]]*#\{[^\}]+
 ['" ](LIMIT|limit)[[:space:]]+.*#\{[^\}]+
+[Jj][Ww][Tt]\.decode[[:space:]]+.*,[[:space:]]*false[[:space:]]*,[[:space:]]*\{
+[Jj][Ww][Tt]\.encode[[:space:]]+.*,[[:space:]]*nil[[:space:]]*,[[:space:]]*["']none["']
 # Ruby - Execution
 _send_[[:space:]]*\(
 __send__[[:space:]]*\(

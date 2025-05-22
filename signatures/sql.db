@@ -111,9 +111,20 @@ ovrimos_.*[[:space:]]*\(.*\$.*\)
 maxdb_.*[[:space:]]*\(.*\$.*\)
 db2_.*[[:space:]]*\(.*\$.*\)
 ->sqliteCreate(Agregate|Collation|Function)[[:space:]]*\(
-->createFunction[[:space:]]*\(
+->create(Aggregate|Collation|Function)[[:space:]]*\(
+querySingle[[:space:]]*\(
 [Ww][Hh][Ee][Rr][Ee][[:space:]]+.*=[[:space:]]*\{\}
 [Aa][Nn][Dd][[:space:]]+.*=[[:space:]]*\{\}
+\.filter[[:space:]]*\([[:space:]]*text[[:space:]]*\([^\)]+%s
+\.create_function[[:space:]]*\(
+\.create_aggregate[[:space:]]*\(
+\.create_collation[[:space:]]*\(
+\.enable_load_extension[[:space:]]*\([[:space:]]*True
+\.execute(many|script)?[[:space:]]*\(
+\.iterdump[[:space:]]*\(
+\.load_extension[[:space:]]*\(
+\.set_authorizer[[:space:]]*\(
+\.set_progress_handler[[:space:]]*\(
 (WHERE|where)[[:space:]]+.*=.*[\'\"][[:space:]]*\+.*
 [\'\" ]+AND[[:space:]]+.*=.*\+.*
 (LIKE|like)[[:space:]]+[^\;]+\+.*

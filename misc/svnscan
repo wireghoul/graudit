@@ -1,0 +1,12 @@
+#!/bin/sh
+# download and scan a single github repo, output to stdout
+if [ -z $1 ]; then
+    echo "$0 <https://svn/repo/url>"
+    exit 2
+fi
+url=$1
+echo "Scanning $url!"
+mkdir -p churn
+cd churn
+svn co $url
+graudit -x *.js,*.json,*.map,*.sql -d flatline .

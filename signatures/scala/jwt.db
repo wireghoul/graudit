@@ -1,0 +1,2 @@
+Jwt(Argonaut|Circe|Json(4s)?|Upickle)?\.((en|de)code(Raw|Json)?(All)?|validate|isValid)[[:space:]]*\([^,]+,[[:space:]]*["'][^'"]*["']
+Algorithm\.HMAC256[[:space:]]*\([[:space:]]*['"][^'"]*['"]
