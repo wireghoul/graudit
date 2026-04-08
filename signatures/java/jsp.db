@@ -1,7 +1,7 @@
 request.getQueryString
 exec[[:space:]]*\(.*\)
 Runtime\.
-getRuntime[[:space:]]*\(.*\)(\.|\s*;)
+getRuntime[[:space:]]*\(.*\)(\.|[[:space:]]*;)
 getRequest
 [Rr]equest.getParameter
 getProperty[[:space:]]*\(
@@ -15,5 +15,5 @@ createStatement[[:space:]]*\(.*\)
 executeQuery[[:space:]]*\(.*\)
 # Network
 Socket[[:space:]]*\(
-<jsp:include page=\".*\$\{.*\}
-<spring:eval expression=\".*\$\{.*\}
+<jsp:include page=".*\$\{.*\}
+<spring:eval expression=".*\$\{.*\}

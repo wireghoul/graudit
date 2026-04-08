@@ -1,4 +1,4 @@
-printf[[:space:]]*\([[:space:]]*[^\,\'\"]+[[:space:]]*\)[[:space:]]*\;
+printf[[:space:]]*\([[:space:]]*[^,'"]+[[:space:]]*\)[[:space:]]*\;
 sprintf[[:space:]]*\([^\,]+,[^\,]+\%s
 .?scanf[[:space:]]*\([^\,]+\%s[^\,]+\,[^\,]+\)\;
 strnc(py|at)[[:space:]]*\([^\,]+\,[[:space:]]*[^\,]+\,[[:space:]]*sizeof\(
@@ -21,7 +21,7 @@ strncpy[[:space:]]*\([^\,]+\,[[:space:]]*sizeof\(
 memcpy[[:space:]]*\([^\,]+\,[^\,]+\,[[:space:]]*sizeof\(
 memset[[:space:]]*\([^,]+,[^,]+,[[:space:]]*0[[:space:]]*\);
 # Race conditions
-access\s*\(
+access[[:space:]]*\(
 creat
 mknod
 mkfifo
@@ -32,8 +32,8 @@ basename
 scandir
 fopen
 lstat
-stat\s*\(
-open\s*\(
+stat[[:space:]]*\(
+open[[:space:]]*\(
 chmod
 chown
 chgrp
@@ -42,7 +42,7 @@ rename
 (rmdirp|rmdir)
 remove
 unlink
-link\s*\(
+link[[:space:]]*\(
 lchown
 (execve|execl|execlp|execle|execv)
 freopen
@@ -60,14 +60,14 @@ memfrob
 crypt
 srandom
 # Design signatures
-chroot\s*\(
+chroot[[:space:]]*\(
 gets
-system\s*\(
+system[[:space:]]*\(
 popen
 getenv
 strcpy
 strcat
-(printf|sprintf|wsprintf|wsprintfA|wsprintfW|_snprinft|_snwprinft)\s*\(
+(printf|sprintf|wsprintf|wsprintfA|wsprintfW|_snprinft|_snwprinft)[[:space:]]*\(
 (lstrcpy|lstrcpyA|lstrcpyW)
 wcscpy
 _mbscpy
@@ -217,7 +217,7 @@ getpass
 getchar
 fgetc
 getc
-read\s*\(
+read[[:space:]]*\(
 bcopy
 fgets
 cin
@@ -304,10 +304,10 @@ getwd
 umask
 AddAccessAllowedAce
 # sw bugs from aaron campbell, see https://www.arbornetworks.com/blog/asert/static-code-analysis-using-google-code-search/
-flags\s*&&\s*[A-Z_]+
-\[sizeof\(.*\)\]\s*=\s*'?\\?0'?;$
-^[\s\t]*printf\(getenv
+flags[[:space:]]*&&[[:space:]]*[A-Z_]+
+\[sizeof\(.*\)\][[:space:]]*=[[:space:]]*'?\\?0'?;$
+^[[:space:]]*printf\(getenv
 if \(errno = E
 <= 65553
 0xfffffff[^0-9a-f]
-getopt\s*\(argc,\s*argv,\s*\"[^\"]*;
+getopt[[:space:]]*\(argc,[[:space:]]*argv,[[:space:]]*"[^"]*;

@@ -1,9 +1,9 @@
 # Perl exec signatures
-exec(\s*\(|\s+).*\$.*\)?
-fork(\s*\(|\s+).*\)?
+exec([[:space:]]*\(|[[:space:]]+).*\$.*\)?
+fork([[:space:]]*\(|[[:space:]]+).*\)?
 `.*\$.*`
-system(\s*\(?|\s+)*\$.*\)?
-open(\s*\(?|\s+)*\$.*\)?
+system([[:space:]]*\(?|[[:space:]]+)*\$.*\)?
+open([[:space:]]*\(?|[[:space:]]+)*\$.*\)?
 # Perl-fruit signatures
 exec[[:space:]]*\(?.*\$ARGV.*\)?
 exec[[:space:]]*\(?.*\$.*->param[[:space:]]*\(.*\).*\)?
@@ -25,8 +25,8 @@ use[[:space:]]+.*\$.*->param[[:space:]]*\(.*\).*
 \$ENV
 # Perl signatures
 getc
-readdir(\s+|\s*\().*\$.*
-read(\s+|\s*\().*\$.*
+readdir([[:space:]]+|[[:space:]]*\().*\$.*
+read([[:space:]]+|[[:space:]]*\().*\$.*
 sysread
 eval.*\$.*
 fctnl
@@ -35,18 +35,18 @@ bind
 setpgrp
 syscall
 connect.*\$.*
-glob(\s+|\s*\().*\$.*
-mkdir(\s+|\s*\().*\$.*
-rmdir(\s+|\s*\().*\$.*
-link(\s+|\s*\().*\$.*
-unlink(\s+|\s*\().*\$.*
-chmod(\s+|\s*\().*\$.*
-chown(\s+|\s*\().*\$.*
+glob([[:space:]]+|[[:space:]]*\().*\$.*
+mkdir([[:space:]]+|[[:space:]]*\().*\$.*
+rmdir([[:space:]]+|[[:space:]]*\().*\$.*
+link([[:space:]]+|[[:space:]]*\().*\$.*
+unlink([[:space:]]+|[[:space:]]*\().*\$.*
+chmod([[:space:]]+|[[:space:]]*\().*\$.*
+chown([[:space:]]+|[[:space:]]*\().*\$.*
 chroot
 symlink
-truncate(\s+|\s*\().*\$.*
+truncate([[:space:]]+|[[:space:]]*\().*\$.*
 kill.*\$.*
 umask
-->param\s*\(.*\)
+->param[[:space:]]*\(.*\)
 # Perl xss signatures
 print[[:space:]]*.*\$.*->param\(?.*\)?

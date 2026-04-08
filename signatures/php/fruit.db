@@ -1,6 +1,6 @@
 escapeshellcmd[[:space:]]*\([^\)]*escapeshellarg[[:space:]]*\(.*
 escapeshellarg[[:space:]]*\([^\)]*escapeshellcmd[[:space:]]*\(.*
-[\'\"][[:space:]]*\.[[:space:]]*escapeshellcmd[[:space:]]*\(
+['"][[:space:]]*\.[[:space:]]*escapeshellcmd[[:space:]]*\(
 echo[[:space:]]+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
 print[[:space:]]+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
 print_r([[:space:]]+|[[:space:]]*\().*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
@@ -23,9 +23,9 @@ require_once[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|htt
 fopen[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 readfile[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 file_(get|put)_contents[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
-(is_dir|file_exists|unlink)[[:space:]]*\(\"?\$(_ENV|_GET|_POST|_COOKE|_REQUEST|_SERVER|HTTP|http).*\)
+(is_dir|file_exists|unlink)[[:space:]]*\([[:space:]]*"?\$(_ENV|_GET|_POST|_COOKE|_REQUEST|_SERVER|HTTP|http).*\)
 show_source[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
-preg_replace[[:space:]]*\([\'"](.).*\1[igsu]*e
+preg_replace[[:space:]]*\(['"](.).*\1[igsu]*e
 highlight_file[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 file[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 unserialize[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)

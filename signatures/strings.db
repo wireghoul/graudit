@@ -5,10 +5,10 @@
 [Ff][Ii][Xx][Mm][Ee]
 [Tt][Oo][Dd][Oo]
 XXX
-.*select\s+.*\s+from .*
-.*update\s+.*\s+where
-.*insert\s+.*\s+into
-.*delete\s*.*\s+from
+.*select[[:space:]]+.*[[:space:]]+from .*
+.*update[[:space:]]+.*[[:space:]]+where
+.*insert[[:space:]]+.*[[:space:]]+into
+.*delete[[:space:]]*.*[[:space:]]+from
 .*exec.*
 .*executeQuery.*
 .*sp_executesql.*
@@ -20,14 +20,14 @@ XXX
 .*mysql_query.*
 .*executeQuery.*
 .*createStatement.*
-.*exec\s+(@Query).*
-.*exec\s+@Query.*
+.*exec[[:space:]]+(@Query).*
+.*exec[[:space:]]+@Query.*
 .*concat.*
 .*concatenate.*
 .*GetQueryResultInXML.*
 .*setfilter.*
 .*sqloledb.*
-.*sql\s+server.*
+.*sql[[:space:]]+server.*
 .*driver.*
 .*sqlconnection.*
 .*dsn.*
