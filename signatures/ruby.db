@@ -1,4 +1,5 @@
 http_basic_authenticate_with.*assword.*['"]
+spawn[[:space:]]+[^,]+,[[:space:]]*@[a-zA-Z0-9]+
 (Marshal|[Yy][Aa][Mm][Ll])\.load[[:space:]]*\(
 (class|module|instance)_eval([[:space:]]+.*|[[:space:]]*\()
 eval([[:space:]]*\(|[[:space:]]+[^\(])
