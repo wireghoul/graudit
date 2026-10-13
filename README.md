@@ -125,8 +125,7 @@ https://github.com/wireghoul/graudit and use that. In particular language rules,
 additional scripts and documentation contributions are very welcome.
 If you like graudit then please say thanks and share it around.
 
-If you wish to get in contact with me, shoot me a line on github or twitter:
-@wireghoul
+If you wish to get in contact with me, shoot me a line on github @wireghoul.
 
 Credits
 ===============================================================================
