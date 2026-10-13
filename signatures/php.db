@@ -56,18 +56,18 @@ print.*param[[:space:]]*\(.*\);
 extract[[:space:]]*\(\$_(GET|POST|REQUEST|COOKIE|SERVER)
 new[[:space:]]+\$_(GET|REQUEST|POST|COOKIE).*\(
 # PHP - Execution
-assert([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
-exec([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
+assert([[:space:]]*\(|[[:space:]]+["'])[^\)]+\)?
+exec([[:space:]]*\(|[[:space:]]+["'])[^\)]+\)?
 `[^`]*\$[^`]+`
-passthru([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
-popen([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
-proc_close([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
+passthru([[:space:]]*\(|[[:space:]]+["'])[^\)]+\)?
+popen([[:space:]]*\(|[[:space:]]+["'])[^\)]+\)?
+proc_close([[:space:]]*\(|[[:space:]]+["'])[^\)]+\)?
 proc_open([[:space:]]*\(|[[:space:]]+).*\)?
 proc_get_status([[:space:]]*\(|[[:space:]]+).*\)?
 proc_nice([[:space:]]*\(|[[:space:]]+).*\)?
 proc_terminate([[:space:]]*\(|[[:space:]]+).*\)?
 shell_exec([[:space:]]*\(|[[:space:]]+).*\)?
-system([[:space:]]*\(|[[:space:]]+[\"\']).*\)?
+system([[:space:]]*\(|[[:space:]]+["']).*\)?
 # Extensions
 expect_
 pcntl_
@@ -96,7 +96,7 @@ FFI::new[[:space:]]*\(
 FFI:;string[[:space:]]*\(
 escapeshellcmd[[:space:]]*\([^\)]*escapeshellarg[[:space:]]*\(.*
 escapeshellarg[[:space:]]*\([^\)]*escapeshellcmd[[:space:]]*\(.*
-[\'\"][[:space:]]*\.[[:space:]]*escapeshellcmd[[:space:]]*\(
+['"][[:space:]]*\.[[:space:]]*escapeshellcmd[[:space:]]*\(
 echo[[:space:]]+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
 print[[:space:]]+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
 print_r([[:space:]]+|[[:space:]]*\().*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
@@ -119,9 +119,9 @@ require_once[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|htt
 fopen[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 readfile[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 file_(get|put)_contents[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
-(is_dir|file_exists|unlink)[[:space:]]*\(\"?\$(_ENV|_GET|_POST|_COOKE|_REQUEST|_SERVER|HTTP|http).*\)
+(is_dir|file_exists|unlink)[[:space:]]*\([[:space:]]*"?\$(_ENV|_GET|_POST|_COOKE|_REQUEST|_SERVER|HTTP|http).*\)
 show_source[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
-preg_replace[[:space:]]*\([\'"](.).*\1[igsu]*e
+preg_replace[[:space:]]*\(['"](.).*\1[igsu]*e
 highlight_file[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 file[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 unserialize[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
@@ -246,11 +246,11 @@ querySingle[[:space:]]*\(
 [A-Z]+::expr\(.*\$.*\)
 CURLOPT_SSL_VERIFY(HOST|PEER), *([Ff][Aa][Ll][Ss][Ee]|0)
 unserialize[[:space:]]*\(.*\$.*
-file_exists[[:space:]]*\(\"?\$.*
-is_dir[[:space:]]*\(\"?\$
-md5_file[[:space:]]*\(\"?\$.*
-filemtime[[:space:]]*\(\"?\$.*
-filesize[[:space:]]*\(\"?\$.*
+file_exists[[:space:]]*\("?\$.*
+is_dir[[:space:]]*\("?\$
+md5_file[[:space:]]*\("?\$.*
+filemtime[[:space:]]*\("?\$.*
+filesize[[:space:]]*\("?\$.*
 file_get_contents[[:space:]]*\(.*\$.*
 fopen[[:space:]]*\(.*\$.*
 file[[:space:]]*\(.*\$.*

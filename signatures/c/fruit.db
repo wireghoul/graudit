@@ -1,4 +1,4 @@
-printf[[:space:]]*\([[:space:]]*[^\,\'\"]+[[:space:]]*\)[[:space:]]*\;
+printf[[:space:]]*\([[:space:]]*[^,'"]+[[:space:]]*\)[[:space:]]*\;
 sprintf[[:space:]]*\([^\,]+,[^\,]+\%s
 .?scanf[[:space:]]*\([^\,]+\%s[^\,]+\,[^\,]+\)\;
 strnc(py|at)[[:space:]]*\([^\,]+\,[[:space:]]*[^\,]+\,[[:space:]]*sizeof\(

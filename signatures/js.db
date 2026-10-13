@@ -17,13 +17,13 @@ additionalArguments
 enableWebSQL
 openExternal[[:space:]]*\(
 ELECTRON_RUN_AS_NODE
-\.query\([^\);]*[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
-eval[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
+\.query\([^\);]*['"][[:space:]]*\+[[:space:]]*[^'"]+
+eval[[:space:]]*\([^\)\;]+['"][[:space:]]*\+[[:space:]]*[^'"]+
 eval[[:space:]]*\(.*[Rr]eq(quest)?\.(query|body|param)?
 <%-[[:space:]]+.*%>
-\.(spawn|exec)(File)?(Sync)?\([^\);]*([\'\"] *\+|\$\{)
+\.(spawn|exec)(File)?(Sync)?\([^\);]*(['"] *\+|\$\{)
 set(Interval|Timeout)[[:space:]]*\([^,\}\)]*[Rr]eq(quest)?\.[A-Za-z0-9]+
-\.SafeString[[:space:]]*\([^\)]*[\"'][[:space:]]*\+
+\.SafeString[[:space:]]*\([^\)]*["'][[:space:]]*\+
 eval[[:space:]]*\(
 dangerouslySetInnerHTML
 trustAsHtml

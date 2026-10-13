@@ -1,9 +1,9 @@
 intent\.setData[[:space:]]*\([[:space:]]*Uri\.parse[[:space:]]*\([^\]*\)
 set(Intent|Result)[[:space:]]*\([^\,]+\,[[:space:]]*([_a-zA-Z0-9\.\(\)]+\.)?getIntent[[:space:]]*\(\)
 loadUrl[[:space:]]*\(.*getIntent\(\)\.getStringExtra
-\.rawQuery[[:space:]]*\([^\"\']+\)
-\.rawQuery[[:space:]]*\(.*[\"\'][[:space:]]*\+[[:space:]]*[^\"\']+
-printf[[:space:]]*\([[:space:]]*[^\,\'\"]+[[:space:]]*\)[[:space:]]*\;
+\.rawQuery[[:space:]]*\([^"']+\)
+\.rawQuery[[:space:]]*\(.*["'][[:space:]]*\+[[:space:]]*[^"']+
+printf[[:space:]]*\([[:space:]]*[^,'"]+[[:space:]]*\)[[:space:]]*\;
 sprintf[[:space:]]*\([^\,]+,[^\,]+\%s
 .?scanf[[:space:]]*\([^\,]+\%s[^\,]+\,[^\,]+\)\;
 strnc(py|at)[[:space:]]*\([^\,]+\,[[:space:]]*[^\,]+\,[[:space:]]*sizeof\(
@@ -17,15 +17,15 @@ malloc[[:space:]]*\(.*strlen[[:space:]]*\(
 strnc(at|py)[[:space:]]*\([^,]+,[^,]+,[[:space:]]*strlen[[:space:]]*\([^\)]+\)[[:space:]]*\)
 <%=[[:space:]]*[Rr]equest\.[Qq]uery[Ss]tring\[.*%>
 #[Ss][Ee][Ll][Ee][Cc][Tt][[:space:]]+.*\{[0-9]+\}
-[Ss][Ee][Ll][Ee][Cc][Tt][[:space:]]+.*[\'\"][[:space:]]*\+[[:space:]]*[Rr]equest\..*
-(WHERE|where)[[:space:]]+.*=.*[\'\"][[:space:]]*\+[[:space:]]*[Rr]equest\..*
-[\'\" ]+AND[[:space:]]+.*=.*\+[[:space:]]*[Rr]equest\..*
+[Ss][Ee][Ll][Ee][Cc][Tt][[:space:]]+.*['"][[:space:]]*\+[[:space:]]*[Rr]equest\..*
+(WHERE|where)[[:space:]]+.*=.*['"][[:space:]]*\+[[:space:]]*[Rr]equest\..*
+['" ]+AND[[:space:]]+.*=.*\+[[:space:]]*[Rr]equest\..*
 (LIKE|like)[[:space:]]+[^\;]+\+[[:space:]]*[Rr]equest\..*
 (ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+.*\+[[:space:]]*[Rr]equest
 (LIMIT|limit)[[:space:]]+([0-9]+,[[:space:]]*[Rr]equest\..*|[Rr]request\..*)
 Process.Start[[:space:]]*\(.*\+
-\.Arguments[[:space:]]*=([^;\)]*[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+|[^;\)]*[^\'\"]+[[:space:]]*\+[[:space:]]*[\'\"])
-\.SelectNodes[[:space:]]*\(.*[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
+\.Arguments[[:space:]]*=([^;\)]*['"][[:space:]]*\+[[:space:]]*[^'"]+|[^;\)]*[^'"]+[[:space:]]*\+[[:space:]]*['"])
+\.SelectNodes[[:space:]]*\(.*['"][[:space:]]*\+[[:space:]]*[^'"]+
 ReadAllBytes[[:space:]]*\(.*[Rr]equest
 \.Write(String)?[[:space:]]*\(.*URL\.Query[[:space:]]*\(.*\)
 \.Println[[:space:]]*\(.*URL.Query[[:space:]]*\(.*\)
@@ -38,24 +38,24 @@ SELECT[[:space:]]+.*%s
 response.sendRedirect[[:space:]]*\(.*([Rr]eq(uest)?|\.[Gg]et[Pp]aram).*\)
 out\.print(ln)?.*([Rr]eq(uest)?|\.[Gg]et[Pp]aram)
 <%=([Rr]equest|\.[Gg]et[Pp]aram)
-\.exec[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+.*
-(execute|create|new)Query[[:space:]]*\(.*[\"\'][[:space:]]*\+[[:space:]]*[^\"\']+
-queryforObject[[:space:]]*\(.*[\"\'][[:space:]]*\+[[:space:]]*[^\"\']+
-eval[[:space:]]*\([^\)\;\"]*([Rr]eq(uest)?[\.\)]|\.[Gg]et[Pp]aram[[:space:]]*[\[\(]).*\)
-\.getDocument[[:space:]]*\([^\)\;]+([Rr]eq(uest)?|\.g[Gg]et[Pp]aram).*\)
-(WHERE|where)[[:space:]]+[^;]+=[[:space:]]*[\'\"][\'\"]?[[:space:]]*\+[[:space:]]*[^\"\']+
-[\'\" ]+AND[[:space:]]+.*=[[:space:]]*[\'\"][\'\"]?[[:space:]]*\+[[:space:]]*[^\"\']
-(LIKE|like)[[:space:]]+[\'\"A-Za-z0-9%]+[\'\"][\'\"]?[[:space:]]*\+[[:space:]]*[^\"\']
-(ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+[A-Za-z0-9_, -]*[\'\"][\'\"]?[[:space:]]*\+[[:space:]]*[^\"\']
-(LIMIT|limit)[[:space:]]+([0-9,]+)?[;:space:]]*[\'\"][\'\"]?[[:space:]]*\+[[:space:]]*[^\"\']
-\.query\([^\);]*[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
-eval[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
+\.exec[[:space:]]*\([^\)\;]+['"][[:space:]]*\+.*
+(execute|create|new)Query[[:space:]]*\(.*["'][[:space:]]*\+[[:space:]]*[^"']+
+queryforObject[[:space:]]*\(.*["'][[:space:]]*\+[[:space:]]*[^"']+
+eval[[:space:]]*\([^\);"]*([Rr]eq(uest)?[\.\)]|\.[Gg]et[Pp]aram[[:space:]]*[\[\(]).*\)
+\.getDocument[[:space:]]*\([^\);]+([Rr]eq(uest)?|\.g[Gg]et[Pp]aram).*\)
+(WHERE|where)[[:space:]]+[^;]+=[[:space:]]*['"]['"]?[[:space:]]*\+[[:space:]]*[^"']+
+['" ]+AND[[:space:]]+.*=[[:space:]]*['"]['"]?[[:space:]]*\+[[:space:]]*[^"']
+(LIKE|like)[[:space:]]+['"A-Za-z0-9%]+['"]['"]?[[:space:]]*\+[[:space:]]*[^"']
+(ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+[A-Za-z0-9_, -]*['"]['"]?[[:space:]]*\+[[:space:]]*[^"']
+(LIMIT|limit)[[:space:]]+([0-9,]+)?[;:space:]]*['"]['"]?[[:space:]]*\+[[:space:]]*[^"']
+\.query\([^\);]*['"][[:space:]]*\+[[:space:]]*[^'"]+
+eval[[:space:]]*\([^\)\;]+['"][[:space:]]*\+[[:space:]]*[^'"]+
 eval[[:space:]]*\(.*[Rr]eq(quest)?\.(query|body|param)?
 <%-[[:space:]]+.*%>
-\.(spawn|exec)(File)?(Sync)?\([^\);]*([\'\"] *\+|\$\{)
+\.(spawn|exec)(File)?(Sync)?\([^\);]*(['"] *\+|\$\{)
 set(Interval|Timeout)[[:space:]]*\([^,\}\)]*[Rr]eq(quest)?\.[A-Za-z0-9]+
-\.SafeString[[:space:]]*\([^\)]*[\"'][[:space:]]*\+
-asm[[:space:]]+[\'\"].*
+\.SafeString[[:space:]]*\([^\)]*["'][[:space:]]*\+
+asm[[:space:]]+['"].*
 unsafeAddr
 execShellCmd[[:space:]]*\(
 # Perl-fruit signatures
@@ -75,7 +75,7 @@ use[[:space:]]+.*\$.*->param[[:space:]]*\(.*\).*
 (LIMIT|limit)[[:space:]]+.*\$.*->param[[:space:]]*\(.*\)
 escapeshellcmd[[:space:]]*\([^\)]*escapeshellarg[[:space:]]*\(.*
 escapeshellarg[[:space:]]*\([^\)]*escapeshellcmd[[:space:]]*\(.*
-[\'\"][[:space:]]*\.[[:space:]]*escapeshellcmd[[:space:]]*\(
+['"][[:space:]]*\.[[:space:]]*escapeshellcmd[[:space:]]*\(
 echo[[:space:]]+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
 print[[:space:]]+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
 print_r([[:space:]]+|[[:space:]]*\().*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*
@@ -98,9 +98,9 @@ require_once[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|htt
 fopen[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 readfile[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 file_(get|put)_contents[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
-(is_dir|file_exists|unlink)[[:space:]]*\(\"?\$(_ENV|_GET|_POST|_COOKE|_REQUEST|_SERVER|HTTP|http).*\)
+(is_dir|file_exists|unlink)[[:space:]]*\([[:space:]]*"?\$(_ENV|_GET|_POST|_COOKE|_REQUEST|_SERVER|HTTP|http).*\)
 show_source[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
-preg_replace[[:space:]]*\([\'"](.).*\1[igsu]*e
+preg_replace[[:space:]]*\(['"](.).*\1[igsu]*e
 highlight_file[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 file[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 unserialize[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
@@ -121,7 +121,7 @@ exec[[:space:]]*\([^\);]*["'][[:space:]]*\+
 [Ss][Ee][Ll][Ee][Cc][Tt][[:space:]]+[A-Za-z0-9]+[[:space:]]*=[[:space:]]*\{[^\}]+\}
 FROM[[:space:]]+[A-Za-z0-9]+[[:space:]]*=[[:space:]]*\{[^\}]+\}
 (WHERE|where)[[:space:]]+[A-Za-z0-9]+[[:space:]]*=[[:space:]]*\{[^\}]+\}
-[\'\" ]+(AND|and)[[:space:]]+[A-Za-z0-9]+[[:space:]]*=[[:space:]]*\{[^\}]+\}
+['" ]+(AND|and)[[:space:]]+[A-Za-z0-9]+[[:space:]]*=[[:space:]]*\{[^\}]+\}
 (LIKE|like)[[:space:]]+[^\}\);]*\{[^\}]+\}
 (ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+[A-Za-z0-9_, -]*\{[^\}]+\}
 ['" ](LIMIT|limit)[[:space:]]+[^\}\);]*\{[^\}]+\}
@@ -133,17 +133,17 @@ render[[:space:]]+:?(text|plain):?.*#\{[Pp][Aa][Rr][Aa][Mm][^\}]*\}
 File\.(read|new|open|delete|write)[[:space:]]*\("[^"]*\#\{[^\}]+[^\)]*\)
 ['"(: ][Ss][Ee][Ll][Ee][Cc][Tt][[:space:]]+.*#\{[^\}]+
 (WHERE|where)[[:space:]]+.*=[[:space:]]*['"]*#\{[^\}]+
-[\'\" ]+AND[[:space:]]+.*=.*\+[[:space:]]*#\{[^\}]+
+['" ]+AND[[:space:]]+.*=.*\+[[:space:]]*#\{[^\}]+
 (LIKE|like)[[:space:]]+[^\}\);]*#\{[^\}]+
 (ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+.*\+[[:space:]]*#\{[^\}]+
 ['" ](LIMIT|limit)[[:space:]]+.*#\{[^\}]+
 File\.(read|new|open|delete)[[:space:]]*\(.*\#\{[^\}]+\}
-Source\.fromFile[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
-sql\".*\#\$.*\"\.as\[.*
-SQL[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
-(WHERE|where)[[:space:]]+[^\;:\)]+(=|[Ii][[Nn][[:space:]]+[\+\"\(]).*\$\{
-[\'\" ]+AND[[:space:]]+.*=[[:space:]]?\$\{[^\}]+\}
-(LIKE|like)[[:space:]]+(['"][^\'\"]*)?\$\{[^\}]+\}
+Source\.fromFile[[:space:]]*\([^\)\;]+['"][[:space:]]*\+[[:space:]]*[^'"]+
+sql".*\#\$.*"\.as\[.*
+SQL[[:space:]]*\([^\)\;]+['"][[:space:]]*\+[[:space:]]*[^'"]+
+(WHERE|where)[[:space:]]+[^\;:\)]+(=|[Ii][[Nn][[:space:]]+[\+"\(]).*\$\{
+['" ]+AND[[:space:]]+.*=[[:space:]]?\$\{[^\}]+\}
+(LIKE|like)[[:space:]]+(['"][^'"]*)?\$\{[^\}]+\}
 (ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+[A-Za-z0-9_, -]*\$\{[^\}]+\}
 (LIMIT|limit)[[:space:]]+([0-9 ]+,? ?)?\$\{[^\}]+\}
 (spawn|execFile|\.exec)(Sync)?[[:space:]]\(.*(\$\{[^\}]+\}|\.query|\.param)

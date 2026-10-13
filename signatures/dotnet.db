@@ -34,15 +34,15 @@ new[[:space:]]+Cli[[:space:]]*\(.*
 \.Invoke[[:space:]]*\([^\)]+\)
 <%=[[:space:]]*[Rr]equest\.[Qq]uery[Ss]tring\[.*%>
 #[Ss][Ee][Ll][Ee][Cc][Tt][[:space:]]+.*\{[0-9]+\}
-[Ss][Ee][Ll][Ee][Cc][Tt][[:space:]]+.*[\'\"][[:space:]]*\+[[:space:]]*[Rr]equest\..*
-(WHERE|where)[[:space:]]+.*=.*[\'\"][[:space:]]*\+[[:space:]]*[Rr]equest\..*
-[\'\" ]+AND[[:space:]]+.*=.*\+[[:space:]]*[Rr]equest\..*
+[Ss][Ee][Ll][Ee][Cc][Tt][[:space:]]+.*['"][[:space:]]*\+[[:space:]]*[Rr]equest\..*
+(WHERE|where)[[:space:]]+.*=.*['"][[:space:]]*\+[[:space:]]*[Rr]equest\..*
+['" ]+AND[[:space:]]+.*=.*\+[[:space:]]*[Rr]equest\..*
 (LIKE|like)[[:space:]]+[^\;]+\+[[:space:]]*[Rr]equest\..*
 (ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+.*\+[[:space:]]*[Rr]equest
 (LIMIT|limit)[[:space:]]+([0-9]+,[[:space:]]*[Rr]equest\..*|[Rr]request\..*)
 Process.Start[[:space:]]*\(.*\+
-\.Arguments[[:space:]]*=([^;\)]*[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+|[^;\)]*[^\'\"]+[[:space:]]*\+[[:space:]]*[\'\"])
-\.SelectNodes[[:space:]]*\(.*[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
+\.Arguments[[:space:]]*=([^;\)]*['"][[:space:]]*\+[[:space:]]*[^'"]+|[^;\)]*[^'"]+[[:space:]]*\+[[:space:]]*['"])
+\.SelectNodes[[:space:]]*\(.*['"][[:space:]]*\+[[:space:]]*[^'"]+
 ReadAllBytes[[:space:]]*\(.*[Rr]equest
 # DotNet input controls
 system.web.ui.htmlcontrols.htmlinputhidden
@@ -154,7 +154,7 @@ GetQueryResultInXML[[:space:]]*\(
 #driver
 Server\.CreateObject
 #\.Provider
-\.Open([[:space:]]*\(|[[:space:]]+[\"\']).*
+\.Open([[:space:]]*\(|[[:space:]]+["']).*
 #ADODB.recordset
 New[[:space:]]+OleDbConnection
 ExecuteReader[[:space:]]*\(
@@ -168,14 +168,14 @@ SqlCo(mmand|nnection).*\=
 #CommandType
 StoredProcedure[[:space:]]*\(
 #System\.Data\.sql
-[Cc]onnection[Ss]tr(ing)?[[:space:]]*\=[[:space:]]*[\'\"].*
+[Cc]onnection[Ss]tr(ing)?[[:space:]]*\=[[:space:]]*['"].*
 # Stricter matching to avoid javascript spam
-[\'\"][Ss][Ee][Ll][Ee][Cc][Tt][[:space:]]+.*(\{[A-Za-z0-9]+\}|[\'\"][[:space:]]+\+)
-(WHERE|where)[[:space:]]+[^\;]+=.*(\{[A-Za-z0-9]+\}|[\'\"][[:space:]]+\+)
-[\'\" ]+AND[[:space:]]+.*=.*(\{[A-Za-z0-9]+\}|[\'\"][[:space:]]+\+)
-(LIKE|like)[[:space:]]+[^\(\)\;]+(\{[A-Za-z0-9]+\}|[\'\"][[:space:]]+\+)
-(ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+.*(\{[A-Za-z0-9]+\}|[\'\"][[:space:]]+\+)
-(LIMIT|limit)[[:space:]]+.*(\{[A-Za-z0-9]+\}|[\'\"][[:space:]]+\+)
+['"][Ss][Ee][Ll][Ee][Cc][Tt][[:space:]]+.*(\{[A-Za-z0-9]+\}|['"][[:space:]]+\+)
+(WHERE|where)[[:space:]]+[^\;]+=.*(\{[A-Za-z0-9]+\}|['"][[:space:]]+\+)
+['" ]+AND[[:space:]]+.*=.*(\{[A-Za-z0-9]+\}|['"][[:space:]]+\+)
+(LIKE|like)[[:space:]]+[^\(\)\;]+(\{[A-Za-z0-9]+\}|['"][[:space:]]+\+)
+(ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+.*(\{[A-Za-z0-9]+\}|['"][[:space:]]+\+)
+(LIMIT|limit)[[:space:]]+.*(\{[A-Za-z0-9]+\}|['"][[:space:]]+\+)
 ServerCertificateValidationCallback.*[Tt][Rr][Uu][Ee]
 checkCertificateName
 checkCertificateRevocationList
@@ -184,4 +184,4 @@ checkCertificateRevocationList
 <%[[:space:]]*=[[:space:]]*[\_a-zA-Z0-9][^\%]+
 innerText[[:space:]]*=[^\;]+\+
 innerHTML[[:space:]]*=[^\;]+\+
-[Vv]alidate[Rr]equest=[\'\"]?false[\'\"]?
+[Vv]alidate[Rr]equest=['"]?false['"]?

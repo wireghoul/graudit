@@ -3,8 +3,8 @@ Random\.nextInt
 .*\=.*\!\!
 [a-z0-9A-Z]\.\!
 Source\.fromFile[[:space:]]*\(
-Source\.fromFile[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
-sql\".*\#\$.*\"\.as\[.*
-SQL[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+[[:space:]]*[^\'\"]+
+Source\.fromFile[[:space:]]*\([^\)\;]+['"][[:space:]]*\+[[:space:]]*[^'"]+
+sql".*\#\$.*"\.as\[.*
+SQL[[:space:]]*\([^\)\;]+['"][[:space:]]*\+[[:space:]]*[^'"]+
 Jwt(Argonaut|Circe|Json(4s)?|Upickle)?\.((en|de)code(Raw|Json)?(All)?|validate|isValid)[[:space:]]*\([^,]+,[[:space:]]*["'][^'"]*["']
 Algorithm\.HMAC256[[:space:]]*\([[:space:]]*['"][^'"]*['"]

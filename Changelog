@@ -1,3 +1,33 @@
+4.1		2026 Oct 13
+		Reduced flatline rules false positives
+		Added misc/redos (Regex DoS) rules
+		Added secrets rules
+		Reduced false positives for secret rules
+		Added ios rules
+		Added ruby rules
+		Added default rules
+		Improved rule checking tests
+		Added a rule linter script
+		Updated android rules for extended regex correctness
+		Updated c rules for extended regex correctness
+		Updated dotnet rules for extended regex correctness
+		Updated java rules for extended regex correctness
+		Updated js rules for extended regex correctness
+		Updated nim rules for extended regex correctness
+		Updated perl rules for extended regex correctness
+		Updated php rules for extended regex correctness
+		Updated python rules for extended regex correctness
+		Updated ruby rules for extended regex correctness
+		Updated scala rules for extended regex correctness
+		Updated typescript rules for extended regex correctness
+		Updated default rules for extended regex correctness
+		Updated exec rules for extended regex correctness
+		Updated secrets rules for extended regex correctness
+		Updated fruit rules for extended regex correctness
+		Updated sql rules for extended regex correctness
+		Updated strings rules for extended regex correctness
+		Updated xss rules for extended regex correctness
+
 4.0		2025 Dec 19
 		Updated supression rules
 		Updated sql rules

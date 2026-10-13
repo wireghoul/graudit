@@ -1,0 +1,1 @@
+spawn[[:space:]]+[^,]+,[[:space:]]*@[a-zA-Z0-9]+

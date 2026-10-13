@@ -1,5 +1,5 @@
 # PHP RCE signatures
-exec[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
+exec[[:space:]]*\([^;]*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 system[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 popen[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 proc_open[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
@@ -20,8 +20,8 @@ mysqli_query[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|htt
 mssql_query[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 oci_parse[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
 pg_query[[:space:]]*\(.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http).*\)
-(WHERE|where)[[:space:]]+.*=.*\$(_ENV\[|_GET\[|_POST\[|_COOKIE\[|_REQUEST\[|_SERVER\[|HTTP|http)[^; ]+
+(WHERE|where)[[:space:]]+[^,;]*=[^;]*\$(_ENV\[|_GET\[|_POST\[|_COOKIE\[|_REQUEST\[|_SERVER\[|HTTP|http)[^; ]+
 [\'\" ]+AND[[:space:]]+.*=[[:space:]]?\$(_ENV\[|_GET\[|_POST\[|_COOKIE\[|_REQUEST\[|_SERVER\[|HTTP|http)[^; ]+
 (LIKE|like)[[:space:]]+.*\$(_ENV\[|_GET\[|_POST\[|_COOKIE\[|_REQUEST\[|_SERVER\[|HTTP|http)
 (ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+.*\$(_ENV|_GET\[|_POST\[|_COOKIE\[|_REQUEST\[|_SERVER|HTTP|http)
-(LIMIT|limit)[[:space:]]+.*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http)
+(LIMIT|limit)[[:space:]]+[^;]*\$(_ENV|_GET|_POST|_COOKIE|_REQUEST|_SERVER|HTTP|http)

@@ -1,6 +1,6 @@
 java.util.Random
 new[[:space:]]*(Secure)?Random[[:space:]]*\(
-MessageDigest\.getInstance[[:space:]]*\([\"\']([Mm][Dd]5|[Ss][Hh][Aa]-?(1|256)|[Rr][Ss][Aa]\/[Nn][Oo][Nn][Ee]|DES.*|AES\/(CBC|ECB)\/.*)[\"\']\)
+MessageDigest\.getInstance[[:space:]]*\(["']([Mm][Dd]5|[Ss][Hh][Aa]-?(1|256)|[Rr][Ss][Aa]\/[Nn][Oo][Nn][Ee]|DES.*|AES\/(CBC|ECB)\/.*)["']\)
 \.digest[[:space:]]*\(
 extends[[:space:]]*MessageDigest
 # Java Specific Security Related Exceptions
@@ -33,16 +33,16 @@ UnrecoverableKeyException
 response.sendRedirect[[:space:]]*\(.*([Rr]eq(uest)?|\.[Gg]et[Pp]aram).*\)
 out\.print(ln)?.*([Rr]eq(uest)?|\.[Gg]et[Pp]aram)
 <%=([Rr]equest|\.[Gg]et[Pp]aram)
-\.exec[[:space:]]*\([^\)\;]+[\'\"][[:space:]]*\+.*
-(execute|create|new)Query[[:space:]]*\(.*[\"\'][[:space:]]*\+[[:space:]]*[^\"\']+
-queryforObject[[:space:]]*\(.*[\"\'][[:space:]]*\+[[:space:]]*[^\"\']+
-eval[[:space:]]*\([^\)\;\"]*([Rr]eq(uest)?[\.\)]|\.[Gg]et[Pp]aram[[:space:]]*[\[\(]).*\)
-\.getDocument[[:space:]]*\([^\)\;]+([Rr]eq(uest)?|\.g[Gg]et[Pp]aram).*\)
-(WHERE|where)[[:space:]]+[^;]+=[[:space:]]*[\'\"][\'\"]?[[:space:]]*\+[[:space:]]*[^\"\']+
-[\'\" ]+AND[[:space:]]+.*=[[:space:]]*[\'\"][\'\"]?[[:space:]]*\+[[:space:]]*[^\"\']
-(LIKE|like)[[:space:]]+[\'\"A-Za-z0-9%]+[\'\"][\'\"]?[[:space:]]*\+[[:space:]]*[^\"\']
-(ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+[A-Za-z0-9_, -]*[\'\"][\'\"]?[[:space:]]*\+[[:space:]]*[^\"\']
-(LIMIT|limit)[[:space:]]+([0-9,]+)?[;:space:]]*[\'\"][\'\"]?[[:space:]]*\+[[:space:]]*[^\"\']
+\.exec[[:space:]]*\([^\)\;]+['"][[:space:]]*\+.*
+(execute|create|new)Query[[:space:]]*\(.*["'][[:space:]]*\+[[:space:]]*[^"']+
+queryforObject[[:space:]]*\(.*["'][[:space:]]*\+[[:space:]]*[^"']+
+eval[[:space:]]*\([^\);"]*([Rr]eq(uest)?[\.\)]|\.[Gg]et[Pp]aram[[:space:]]*[\[\(]).*\)
+\.getDocument[[:space:]]*\([^\);]+([Rr]eq(uest)?|\.g[Gg]et[Pp]aram).*\)
+(WHERE|where)[[:space:]]+[^;]+=[[:space:]]*['"]['"]?[[:space:]]*\+[[:space:]]*[^"']+
+['" ]+AND[[:space:]]+.*=[[:space:]]*['"]['"]?[[:space:]]*\+[[:space:]]*[^"']
+(LIKE|like)[[:space:]]+['"A-Za-z0-9%]+['"]['"]?[[:space:]]*\+[[:space:]]*[^"']
+(ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+[A-Za-z0-9_, -]*['"]['"]?[[:space:]]*\+[[:space:]]*[^"']
+(LIMIT|limit)[[:space:]]+([0-9,]+)?[;:space:]]*['"]['"]?[[:space:]]*\+[[:space:]]*[^"']
 AccessController
 addHeader
 CallableStatement
@@ -95,7 +95,7 @@ new[[:space:]]+URL[[:space:]]*\(.*\)\.(open(Stream|Connection)|getContent)
 request.getQueryString
 exec[[:space:]]*\(.*\)
 Runtime\.
-getRuntime[[:space:]]*\(.*\)(\.|\s*;)
+getRuntime[[:space:]]*\(.*\)(\.|[[:space:]]*;)
 getRequest
 [Rr]equest.getParameter
 getProperty[[:space:]]*\(
@@ -109,8 +109,8 @@ createStatement[[:space:]]*\(.*\)
 executeQuery[[:space:]]*\(.*\)
 # Network
 Socket[[:space:]]*\(
-<jsp:include page=\".*\$\{.*\}
-<spring:eval expression=\".*\$\{.*\}
+<jsp:include page=".*\$\{.*\}
+<spring:eval expression=".*\$\{.*\}
 Algorithm\.HMAC256[[:space:]]*\([[:space:]]*"[^"]*"
 Algorithm\.none[[:space:]]*\([[:space:]]*\)
 A[Ll][Ll][Oo][Ww]_?A[Ll][Ll]_?H[Oo][Ss][Tt][Nn][Aa][Mm][Ee]_?V[Ee][Rr][Ii][Ff][Ii][Ee][Rr]

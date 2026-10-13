@@ -11,24 +11,24 @@ syscall\.Exec[[:space:]]*\(
 os\.StartProcess[[:space:]]*\(
 session\.Run[[:space:]]*\(
 # Perl exec signatures
-exec(\s*\(|\s+).*\$.*\)?
-fork(\s*\(|\s+).*\)?
+exec([[:space:]]*\(|[[:space:]]+).*\$.*\)?
+fork([[:space:]]*\(|[[:space:]]+).*\)?
 `.*\$.*`
-system(\s*\(?|\s+)*\$.*\)?
-open(\s*\(?|\s+)*\$.*\)?
+system([[:space:]]*\(?|[[:space:]]+)*\$.*\)?
+open([[:space:]]*\(?|[[:space:]]+)*\$.*\)?
 # PHP - Execution
-assert([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
-exec([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
+assert([[:space:]]*\(|[[:space:]]+["'])[^\)]+\)?
+exec([[:space:]]*\(|[[:space:]]+["'])[^\)]+\)?
 `[^`]*\$[^`]+`
-passthru([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
-popen([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
-proc_close([[:space:]]*\(|[[:space:]]+[\"\'])[^\)]+\)?
+passthru([[:space:]]*\(|[[:space:]]+["'])[^\)]+\)?
+popen([[:space:]]*\(|[[:space:]]+["'])[^\)]+\)?
+proc_close([[:space:]]*\(|[[:space:]]+["'])[^\)]+\)?
 proc_open([[:space:]]*\(|[[:space:]]+).*\)?
 proc_get_status([[:space:]]*\(|[[:space:]]+).*\)?
 proc_nice([[:space:]]*\(|[[:space:]]+).*\)?
 proc_terminate([[:space:]]*\(|[[:space:]]+).*\)?
 shell_exec([[:space:]]*\(|[[:space:]]+).*\)?
-system([[:space:]]*\(|[[:space:]]+[\"\']).*\)?
+system([[:space:]]*\(|[[:space:]]+["']).*\)?
 exec([vl][pe]*)?[[:space:]]*\(
 \.system[[:space:]]*\([^\)]+\)
 [Pp]open[234]?[[:space:]]*\(

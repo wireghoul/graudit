@@ -3,7 +3,7 @@ exec[[:space:]]*\([^\);]*["'][[:space:]]*\+
 [Ss][Ee][Ll][Ee][Cc][Tt][[:space:]]+[A-Za-z0-9]+[[:space:]]*=[[:space:]]*\{[^\}]+\}
 FROM[[:space:]]+[A-Za-z0-9]+[[:space:]]*=[[:space:]]*\{[^\}]+\}
 (WHERE|where)[[:space:]]+[A-Za-z0-9]+[[:space:]]*=[[:space:]]*\{[^\}]+\}
-[\'\" ]+(AND|and)[[:space:]]+[A-Za-z0-9]+[[:space:]]*=[[:space:]]*\{[^\}]+\}
+['" ]+(AND|and)[[:space:]]+[A-Za-z0-9]+[[:space:]]*=[[:space:]]*\{[^\}]+\}
 (LIKE|like)[[:space:]]+[^\}\);]*\{[^\}]+\}
 (ORDER[[:space:]]+BY|order[[:space:]]+by)[[:space:]]+[A-Za-z0-9_, -]*\{[^\}]+\}
 ['" ](LIMIT|limit)[[:space:]]+[^\}\);]*\{[^\}]+\}
